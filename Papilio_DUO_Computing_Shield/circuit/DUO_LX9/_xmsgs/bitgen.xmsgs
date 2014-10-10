@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="Bitgen" num="341" delta="new" >This design is using one or more 9K Block RAMs (RAMB8BWER).  9K Block RAM initialization data, both user defined and default, requires a special bit stream format.  For more information, please reference Xilinx Answer Record 39999.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">XLXI_81/fifo_instance/Mram_memory1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="1176" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">XLXI_39/zpuino/core/cache/cachemem/Mram_RAM1</arg>&gt;:&lt;<arg fmt="%s" index="2">RAMB16BWER_RAMB16BWER</arg>&gt;.  The block is configured to use input parity pin DIBP0. There is dangling output for parity pin DOPB0.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="1176" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">XLXI_39/zpuino/core/cache/cachemem/Mram_RAM2</arg>&gt;:&lt;<arg fmt="%s" index="2">RAMB16BWER_RAMB16BWER</arg>&gt;.  The block is configured to use input parity pin DIBP0. There is dangling output for parity pin DOPB0.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="1176" delta="new" >Issue with pin connections and/or configuration on block:&lt;<arg fmt="%s" index="1">XLXI_39/zpuino/core/cache/cachemem/Mram_RAM3</arg>&gt;:&lt;<arg fmt="%s" index="2">RAMB16BWER_RAMB16BWER</arg>&gt;.  The block is configured to use input parity pin DIBP0. There is dangling output for parity pin DOPB0.
+</msg>
+
+<msg type="info" file="PhysDesignRules" num="1861" delta="new" >To achieve optimal frequency synthesis performance with the CLKFX and CLKFX180 outputs of the DCM comp <arg fmt="%s" index="1">XLXI_64/dcm_sp_inst</arg>, consult the device Data Sheet.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="2410" delta="new" >This design is using one or more 9K Block RAMs (RAMB8BWER).  9K Block RAM initialization data, both user defined and default, may be incorrect and should not be used.  For more information, please reference Xilinx Answer Record 39999.
+</msg>
+
+</messages>
+

@@ -1,0 +1,34 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Thu Oct 09 17:21:23 2014
+
+drc -z Papilio_DUO_LX9.ncd Papilio_DUO_LX9.pcf
+
+WARNING:PhysDesignRules:367 - The signal
+   <XLXI_81/fifo_instance/Mram_memory1_RAMD_D1_O> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM1>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM2>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM3>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp XLXI_64/dcm_sp_inst,
+   consult the device Data Sheet.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+DRC detected 0 errors and 5 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
