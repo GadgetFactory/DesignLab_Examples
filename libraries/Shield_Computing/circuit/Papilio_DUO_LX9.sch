@@ -383,7 +383,7 @@
             <line x2="32" y1="-64" y2="-64" x1="96" />
         </blockdef>
         <blockdef name="Computing_Shield_Pinout">
-            <timestamp>2014-10-10T6:22:48</timestamp>
+            <timestamp>2014-10-10T20:30:13</timestamp>
             <rect width="432" x="64" y="-2176" height="2104" />
             <rect width="188" x="308" y="-1820" height="272" />
             <line x2="60" y1="-2144" y2="-2144" x1="0" />
@@ -448,22 +448,6 @@
             <line x2="0" y1="-560" y2="-560" x1="64" />
             <line x2="0" y1="-400" y2="-400" x1="64" />
             <line x2="0" y1="-464" y2="-464" x1="64" />
-            <line x2="560" y1="-352" y2="-352" x1="496" />
-            <line x2="560" y1="-320" y2="-320" x1="496" />
-            <line x2="560" y1="-288" y2="-288" x1="496" />
-            <line x2="560" y1="-256" y2="-256" x1="496" />
-            <line x2="560" y1="-224" y2="-224" x1="496" />
-            <line x2="560" y1="-192" y2="-192" x1="496" />
-            <line x2="560" y1="-160" y2="-160" x1="496" />
-            <line x2="560" y1="-128" y2="-128" x1="496" />
-            <line x2="560" y1="-640" y2="-640" x1="496" />
-            <line x2="560" y1="-608" y2="-608" x1="496" />
-            <line x2="560" y1="-576" y2="-576" x1="496" />
-            <line x2="560" y1="-544" y2="-544" x1="496" />
-            <line x2="560" y1="-512" y2="-512" x1="496" />
-            <line x2="560" y1="-480" y2="-480" x1="496" />
-            <line x2="560" y1="-448" y2="-448" x1="496" />
-            <line x2="560" y1="-416" y2="-416" x1="496" />
             <line x2="560" y1="-1504" y2="-1504" x1="496" />
             <line x2="560" y1="-1472" y2="-1472" x1="496" />
             <line x2="560" y1="-1440" y2="-1440" x1="496" />
@@ -472,6 +456,22 @@
             <line x2="560" y1="-1344" y2="-1344" x1="496" />
             <line x2="560" y1="-1312" y2="-1312" x1="496" />
             <line x2="560" y1="-1280" y2="-1280" x1="496" />
+            <line x2="560" y1="-640" y2="-640" x1="496" />
+            <line x2="560" y1="-608" y2="-608" x1="496" />
+            <line x2="560" y1="-576" y2="-576" x1="496" />
+            <line x2="560" y1="-544" y2="-544" x1="496" />
+            <line x2="560" y1="-512" y2="-512" x1="496" />
+            <line x2="560" y1="-480" y2="-480" x1="496" />
+            <line x2="560" y1="-448" y2="-448" x1="496" />
+            <line x2="560" y1="-416" y2="-416" x1="496" />
+            <line x2="560" y1="-352" y2="-352" x1="496" />
+            <line x2="560" y1="-320" y2="-320" x1="496" />
+            <line x2="560" y1="-288" y2="-288" x1="496" />
+            <line x2="560" y1="-256" y2="-256" x1="496" />
+            <line x2="560" y1="-224" y2="-224" x1="496" />
+            <line x2="560" y1="-192" y2="-192" x1="496" />
+            <line x2="560" y1="-160" y2="-160" x1="496" />
+            <line x2="560" y1="-128" y2="-128" x1="496" />
         </blockdef>
         <block symbolname="ZPUino_Papilio_DUO_V1" name="XLXI_39">
             <blockpin signalname="XLXN_408(165:0)" name="gpio_bus_out(165:0)" />
@@ -655,22 +655,6 @@
             <blockpin signalname="XLXN_640" name="Audio1_Right" />
             <blockpin signalname="XLXN_666" name="Audio2_Right" />
             <blockpin signalname="XLXN_665" name="Audio2_Left" />
-            <blockpin signalname="Arduino_37" name="WING_DL7" />
-            <blockpin signalname="Arduino_35" name="WING_DL6" />
-            <blockpin signalname="Arduino_33" name="WING_DL5" />
-            <blockpin signalname="Arduino_31" name="WING_DL4" />
-            <blockpin signalname="Arduino_29" name="WING_DL3" />
-            <blockpin signalname="Arduino_27" name="WING_DL2" />
-            <blockpin signalname="Arduino_25" name="WING_DL1" />
-            <blockpin signalname="Arduino_23" name="WING_DL0" />
-            <blockpin signalname="Arduino_53" name="WING_DH7" />
-            <blockpin signalname="Arduino_51" name="WING_DH6" />
-            <blockpin signalname="Arduino_49" name="WING_DH5" />
-            <blockpin signalname="Arduino_47" name="WING_DH4" />
-            <blockpin signalname="Arduino_45" name="WING_DH3" />
-            <blockpin signalname="Arduino_43" name="WING_DH2" />
-            <blockpin signalname="Arduino_41" name="WING_DH1" />
-            <blockpin signalname="Arduino_39" name="WING_DH0" />
             <blockpin signalname="Arduino_21" name="WING_BL0" />
             <blockpin signalname="Arduino_20" name="WING_BL1" />
             <blockpin signalname="Arduino_19" name="WING_BL2" />
@@ -679,6 +663,22 @@
             <blockpin signalname="Arduino_16" name="WING_BL5" />
             <blockpin signalname="Arduino_15" name="WING_BL6" />
             <blockpin signalname="Arduino_14" name="WING_BL7" />
+            <blockpin signalname="Arduino_53" name="WING_DL0" />
+            <blockpin signalname="Arduino_51" name="WING_DL1" />
+            <blockpin signalname="Arduino_49" name="WING_DL2" />
+            <blockpin signalname="Arduino_47" name="WING_DL3" />
+            <blockpin signalname="Arduino_45" name="WING_DL4" />
+            <blockpin signalname="Arduino_43" name="WING_DL5" />
+            <blockpin signalname="Arduino_41" name="WING_DL6" />
+            <blockpin signalname="Arduino_39" name="WING_DL7" />
+            <blockpin signalname="Arduino_37" name="WING_DH0" />
+            <blockpin signalname="Arduino_35" name="WING_DH1" />
+            <blockpin signalname="Arduino_33" name="WING_DH2" />
+            <blockpin signalname="Arduino_31" name="WING_DH3" />
+            <blockpin signalname="Arduino_29" name="WING_DH4" />
+            <blockpin signalname="Arduino_27" name="WING_DH5" />
+            <blockpin signalname="Arduino_25" name="WING_DH6" />
+            <blockpin signalname="Arduino_23" name="WING_DH7" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">

@@ -204,8 +204,8 @@ begin
 	--WING_AH4 <= SPI_CS;
 	
 	--RS232 UART
-	WING_AL0 <= RS232_RX;
-	RS232_TX <= WING_AL1;	
+	WING_AL1 <= RS232_RX;
+	RS232_TX <= WING_AL0;	
 
 --  pin00: IOPAD port map(I => gpio_o(0), O => gpio_bus_in(0), T => gpio_t(0), C => gpio_clk,PAD => WING_AL0);
 --  pin01: IOPAD port map(I => gpio_o(1), O => gpio_bus_in(1), T => gpio_t(1), C => gpio_clk,PAD => WING_AL1);

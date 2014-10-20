@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 10/10/2014 09:45:29
+-- /___/   /\     Timestamp : 10/10/2014 14:32:04
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Shield_Computing/circuit/DUO_LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Shield_Computing/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Shield_Computing/circuit/Papilio_DUO_LX9.sch
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Shield_Computing/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Shield_Computing/circuit/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:
@@ -376,22 +376,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              Audio1_Right : in    std_logic; 
              Audio2_Right : in    std_logic; 
              Audio2_Left  : in    std_logic; 
-             WING_DL7     : inout std_logic; 
-             WING_DL6     : inout std_logic; 
-             WING_DL5     : inout std_logic; 
-             WING_DL4     : inout std_logic; 
-             WING_DL3     : inout std_logic; 
-             WING_DL2     : inout std_logic; 
-             WING_DL1     : inout std_logic; 
-             WING_DL0     : inout std_logic; 
-             WING_DH7     : inout std_logic; 
-             WING_DH6     : inout std_logic; 
-             WING_DH5     : inout std_logic; 
-             WING_DH4     : inout std_logic; 
-             WING_DH3     : inout std_logic; 
-             WING_DH2     : inout std_logic; 
-             WING_DH1     : inout std_logic; 
-             WING_DH0     : inout std_logic; 
              WING_BL0     : inout std_logic; 
              WING_BL1     : inout std_logic; 
              WING_BL2     : inout std_logic; 
@@ -399,7 +383,23 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              WING_BL4     : inout std_logic; 
              WING_BL5     : inout std_logic; 
              WING_BL6     : inout std_logic; 
-             WING_BL7     : inout std_logic);
+             WING_BL7     : inout std_logic; 
+             WING_DL0     : inout std_logic; 
+             WING_DL1     : inout std_logic; 
+             WING_DL2     : inout std_logic; 
+             WING_DL3     : inout std_logic; 
+             WING_DL4     : inout std_logic; 
+             WING_DL5     : inout std_logic; 
+             WING_DL6     : inout std_logic; 
+             WING_DL7     : inout std_logic; 
+             WING_DH0     : inout std_logic; 
+             WING_DH1     : inout std_logic; 
+             WING_DH2     : inout std_logic; 
+             WING_DH3     : inout std_logic; 
+             WING_DH4     : inout std_logic; 
+             WING_DH5     : inout std_logic; 
+             WING_DH6     : inout std_logic; 
+             WING_DH7     : inout std_logic);
    end component;
    
 begin
@@ -594,22 +594,22 @@ begin
                 WING_CL5=>Arduino_32,
                 WING_CL6=>Arduino_34,
                 WING_CL7=>Arduino_36,
-                WING_DH0=>Arduino_39,
-                WING_DH1=>Arduino_41,
-                WING_DH2=>Arduino_43,
-                WING_DH3=>Arduino_45,
-                WING_DH4=>Arduino_47,
-                WING_DH5=>Arduino_49,
-                WING_DH6=>Arduino_51,
-                WING_DH7=>Arduino_53,
-                WING_DL0=>Arduino_23,
-                WING_DL1=>Arduino_25,
-                WING_DL2=>Arduino_27,
-                WING_DL3=>Arduino_29,
-                WING_DL4=>Arduino_31,
-                WING_DL5=>Arduino_33,
-                WING_DL6=>Arduino_35,
-                WING_DL7=>Arduino_37);
+                WING_DH0=>Arduino_37,
+                WING_DH1=>Arduino_35,
+                WING_DH2=>Arduino_33,
+                WING_DH3=>Arduino_31,
+                WING_DH4=>Arduino_29,
+                WING_DH5=>Arduino_27,
+                WING_DH6=>Arduino_25,
+                WING_DH7=>Arduino_23,
+                WING_DL0=>Arduino_53,
+                WING_DL1=>Arduino_51,
+                WING_DL2=>Arduino_49,
+                WING_DL3=>Arduino_47,
+                WING_DL4=>Arduino_45,
+                WING_DL5=>Arduino_43,
+                WING_DL6=>Arduino_41,
+                WING_DL7=>Arduino_39);
    
 end BEHAVIORAL;
 
