@@ -150,7 +150,8 @@ void setup() {
   
   // initialize the LED pins as an output:
   for (int thisPin = 0; thisPin < ledCount; thisPin++)  {
-    pinMode(ledPins[thisPin], OUTPUT);  
+    pinMode(ledPins[thisPin], OUTPUT);
+    digitalWrite(ledPins[thisPin], LOW);  
   }
   
   // initialize the switch pins as an input:
@@ -179,6 +180,38 @@ void chanUpdate()
         sevenseg.setHexValue(0xC,0);
 }
 
+static void up()
+{
+   sevenseg.custom(0,0);
+   sevenseg.custom(0,1);
+   sevenseg.custom(SEGB|SEGC|SEGD|SEGE|SEGF,2);
+   sevenseg.custom(SEGA|SEGB|SEGE|SEGF|SEGG,3);
+}
+
+static void down()
+{
+   sevenseg.custom(SEGA|SEGB|SEGC|SEGD,0);
+   sevenseg.custom(SEGA|SEGB|SEGC|SEGD|SEGE|SEGF,1);
+   sevenseg.custom(SEGB|SEGC|SEGD|SEGE|SEGF|SEGG,2);
+   sevenseg.custom(SEGA|SEGB|SEGC|SEGE|SEGF,3);
+}
+
+static void right()
+{
+   sevenseg.custom(SEGA|SEGB|SEGC|SEGE|SEGG,0);
+   sevenseg.custom(SEGA|SEGC|SEGD|SEGE|SEGF,1);
+   sevenseg.custom(SEGB|SEGC|SEGE|SEGF|SEGG,2);
+   sevenseg.custom(SEGD|SEGE|SEGF|SEGG,3);
+}
+
+static void left()
+{
+   sevenseg.custom(SEGD|SEGE|SEGF,0);
+   sevenseg.custom(SEGA|SEGD|SEGE|SEGF|SEGG,1);
+   sevenseg.custom(SEGA|SEGE|SEGF|SEGG,2);
+   sevenseg.custom(SEGD|SEGE|SEGF|SEGG,3);
+}
+
 void loop() {
   // put your main code here, to run repeatedly: 
 
@@ -202,41 +235,28 @@ void loop() {
       digitalWrite(ledPins[thisPin], LOW); 
     }
   }    
+
   
   //Handle joystick and reading SPI ADC
   if ((extcnt & 0x17) == 0) {
-
-//    if (!digitalRead(LS_JOY_SELECT)) {
-//      sevenseg.setHexValue(0x8888);
-//    } else {
-//      if (timeout==0) {
-//        if (mode==0) {
-//          if ((cnt & 0x3F)==0)
-//            sevenseg.setIntValue(analog.read(channel),1);
-//          } else {
-//            sevenseg.setIntValue(cnt,0);
-//          }
-//        }
-//      }
-
-    /* Check for mode change */
-//    if (!digitalRead(LS_JOY_LEFT))
-//      mode=0;
-//    else if (!digitalRead(LS_JOY_RIGHT))
-//      mode=1;
-//
-//    if (timeout==0) {
-//      if (!digitalRead(LS_JOY_UP)) {
-//        if (channel<7)
-//          channel++;
-//          /* Print something and add timeout */
-//          //chanUpdate();
-//        } else if (!digitalRead(LS_JOY_DOWN)) {
-//          if (channel!=0)
-//            channel--;
-//            //chanUpdate();
-//          }
-//    }
+    if (timeout==0) {
+      if (digitalRead(LS_JOY_UP)) {
+          //Serial.println("Up");
+          up();
+      } else if (digitalRead(LS_JOY_DOWN)) {
+          //Serial.println("Down");
+          down();
+      } else if (digitalRead(LS_JOY_LEFT)) {
+          //Serial.println("Left");
+          left();
+      } else if (digitalRead(LS_JOY_RIGHT)) {
+          //Serial.println("Right");
+          right();
+      }      
+      else  {
+        sevenseg.setHexValue(0x8888);
+      }
+    }
         cnt++;
   }
       extcnt++;
