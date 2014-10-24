@@ -1,0 +1,365 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'Papilio_DUO_LX9'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx9-tqg144-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-pr off -lc off -power off -o Papilio_DUO_LX9_map.ncd Papilio_DUO_LX9.ngd
+Papilio_DUO_LX9.pcf 
+Target Device  : xc6slx9
+Target Package : tqg144
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Fri Oct 10 17:01:50 2014
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    8
+Slice Logic Utilization:
+  Number of Slice Registers:                 2,997 out of  11,440   26%
+    Number used as Flip Flops:               2,997
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                      3,566 out of   5,720   62%
+    Number used as logic:                    3,475 out of   5,720   60%
+      Number using O6 output only:           2,391
+      Number using O5 output only:             190
+      Number using O5 and O6:                  894
+      Number used as ROM:                        0
+    Number used as Memory:                      26 out of   1,440    1%
+      Number used as Dual Port RAM:              8
+        Number using O6 output only:             4
+        Number using O5 output only:             0
+        Number using O5 and O6:                  4
+      Number used as Single Port RAM:            0
+      Number used as Shift Register:            18
+        Number using O6 output only:             2
+        Number using O5 output only:             0
+        Number using O5 and O6:                 16
+    Number used exclusively as route-thrus:     65
+      Number with same-slice register load:     42
+      Number with same-slice carry load:        23
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                 1,262 out of   1,430   88%
+  Number of MUXCYs used:                     1,012 out of   2,860   35%
+  Number of LUT Flip Flop pairs used:        4,079
+    Number with an unused Flip Flop:         1,450 out of   4,079   35%
+    Number with an unused LUT:                 513 out of   4,079   12%
+    Number of fully used LUT-FF pairs:       2,116 out of   4,079   51%
+    Number of unique control sets:             174
+    Number of slice register sites lost
+      to control set restrictions:             509 out of  11,440    4%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        92 out of     102   90%
+    Number of LOCed IOBs:                       92 out of      92  100%
+    IOB Flip Flops:                             30
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                        24 out of      32   75%
+  Number of RAMB8BWERs:                          1 out of      64    1%
+  Number of BUFIO2/BUFIO2_2CLKs:                 2 out of      32    6%
+    Number used as BUFIO2s:                      2
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       6 out of      16   37%
+    Number used as BUFGs:                        6
+    Number used as BUFGMUX:                      0
+  Number of DCM/DCM_CLKGENs:                     2 out of       4   50%
+    Number used as DCMs:                         2
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     200    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     200    0%
+  Number of OLOGIC2/OSERDES2s:                  30 out of     200   15%
+    Number used as OLOGIC2s:                    30
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     128    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            8 out of      16   50%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            1 out of       2   50%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.74
+
+Peak Memory Usage:  480 MB
+Total REAL time to MAP completion:  3 mins 19 secs 
+Total CPU time to MAP completion:   3 mins 11 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Pack:1186 - One or more I/O components have conflicting property values.
+    For each occurrence, the system will use the property value attached to the
+   pad.  Otherwise, the system will use the first property value read.  To view
+   each occurrence, create a detailed map report (run map using the -detail
+   option).
+WARNING:Timing:3402 - The Clock Modifying COMP, XLXI_39/clkgen_inst/DCM_inst_1mhz, has the attribute CLK_FEEDBACK set to NONE.  No phase
+   relationship exists between the input and output clocks of this Clock Modifying COMP. Data paths between these clock domains must be
+   constrained using FROM/TO constraints.
+WARNING:Timing:3402 - The Clock Modifying COMP, XLXI_64/dcm_sp_inst, has the attribute CLK_FEEDBACK set to NONE.  No phase relationship
+   exists between the input and output clocks of this Clock Modifying COMP. Data paths between these clock domains must be constrained using
+   FROM/TO constraints.
+WARNING:PhysDesignRules:367 - The signal
+   <XLXI_81/fifo_instance/Mram_memory1_RAMD_D1_O> is incomplete. The signal does
+   not drive any load pins in the design.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM1>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM2>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
+   on
+   block:<XLXI_39/zpuino/core/cache/cachemem/Mram_RAM3>:<RAMB16BWER_RAMB16BWER>.
+    The block is configured to use input parity pin DIBP0. There is dangling
+   output for parity pin DOPB0.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network Arduino_26_IBUF has no load.
+INFO:LIT:395 - The above info message is repeated 5 more times for the following
+   (max. 5 shown):
+   Arduino_32_IBUF,
+   Arduino_38_IBUF,
+   Arduino_52_IBUF,
+   XLXI_81/fifo_instance/Mram_memory22/SPO,
+   XLXI_81/fifo_instance/Mram_memory21/SPO
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp XLXI_64/dcm_sp_inst,
+   consult the device Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) removed
+   3 block(s) optimized away
+   1 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "XLXI_39/clkgen_inst/clk2_inst" (CKBUF) removed.
+ The signal "XLXI_39/clkgen_inst/clk2" is loadless and has been removed.
+Loadless block "XLXI_39/clkgen_inst/vgainst" (CKBUF) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+PULLDOWN 		XLXI_47
+GND 		XLXI_93
+VCC 		XLXI_94
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ARD_RESET                          | IOB              | OUTPUT    | LVTTL                |       | 8        | SLOW |              |          |          |
+| Arduino_0                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_1                          | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_2                          | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_3                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_4                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_5                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_6                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_7                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_8                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_9                          | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_10                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_11                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_12                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_13                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_14                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_15                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_16                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_17                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_18                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_19                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_20                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_21                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_22                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_23                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_24                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_25                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_26                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_27                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_28                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_29                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_30                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_31                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_32                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_33                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_34                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_35                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_36                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_37                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_38                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_39                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_40                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_41                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_42                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_43                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_44                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_45                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_46                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_47                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_48                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_49                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_50                         | IOB              | OUTPUT    | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_51                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| Arduino_52                         | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| Arduino_53                         | IOB              | BIDIR     | LVTTL                |       | 12       | SLOW |              |          |          |
+| CLK                                | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| RXD                                | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SPI_CS                             | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
+| SPI_MISO                           | IOB              | INPUT     | LVTTL                |       |          |      |              |          |          |
+| SPI_MOSI                           | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
+| SPI_SCK                            | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
+| TXD                                | IOB              | OUTPUT    | LVTTL                |       | 8        | FAST |              |          |          |
+| sram_addr<0>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<1>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<2>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<3>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<4>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<5>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<6>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<7>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<8>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<9>                       | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<10>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<11>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<12>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<13>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<14>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<15>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<16>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<17>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_addr<18>                      | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
+| sram_ce                            | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<0>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<1>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<2>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<3>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<4>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<5>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<6>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_data<7>                       | IOB              | BIDIR     | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_oe                            | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | OFF          |          |          |
+| sram_we                            | IOB              | OUTPUT    | LVTTL                |       | 12       | FAST | ODDR         |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

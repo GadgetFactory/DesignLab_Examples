@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 10/20/2014 14:15:42
+-- /___/   /\     Timestamp : 10/22/2014 11:09:58
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/examples/Papilio_DUO_LogicStart_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/examples/Papilio_DUO_LogicStart_Shield/circuit/Papilio_DUO_LX9.sch
+--Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Papilio_DUO_LogicStart_Shield/circuit/DUO_LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Papilio_DUO_LogicStart_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Papilio_DUO_LogicStart_Shield/circuit/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:
@@ -27,6 +27,7 @@ use UNISIM.Vcomponents.ALL;
 
 entity Papilio_DUO_LX9 is
    port ( CLK        : in    std_logic; 
+          DUO_SW1    : in    std_logic; 
           RXD        : in    std_logic; 
           SPI_MISO   : in    std_logic; 
           ARD_RESET  : out   std_logic; 
@@ -96,9 +97,6 @@ entity Papilio_DUO_LX9 is
 end Papilio_DUO_LX9;
 
 architecture BEHAVIORAL of Papilio_DUO_LX9 is
-   attribute IOSTANDARD : string ;
-   attribute SLEW       : string ;
-   attribute DRIVE      : string ;
    attribute BOX_TYPE   : string ;
    signal XLXN_408                                  : std_logic_vector (165 
          downto 0);
@@ -127,7 +125,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
    signal XLXN_450                                  : std_logic_vector (17 
          downto 0);
    signal XLXN_452                                  : std_logic;
-   signal XLXN_456                                  : std_logic;
    signal XLXN_536                                  : std_logic_vector (61 
          downto 0);
    signal XLXN_537                                  : std_logic_vector (33 
@@ -217,20 +214,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              vgaclkout               : out   std_logic; 
              sram_addr               : out   std_logic_vector (18 downto 0));
    end component;
-   
-   component OBUF
-      port ( I : in    std_logic; 
-             O : out   std_logic);
-   end component;
-   attribute IOSTANDARD of OBUF : component is "DEFAULT";
-   attribute SLEW of OBUF : component is "SLOW";
-   attribute DRIVE of OBUF : component is "12";
-   attribute BOX_TYPE of OBUF : component is "BLACK_BOX";
-   
-   component PULLDOWN
-      port ( O : out   std_logic);
-   end component;
-   attribute BOX_TYPE of PULLDOWN : component is "BLACK_BOX";
    
    component VIDEO_zpuino_wb_vga_hqvga
       port ( clk_50Mhz    : in    std_logic; 
@@ -353,6 +336,12 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              out2 : out   std_logic);
    end component;
    
+   component INV
+      port ( I : in    std_logic; 
+             O : out   std_logic);
+   end component;
+   attribute BOX_TYPE of INV : component is "BLACK_BOX";
+   
 begin
    XLXI_31 : Wishbone_Empty_Slot
       port map (wishbone_in(61 downto 0)=>XLXN_442(61 downto 0),
@@ -415,13 +404,6 @@ begin
                 wishbone_slot_14_in(61 downto 0)=>XLXN_430(61 downto 0),
                 SPI_CS=>SPI_CS,
                 sram_data(7 downto 0)=>sram_data(7 downto 0));
-   
-   XLXI_45 : OBUF
-      port map (I=>XLXN_456,
-                O=>ARD_RESET);
-   
-   XLXI_47 : PULLDOWN
-      port map (O=>XLXN_456);
    
    XLXI_54 : VIDEO_zpuino_wb_vga_hqvga
       port map (clk_50Mhz=>XLXN_596,
@@ -540,6 +522,10 @@ begin
       port map (in1=>XLXN_626,
                 out1=>XLXN_624,
                 out2=>XLXN_625);
+   
+   XLXI_77 : INV
+      port map (I=>DUO_SW1,
+                O=>ARD_RESET);
    
 end BEHAVIORAL;
 

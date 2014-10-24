@@ -1,0 +1,3 @@
+MODULE Edit_Your_Chip_Design
+	SUBMODULE Computing_Shield_Pinout
+		INSTANCE XLXI_49

@@ -261,12 +261,12 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/AUDIO_zpuino_sa_sigmadeltaDAC.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="195"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="50"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="51"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/AUDIO_zpuino_wb_passthrough.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="196"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="49"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="50"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/AUDIO_zpuino_wb_pokey.vhd" xil_pn:type="FILE_VHDL">
@@ -336,7 +336,7 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/clk_32to50_dcm.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="210"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="48"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="49"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/clk_32to800_pll.vhd" xil_pn:type="FILE_VHDL">
@@ -381,7 +381,7 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/MISC_zpuino_sa_splitter2.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="219"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="47"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="48"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/MISC_zpuino_sa_splitter4.vhd" xil_pn:type="FILE_VHDL">
@@ -391,7 +391,7 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/MISC_zpuino_wb_SevenSeg.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="221"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="46"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="47"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/papilio_stepper.vhd" xil_pn:type="FILE_VHDL">
@@ -461,12 +461,12 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/VIDEO_zpuino_wb_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="235"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="45"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="46"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/VIDEO_zpuino_wb_vga_hqvga.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="236"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="44"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="45"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/VIDEO_zpuino_wb_vga_zxspectrum.vhd" xil_pn:type="FILE_VHDL">
@@ -481,7 +481,7 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="239"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="43"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="44"/>
       <library xil_pn:name="wishbone"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/Wishbone_Peripherals/zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
@@ -666,7 +666,7 @@
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/ZPUino_Papilio_DUO_V1.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="276"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="42"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="43"/>
       <library xil_pn:name="zpuino"/>
     </file>
     <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/ZPUino_Papilio_One_V1.vhd" xil_pn:type="FILE_VHDL">
@@ -743,41 +743,41 @@
     </file>
     <file xil_pn:name="LogicStart_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="168"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="51"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="42"/>
     </file>
     <file xil_pn:name="../../libraries/HQVGA/HQVGA.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="155"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="155"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="HQVGA"/>
     </file>
     <file xil_pn:name="../../libraries/HQVGA/HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="156"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="156"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="HQVGA"/>
     </file>
     <file xil_pn:name="../../libraries/HQVGA/Simulate_Your_CCL_Design.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="157"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="157"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="HQVGA"/>
     </file>
     <file xil_pn:name="../../libraries/HQVGA/Wishbone_to_Registers.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="158"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="158"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="HQVGA"/>
     </file>
     <file xil_pn:name="../../libraries/Shield_Computing/Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="159"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="159"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="Shield_Computing"/>
     </file>
     <file xil_pn:name="../../libraries/Shield_Computing/Simulate_Your_CCL_Design.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="160"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="160"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="Shield_Computing"/>
     </file>
     <file xil_pn:name="../../libraries/Shield_Computing/Wishbone_to_Registers.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="161"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="161"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="Shield_Computing"/>
     </file>
   </files>
@@ -808,7 +808,7 @@
     <property xil_pn:name="Change Device Speed To" xil_pn:value="-2" xil_pn:valueState="default"/>
     <property xil_pn:name="Change Device Speed To Post Trace" xil_pn:value="-2" xil_pn:valueState="default"/>
     <property xil_pn:name="Combinatorial Logic Optimization" xil_pn:value="false" xil_pn:valueState="default"/>
-    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="true" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile SIMPRIM (Timing) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile UNISIM (Functional) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile XilinxCoreLib (CORE Generator) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>

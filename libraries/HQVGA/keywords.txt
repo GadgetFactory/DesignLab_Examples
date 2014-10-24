@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-VGA	KEYWORD1
+HQVGA	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
