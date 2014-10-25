@@ -6,6 +6,14 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
+        <signal name="Arduino_0" />
+        <signal name="Arduino_1" />
+        <signal name="Arduino_2" />
+        <signal name="Arduino_3" />
+        <signal name="Arduino_4" />
+        <signal name="Arduino_5" />
+        <signal name="Arduino_6" />
+        <signal name="Arduino_7" />
         <signal name="Arduino_8" />
         <signal name="Arduino_9" />
         <signal name="Arduino_10" />
@@ -45,6 +53,8 @@
         <signal name="XLXN_443(33:0)" />
         <signal name="XLXN_444(61:0)" />
         <signal name="XLXN_445(33:0)" />
+        <signal name="XLXN_446(61:0)" />
+        <signal name="XLXN_447(33:0)" />
         <signal name="XLXN_335(7:0)" />
         <signal name="XLXN_336(7:0)" />
         <signal name="XLXN_333(7:0)" />
@@ -96,28 +106,16 @@
         <signal name="Arduino_27" />
         <signal name="Arduino_25" />
         <signal name="Arduino_23" />
-        <signal name="leds(3:0)" />
-        <signal name="WING_AL0" />
-        <signal name="WING_AL2" />
-        <signal name="WING_AL4" />
-        <signal name="WING_AL6" />
-        <signal name="BUTTONS(3:0)" />
-        <signal name="BUTTONS(3)" />
-        <signal name="BUTTONS(2)" />
-        <signal name="BUTTONS(1)" />
-        <signal name="BUTTONS(0)" />
-        <signal name="WING_AL1" />
-        <signal name="WING_AL3" />
-        <signal name="WING_AL5" />
-        <signal name="WING_AL7" />
-        <signal name="leds(3)" />
-        <signal name="leds(2)" />
-        <signal name="leds(1)" />
-        <signal name="leds(0)" />
-        <signal name="XLXN_450(61:0)" />
-        <signal name="XLXN_451(33:0)" />
         <signal name="ARD_RESET" />
         <signal name="DUO_SW1" />
+        <port polarity="BiDirectional" name="Arduino_0" />
+        <port polarity="BiDirectional" name="Arduino_1" />
+        <port polarity="BiDirectional" name="Arduino_2" />
+        <port polarity="BiDirectional" name="Arduino_3" />
+        <port polarity="BiDirectional" name="Arduino_4" />
+        <port polarity="BiDirectional" name="Arduino_5" />
+        <port polarity="BiDirectional" name="Arduino_6" />
+        <port polarity="BiDirectional" name="Arduino_7" />
         <port polarity="BiDirectional" name="Arduino_8" />
         <port polarity="BiDirectional" name="Arduino_9" />
         <port polarity="BiDirectional" name="Arduino_10" />
@@ -176,14 +174,6 @@
         <port polarity="BiDirectional" name="Arduino_27" />
         <port polarity="BiDirectional" name="Arduino_25" />
         <port polarity="BiDirectional" name="Arduino_23" />
-        <port polarity="Output" name="WING_AL0" />
-        <port polarity="Output" name="WING_AL2" />
-        <port polarity="Output" name="WING_AL4" />
-        <port polarity="Output" name="WING_AL6" />
-        <port polarity="Input" name="WING_AL1" />
-        <port polarity="Input" name="WING_AL3" />
-        <port polarity="Input" name="WING_AL5" />
-        <port polarity="Input" name="WING_AL7" />
         <port polarity="Output" name="ARD_RESET" />
         <port polarity="Input" name="DUO_SW1" />
         <blockdef name="Wing_GPIO">
@@ -356,60 +346,6 @@
             <line x2="496" y1="-1888" y2="-1888" x1="432" />
             <line x2="496" y1="-1920" y2="-1920" x1="432" />
         </blockdef>
-        <blockdef name="ZPUino_2">
-            <timestamp>2014-10-1T6:28:8</timestamp>
-            <rect width="160" x="52" y="-64" height="64" />
-            <line x2="52" y1="-48" y2="-48" x1="0" />
-            <line x2="256" y1="-16" y2="-16" x1="212" />
-            <line x2="128" y1="-112" y2="-64" x1="128" />
-            <line x2="144" y1="-112" y2="-64" x1="144" />
-        </blockdef>
-        <blockdef name="obuf4">
-            <timestamp>2000-1-1T10:10:10</timestamp>
-            <line x2="64" y1="0" y2="-64" x1="64" />
-            <line x2="64" y1="-32" y2="0" x1="128" />
-            <line x2="128" y1="-64" y2="-32" x1="64" />
-            <line x2="64" y1="-128" y2="-192" x1="64" />
-            <line x2="64" y1="-160" y2="-128" x1="128" />
-            <line x2="128" y1="-192" y2="-160" x1="64" />
-            <line x2="64" y1="-192" y2="-256" x1="64" />
-            <line x2="64" y1="-224" y2="-192" x1="128" />
-            <line x2="128" y1="-256" y2="-224" x1="64" />
-            <line x2="128" y1="-224" y2="-224" x1="224" />
-            <line x2="128" y1="-160" y2="-160" x1="224" />
-            <line x2="64" y1="-96" y2="-96" x1="0" />
-            <line x2="128" y1="-96" y2="-96" x1="224" />
-            <line x2="64" y1="-64" y2="-128" x1="64" />
-            <line x2="64" y1="-96" y2="-64" x1="128" />
-            <line x2="128" y1="-128" y2="-96" x1="64" />
-            <line x2="64" y1="-160" y2="-160" x1="0" />
-            <line x2="64" y1="-224" y2="-224" x1="0" />
-            <line x2="64" y1="-32" y2="-32" x1="0" />
-            <line x2="128" y1="-32" y2="-32" x1="224" />
-        </blockdef>
-        <blockdef name="ibuf4">
-            <timestamp>2000-1-1T10:10:10</timestamp>
-            <line x2="64" y1="-224" y2="-224" x1="0" />
-            <line x2="128" y1="-160" y2="-160" x1="224" />
-            <line x2="64" y1="-32" y2="-32" x1="0" />
-            <line x2="64" y1="-192" y2="-256" x1="64" />
-            <line x2="64" y1="-224" y2="-192" x1="128" />
-            <line x2="128" y1="-256" y2="-224" x1="64" />
-            <line x2="64" y1="-128" y2="-192" x1="64" />
-            <line x2="64" y1="-160" y2="-128" x1="128" />
-            <line x2="128" y1="-192" y2="-160" x1="64" />
-            <line x2="64" y1="-64" y2="-128" x1="64" />
-            <line x2="64" y1="-96" y2="-64" x1="128" />
-            <line x2="128" y1="-128" y2="-96" x1="64" />
-            <line x2="64" y1="0" y2="-64" x1="64" />
-            <line x2="64" y1="-32" y2="0" x1="128" />
-            <line x2="128" y1="-64" y2="-32" x1="64" />
-            <line x2="128" y1="-32" y2="-32" x1="224" />
-            <line x2="64" y1="-96" y2="-96" x1="0" />
-            <line x2="64" y1="-160" y2="-160" x1="0" />
-            <line x2="128" y1="-224" y2="-224" x1="224" />
-            <line x2="128" y1="-96" y2="-96" x1="224" />
-        </blockdef>
         <blockdef name="inv">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="-32" y2="-32" x1="0" />
@@ -450,6 +386,10 @@
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_30">
             <blockpin signalname="XLXN_444(61:0)" name="wishbone_in(61:0)" />
             <blockpin signalname="XLXN_445(33:0)" name="wishbone_out(33:0)" />
+        </block>
+        <block symbolname="Wishbone_Empty_Slot" name="XLXI_29">
+            <blockpin signalname="XLXN_446(61:0)" name="wishbone_in(61:0)" />
+            <blockpin signalname="XLXN_447(33:0)" name="wishbone_out(33:0)" />
         </block>
         <block symbolname="Wing_GPIO" name="XLXI_27">
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
@@ -492,8 +432,8 @@
             <blockpin signalname="CLK" name="CLK" />
             <blockpin signalname="SPI_MISO" name="SPI_MISO" />
             <blockpin signalname="RXD" name="RXD" />
-            <blockpin signalname="XLXN_451(33:0)" name="wishbone_slot_5_out(33:0)" />
-            <blockpin signalname="XLXN_450(61:0)" name="wishbone_slot_5_in(61:0)" />
+            <blockpin signalname="XLXN_447(33:0)" name="wishbone_slot_5_out(33:0)" />
+            <blockpin signalname="XLXN_446(61:0)" name="wishbone_slot_5_in(61:0)" />
             <blockpin signalname="XLXN_444(61:0)" name="wishbone_slot_6_in(61:0)" />
             <blockpin signalname="XLXN_445(33:0)" name="wishbone_slot_6_out(33:0)" />
             <blockpin signalname="XLXN_442(61:0)" name="wishbone_slot_8_in(61:0)" />
@@ -526,12 +466,12 @@
             <blockpin signalname="Arduino_11" name="WING_AH3" />
             <blockpin signalname="Arduino_12" name="WING_AH4" />
             <blockpin signalname="Arduino_13" name="WING_AH5" />
-            <blockpin name="WING_AL0" />
-            <blockpin name="WING_AL1" />
-            <blockpin name="WING_AL2" />
-            <blockpin name="WING_AL3" />
-            <blockpin name="WING_AL4" />
-            <blockpin name="WING_AL5" />
+            <blockpin signalname="Arduino_0" name="WING_AL0" />
+            <blockpin signalname="Arduino_1" name="WING_AL1" />
+            <blockpin signalname="Arduino_2" name="WING_AL2" />
+            <blockpin signalname="Arduino_3" name="WING_AL3" />
+            <blockpin signalname="Arduino_4" name="WING_AL4" />
+            <blockpin signalname="Arduino_5" name="WING_AL5" />
             <blockpin signalname="Arduino_21" name="WING_BL0" />
             <blockpin signalname="Arduino_20" name="WING_BL1" />
             <blockpin signalname="Arduino_19" name="WING_BL2" />
@@ -588,41 +528,47 @@
             <blockpin signalname="XLXN_449(7:0)" name="WingType_mosi_DH(7:0)" />
             <blockpin signalname="XLXN_448(7:0)" name="WingType_miso_DH(7:0)" />
             <blockpin signalname="XLXN_325(7:0)" name="WingType_miso_DL(7:0)" />
-            <blockpin name="WING_AL7" />
-            <blockpin name="WING_AL6" />
+            <blockpin signalname="Arduino_7" name="WING_AL7" />
+            <blockpin signalname="Arduino_6" name="WING_AL6" />
         </block>
-        <block symbolname="ZPUino_2" name="XLXI_48">
-            <blockpin signalname="BUTTONS(3:0)" name="buttons(3:0)" />
-            <blockpin signalname="leds(3:0)" name="leds(3:0)" />
-            <blockpin signalname="XLXN_450(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_451(33:0)" name="wishbone_out(33:0)" />
-        </block>
-        <block symbolname="obuf4" name="XLXI_49">
-            <blockpin signalname="leds(0)" name="I0" />
-            <blockpin signalname="leds(1)" name="I1" />
-            <blockpin signalname="leds(2)" name="I2" />
-            <blockpin signalname="leds(3)" name="I3" />
-            <blockpin signalname="WING_AL0" name="O0" />
-            <blockpin signalname="WING_AL2" name="O1" />
-            <blockpin signalname="WING_AL4" name="O2" />
-            <blockpin signalname="WING_AL6" name="O3" />
-        </block>
-        <block symbolname="ibuf4" name="XLXI_50">
-            <blockpin signalname="WING_AL1" name="I0" />
-            <blockpin signalname="WING_AL3" name="I1" />
-            <blockpin signalname="WING_AL5" name="I2" />
-            <blockpin signalname="WING_AL7" name="I3" />
-            <blockpin signalname="BUTTONS(0)" name="O0" />
-            <blockpin signalname="BUTTONS(1)" name="O1" />
-            <blockpin signalname="BUTTONS(2)" name="O2" />
-            <blockpin signalname="BUTTONS(3)" name="O3" />
-        </block>
-        <block symbolname="inv" name="XLXI_51">
+        <block symbolname="inv" name="XLXI_48">
             <blockpin signalname="DUO_SW1" name="I" />
             <blockpin signalname="ARD_RESET" name="O" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
+        <branch name="Arduino_0">
+            <wire x2="5184" y1="1392" y2="1392" x1="5168" />
+            <wire x2="5200" y1="1392" y2="1392" x1="5184" />
+        </branch>
+        <branch name="Arduino_1">
+            <wire x2="5184" y1="1424" y2="1424" x1="5168" />
+            <wire x2="5200" y1="1424" y2="1424" x1="5184" />
+        </branch>
+        <branch name="Arduino_2">
+            <wire x2="5184" y1="1456" y2="1456" x1="5168" />
+            <wire x2="5200" y1="1456" y2="1456" x1="5184" />
+        </branch>
+        <branch name="Arduino_3">
+            <wire x2="5184" y1="1488" y2="1488" x1="5168" />
+            <wire x2="5200" y1="1488" y2="1488" x1="5184" />
+        </branch>
+        <branch name="Arduino_4">
+            <wire x2="5184" y1="1520" y2="1520" x1="5168" />
+            <wire x2="5200" y1="1520" y2="1520" x1="5184" />
+        </branch>
+        <branch name="Arduino_5">
+            <wire x2="5184" y1="1552" y2="1552" x1="5168" />
+            <wire x2="5200" y1="1552" y2="1552" x1="5184" />
+        </branch>
+        <branch name="Arduino_6">
+            <wire x2="5184" y1="1584" y2="1584" x1="5168" />
+            <wire x2="5200" y1="1584" y2="1584" x1="5184" />
+        </branch>
+        <branch name="Arduino_7">
+            <wire x2="5184" y1="1616" y2="1616" x1="5168" />
+            <wire x2="5200" y1="1616" y2="1616" x1="5184" />
+        </branch>
         <branch name="Arduino_8">
             <wire x2="5184" y1="1680" y2="1680" x1="5168" />
             <wire x2="5200" y1="1680" y2="1680" x1="5184" />
@@ -679,6 +625,14 @@
             <wire x2="5184" y1="2192" y2="2192" x1="5168" />
             <wire x2="5200" y1="2192" y2="2192" x1="5184" />
         </branch>
+        <iomarker fontsize="28" x="5200" y="1392" name="Arduino_0" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1424" name="Arduino_1" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1456" name="Arduino_2" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1488" name="Arduino_3" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1520" name="Arduino_4" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1552" name="Arduino_5" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1584" name="Arduino_6" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1616" name="Arduino_7" orien="R0" />
         <iomarker fontsize="28" x="5200" y="1680" name="Arduino_8" orien="R0" />
         <iomarker fontsize="28" x="5200" y="1712" name="Arduino_9" orien="R0" />
         <iomarker fontsize="28" x="5200" y="1744" name="Arduino_10" orien="R0" />
@@ -777,6 +731,66 @@
             <wire x2="1200" y1="816" y2="848" x1="1200" />
         </branch>
         <instance x="1120" y="912" name="XLXI_30" orien="R0" />
+        <branch name="XLXN_446(61:0)">
+            <wire x2="736" y1="816" y2="848" x1="736" />
+        </branch>
+        <branch name="XLXN_447(33:0)">
+            <wire x2="752" y1="816" y2="848" x1="752" />
+        </branch>
+        <instance x="672" y="912" name="XLXI_29" orien="R0" />
+        <branch name="XLXN_408(165:0)">
+            <wire x2="4576" y1="1200" y2="1344" x1="4576" />
+            <wire x2="4608" y1="1344" y2="1344" x1="4576" />
+            <wire x2="4752" y1="1200" y2="1200" x1="4576" />
+            <wire x2="5136" y1="1200" y2="1200" x1="4752" />
+            <wire x2="5296" y1="1200" y2="1200" x1="5136" />
+            <wire x2="5296" y1="352" y2="352" x1="4704" />
+            <wire x2="5296" y1="352" y2="1200" x1="5296" />
+        </branch>
+        <branch name="XLXN_409(109:0)">
+            <wire x2="4592" y1="1216" y2="1328" x1="4592" />
+            <wire x2="4608" y1="1328" y2="1328" x1="4592" />
+            <wire x2="4784" y1="1216" y2="1216" x1="4592" />
+            <wire x2="5312" y1="1216" y2="1216" x1="4784" />
+            <wire x2="5312" y1="336" y2="336" x1="4704" />
+            <wire x2="5312" y1="336" y2="1216" x1="5312" />
+        </branch>
+        <branch name="XLXN_335(7:0)">
+            <wire x2="4608" y1="1488" y2="1488" x1="4576" />
+        </branch>
+        <branch name="XLXN_336(7:0)">
+            <wire x2="4608" y1="1552" y2="1552" x1="4576" />
+        </branch>
+        <branch name="XLXN_333(7:0)">
+            <wire x2="4608" y1="1776" y2="1776" x1="4576" />
+        </branch>
+        <branch name="XLXN_334(7:0)">
+            <wire x2="4608" y1="1840" y2="1840" x1="4576" />
+        </branch>
+        <branch name="XLXN_331(7:0)">
+            <wire x2="4608" y1="2048" y2="2048" x1="4576" />
+        </branch>
+        <branch name="XLXN_332(7:0)">
+            <wire x2="4608" y1="2112" y2="2112" x1="4576" />
+        </branch>
+        <branch name="XLXN_329(7:0)">
+            <wire x2="4608" y1="2352" y2="2352" x1="4576" />
+        </branch>
+        <branch name="XLXN_330(7:0)">
+            <wire x2="4608" y1="2416" y2="2416" x1="4576" />
+        </branch>
+        <branch name="XLXN_327(7:0)">
+            <wire x2="4608" y1="2640" y2="2640" x1="4576" />
+        </branch>
+        <branch name="XLXN_328(7:0)">
+            <wire x2="4608" y1="2704" y2="2704" x1="4576" />
+        </branch>
+        <branch name="XLXN_325(7:0)">
+            <wire x2="4608" y1="2928" y2="2928" x1="4576" />
+        </branch>
+        <branch name="XLXN_326(7:0)">
+            <wire x2="4608" y1="2992" y2="2992" x1="4576" />
+        </branch>
         <instance x="4352" y="1584" name="XLXI_27" orien="R0">
         </instance>
         <instance x="4352" y="1872" name="XLXI_26" orien="R0">
@@ -811,6 +825,12 @@
             <wire x2="336" y1="352" y2="352" x1="304" />
         </branch>
         <iomarker fontsize="28" x="304" y="352" name="sram_addr(18:0)" orien="R180" />
+        <branch name="XLXN_448(7:0)">
+            <wire x2="4608" y1="3216" y2="3216" x1="4576" />
+        </branch>
+        <branch name="XLXN_449(7:0)">
+            <wire x2="4608" y1="3280" y2="3280" x1="4576" />
+        </branch>
         <instance x="4352" y="3312" name="XLXI_41" orien="R0">
         </instance>
         <branch name="Arduino_22">
@@ -894,278 +914,82 @@
         <iomarker fontsize="28" x="5200" y="2736" name="Arduino_50" orien="R0" />
         <iomarker fontsize="28" x="5200" y="2768" name="Arduino_52" orien="R0" />
         <branch name="Arduino_53">
-            <wire x2="5184" y1="2832" y2="2832" x1="5168" />
-            <wire x2="5200" y1="2832" y2="2832" x1="5184" />
+            <wire x2="5200" y1="2832" y2="2832" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2832" name="Arduino_53" orien="R0" />
         <branch name="Arduino_51">
-            <wire x2="5184" y1="2864" y2="2864" x1="5168" />
-            <wire x2="5200" y1="2864" y2="2864" x1="5184" />
+            <wire x2="5200" y1="2864" y2="2864" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2864" name="Arduino_51" orien="R0" />
         <branch name="Arduino_49">
-            <wire x2="5184" y1="2896" y2="2896" x1="5168" />
-            <wire x2="5200" y1="2896" y2="2896" x1="5184" />
+            <wire x2="5200" y1="2896" y2="2896" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2896" name="Arduino_49" orien="R0" />
         <branch name="Arduino_47">
-            <wire x2="5184" y1="2928" y2="2928" x1="5168" />
-            <wire x2="5200" y1="2928" y2="2928" x1="5184" />
+            <wire x2="5200" y1="2928" y2="2928" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2928" name="Arduino_47" orien="R0" />
         <branch name="Arduino_45">
-            <wire x2="5184" y1="2960" y2="2960" x1="5168" />
-            <wire x2="5200" y1="2960" y2="2960" x1="5184" />
+            <wire x2="5200" y1="2960" y2="2960" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2960" name="Arduino_45" orien="R0" />
         <branch name="Arduino_43">
-            <wire x2="5184" y1="2992" y2="2992" x1="5168" />
-            <wire x2="5200" y1="2992" y2="2992" x1="5184" />
+            <wire x2="5200" y1="2992" y2="2992" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="2992" name="Arduino_43" orien="R0" />
         <branch name="Arduino_41">
-            <wire x2="5184" y1="3024" y2="3024" x1="5168" />
-            <wire x2="5200" y1="3024" y2="3024" x1="5184" />
+            <wire x2="5200" y1="3024" y2="3024" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3024" name="Arduino_41" orien="R0" />
         <branch name="Arduino_39">
-            <wire x2="5184" y1="3056" y2="3056" x1="5168" />
-            <wire x2="5200" y1="3056" y2="3056" x1="5184" />
+            <wire x2="5200" y1="3056" y2="3056" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3056" name="Arduino_39" orien="R0" />
         <branch name="Arduino_37">
-            <wire x2="5184" y1="3120" y2="3120" x1="5168" />
-            <wire x2="5200" y1="3120" y2="3120" x1="5184" />
+            <wire x2="5200" y1="3120" y2="3120" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3120" name="Arduino_37" orien="R0" />
         <branch name="Arduino_35">
-            <wire x2="5184" y1="3152" y2="3152" x1="5168" />
-            <wire x2="5200" y1="3152" y2="3152" x1="5184" />
+            <wire x2="5200" y1="3152" y2="3152" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3152" name="Arduino_35" orien="R0" />
         <branch name="Arduino_33">
-            <wire x2="5184" y1="3184" y2="3184" x1="5168" />
-            <wire x2="5200" y1="3184" y2="3184" x1="5184" />
+            <wire x2="5200" y1="3184" y2="3184" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3184" name="Arduino_33" orien="R0" />
         <branch name="Arduino_31">
-            <wire x2="5184" y1="3216" y2="3216" x1="5168" />
-            <wire x2="5200" y1="3216" y2="3216" x1="5184" />
+            <wire x2="5200" y1="3216" y2="3216" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3216" name="Arduino_31" orien="R0" />
         <branch name="Arduino_29">
-            <wire x2="5184" y1="3248" y2="3248" x1="5168" />
-            <wire x2="5200" y1="3248" y2="3248" x1="5184" />
+            <wire x2="5200" y1="3248" y2="3248" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3248" name="Arduino_29" orien="R0" />
         <branch name="Arduino_27">
-            <wire x2="5184" y1="3280" y2="3280" x1="5168" />
-            <wire x2="5200" y1="3280" y2="3280" x1="5184" />
+            <wire x2="5200" y1="3280" y2="3280" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3280" name="Arduino_27" orien="R0" />
         <branch name="Arduino_25">
-            <wire x2="5184" y1="3312" y2="3312" x1="5168" />
-            <wire x2="5200" y1="3312" y2="3312" x1="5184" />
+            <wire x2="5200" y1="3312" y2="3312" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3312" name="Arduino_25" orien="R0" />
         <branch name="Arduino_23">
-            <wire x2="5184" y1="3344" y2="3344" x1="5168" />
-            <wire x2="5200" y1="3344" y2="3344" x1="5184" />
+            <wire x2="5200" y1="3344" y2="3344" x1="5168" />
         </branch>
         <iomarker fontsize="28" x="5200" y="3344" name="Arduino_23" orien="R0" />
-        <instance x="864" y="1904" name="XLXI_48" orien="R0" />
-        <branch name="leds(3:0)">
-            <wire x2="1280" y1="1888" y2="1888" x1="1120" />
-            <wire x2="1280" y1="1888" y2="1920" x1="1280" />
-            <wire x2="1280" y1="1920" y2="1984" x1="1280" />
-            <wire x2="1280" y1="1984" y2="2048" x1="1280" />
-            <wire x2="1280" y1="2048" y2="2112" x1="1280" />
-            <wire x2="1280" y1="2112" y2="2176" x1="1280" />
-        </branch>
-        <instance x="1488" y="2144" name="XLXI_49" orien="R0" />
-        <branch name="WING_AL0">
-            <wire x2="1744" y1="1920" y2="1920" x1="1712" />
-        </branch>
-        <branch name="WING_AL2">
-            <wire x2="1744" y1="1984" y2="1984" x1="1712" />
-        </branch>
-        <branch name="WING_AL4">
-            <wire x2="1744" y1="2048" y2="2048" x1="1712" />
-        </branch>
-        <branch name="WING_AL6">
-            <wire x2="1744" y1="2112" y2="2112" x1="1712" />
-        </branch>
-        <branch name="BUTTONS(3:0)">
-            <wire x2="864" y1="1856" y2="1856" x1="800" />
-            <wire x2="800" y1="1856" y2="1904" x1="800" />
-            <wire x2="800" y1="1904" y2="1968" x1="800" />
-            <wire x2="800" y1="1968" y2="2032" x1="800" />
-            <wire x2="800" y1="2032" y2="2096" x1="800" />
-            <wire x2="800" y1="2096" y2="2160" x1="800" />
-        </branch>
-        <instance x="464" y="2128" name="XLXI_50" orien="R0" />
-        <bustap x2="704" y1="2096" y2="2096" x1="800" />
-        <branch name="BUTTONS(3)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="696" y="2096" type="branch" />
-            <wire x2="704" y1="2096" y2="2096" x1="688" />
-        </branch>
-        <bustap x2="704" y1="2032" y2="2032" x1="800" />
-        <branch name="BUTTONS(2)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="696" y="2032" type="branch" />
-            <wire x2="704" y1="2032" y2="2032" x1="688" />
-        </branch>
-        <bustap x2="704" y1="1968" y2="1968" x1="800" />
-        <branch name="BUTTONS(1)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="696" y="1968" type="branch" />
-            <wire x2="704" y1="1968" y2="1968" x1="688" />
-        </branch>
-        <bustap x2="704" y1="1904" y2="1904" x1="800" />
-        <branch name="BUTTONS(0)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="696" y="1904" type="branch" />
-            <wire x2="704" y1="1904" y2="1904" x1="688" />
-        </branch>
-        <branch name="WING_AL1">
-            <wire x2="464" y1="1904" y2="1904" x1="432" />
-        </branch>
-        <branch name="WING_AL3">
-            <wire x2="464" y1="1968" y2="1968" x1="432" />
-        </branch>
-        <branch name="WING_AL5">
-            <wire x2="464" y1="2032" y2="2032" x1="432" />
-        </branch>
-        <branch name="WING_AL7">
-            <wire x2="464" y1="2096" y2="2096" x1="432" />
-        </branch>
-        <bustap x2="1376" y1="2112" y2="2112" x1="1280" />
-        <branch name="leds(3)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1432" y="2112" type="branch" />
-            <wire x2="1440" y1="2112" y2="2112" x1="1376" />
-            <wire x2="1488" y1="2112" y2="2112" x1="1440" />
-        </branch>
-        <bustap x2="1376" y1="2048" y2="2048" x1="1280" />
-        <branch name="leds(2)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1432" y="2048" type="branch" />
-            <wire x2="1440" y1="2048" y2="2048" x1="1376" />
-            <wire x2="1488" y1="2048" y2="2048" x1="1440" />
-        </branch>
-        <bustap x2="1376" y1="1984" y2="1984" x1="1280" />
-        <branch name="leds(1)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1432" y="1984" type="branch" />
-            <wire x2="1440" y1="1984" y2="1984" x1="1376" />
-            <wire x2="1488" y1="1984" y2="1984" x1="1440" />
-        </branch>
-        <bustap x2="1376" y1="1920" y2="1920" x1="1280" />
-        <branch name="leds(0)">
-            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1432" y="1920" type="branch" />
-            <wire x2="1440" y1="1920" y2="1920" x1="1376" />
-            <wire x2="1488" y1="1920" y2="1920" x1="1440" />
-        </branch>
-        <branch name="XLXN_450(61:0)">
-            <wire x2="736" y1="816" y2="1312" x1="736" />
-            <wire x2="992" y1="1312" y2="1312" x1="736" />
-            <wire x2="992" y1="1312" y2="1792" x1="992" />
-        </branch>
-        <branch name="XLXN_451(33:0)">
-            <wire x2="752" y1="816" y2="1296" x1="752" />
-            <wire x2="1008" y1="1296" y2="1296" x1="752" />
-            <wire x2="1008" y1="1296" y2="1792" x1="1008" />
-        </branch>
-        <iomarker fontsize="28" x="1744" y="1920" name="WING_AL0" orien="R0" />
-        <iomarker fontsize="28" x="1744" y="1984" name="WING_AL2" orien="R0" />
-        <iomarker fontsize="28" x="1744" y="2048" name="WING_AL4" orien="R0" />
-        <iomarker fontsize="28" x="1744" y="2112" name="WING_AL6" orien="R0" />
-        <iomarker fontsize="28" x="432" y="1904" name="WING_AL1" orien="R180" />
-        <iomarker fontsize="28" x="432" y="1968" name="WING_AL3" orien="R180" />
-        <iomarker fontsize="28" x="432" y="2032" name="WING_AL5" orien="R180" />
-        <iomarker fontsize="28" x="432" y="2096" name="WING_AL7" orien="R180" />
-        <branch name="XLXN_449(7:0)">
-            <wire x2="4592" y1="3280" y2="3280" x1="4576" />
-            <wire x2="4608" y1="3280" y2="3280" x1="4592" />
-        </branch>
-        <branch name="XLXN_448(7:0)">
-            <wire x2="4592" y1="3216" y2="3216" x1="4576" />
-            <wire x2="4608" y1="3216" y2="3216" x1="4592" />
-        </branch>
-        <branch name="XLXN_326(7:0)">
-            <wire x2="4592" y1="2992" y2="2992" x1="4576" />
-            <wire x2="4608" y1="2992" y2="2992" x1="4592" />
-        </branch>
-        <branch name="XLXN_325(7:0)">
-            <wire x2="4592" y1="2928" y2="2928" x1="4576" />
-            <wire x2="4608" y1="2928" y2="2928" x1="4592" />
-        </branch>
-        <branch name="XLXN_328(7:0)">
-            <wire x2="4592" y1="2704" y2="2704" x1="4576" />
-            <wire x2="4608" y1="2704" y2="2704" x1="4592" />
-        </branch>
-        <branch name="XLXN_327(7:0)">
-            <wire x2="4592" y1="2640" y2="2640" x1="4576" />
-            <wire x2="4608" y1="2640" y2="2640" x1="4592" />
-        </branch>
-        <branch name="XLXN_330(7:0)">
-            <wire x2="4592" y1="2416" y2="2416" x1="4576" />
-            <wire x2="4608" y1="2416" y2="2416" x1="4592" />
-        </branch>
-        <branch name="XLXN_329(7:0)">
-            <wire x2="4592" y1="2352" y2="2352" x1="4576" />
-            <wire x2="4608" y1="2352" y2="2352" x1="4592" />
-        </branch>
-        <branch name="XLXN_332(7:0)">
-            <wire x2="4592" y1="2112" y2="2112" x1="4576" />
-            <wire x2="4608" y1="2112" y2="2112" x1="4592" />
-        </branch>
-        <branch name="XLXN_331(7:0)">
-            <wire x2="4592" y1="2048" y2="2048" x1="4576" />
-            <wire x2="4608" y1="2048" y2="2048" x1="4592" />
-        </branch>
-        <branch name="XLXN_334(7:0)">
-            <wire x2="4592" y1="1840" y2="1840" x1="4576" />
-            <wire x2="4608" y1="1840" y2="1840" x1="4592" />
-        </branch>
-        <branch name="XLXN_333(7:0)">
-            <wire x2="4592" y1="1776" y2="1776" x1="4576" />
-            <wire x2="4608" y1="1776" y2="1776" x1="4592" />
-        </branch>
-        <branch name="XLXN_336(7:0)">
-            <wire x2="4592" y1="1552" y2="1552" x1="4576" />
-            <wire x2="4608" y1="1552" y2="1552" x1="4592" />
-        </branch>
-        <branch name="XLXN_335(7:0)">
-            <wire x2="4592" y1="1488" y2="1488" x1="4576" />
-            <wire x2="4608" y1="1488" y2="1488" x1="4592" />
-        </branch>
-        <branch name="XLXN_408(165:0)">
-            <wire x2="4752" y1="1200" y2="1200" x1="4576" />
-            <wire x2="5136" y1="1200" y2="1200" x1="4752" />
-            <wire x2="5296" y1="1200" y2="1200" x1="5136" />
-            <wire x2="4576" y1="1200" y2="1344" x1="4576" />
-            <wire x2="4608" y1="1344" y2="1344" x1="4576" />
-            <wire x2="4720" y1="352" y2="352" x1="4704" />
-            <wire x2="5296" y1="352" y2="352" x1="4720" />
-            <wire x2="5296" y1="352" y2="1200" x1="5296" />
-        </branch>
-        <branch name="XLXN_409(109:0)">
-            <wire x2="4784" y1="1216" y2="1216" x1="4592" />
-            <wire x2="5312" y1="1216" y2="1216" x1="4784" />
-            <wire x2="4592" y1="1216" y2="1328" x1="4592" />
-            <wire x2="4608" y1="1328" y2="1328" x1="4592" />
-            <wire x2="4720" y1="336" y2="336" x1="4704" />
-            <wire x2="5312" y1="336" y2="336" x1="4720" />
-            <wire x2="5312" y1="336" y2="1216" x1="5312" />
-        </branch>
         <instance x="4672" y="3504" name="XLXI_44" orien="R0">
         </instance>
-        <text style="fontsize:64;fontname:Arial" x="2348" y="3432">Version: 1.0</text>
-        <iomarker fontsize="28" x="560" y="3168" name="ARD_RESET" orien="R0" />
+        <text style="fontsize:28;fontname:Arial" x="48" y="3460">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
         <branch name="ARD_RESET">
             <wire x2="560" y1="3168" y2="3168" x1="528" />
         </branch>
-        <instance x="304" y="3200" name="XLXI_51" orien="R0" />
+        <iomarker fontsize="28" x="560" y="3168" name="ARD_RESET" orien="R0" />
+        <instance x="304" y="3200" name="XLXI_48" orien="R0" />
         <branch name="DUO_SW1">
             <wire x2="304" y1="3168" y2="3168" x1="272" />
         </branch>
         <iomarker fontsize="28" x="272" y="3168" name="DUO_SW1" orien="R180" />
-        <text style="fontsize:28;fontname:Arial" x="44" y="3492">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
-        <text style="fontsize:28;fontname:Arial" x="44" y="3456">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
+        <text style="fontsize:28;fontname:Arial" x="48" y="3492">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
+        <text style="fontsize:64;fontname:Arial" x="2108" y="3456">Version: 1.0</text>
     </sheet>
 </drawing>

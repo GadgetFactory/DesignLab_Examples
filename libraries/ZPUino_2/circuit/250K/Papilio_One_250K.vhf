@@ -4,14 +4,14 @@
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 14.7
+-- \   \   \/     Version : 14.6
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_One_250K.vhf
--- /___/   /\     Timestamp : 10/01/2014 01:26:22
+-- /___/   /\     Timestamp : 01/17/2014 12:01:22
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan3e -flat -suppress -vhdl D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/250K/Papilio_One_250K.vhf -w D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/Papilio_One_250K.sch
+--Command: sch2hdl -sympath C:/dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_PSL_Base/250K -intstyle ise -family spartan3e -flat -suppress -vhdl C:/dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_PSL_Base/250K/Papilio_One_250K.vhf -w C:/dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_PSL_Base/Papilio_One_250K.sch
 --Design Name: Papilio_One_250K
 --Device: spartan3e
 --Purpose:
@@ -25,125 +25,13 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
-entity IBUF4_MXILINX_Papilio_One_250K is
-   port ( I0 : in    std_logic; 
-          I1 : in    std_logic; 
-          I2 : in    std_logic; 
-          I3 : in    std_logic; 
-          O0 : out   std_logic; 
-          O1 : out   std_logic; 
-          O2 : out   std_logic; 
-          O3 : out   std_logic);
-end IBUF4_MXILINX_Papilio_One_250K;
-
-architecture BEHAVIORAL of IBUF4_MXILINX_Papilio_One_250K is
-   attribute IOSTANDARD       : string ;
-   attribute IBUF_DELAY_VALUE : string ;
-   attribute IFD_DELAY_VALUE  : string ;
-   attribute BOX_TYPE         : string ;
-   component IBUF
-      port ( I : in    std_logic; 
-             O : out   std_logic);
-   end component;
-   attribute IOSTANDARD of IBUF : component is "DEFAULT";
-   attribute IBUF_DELAY_VALUE of IBUF : component is "0";
-   attribute IFD_DELAY_VALUE of IBUF : component is "AUTO";
-   attribute BOX_TYPE of IBUF : component is "BLACK_BOX";
-   
-begin
-   I_36_37 : IBUF
-      port map (I=>I3,
-                O=>O3);
-   
-   I_36_38 : IBUF
-      port map (I=>I2,
-                O=>O2);
-   
-   I_36_39 : IBUF
-      port map (I=>I1,
-                O=>O1);
-   
-   I_36_40 : IBUF
-      port map (I=>I0,
-                O=>O0);
-   
-end BEHAVIORAL;
-
-
-
-library ieee;
-use ieee.std_logic_1164.ALL;
-use ieee.numeric_std.ALL;
-library UNISIM;
-use UNISIM.Vcomponents.ALL;
-
-entity OBUF4_MXILINX_Papilio_One_250K is
-   port ( I0 : in    std_logic; 
-          I1 : in    std_logic; 
-          I2 : in    std_logic; 
-          I3 : in    std_logic; 
-          O0 : out   std_logic; 
-          O1 : out   std_logic; 
-          O2 : out   std_logic; 
-          O3 : out   std_logic);
-end OBUF4_MXILINX_Papilio_One_250K;
-
-architecture BEHAVIORAL of OBUF4_MXILINX_Papilio_One_250K is
-   attribute IOSTANDARD : string ;
-   attribute SLEW       : string ;
-   attribute DRIVE      : string ;
-   attribute BOX_TYPE   : string ;
-   component OBUF
-      port ( I : in    std_logic; 
-             O : out   std_logic);
-   end component;
-   attribute IOSTANDARD of OBUF : component is "DEFAULT";
-   attribute SLEW of OBUF : component is "SLOW";
-   attribute DRIVE of OBUF : component is "12";
-   attribute BOX_TYPE of OBUF : component is "BLACK_BOX";
-   
-begin
-   I_36_30 : OBUF
-      port map (I=>I0,
-                O=>O0);
-   
-   I_36_31 : OBUF
-      port map (I=>I1,
-                O=>O1);
-   
-   I_36_32 : OBUF
-      port map (I=>I2,
-                O=>O2);
-   
-   I_36_33 : OBUF
-      port map (I=>I3,
-                O=>O3);
-   
-end BEHAVIORAL;
-
-
-
-library ieee;
-use ieee.std_logic_1164.ALL;
-use ieee.numeric_std.ALL;
-library UNISIM;
-use UNISIM.Vcomponents.ALL;
-
 entity Papilio_One_250K is
    port ( CLK      : in    std_logic; 
           RXD      : in    std_logic; 
           SPI_MISO : in    std_logic; 
-          XLXN_483 : in    std_logic; 
-          XLXN_484 : in    std_logic; 
-          XLXN_485 : in    std_logic; 
-          XLXN_486 : in    std_logic; 
           SPI_MOSI : out   std_logic; 
           SPI_SCK  : out   std_logic; 
           TXD      : out   std_logic; 
-          XLXN_478 : out   std_logic; 
-          XLXN_479 : out   std_logic; 
-          XLXN_480 : out   std_logic; 
-          XLXN_481 : out   std_logic; 
           SPI_CS   : inout std_logic; 
           WING_AH0 : inout std_logic; 
           WING_AH1 : inout std_logic; 
@@ -153,6 +41,14 @@ entity Papilio_One_250K is
           WING_AH5 : inout std_logic; 
           WING_AH6 : inout std_logic; 
           WING_AH7 : inout std_logic; 
+          WING_AL0 : inout std_logic; 
+          WING_AL1 : inout std_logic; 
+          WING_AL2 : inout std_logic; 
+          WING_AL3 : inout std_logic; 
+          WING_AL4 : inout std_logic; 
+          WING_AL5 : inout std_logic; 
+          WING_AL6 : inout std_logic; 
+          WING_AL7 : inout std_logic; 
           WING_BH0 : inout std_logic; 
           WING_BH1 : inout std_logic; 
           WING_BH2 : inout std_logic; 
@@ -188,11 +84,6 @@ entity Papilio_One_250K is
 end Papilio_One_250K;
 
 architecture BEHAVIORAL of Papilio_One_250K is
-   attribute HU_SET     : string ;
-   signal BUTTONS                                   : std_logic_vector (3 
-         downto 0);
-   signal leds                                      : std_logic_vector (3 
-         downto 0);
    signal XLXN_325                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_326                                  : std_logic_vector (7 
@@ -253,13 +144,13 @@ architecture BEHAVIORAL of Papilio_One_250K is
          downto 0);
    signal XLXN_445                                  : std_logic_vector (33 
          downto 0);
+   signal XLXN_446                                  : std_logic_vector (61 
+         downto 0);
+   signal XLXN_447                                  : std_logic_vector (33 
+         downto 0);
    signal XLXN_448                                  : std_logic_vector (61 
          downto 0);
    signal XLXN_449                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_450                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_451                                  : std_logic_vector (33 
          downto 0);
    signal XLXI_38_wishbone_slot_video_in_openSignal : std_logic_vector (63 
          downto 0);
@@ -309,13 +200,6 @@ architecture BEHAVIORAL of Papilio_One_250K is
              SPI_FLASH_CS            : inout std_logic; 
              gpio_bus_out            : out   std_logic_vector (147 downto 0); 
              gpio_bus_in             : in    std_logic_vector (97 downto 0));
-   end component;
-   
-   component Wishbone_Symbol_Example
-      port ( buttons      : in    std_logic_vector (3 downto 0); 
-             leds         : out   std_logic_vector (3 downto 0); 
-             wishbone_in  : in    std_logic_vector (61 downto 0); 
-             wishbone_out : out   std_logic_vector (33 downto 0));
    end component;
    
    component Papilio_Default_Wing_Pinout
@@ -383,30 +267,6 @@ architecture BEHAVIORAL of Papilio_One_250K is
              WingType_miso_AL : inout std_logic_vector (7 downto 0));
    end component;
    
-   component OBUF4_MXILINX_Papilio_One_250K
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
-   end component;
-   
-   component IBUF4_MXILINX_Papilio_One_250K
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
-   end component;
-   
-   attribute HU_SET of XLXI_49 : label is "XLXI_49_0";
-   attribute HU_SET of XLXI_50 : label is "XLXI_50_1";
 begin
    XLXI_22 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_325(7 downto 0),
@@ -431,6 +291,10 @@ begin
    XLXI_27 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_335(7 downto 0),
                 wt_mosi(7 downto 0)=>XLXN_336(7 downto 0));
+   
+   XLXI_29 : Wishbone_Empty_Slot
+      port map (wishbone_in(61 downto 0)=>XLXN_446(61 downto 0),
+                wishbone_out(33 downto 0)=>XLXN_447(33 downto 0));
    
    XLXI_30 : Wishbone_Empty_Slot
       port map (wishbone_in(61 downto 0)=>XLXN_444(61 downto 0),
@@ -471,7 +335,7 @@ begin
                 SPI_FLASH_MISO=>SPI_MISO,
                 wishbone_slot_video_in(63 downto 
             0)=>XLXI_38_wishbone_slot_video_in_openSignal(63 downto 0),
-                wishbone_slot_5_out(33 downto 0)=>XLXN_451(33 downto 0),
+                wishbone_slot_5_out(33 downto 0)=>XLXN_447(33 downto 0),
                 wishbone_slot_6_out(33 downto 0)=>XLXN_445(33 downto 0),
                 wishbone_slot_8_out(33 downto 0)=>XLXN_443(33 downto 0),
                 wishbone_slot_9_out(33 downto 0)=>XLXN_441(33 downto 0),
@@ -490,7 +354,7 @@ begin
                 TXD=>TXD,
                 vgaclkout=>open,
                 wishbone_slot_video_out=>open,
-                wishbone_slot_5_in(61 downto 0)=>XLXN_450(61 downto 0),
+                wishbone_slot_5_in(61 downto 0)=>XLXN_446(61 downto 0),
                 wishbone_slot_6_in(61 downto 0)=>XLXN_444(61 downto 0),
                 wishbone_slot_8_in(61 downto 0)=>XLXN_442(61 downto 0),
                 wishbone_slot_9_in(61 downto 0)=>XLXN_440(61 downto 0),
@@ -505,12 +369,6 @@ begin
    XLXI_40 : Wishbone_Empty_Slot
       port map (wishbone_in(61 downto 0)=>XLXN_448(61 downto 0),
                 wishbone_out(33 downto 0)=>XLXN_449(33 downto 0));
-   
-   XLXI_41 : Wishbone_Symbol_Example
-      port map (buttons(3 downto 0)=>BUTTONS(3 downto 0),
-                wishbone_in(61 downto 0)=>XLXN_450(61 downto 0),
-                leds(3 downto 0)=>leds(3 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_451(33 downto 0));
    
    XLXI_47 : Papilio_Default_Wing_Pinout
       port map (gpio_bus_out(147 downto 0)=>XLXN_408(147 downto 0),
@@ -535,14 +393,14 @@ begin
                 WING_AH5=>WING_AH5,
                 WING_AH6=>WING_AH6,
                 WING_AH7=>WING_AH7,
-                WING_AL0=>open,
-                WING_AL1=>open,
-                WING_AL2=>open,
-                WING_AL3=>open,
-                WING_AL4=>open,
-                WING_AL5=>open,
-                WING_AL6=>open,
-                WING_AL7=>open,
+                WING_AL0=>WING_AL0,
+                WING_AL1=>WING_AL1,
+                WING_AL2=>WING_AL2,
+                WING_AL3=>WING_AL3,
+                WING_AL4=>WING_AL4,
+                WING_AL5=>WING_AL5,
+                WING_AL6=>WING_AL6,
+                WING_AL7=>WING_AL7,
                 WING_BH0=>WING_BH0,
                 WING_BH1=>WING_BH1,
                 WING_BH2=>WING_BH2,
@@ -575,26 +433,6 @@ begin
                 WING_CL5=>WING_CL5,
                 WING_CL6=>WING_CL6,
                 WING_CL7=>WING_CL7);
-   
-   XLXI_49 : OBUF4_MXILINX_Papilio_One_250K
-      port map (I0=>leds(0),
-                I1=>leds(1),
-                I2=>leds(2),
-                I3=>leds(3),
-                O0=>XLXN_478,
-                O1=>XLXN_479,
-                O2=>XLXN_480,
-                O3=>XLXN_481);
-   
-   XLXI_50 : IBUF4_MXILINX_Papilio_One_250K
-      port map (I0=>XLXN_483,
-                I1=>XLXN_484,
-                I2=>XLXN_485,
-                I3=>XLXN_486,
-                O0=>BUTTONS(0),
-                O1=>BUTTONS(1),
-                O2=>BUTTONS(2),
-                O3=>BUTTONS(3));
    
 end BEHAVIORAL;
 

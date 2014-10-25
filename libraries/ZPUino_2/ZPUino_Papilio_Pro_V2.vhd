@@ -43,7 +43,7 @@ use ieee.numeric_std.all;
 entity ZPUino_Papilio_Pro_V2 is
   port (
 	 --32Mhz input clock is converted to a 96Mhz clock
-    CLK:        in std_logic;
+--    CLK:        in std_logic;
 	 
 	 --Clock outputs to be used in schematic
 	 clk_96Mhz:        out std_logic;	--This is the clock that the system runs on.
@@ -51,31 +51,35 @@ entity ZPUino_Papilio_Pro_V2 is
 	 clk_osc_32Mhz:   out std_logic;		--This is the 32Mhz clock from external oscillator.
 
     -- Connection to the main SPI flash
-    SPI_SCK:    out std_logic;
-    SPI_MISO:   in std_logic;
-    SPI_MOSI:   out std_logic;
-    SPI_CS:     out std_logic;
+--    SPI_SCK:    out std_logic;
+--    SPI_MISO:   in std_logic;
+--    SPI_MOSI:   out std_logic;
+--    SPI_CS:     out std_logic;
+	 
+	 ext_pins_in : in std_logic_vector(100 downto 0);
+	 ext_pins_out : out std_logic_vector(100 downto 0);
+	 ext_pins_inout : inout std_logic_vector(100 downto 0);
 
 	 gpio_bus_in : in std_logic_vector(97 downto 0);
 	 gpio_bus_out : out std_logic_vector(147 downto 0);
 
     -- UART (FTDI) connection
-    TXD:        out std_logic;
-    RXD:        in std_logic;
+--    TXD:        out std_logic;
+--    RXD:        in std_logic;
 
-    DRAM_ADDR   : OUT   STD_LOGIC_VECTOR (12 downto 0);
-     DRAM_BA      : OUT   STD_LOGIC_VECTOR (1 downto 0);
-     DRAM_CAS_N   : OUT   STD_LOGIC;
-     DRAM_CKE      : OUT   STD_LOGIC;
-     DRAM_CLK      : OUT   STD_LOGIC;
-     DRAM_CS_N   : OUT   STD_LOGIC;
-     DRAM_DQ      : INOUT STD_LOGIC_VECTOR(15 downto 0);
-     DRAM_DQM      : OUT   STD_LOGIC_VECTOR(1 downto 0);
-     DRAM_RAS_N   : OUT   STD_LOGIC;
-     DRAM_WE_N    : OUT   STD_LOGIC;
+--    DRAM_ADDR   : OUT   STD_LOGIC_VECTOR (12 downto 0);
+--     DRAM_BA      : OUT   STD_LOGIC_VECTOR (1 downto 0);
+--     DRAM_CAS_N   : OUT   STD_LOGIC;
+--     DRAM_CKE      : OUT   STD_LOGIC;
+--     DRAM_CLK      : OUT   STD_LOGIC;
+--     DRAM_CS_N   : OUT   STD_LOGIC;
+--     DRAM_DQ      : INOUT STD_LOGIC_VECTOR(15 downto 0);
+--     DRAM_DQM      : OUT   STD_LOGIC_VECTOR(1 downto 0);
+--     DRAM_RAS_N   : OUT   STD_LOGIC;
+--     DRAM_WE_N    : OUT   STD_LOGIC;
 
     -- The LED
-    LED:        out std_logic;
+--    LED:        out std_logic;
 	
 	 --There are more bits in the address for this wishbone connection
 	 wishbone_slot_video_in : in std_logic_vector(63 downto 0);
@@ -225,21 +229,20 @@ constant maxAddrBitBRAM		: integer := 22;
 
 begin
 
-
 	Inst_ZPUino_SDRAM_Wrapper: ZPUino_SDRAM_Wrapper PORT MAP(
-		CLK => CLK,
+		CLK => ext_pins_in(0),
 		clk_96Mhz => clk_96Mhz,
 		clk_1Mhz => clk_1Mhz,
 		clk_osc_32Mhz => clk_osc_32Mhz,
-		SPI_SCK => SPI_SCK,
-		SPI_MISO => SPI_MISO,
-		SPI_MOSI => SPI_MOSI,
-		SPI_CS => SPI_CS,
+		SPI_SCK => ext_pins_out(0),
+		SPI_MISO => ext_pins_in(1),
+		SPI_MOSI => ext_pins_out(1),
+		SPI_CS => ext_pins_out(2),
 		gpio_bus_in => gpio_bus_in,
 		gpio_bus_out => gpio_bus_out,
-		TXD => TXD,
-		RXD => RXD,
-		LED => LED,
+		TXD => ext_pins_out(3),
+		RXD => ext_pins_in(2),
+		LED => ext_pins_out(26),
 		sram_wb_clk_i => sram_wb_clk_i,
 		sram_wb_rst_i => sram_wb_rst_i,
 		sram_wb_dat_o => sram_wb_dat_o,
@@ -291,18 +294,18 @@ begin
       wb_stall_o  => sram_wb_stall_o,
 
       clk_off_3ns => clk_off_3ns,
-    DRAM_ADDR   => DRAM_ADDR(11 downto 0),
-    DRAM_BA     => DRAM_BA,
-    DRAM_CAS_N  => DRAM_CAS_N,
-    DRAM_CKE    => DRAM_CKE,
-    DRAM_CLK    => DRAM_CLK,
-    DRAM_CS_N   => DRAM_CS_N,
-    DRAM_DQ     => DRAM_DQ,
-    DRAM_DQM    => DRAM_DQM,
-    DRAM_RAS_N  => DRAM_RAS_N,
-    DRAM_WE_N   => DRAM_WE_N
+    DRAM_ADDR   => ext_pins_out(15 downto 4),
+    DRAM_BA     => ext_pins_out(17 downto 16),
+    DRAM_CAS_N  => ext_pins_out(18),
+    DRAM_CKE    => ext_pins_out(19),
+    DRAM_CLK    => ext_pins_out(20),
+    DRAM_CS_N   => ext_pins_out(21),
+    DRAM_DQ     => ext_pins_inout(15 downto 0),
+    DRAM_DQM    => ext_pins_out(23 downto 22),
+    DRAM_RAS_N  => ext_pins_out(24),
+    DRAM_WE_N   => ext_pins_out(25)
 
     );
-    DRAM_ADDR(12) <= '0';  
+--    DRAM_ADDR(12) <= '0';  
 
 end behave;

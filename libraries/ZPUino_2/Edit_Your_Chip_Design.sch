@@ -7,33 +7,14 @@
     </attr>
     <netlist>
         <blockdef name="ZPUino_Papilio_Pro_V2">
-            <timestamp>2014-10-24T20:34:5</timestamp>
+            <timestamp>2014-10-25T3:44:35</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
-            <line x2="4368" y1="-560" y2="-560" x1="4304" />
             <rect width="4240" x="64" y="-688" height="688" />
-            <line x2="4312" y1="-592" y2="-592" x1="4368" />
-            <line x2="4312" y1="-624" y2="-624" x1="4368" />
-            <line x2="4312" y1="-656" y2="-656" x1="4368" />
             <line x2="4368" y1="-272" y2="-272" x1="4304" />
             <line x2="4304" y1="-240" y2="-240" x1="4368" />
             <rect width="176" x="4128" y="-300" height="124" />
-            <line x2="0" y1="-432" y2="-432" x1="64" />
-            <line x2="0" y1="-80" y2="-80" x1="64" />
-            <rect width="250" x="66" y="-456" height="328" />
-            <line x2="0" y1="-400" y2="-400" x1="64" />
-            <line x2="0" y1="-368" y2="-368" x1="64" />
-            <line x2="0" y1="-336" y2="-336" x1="64" />
-            <line x2="0" y1="-304" y2="-304" x1="64" />
-            <line x2="0" y1="-272" y2="-272" x1="64" />
-            <line x2="0" y1="-240" y2="-240" x1="64" />
-            <line x2="0" y1="-208" y2="-208" x1="64" />
-            <line x2="0" y1="-176" y2="-176" x1="64" />
-            <line x2="0" y1="-144" y2="-144" x1="64" />
-            <line x2="0" y1="-656" y2="-656" x1="64" />
-            <line x2="0" y1="-592" y2="-592" x1="64" />
-            <line x2="0" y1="-528" y2="-528" x1="64" />
             <line x2="416" y1="64" y2="0" x1="416" />
             <line x2="400" y1="64" y2="0" x1="400" />
             <line x2="848" y1="64" y2="0" x1="848" />
@@ -65,31 +46,17 @@
             <line x2="4128" y1="64" y2="0" x1="4128" />
             <line x2="4144" y1="64" y2="0" x1="4144" />
             <line x2="4304" y1="-208" y2="-208" x1="4368" />
+            <line x2="64" y1="-656" y2="-656" x1="4" />
+            <line x2="64" y1="-624" y2="-624" x1="0" />
+            <line x2="64" y1="-588" y2="-588" x1="0" />
+            <rect width="360" x="64" y="-676" height="116" />
         </blockdef>
         <block symbolname="ZPUino_Papilio_Pro_V2" name="XLXI_50">
             <blockpin name="gpio_bus_out(147:0)" />
             <blockpin name="gpio_bus_in(97:0)" />
-            <blockpin name="SPI_CS" />
-            <blockpin name="TXD" />
-            <blockpin name="SPI_MOSI" />
-            <blockpin name="SPI_SCK" />
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
-            <blockpin name="DRAM_DQ(15:0)" />
-            <blockpin name="LED" />
-            <blockpin name="DRAM_CAS_N" />
-            <blockpin name="DRAM_CKE" />
-            <blockpin name="DRAM_CLK" />
-            <blockpin name="DRAM_CS_N" />
-            <blockpin name="DRAM_RAS_N" />
-            <blockpin name="DRAM_WE_N" />
-            <blockpin name="DRAM_ADDR(12:0)" />
-            <blockpin name="DRAM_BA(1:0)" />
-            <blockpin name="DRAM_DQM(1:0)" />
-            <blockpin name="CLK" />
-            <blockpin name="SPI_MISO" />
-            <blockpin name="RXD" />
             <blockpin name="wishbone_slot_5_out(33:0)" />
             <blockpin name="wishbone_slot_5_in(61:0)" />
             <blockpin name="wishbone_slot_6_in(61:0)" />
@@ -111,6 +78,9 @@
             <blockpin name="wishbone_slot_video_in(63:0)" />
             <blockpin name="wishbone_slot_video_out(33:0)" />
             <blockpin name="vgaclkout" />
+            <blockpin name="ext_pins_in(100:0)" />
+            <blockpin name="ext_pins_out(100:0)" />
+            <blockpin name="ext_pins_inout(100:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">

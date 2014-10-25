@@ -7,75 +7,17 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 10/01/2014 01:26:38
+-- /___/   /\     Timestamp : 08/28/2014 16:31:38
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/Papilio_DUO_LX9.sch
+--Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_PSL_Base/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_PSL_Base/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:
 --    This vhdl netlist is translated from an ECS schematic. It can be 
 --    synthesized and simulated, but it should not be modified. 
 --
------ CELL IBUF4_HXILINX_Papilio_DUO_LX9 -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity IBUF4_HXILINX_Papilio_DUO_LX9 is
-  
-port(
-    O0  : out std_logic;
-    O1  : out std_logic;
-    O2  : out std_logic;
-    O3  : out std_logic;
-
-    I0  : in std_logic;
-    I1  : in std_logic;
-    I2  : in std_logic;
-    I3  : in std_logic
-  );
-end IBUF4_HXILINX_Papilio_DUO_LX9;
-
-architecture IBUF4_HXILINX_Papilio_DUO_LX9_V of IBUF4_HXILINX_Papilio_DUO_LX9 is
-begin
-
-  O0 <= I0;
-  O1 <= I1;
-  O2 <= I2;
-  O3 <= I3;
-
-end IBUF4_HXILINX_Papilio_DUO_LX9_V;
------ CELL OBUF4_HXILINX_Papilio_DUO_LX9 -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity OBUF4_HXILINX_Papilio_DUO_LX9 is
-  
-port(
-    O0  : out std_logic;
-    O1  : out std_logic;
-    O2  : out std_logic;
-    O3  : out std_logic;
-
-    I0  : in std_logic;
-    I1  : in std_logic;
-    I2  : in std_logic;
-    I3  : in std_logic
-  );
-end OBUF4_HXILINX_Papilio_DUO_LX9;
-
-architecture OBUF4_HXILINX_Papilio_DUO_LX9_V of OBUF4_HXILINX_Papilio_DUO_LX9 is
-begin
-
-  O0 <= I0;
-  O1 <= I1;
-  O2 <= I2;
-  O3 <= I3;
-
-end OBUF4_HXILINX_Papilio_DUO_LX9_V;
 
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -87,10 +29,6 @@ entity Papilio_DUO_LX9 is
    port ( CLK        : in    std_logic; 
           RXD        : in    std_logic; 
           SPI_MISO   : in    std_logic; 
-          WING_AL1   : in    std_logic; 
-          WING_AL3   : in    std_logic; 
-          WING_AL5   : in    std_logic; 
-          WING_AL7   : in    std_logic; 
           ARD_RESET  : out   std_logic; 
           SPI_MOSI   : out   std_logic; 
           SPI_SCK    : out   std_logic; 
@@ -99,10 +37,14 @@ entity Papilio_DUO_LX9 is
           sram_oe    : out   std_logic; 
           sram_we    : out   std_logic; 
           TXD        : out   std_logic; 
-          WING_AL0   : out   std_logic; 
-          WING_AL2   : out   std_logic; 
-          WING_AL4   : out   std_logic; 
-          WING_AL6   : out   std_logic; 
+          Arduino_0  : inout std_logic; 
+          Arduino_1  : inout std_logic; 
+          Arduino_2  : inout std_logic; 
+          Arduino_3  : inout std_logic; 
+          Arduino_4  : inout std_logic; 
+          Arduino_5  : inout std_logic; 
+          Arduino_6  : inout std_logic; 
+          Arduino_7  : inout std_logic; 
           Arduino_8  : inout std_logic; 
           Arduino_9  : inout std_logic; 
           Arduino_10 : inout std_logic; 
@@ -158,11 +100,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
    attribute SLEW       : string ;
    attribute DRIVE      : string ;
    attribute BOX_TYPE   : string ;
-   attribute HU_SET     : string ;
-   signal BUTTONS                                   : std_logic_vector (3 
-         downto 0);
-   signal leds                                      : std_logic_vector (3 
-         downto 0);
    signal XLXN_325                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_326                                  : std_logic_vector (7 
@@ -223,13 +160,13 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
          downto 0);
    signal XLXN_445                                  : std_logic_vector (33 
          downto 0);
+   signal XLXN_446                                  : std_logic_vector (61 
+         downto 0);
+   signal XLXN_447                                  : std_logic_vector (33 
+         downto 0);
    signal XLXN_448                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_449                                  : std_logic_vector (7 
-         downto 0);
-   signal XLXN_450                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_451                                  : std_logic_vector (33 
          downto 0);
    signal XLXN_456                                  : std_logic;
    signal XLXI_39_wishbone_slot_video_in_openSignal : std_logic_vector (63 
@@ -372,37 +309,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
    end component;
    attribute BOX_TYPE of PULLDOWN : component is "BLACK_BOX";
    
-   component Wishbone_Symbol_Example
-      port ( buttons      : in    std_logic_vector (3 downto 0); 
-             leds         : out   std_logic_vector (3 downto 0); 
-             wishbone_in  : in    std_logic_vector (61 downto 0); 
-             wishbone_out : out   std_logic_vector (33 downto 0));
-   end component;
-   
-   component OBUF4_HXILINX_Papilio_DUO_LX9
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
-   end component;
-   
-   component IBUF4_HXILINX_Papilio_DUO_LX9
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
-   end component;
-   
-   attribute HU_SET of XLXI_49 : label is "XLXI_49_0";
-   attribute HU_SET of XLXI_50 : label is "XLXI_50_1";
 begin
    XLXI_22 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_325(7 downto 0),
@@ -427,6 +333,10 @@ begin
    XLXI_27 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_335(7 downto 0),
                 wt_mosi(7 downto 0)=>XLXN_336(7 downto 0));
+   
+   XLXI_29 : Wishbone_Empty_Slot
+      port map (wishbone_in(61 downto 0)=>XLXN_446(61 downto 0),
+                wishbone_out(33 downto 0)=>XLXN_447(33 downto 0));
    
    XLXI_30 : Wishbone_Empty_Slot
       port map (wishbone_in(61 downto 0)=>XLXN_444(61 downto 0),
@@ -467,7 +377,7 @@ begin
                 SPI_MISO=>SPI_MISO,
                 wishbone_slot_video_in(63 downto 
             0)=>XLXI_39_wishbone_slot_video_in_openSignal(63 downto 0),
-                wishbone_slot_5_out(33 downto 0)=>XLXN_451(33 downto 0),
+                wishbone_slot_5_out(33 downto 0)=>XLXN_447(33 downto 0),
                 wishbone_slot_6_out(33 downto 0)=>XLXN_445(33 downto 0),
                 wishbone_slot_8_out(33 downto 0)=>XLXN_443(33 downto 0),
                 wishbone_slot_9_out(33 downto 0)=>XLXN_441(33 downto 0),
@@ -489,7 +399,7 @@ begin
                 TXD=>TXD,
                 vgaclkout=>open,
                 wishbone_slot_video_out=>open,
-                wishbone_slot_5_in(61 downto 0)=>XLXN_450(61 downto 0),
+                wishbone_slot_5_in(61 downto 0)=>XLXN_446(61 downto 0),
                 wishbone_slot_6_in(61 downto 0)=>XLXN_444(61 downto 0),
                 wishbone_slot_8_in(61 downto 0)=>XLXN_442(61 downto 0),
                 wishbone_slot_9_in(61 downto 0)=>XLXN_440(61 downto 0),
@@ -528,14 +438,14 @@ begin
                 WING_AH3=>Arduino_11,
                 WING_AH4=>Arduino_12,
                 WING_AH5=>Arduino_13,
-                WING_AL0=>open,
-                WING_AL1=>open,
-                WING_AL2=>open,
-                WING_AL3=>open,
-                WING_AL4=>open,
-                WING_AL5=>open,
-                WING_AL6=>open,
-                WING_AL7=>open,
+                WING_AL0=>Arduino_0,
+                WING_AL1=>Arduino_1,
+                WING_AL2=>Arduino_2,
+                WING_AL3=>Arduino_3,
+                WING_AL4=>Arduino_4,
+                WING_AL5=>Arduino_5,
+                WING_AL6=>Arduino_6,
+                WING_AL7=>Arduino_7,
                 WING_BL0=>Arduino_21,
                 WING_BL1=>Arduino_20,
                 WING_BL2=>Arduino_19,
@@ -583,32 +493,6 @@ begin
    
    XLXI_47 : PULLDOWN
       port map (O=>XLXN_456);
-   
-   XLXI_48 : Wishbone_Symbol_Example
-      port map (buttons(3 downto 0)=>BUTTONS(3 downto 0),
-                wishbone_in(61 downto 0)=>XLXN_450(61 downto 0),
-                leds(3 downto 0)=>leds(3 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_451(33 downto 0));
-   
-   XLXI_49 : OBUF4_HXILINX_Papilio_DUO_LX9
-      port map (I0=>leds(0),
-                I1=>leds(1),
-                I2=>leds(2),
-                I3=>leds(3),
-                O0=>WING_AL0,
-                O1=>WING_AL2,
-                O2=>WING_AL4,
-                O3=>WING_AL6);
-   
-   XLXI_50 : IBUF4_HXILINX_Papilio_DUO_LX9
-      port map (I0=>WING_AL1,
-                I1=>WING_AL3,
-                I2=>WING_AL5,
-                I3=>WING_AL7,
-                O0=>BUTTONS(0),
-                O1=>BUTTONS(1),
-                O2=>BUTTONS(2),
-                O3=>BUTTONS(3));
    
 end BEHAVIORAL;
 
