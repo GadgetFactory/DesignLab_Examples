@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ZPUino_Papilio_Pro_V2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-25T3:44:35</timestamp>
-    <pin polarity="Output" x="4368" y="-400" name="gpio_bus_out(147:0)" />
-    <pin polarity="Input" x="4368" y="-416" name="gpio_bus_in(97:0)" />
+    <timestamp>2014-10-27T23:46:19</timestamp>
+    <pin polarity="Output" x="4368" y="-400" name="gpio_bus_out(200:0)" />
+    <pin polarity="Input" x="4368" y="-416" name="gpio_bus_in(200:0)" />
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />
     <pin polarity="Output" x="4368" y="-240" name="clk_1Mhz" />
     <pin polarity="Output" x="4368" y="-208" name="clk_osc_32Mhz" />
-    <pin polarity="Input" x="416" y="64" name="wishbone_slot_5_out(33:0)" />
-    <pin polarity="Output" x="400" y="64" name="wishbone_slot_5_in(61:0)" />
-    <pin polarity="Output" x="848" y="64" name="wishbone_slot_6_in(61:0)" />
-    <pin polarity="Input" x="864" y="64" name="wishbone_slot_6_out(33:0)" />
-    <pin polarity="Output" x="1296" y="64" name="wishbone_slot_8_in(61:0)" />
-    <pin polarity="Input" x="1312" y="64" name="wishbone_slot_8_out(33:0)" />
-    <pin polarity="Output" x="1744" y="64" name="wishbone_slot_9_in(61:0)" />
-    <pin polarity="Input" x="1760" y="64" name="wishbone_slot_9_out(33:0)" />
-    <pin polarity="Output" x="2208" y="64" name="wishbone_slot_10_in(61:0)" />
-    <pin polarity="Input" x="2224" y="64" name="wishbone_slot_10_out(33:0)" />
-    <pin polarity="Output" x="2640" y="64" name="wishbone_slot_11_in(61:0)" />
-    <pin polarity="Input" x="2656" y="64" name="wishbone_slot_11_out(33:0)" />
-    <pin polarity="Output" x="3104" y="64" name="wishbone_slot_12_in(61:0)" />
-    <pin polarity="Input" x="3120" y="64" name="wishbone_slot_12_out(33:0)" />
-    <pin polarity="Output" x="3552" y="64" name="wishbone_slot_13_in(61:0)" />
-    <pin polarity="Input" x="3568" y="64" name="wishbone_slot_13_out(33:0)" />
-    <pin polarity="Output" x="4000" y="64" name="wishbone_slot_14_in(61:0)" />
-    <pin polarity="Input" x="4016" y="64" name="wishbone_slot_14_out(33:0)" />
-    <pin polarity="Input" x="4112" y="64" name="wishbone_slot_video_in(63:0)" />
-    <pin polarity="Output" x="4128" y="64" name="wishbone_slot_video_out(33:0)" />
+    <pin polarity="Input" x="416" y="64" name="wishbone_slot_5_out(100:0)" />
+    <pin polarity="Output" x="400" y="64" name="wishbone_slot_5_in(100:0)" />
+    <pin polarity="Output" x="848" y="64" name="wishbone_slot_6_in(100:0)" />
+    <pin polarity="Input" x="864" y="64" name="wishbone_slot_6_out(100:0)" />
+    <pin polarity="Output" x="1296" y="64" name="wishbone_slot_8_in(100:0)" />
+    <pin polarity="Input" x="1312" y="64" name="wishbone_slot_8_out(100:0)" />
+    <pin polarity="Output" x="1744" y="64" name="wishbone_slot_9_in(100:0)" />
+    <pin polarity="Input" x="1760" y="64" name="wishbone_slot_9_out(100:0)" />
+    <pin polarity="Output" x="2208" y="64" name="wishbone_slot_10_in(100:0)" />
+    <pin polarity="Input" x="2224" y="64" name="wishbone_slot_10_out(100:0)" />
+    <pin polarity="Output" x="2640" y="64" name="wishbone_slot_11_in(100:0)" />
+    <pin polarity="Input" x="2656" y="64" name="wishbone_slot_11_out(100:0)" />
+    <pin polarity="Output" x="3104" y="64" name="wishbone_slot_12_in(100:0)" />
+    <pin polarity="Input" x="3120" y="64" name="wishbone_slot_12_out(100:0)" />
+    <pin polarity="Output" x="3552" y="64" name="wishbone_slot_13_in(100:0)" />
+    <pin polarity="Input" x="3568" y="64" name="wishbone_slot_13_out(100:0)" />
+    <pin polarity="Output" x="4000" y="64" name="wishbone_slot_14_in(100:0)" />
+    <pin polarity="Input" x="4016" y="64" name="wishbone_slot_14_out(100:0)" />
+    <pin polarity="Input" x="4112" y="64" name="wishbone_slot_video_in(100:0)" />
+    <pin polarity="Output" x="4128" y="64" name="wishbone_slot_video_out(100:0)" />
     <pin polarity="Output" x="4144" y="64" name="vgaclkout" />
     <pin polarity="Input" x="0" y="-656" name="ext_pins_in(100:0)" />
     <pin polarity="Output" x="0" y="-624" name="ext_pins_out(100:0)" />
     <pin polarity="BiDirectional" x="0" y="-592" name="ext_pins_inout(100:0)" />
     <graph>
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="4296" y="-400" type="pin gpio_bus_out(147:0)" />
         <line x2="4368" y1="-400" y2="-400" x1="4304" />
         <line x2="4304" y1="-416" y2="-416" x1="4368" />
         <rect width="248" x="4056" y="-448" height="76" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="4104" y="-424" type="pin gpio_bus_in(97:0)" />
         <text style="fontsize:28;fontname:Arial" x="4116" y="-468">GPIO Pins</text>
         <rect width="4240" x="64" y="-688" height="688" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="4296" y="-272" type="pin clk_96Mhz" />
@@ -120,5 +118,7 @@
         <line x2="64" y1="-588" y2="-588" x1="0" />
         <rect width="360" x="64" y="-676" height="116" />
         <text style="fontsize:28;fontname:Arial" x="152" y="-536">External Pins</text>
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="4092" y="-424" type="pin gpio_bus_in(200:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="4296" y="-400" type="pin gpio_bus_out(200:0)" />
     </graph>
 </symbol>

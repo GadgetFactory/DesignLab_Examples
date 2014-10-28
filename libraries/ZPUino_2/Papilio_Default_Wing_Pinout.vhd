@@ -53,8 +53,8 @@ use UNISIM.Vcomponents.ALL;
 entity Papilio_Default_Wing_Pinout is
    port (    
  
-			gpio_bus_in : out std_logic_vector(97 downto 0);
-			gpio_bus_out : in std_logic_vector(147 downto 0);	 			 
+			gpio_bus_in : out std_logic_vector(200 downto 0);
+			gpio_bus_out : in std_logic_vector(200 downto 0);	 			 
 
 			 WingType_miso_AH: inout std_logic_vector(7 downto 0); 
 			 WingType_mosi_AH: inout std_logic_vector(7 downto 0);			 

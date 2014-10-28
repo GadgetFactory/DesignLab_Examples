@@ -60,8 +60,8 @@ entity ZPUino_Papilio_Pro_V2 is
 	 ext_pins_out : out std_logic_vector(100 downto 0);
 	 ext_pins_inout : inout std_logic_vector(100 downto 0);
 
-	 gpio_bus_in : in std_logic_vector(97 downto 0);
-	 gpio_bus_out : out std_logic_vector(147 downto 0);
+	 gpio_bus_in : in std_logic_vector(200 downto 0);
+	 gpio_bus_out : out std_logic_vector(200 downto 0);
 
     -- UART (FTDI) connection
 --    TXD:        out std_logic;
@@ -82,37 +82,37 @@ entity ZPUino_Papilio_Pro_V2 is
 --    LED:        out std_logic;
 	
 	 --There are more bits in the address for this wishbone connection
-	 wishbone_slot_video_in : in std_logic_vector(63 downto 0);
-	 wishbone_slot_video_out : out std_logic_vector(33 downto 0);
+	 wishbone_slot_video_in : in std_logic_vector(100 downto 0);
+	 wishbone_slot_video_out : out std_logic_vector(100 downto 0);
 	 vgaclkout: out std_logic;	
 
 	 --Input and output reversed for the master
-	 wishbone_slot_5_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_5_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_5_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_5_out : in std_logic_vector(100 downto 0);
 	 
-	 wishbone_slot_6_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_6_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_6_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_6_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_8_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_8_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_8_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_8_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_9_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_9_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_9_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_9_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_10_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_10_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_10_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_10_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_11_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_11_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_11_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_11_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_12_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_12_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_12_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_12_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_13_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_13_out : in std_logic_vector(33 downto 0);
+	 wishbone_slot_13_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_13_out : in std_logic_vector(100 downto 0);
 
-	 wishbone_slot_14_in : out std_logic_vector(61 downto 0);
-	 wishbone_slot_14_out : in std_logic_vector(33 downto 0)
+	 wishbone_slot_14_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_14_out : in std_logic_vector(100 downto 0)
 
 --	 wishbone_slot_15_in : out std_logic_vector(61 downto 0);
 --	 wishbone_slot_15_out : in std_logic_vector(33 downto 0)	 
@@ -169,28 +169,28 @@ constant maxAddrBitBRAM		: integer := 22;
 	PORT(
 		CLK : IN std_logic;
 		SPI_MISO : IN std_logic;
-		gpio_bus_in : IN std_logic_vector(97 downto 0);
+		gpio_bus_in : IN std_logic_vector(200 downto 0);
 		RXD : IN std_logic;
 		sram_wb_dat_o : IN std_logic_vector(wordSize-1 downto 0);
 		sram_wb_ack_o : IN std_logic;
 		sram_wb_stall_o : IN std_logic;
-		wishbone_slot_video_in : IN std_logic_vector(63 downto 0);
-		wishbone_slot_5_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_6_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_8_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_9_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_10_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_11_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_12_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_13_out : IN std_logic_vector(33 downto 0);
-		wishbone_slot_14_out : IN std_logic_vector(33 downto 0);          
+		wishbone_slot_video_in : IN std_logic_vector(100 downto 0);
+		wishbone_slot_5_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_6_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_8_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_9_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_10_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_11_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_12_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_13_out : IN std_logic_vector(100 downto 0);
+		wishbone_slot_14_out : IN std_logic_vector(100 downto 0);          
 		clk_96Mhz : OUT std_logic;
 		clk_1Mhz : OUT std_logic;
 		clk_osc_32Mhz : OUT std_logic;
 		SPI_SCK : OUT std_logic;
 		SPI_MOSI : OUT std_logic;
 		SPI_CS : OUT std_logic;
-		gpio_bus_out : OUT std_logic_vector(147 downto 0);
+		gpio_bus_out : OUT std_logic_vector(200 downto 0);
 		TXD : OUT std_logic;
 		LED : OUT std_logic;
 		sram_wb_dat_i : OUT std_logic_vector(wordSize-1 downto 0);
@@ -202,17 +202,17 @@ constant maxAddrBitBRAM		: integer := 22;
 		sram_wb_rst_i : OUT std_logic;
 		sram_wb_sel_i : OUT std_logic_vector(3 downto 0);
 		clk_off_3ns : OUT std_logic;
-		wishbone_slot_video_out : OUT std_logic_vector(33 downto 0);
+		wishbone_slot_video_out : OUT std_logic_vector(100 downto 0);
 		vgaclkout : OUT std_logic;
-		wishbone_slot_5_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_6_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_8_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_9_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_10_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_11_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_12_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_13_in : OUT std_logic_vector(61 downto 0);
-		wishbone_slot_14_in : OUT std_logic_vector(61 downto 0)
+		wishbone_slot_5_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_6_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_8_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_9_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_10_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_11_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_12_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_13_in : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_14_in : OUT std_logic_vector(100 downto 0)
 		);
 	END COMPONENT;  
 	
