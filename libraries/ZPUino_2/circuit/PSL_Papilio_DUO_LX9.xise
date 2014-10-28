@@ -55,6 +55,1390 @@
 	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
 	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
 	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\prescaler.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\prescaler.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spi.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spi.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spiclkgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spiclkgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spi.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spi.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spiclkgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\spiclkgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_Wishbone_Peripherals\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc.bak" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_mv_filter.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\fifo.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\fifo.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\tx_unit.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\tx_unit.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\uart_brgen.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\uart_brgen.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_rx.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\zpuino_uart_rx.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_SPI.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\COMM_zpuino_wb_UART.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_wrap.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wing_GPIO.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Wishbone_Empty_Slot.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_Papilio_Pro_V2.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\ZPUino_SDRAM_Wrapper.ngc" xil_pn:type="FILE_NGC">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\Computing_Shield\Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\HQVGA\HQVGA_char_ram_8x8_sp.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\pad.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	<library xil_pn:name="DesignLab"/>
+	</file>
+	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\Papilio_Default_Wing_Pinout.vhd" xil_pn:type="FILE_VERILOG">
+	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+	</file>
 	<file xil_pn:name="D:\Dropbox\GadgetFactory_Engineering\DesignLab_Examples\libraries\ZPUino_2\sdram_hamster.vhd" xil_pn:type="FILE_VHDL">
 	<association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
 	<association xil_pn:name="Implementation" xil_pn:seqID="0"/>
