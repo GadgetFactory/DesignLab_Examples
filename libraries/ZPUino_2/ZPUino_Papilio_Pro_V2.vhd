@@ -165,7 +165,7 @@ constant maxAddrBitBRAM		: integer := 22;
   );
   end component sdram_ctrl;
   
-	COMPONENT ZPUino_SDRAM_Wrapper
+	COMPONENT ZPUino_Papilio_Pro_V2_blackbox
 	PORT(
 		CLK : IN std_logic;
 		SPI_MISO : IN std_logic;
@@ -229,7 +229,7 @@ constant maxAddrBitBRAM		: integer := 22;
 
 begin
 
-	Inst_ZPUino_SDRAM_Wrapper: ZPUino_SDRAM_Wrapper PORT MAP(
+	Inst_ZPUino_Papilio_Pro_V2_blackbox: ZPUino_Papilio_Pro_V2_blackbox PORT MAP(
 		CLK => ext_pins_in(0),
 		clk_96Mhz => clk_96Mhz,
 		clk_1Mhz => clk_1Mhz,

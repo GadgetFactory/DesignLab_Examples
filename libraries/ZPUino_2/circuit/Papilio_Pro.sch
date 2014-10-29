@@ -71,8 +71,8 @@
         <signal name="ext_pins_in(100:0)" />
         <signal name="XLXN_408(200:0)" />
         <signal name="XLXN_409(200:0)" />
-        <signal name="XLXN_413" />
-        <signal name="XLXN_418" />
+        <signal name="XLXN_419" />
+        <signal name="XLXN_420" />
         <port polarity="BiDirectional" name="WING_AL0" />
         <port polarity="BiDirectional" name="WING_AL1" />
         <port polarity="BiDirectional" name="WING_AL2" />
@@ -133,7 +133,7 @@
             <line x2="224" y1="-32" y2="-32" x1="160" />
         </blockdef>
         <blockdef name="Papilio_Default_Wing_Pinout">
-            <timestamp>2014-10-28T20:54:0</timestamp>
+            <timestamp>2014-10-29T21:26:30</timestamp>
             <rect width="148" x="316" y="-1724" height="276" />
             <rect width="148" x="316" y="-1152" height="280" />
             <rect width="148" x="316" y="-860" height="276" />
@@ -372,18 +372,18 @@
             <blockpin signalname="XLXN_326(7:0)" name="WingType_mosi_CH(7:0)" />
             <blockpin signalname="XLXN_336(7:0)" name="WingType_mosi_AL(7:0)" />
             <blockpin signalname="XLXN_335(7:0)" name="WingType_miso_AL(7:0)" />
-            <blockpin signalname="XLXN_413" name="Flex_Pin_in_0" />
-            <blockpin signalname="XLXN_418" name="Flex_Pin_in_1" />
-            <blockpin name="Flex_Pin_in_2" />
-            <blockpin name="Flex_Pin_in_3" />
-            <blockpin name="Flex_Pin_in_4" />
-            <blockpin name="Flex_Pin_in_5" />
-            <blockpin name="Flex_Pin_out_0" />
-            <blockpin signalname="XLXN_418" name="Flex_Pin_out_1" />
+            <blockpin signalname="XLXN_419" name="Flex_Pin_out_0" />
+            <blockpin signalname="XLXN_420" name="Flex_Pin_out_1" />
             <blockpin name="Flex_Pin_out_2" />
             <blockpin name="Flex_Pin_out_3" />
             <blockpin name="Flex_Pin_out_4" />
             <blockpin name="Flex_Pin_out_5" />
+            <blockpin name="Flex_Pin_in_0" />
+            <blockpin signalname="XLXN_420" name="Flex_Pin_in_1" />
+            <blockpin name="Flex_Pin_in_2" />
+            <blockpin name="Flex_Pin_in_3" />
+            <blockpin name="Flex_Pin_in_4" />
+            <blockpin name="Flex_Pin_in_5" />
         </block>
         <block symbolname="ZPUino_Papilio_Pro_V2" name="XLXI_39">
             <blockpin signalname="XLXN_408(200:0)" name="gpio_bus_out(200:0)" />
@@ -417,7 +417,7 @@
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
         </block>
         <block symbolname="vcc" name="XLXI_41">
-            <blockpin signalname="XLXN_413" name="P" />
+            <blockpin signalname="XLXN_419" name="P" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
@@ -744,11 +744,11 @@
         <instance x="336" y="752" name="XLXI_39" orien="R0">
         </instance>
         <instance x="4208" y="3120" name="XLXI_41" orien="R0" />
-        <branch name="XLXN_413">
+        <branch name="XLXN_419">
             <wire x2="4272" y1="3120" y2="3152" x1="4272" />
             <wire x2="4608" y1="3152" y2="3152" x1="4272" />
         </branch>
-        <branch name="XLXN_418">
+        <branch name="XLXN_420">
             <wire x2="4608" y1="3184" y2="3184" x1="4528" />
             <wire x2="4528" y1="3184" y2="3392" x1="4528" />
             <wire x2="5248" y1="3392" y2="3392" x1="4528" />
