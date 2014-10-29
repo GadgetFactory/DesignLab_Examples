@@ -7,7 +7,7 @@
     </attr>
     <netlist>
         <blockdef name="ZPUino_Papilio_Pro_V2">
-            <timestamp>2014-10-27T22:33:9</timestamp>
+            <timestamp>2014-10-27T23:46:19</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
@@ -52,7 +52,7 @@
             <rect width="360" x="64" y="-676" height="116" />
         </blockdef>
         <blockdef name="Papilio_Default_Wing_Pinout">
-            <timestamp>2014-10-27T23:14:11</timestamp>
+            <timestamp>2014-10-28T20:54:0</timestamp>
             <rect width="148" x="316" y="-1724" height="276" />
             <rect width="148" x="316" y="-1152" height="280" />
             <rect width="148" x="316" y="-860" height="276" />
@@ -107,7 +107,7 @@
             <line x2="528" y1="-96" y2="-96" x1="464" />
             <line x2="528" y1="-64" y2="-64" x1="464" />
             <line x2="528" y1="-32" y2="-32" x1="464" />
-            <rect width="432" x="32" y="-1784" height="1784" />
+            <rect width="432" x="32" y="-1784" height="2028" />
             <line x2="32" y1="-1744" y2="-1744" x1="-32" />
             <line x2="32" y1="-1760" y2="-1760" x1="-32" />
             <rect width="64" x="-32" y="-108" height="24" />
@@ -140,6 +140,18 @@
             <rect width="88" x="32" y="-752" height="96" />
             <rect width="88" x="32" y="-464" height="96" />
             <rect width="88" x="32" y="-176" height="96" />
+            <line x2="528" y1="64" y2="64" x1="464" />
+            <line x2="528" y1="96" y2="96" x1="464" />
+            <line x2="528" y1="128" y2="128" x1="464" />
+            <line x2="528" y1="160" y2="160" x1="464" />
+            <line x2="528" y1="192" y2="192" x1="464" />
+            <line x2="528" y1="224" y2="224" x1="464" />
+            <line x2="32" y1="64" y2="64" x1="-32" />
+            <line x2="32" y1="96" y2="96" x1="-32" />
+            <line x2="32" y1="128" y2="128" x1="-32" />
+            <line x2="32" y1="160" y2="160" x1="-32" />
+            <line x2="32" y1="192" y2="192" x1="-32" />
+            <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
         <block symbolname="ZPUino_Papilio_Pro_V2" name="XLXI_50">
             <blockpin name="gpio_bus_out(200:0)" />
@@ -147,26 +159,26 @@
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
-            <blockpin name="wishbone_slot_5_out(33:0)" />
-            <blockpin name="wishbone_slot_5_in(61:0)" />
-            <blockpin name="wishbone_slot_6_in(61:0)" />
-            <blockpin name="wishbone_slot_6_out(33:0)" />
-            <blockpin name="wishbone_slot_8_in(61:0)" />
-            <blockpin name="wishbone_slot_8_out(33:0)" />
-            <blockpin name="wishbone_slot_9_in(61:0)" />
-            <blockpin name="wishbone_slot_9_out(33:0)" />
-            <blockpin name="wishbone_slot_10_in(61:0)" />
-            <blockpin name="wishbone_slot_10_out(33:0)" />
-            <blockpin name="wishbone_slot_11_in(61:0)" />
-            <blockpin name="wishbone_slot_11_out(33:0)" />
-            <blockpin name="wishbone_slot_12_in(61:0)" />
-            <blockpin name="wishbone_slot_12_out(33:0)" />
-            <blockpin name="wishbone_slot_13_in(61:0)" />
-            <blockpin name="wishbone_slot_13_out(33:0)" />
-            <blockpin name="wishbone_slot_14_in(61:0)" />
-            <blockpin name="wishbone_slot_14_out(33:0)" />
-            <blockpin name="wishbone_slot_video_in(63:0)" />
-            <blockpin name="wishbone_slot_video_out(33:0)" />
+            <blockpin name="wishbone_slot_5_out(100:0)" />
+            <blockpin name="wishbone_slot_5_in(100:0)" />
+            <blockpin name="wishbone_slot_6_in(100:0)" />
+            <blockpin name="wishbone_slot_6_out(100:0)" />
+            <blockpin name="wishbone_slot_8_in(100:0)" />
+            <blockpin name="wishbone_slot_8_out(100:0)" />
+            <blockpin name="wishbone_slot_9_in(100:0)" />
+            <blockpin name="wishbone_slot_9_out(100:0)" />
+            <blockpin name="wishbone_slot_10_in(100:0)" />
+            <blockpin name="wishbone_slot_10_out(100:0)" />
+            <blockpin name="wishbone_slot_11_in(100:0)" />
+            <blockpin name="wishbone_slot_11_out(100:0)" />
+            <blockpin name="wishbone_slot_12_in(100:0)" />
+            <blockpin name="wishbone_slot_12_out(100:0)" />
+            <blockpin name="wishbone_slot_13_in(100:0)" />
+            <blockpin name="wishbone_slot_13_out(100:0)" />
+            <blockpin name="wishbone_slot_14_in(100:0)" />
+            <blockpin name="wishbone_slot_14_out(100:0)" />
+            <blockpin name="wishbone_slot_video_in(100:0)" />
+            <blockpin name="wishbone_slot_video_out(100:0)" />
             <blockpin name="vgaclkout" />
             <blockpin name="ext_pins_in(100:0)" />
             <blockpin name="ext_pins_out(100:0)" />
@@ -235,6 +247,18 @@
             <blockpin name="WingType_mosi_CH(7:0)" />
             <blockpin name="WingType_mosi_AL(7:0)" />
             <blockpin name="WingType_miso_AL(7:0)" />
+            <blockpin name="Flex_Pin_in_0" />
+            <blockpin name="Flex_Pin_in_1" />
+            <blockpin name="Flex_Pin_in_2" />
+            <blockpin name="Flex_Pin_in_3" />
+            <blockpin name="Flex_Pin_in_4" />
+            <blockpin name="Flex_Pin_in_5" />
+            <blockpin name="Flex_Pin_out_0" />
+            <blockpin name="Flex_Pin_out_1" />
+            <blockpin name="Flex_Pin_out_2" />
+            <blockpin name="Flex_Pin_out_3" />
+            <blockpin name="Flex_Pin_out_4" />
+            <blockpin name="Flex_Pin_out_5" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">

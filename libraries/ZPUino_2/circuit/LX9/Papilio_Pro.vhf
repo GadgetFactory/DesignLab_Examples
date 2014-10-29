@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_Pro.vhf
--- /___/   /\     Timestamp : 10/27/2014 20:48:16
+-- /___/   /\     Timestamp : 10/29/2014 15:03:51
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -80,6 +80,7 @@ entity Papilio_Pro is
 end Papilio_Pro;
 
 architecture BEHAVIORAL of Papilio_Pro is
+   attribute BOX_TYPE   : string ;
    signal XLXN_325                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_326                                  : std_logic_vector (7 
@@ -108,6 +109,12 @@ architecture BEHAVIORAL of Papilio_Pro is
          downto 0);
    signal XLXN_409                                  : std_logic_vector (200 
          downto 0);
+   signal XLXN_413                                  : std_logic;
+   signal XLXN_418                                  : std_logic;
+   signal XLXI_38_Flex_Pin_in_2_openSignal          : std_logic;
+   signal XLXI_38_Flex_Pin_in_3_openSignal          : std_logic;
+   signal XLXI_38_Flex_Pin_in_4_openSignal          : std_logic;
+   signal XLXI_38_Flex_Pin_in_5_openSignal          : std_logic;
    signal XLXI_39_wishbone_slot_video_in_openSignal : std_logic_vector (100 
          downto 0);
    signal XLXI_39_wishbone_slot_5_out_openSignal    : std_logic_vector (100 
@@ -195,7 +202,19 @@ architecture BEHAVIORAL of Papilio_Pro is
              WingType_miso_CH : inout std_logic_vector (7 downto 0); 
              WingType_mosi_CH : inout std_logic_vector (7 downto 0); 
              WingType_mosi_AL : inout std_logic_vector (7 downto 0); 
-             WingType_miso_AL : inout std_logic_vector (7 downto 0));
+             WingType_miso_AL : inout std_logic_vector (7 downto 0); 
+             Flex_Pin_in_0    : in    std_logic; 
+             Flex_Pin_in_1    : in    std_logic; 
+             Flex_Pin_in_2    : in    std_logic; 
+             Flex_Pin_in_3    : in    std_logic; 
+             Flex_Pin_in_4    : in    std_logic; 
+             Flex_Pin_in_5    : in    std_logic; 
+             Flex_Pin_out_0   : out   std_logic; 
+             Flex_Pin_out_1   : out   std_logic; 
+             Flex_Pin_out_2   : out   std_logic; 
+             Flex_Pin_out_3   : out   std_logic; 
+             Flex_Pin_out_4   : out   std_logic; 
+             Flex_Pin_out_5   : out   std_logic);
    end component;
    
    component ZPUino_Papilio_Pro_V2
@@ -230,6 +249,11 @@ architecture BEHAVIORAL of Papilio_Pro is
              ext_pins_inout          : inout std_logic_vector (100 downto 0));
    end component;
    
+   component VCC
+      port ( P : out   std_logic);
+   end component;
+   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
+   
 begin
    XLXI_22 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_325(7 downto 0),
@@ -256,7 +280,19 @@ begin
                 wt_mosi(7 downto 0)=>XLXN_336(7 downto 0));
    
    XLXI_38 : Papilio_Default_Wing_Pinout
-      port map (gpio_bus_out(200 downto 0)=>XLXN_408(200 downto 0),
+      port map (Flex_Pin_in_0=>XLXN_413,
+                Flex_Pin_in_1=>XLXN_418,
+                Flex_Pin_in_2=>XLXI_38_Flex_Pin_in_2_openSignal,
+                Flex_Pin_in_3=>XLXI_38_Flex_Pin_in_3_openSignal,
+                Flex_Pin_in_4=>XLXI_38_Flex_Pin_in_4_openSignal,
+                Flex_Pin_in_5=>XLXI_38_Flex_Pin_in_5_openSignal,
+                gpio_bus_out(200 downto 0)=>XLXN_408(200 downto 0),
+                Flex_Pin_out_0=>open,
+                Flex_Pin_out_1=>XLXN_418,
+                Flex_Pin_out_2=>open,
+                Flex_Pin_out_3=>open,
+                Flex_Pin_out_4=>open,
+                Flex_Pin_out_5=>open,
                 gpio_bus_in(200 downto 0)=>XLXN_409(200 downto 0),
                 WingType_miso_AH(7 downto 0)=>XLXN_333(7 downto 0),
                 WingType_miso_AL(7 downto 0)=>XLXN_335(7 downto 0),
@@ -359,6 +395,9 @@ begin
                 wishbone_slot_13_in=>open,
                 wishbone_slot_14_in=>open,
                 ext_pins_inout(100 downto 0)=>ext_pins_inout(100 downto 0));
+   
+   XLXI_41 : VCC
+      port map (P=>XLXN_413);
    
 end BEHAVIORAL;
 
