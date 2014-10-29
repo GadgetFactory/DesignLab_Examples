@@ -122,19 +122,19 @@ entity Papilio_Default_Wing_Pinout is
 			 WING_CL6	: inout std_logic;
 			 WING_CL7	: inout std_logic;
 			 
-			 Flex_Pin_in_0: in std_logic;
-			 Flex_Pin_in_1: in std_logic;
-			 Flex_Pin_in_2: in std_logic;
-			 Flex_Pin_in_3: in std_logic;
-			 Flex_Pin_in_4: in std_logic;
-			 Flex_Pin_in_5: in std_logic;
+			 Flex_Pin_out_0: in std_logic;
+			 Flex_Pin_out_1: in std_logic;
+			 Flex_Pin_out_2: in std_logic;
+			 Flex_Pin_out_3: in std_logic;
+			 Flex_Pin_out_4: in std_logic;
+			 Flex_Pin_out_5: in std_logic;
 			 
-			 Flex_Pin_out_0: out std_logic;
-			 Flex_Pin_out_1: out std_logic;
-			 Flex_Pin_out_2: out std_logic;
-			 Flex_Pin_out_3: out std_logic;
-			 Flex_Pin_out_4: out std_logic;
-			 Flex_Pin_out_5: out std_logic
+			 Flex_Pin_in_0: out std_logic;
+			 Flex_Pin_in_1: out std_logic;
+			 Flex_Pin_in_2: out std_logic;
+			 Flex_Pin_in_3: out std_logic;
+			 Flex_Pin_in_4: out std_logic;
+			 Flex_Pin_in_5: out std_logic
 			 );			 
 end Papilio_Default_Wing_Pinout;
 
@@ -283,25 +283,25 @@ begin
   WING_CH6 <= WingType_miso_CH(6);
   WING_CH7 <= WingType_miso_CH(7);
 
-  process(Flex_Pin_in_0, Flex_Pin_in_1, Flex_Pin_in_2, Flex_Pin_in_3, Flex_Pin_in_4, Flex_Pin_in_5)
+  process(Flex_Pin_out_0, Flex_Pin_out_1, Flex_Pin_out_2, Flex_Pin_out_3, Flex_Pin_out_4, Flex_Pin_out_5)
 --          sigmadelta_spp_data,
 --          timers_pwm,
 --          spi2_mosi,spi2_sck)
   begin
-	 gpio_bus_in(49) <= Flex_Pin_in_0;
-	 gpio_bus_in(50) <= Flex_Pin_in_1;
-	 gpio_bus_in(51) <= Flex_Pin_in_2;
-	 gpio_bus_in(52) <= Flex_Pin_in_3;
-	 gpio_bus_in(53) <= Flex_Pin_in_4;
-	 gpio_bus_in(54) <= Flex_Pin_in_5;
+	 gpio_bus_in(49) <= Flex_Pin_out_0;
+	 gpio_bus_in(50) <= Flex_Pin_out_1;
+	 gpio_bus_in(51) <= Flex_Pin_out_2;
+	 gpio_bus_in(52) <= Flex_Pin_out_3;
+	 gpio_bus_in(53) <= Flex_Pin_out_4;
+	 gpio_bus_in(54) <= Flex_Pin_out_5;
 	 gpio_bus_in(97 downto 55) <= (others => DontCareValue);
 	 
-	 Flex_Pin_out_0 <= gpio_spp_read(0);
-	 Flex_Pin_out_1 <= gpio_spp_read(1);
-	 Flex_Pin_out_2 <= gpio_spp_read(2);
-	 Flex_Pin_out_3 <= gpio_spp_read(3);
-	 Flex_Pin_out_4 <= gpio_spp_read(4);
-	 Flex_Pin_out_5 <= gpio_spp_read(5);
+	 Flex_Pin_in_0 <= gpio_spp_read(0);
+	 Flex_Pin_in_1 <= gpio_spp_read(1);
+	 Flex_Pin_in_2 <= gpio_spp_read(2);
+	 Flex_Pin_in_3 <= gpio_spp_read(3);
+	 Flex_Pin_in_4 <= gpio_spp_read(4);
+	 Flex_Pin_in_5 <= gpio_spp_read(5);
 
   end process;
 
