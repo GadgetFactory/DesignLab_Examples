@@ -153,8 +153,53 @@
             <line x2="32" y1="192" y2="192" x1="-32" />
             <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
-        <blockdef name="ZPUino_Papilio_One_V2">
-            <timestamp>2014-10-30T0:53:41</timestamp>
+        <blockdef name="ZPUino_Papilio_One_250K_V2">
+            <timestamp>2014-10-30T5:13:36</timestamp>
+            <rect width="4240" x="64" y="-688" height="688" />
+            <line x2="4368" y1="-272" y2="-272" x1="4304" />
+            <line x2="4304" y1="-240" y2="-240" x1="4368" />
+            <rect width="180" x="4124" y="-300" height="112" />
+            <line x2="4304" y1="-208" y2="-208" x1="4368" />
+            <line x2="64" y1="-656" y2="-656" x1="4" />
+            <line x2="64" y1="-624" y2="-624" x1="0" />
+            <line x2="64" y1="-588" y2="-588" x1="0" />
+            <rect width="360" x="64" y="-676" height="116" />
+            <line x2="4368" y1="-400" y2="-400" x1="4304" />
+            <line x2="4304" y1="-416" y2="-416" x1="4368" />
+            <rect width="248" x="4056" y="-448" height="76" />
+            <line x2="176" y1="64" y2="0" x1="176" />
+            <line x2="160" y1="64" y2="0" x1="160" />
+            <line x2="608" y1="64" y2="0" x1="608" />
+            <line x2="624" y1="64" y2="0" x1="624" />
+            <line x2="1056" y1="64" y2="0" x1="1056" />
+            <line x2="1072" y1="64" y2="0" x1="1072" />
+            <line x2="1504" y1="64" y2="0" x1="1504" />
+            <line x2="1520" y1="64" y2="0" x1="1520" />
+            <line x2="1968" y1="64" y2="0" x1="1968" />
+            <line x2="1984" y1="64" y2="0" x1="1984" />
+            <line x2="2400" y1="64" y2="0" x1="2400" />
+            <line x2="2416" y1="64" y2="0" x1="2416" />
+            <line x2="2864" y1="64" y2="0" x1="2864" />
+            <line x2="2880" y1="64" y2="0" x1="2880" />
+            <line x2="3312" y1="64" y2="0" x1="3312" />
+            <line x2="3328" y1="64" y2="0" x1="3328" />
+            <line x2="3760" y1="64" y2="0" x1="3760" />
+            <line x2="3776" y1="64" y2="0" x1="3776" />
+            <rect width="172" x="80" y="-92" height="92" />
+            <rect width="172" x="528" y="-92" height="92" />
+            <rect width="172" x="976" y="-92" height="92" />
+            <rect width="172" x="1424" y="-92" height="92" />
+            <rect width="172" x="1888" y="-92" height="92" />
+            <rect width="172" x="2320" y="-92" height="92" />
+            <rect width="172" x="2784" y="-92" height="92" />
+            <rect width="172" x="3232" y="-92" height="92" />
+            <rect width="240" x="3680" y="-92" height="92" />
+            <line x2="3872" y1="64" y2="0" x1="3872" />
+            <line x2="3888" y1="64" y2="0" x1="3888" />
+            <line x2="3904" y1="64" y2="0" x1="3904" />
+        </blockdef>
+        <blockdef name="ZPUino_Papilio_One_500K_V2">
+            <timestamp>2014-10-30T5:13:13</timestamp>
             <rect width="4240" x="64" y="-688" height="688" />
             <line x2="4368" y1="-272" y2="-272" x1="4304" />
             <line x2="4304" y1="-240" y2="-240" x1="4368" />
@@ -305,12 +350,43 @@
             <blockpin name="Flex_Pin_in_4" />
             <blockpin name="Flex_Pin_in_5" />
         </block>
-        <block symbolname="ZPUino_Papilio_One_V2" name="XLXI_53">
+        <block symbolname="ZPUino_Papilio_One_250K_V2" name="XLXI_54">
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
-            <blockpin name="ext_pins_in(5:0)" />
-            <blockpin name="ext_pins_out(5:0)" />
+            <blockpin name="ext_pins_in(100:0)" />
+            <blockpin name="ext_pins_out(100:0)" />
+            <blockpin name="ext_pins_inout(100:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
+            <blockpin name="wishbone_slot_5_out(100:0)" />
+            <blockpin name="wishbone_slot_5_in(100:0)" />
+            <blockpin name="wishbone_slot_6_in(100:0)" />
+            <blockpin name="wishbone_slot_6_out(100:0)" />
+            <blockpin name="wishbone_slot_8_in(100:0)" />
+            <blockpin name="wishbone_slot_8_out(100:0)" />
+            <blockpin name="wishbone_slot_9_in(100:0)" />
+            <blockpin name="wishbone_slot_9_out(100:0)" />
+            <blockpin name="wishbone_slot_10_in(100:0)" />
+            <blockpin name="wishbone_slot_10_out(100:0)" />
+            <blockpin name="wishbone_slot_11_in(100:0)" />
+            <blockpin name="wishbone_slot_11_out(100:0)" />
+            <blockpin name="wishbone_slot_12_in(100:0)" />
+            <blockpin name="wishbone_slot_12_out(100:0)" />
+            <blockpin name="wishbone_slot_13_in(100:0)" />
+            <blockpin name="wishbone_slot_13_out(100:0)" />
+            <blockpin name="wishbone_slot_14_in(100:0)" />
+            <blockpin name="wishbone_slot_14_out(100:0)" />
+            <blockpin name="wishbone_slot_video_in(100:0)" />
+            <blockpin name="wishbone_slot_video_out(100:0)" />
+            <blockpin name="vgaclkout" />
+        </block>
+        <block symbolname="ZPUino_Papilio_One_500K_V2" name="XLXI_55">
+            <blockpin name="clk_96Mhz" />
+            <blockpin name="clk_1Mhz" />
+            <blockpin name="clk_osc_32Mhz" />
+            <blockpin name="ext_pins_in(100:0)" />
+            <blockpin name="ext_pins_out(100:0)" />
             <blockpin name="ext_pins_inout(100:0)" />
             <blockpin name="gpio_bus_out(200:0)" />
             <blockpin name="gpio_bus_in(200:0)" />
@@ -342,7 +418,9 @@
         </instance>
         <instance x="4832" y="3072" name="XLXI_51" orien="R0">
         </instance>
-        <instance x="64" y="1744" name="XLXI_53" orien="R0">
+        <instance x="48" y="2608" name="XLXI_54" orien="R0">
+        </instance>
+        <instance x="64" y="1744" name="XLXI_55" orien="R0">
         </instance>
     </sheet>
 </drawing>

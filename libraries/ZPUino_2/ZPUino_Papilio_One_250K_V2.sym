@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ZPUino_Papilio_One_250K_V2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-30T4:20:36</timestamp>
+    <timestamp>2014-10-30T5:13:36</timestamp>
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />
     <pin polarity="Output" x="4368" y="-240" name="clk_1Mhz" />
     <pin polarity="Output" x="4368" y="-208" name="clk_osc_32Mhz" />
@@ -44,7 +44,7 @@
         <text style="fontsize:40;fontname:Arial" x="2040" y="-548">Author: Alvaro Lopes</text>
         <text style="fontsize:40;fontname:Arial" x="2076" y="-504">alvie.com/zpuino</text>
         <text style="fontsize:52;fontname:Arial" x="1844" y="-204">Visit Papilio.cc for Documentation</text>
-        <text style="fontsize:64;fontname:Arial" x="1520" y="-608">ZPUino Soft Processor - Papilio One - Vanilla - v2.0</text>
+        <text style="fontsize:64;fontname:Arial" x="1520" y="-608">ZPUino Soft Processor - Papilio One 250K - Vanilla - v2.0</text>
         <text style="fontsize:40;fontname:Arial" x="2816" y="-436">Used Resources for P1 500K:</text>
         <text style="fontsize:40;fontname:Arial" x="2852" y="-392">18 of 20 Block RAM (BRAM)</text>
         <text style="fontsize:40;fontname:Arial" x="2856" y="-348">37% of available Slices</text>

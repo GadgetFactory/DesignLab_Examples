@@ -234,8 +234,14 @@
             <line x2="32" y1="192" y2="192" x1="-32" />
             <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
-        <blockdef name="ZPUino_Papilio_One_V2">
-            <timestamp>2014-10-30T4:20:36</timestamp>
+        <blockdef name="vcc">
+            <timestamp>2000-1-1T10:10:10</timestamp>
+            <line x2="64" y1="-32" y2="-64" x1="64" />
+            <line x2="64" y1="0" y2="-32" x1="64" />
+            <line x2="32" y1="-64" y2="-64" x1="96" />
+        </blockdef>
+        <blockdef name="ZPUino_Papilio_One_500K_V2">
+            <timestamp>2014-10-30T5:13:13</timestamp>
             <rect width="4240" x="64" y="-688" height="688" />
             <line x2="4368" y1="-272" y2="-272" x1="4304" />
             <line x2="4304" y1="-240" y2="-240" x1="4368" />
@@ -278,12 +284,6 @@
             <line x2="3872" y1="64" y2="0" x1="3872" />
             <line x2="3888" y1="64" y2="0" x1="3888" />
             <line x2="3904" y1="64" y2="0" x1="3904" />
-        </blockdef>
-        <blockdef name="vcc">
-            <timestamp>2000-1-1T10:10:10</timestamp>
-            <line x2="64" y1="-32" y2="-64" x1="64" />
-            <line x2="64" y1="0" y2="-32" x1="64" />
-            <line x2="32" y1="-64" y2="-64" x1="96" />
         </blockdef>
         <block symbolname="Papilio_Default_Wing_Pinout" name="XLXI_47">
             <blockpin signalname="WING_AH0" name="WING_AH0" />
@@ -385,7 +385,10 @@
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
             <blockpin signalname="XLXN_336(7:0)" name="wt_mosi(7:0)" />
         </block>
-        <block symbolname="ZPUino_Papilio_One_V2" name="XLXI_48">
+        <block symbolname="vcc" name="XLXI_49">
+            <blockpin signalname="XLXN_410" name="P" />
+        </block>
+        <block symbolname="ZPUino_Papilio_One_500K_V2" name="XLXI_50">
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
@@ -415,9 +418,6 @@
             <blockpin name="wishbone_slot_video_in(100:0)" />
             <blockpin name="wishbone_slot_video_out(100:0)" />
             <blockpin name="vgaclkout" />
-        </block>
-        <block symbolname="vcc" name="XLXI_49">
-            <blockpin signalname="XLXN_410" name="P" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
@@ -678,8 +678,6 @@
         <instance x="4352" y="1584" name="XLXI_27" orien="R0">
         </instance>
         <text style="fontsize:64;fontname:Arial" x="100" y="3460">Version: 1.0</text>
-        <instance x="336" y="752" name="XLXI_48" orien="R0">
-        </instance>
         <instance x="4064" y="3152" name="XLXI_49" orien="R0" />
         <branch name="XLXN_410">
             <wire x2="4608" y1="3152" y2="3152" x1="4128" />
@@ -703,5 +701,7 @@
             <wire x2="336" y1="160" y2="160" x1="304" />
         </branch>
         <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
+        <instance x="336" y="752" name="XLXI_50" orien="R0">
+        </instance>
     </sheet>
 </drawing>
