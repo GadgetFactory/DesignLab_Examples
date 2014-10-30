@@ -70,9 +70,9 @@
         <signal name="XLXN_336(7:0)" />
         <signal name="XLXN_410" />
         <signal name="XLXN_412" />
+        <signal name="ext_pins_in(100:0)" />
+        <signal name="ext_pins_out(100:0)" />
         <signal name="ext_pins_inout(100:0)" />
-        <signal name="ext_pins_in(5:0)" />
-        <signal name="ext_pins_out(5:0)" />
         <port polarity="BiDirectional" name="WING_AL0" />
         <port polarity="BiDirectional" name="WING_AL1" />
         <port polarity="BiDirectional" name="WING_AL2" />
@@ -121,9 +121,9 @@
         <port polarity="BiDirectional" name="WING_CH5" />
         <port polarity="BiDirectional" name="WING_CH6" />
         <port polarity="BiDirectional" name="WING_CH7" />
+        <port polarity="Input" name="ext_pins_in(100:0)" />
+        <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
-        <port polarity="Input" name="ext_pins_in(5:0)" />
-        <port polarity="Output" name="ext_pins_out(5:0)" />
         <blockdef name="Wing_GPIO">
             <timestamp>2013-11-27T0:38:36</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
@@ -235,7 +235,7 @@
             <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
         <blockdef name="ZPUino_Papilio_One_V2">
-            <timestamp>2014-10-30T0:53:41</timestamp>
+            <timestamp>2014-10-30T4:20:36</timestamp>
             <rect width="4240" x="64" y="-688" height="688" />
             <line x2="4368" y1="-272" y2="-272" x1="4304" />
             <line x2="4304" y1="-240" y2="-240" x1="4368" />
@@ -389,8 +389,8 @@
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
-            <blockpin signalname="ext_pins_in(5:0)" name="ext_pins_in(5:0)" />
-            <blockpin signalname="ext_pins_out(5:0)" name="ext_pins_out(5:0)" />
+            <blockpin signalname="ext_pins_in(100:0)" name="ext_pins_in(100:0)" />
+            <blockpin signalname="ext_pins_out(100:0)" name="ext_pins_out(100:0)" />
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
             <blockpin signalname="XLXN_408(200:0)" name="gpio_bus_out(200:0)" />
             <blockpin signalname="XLXN_409(200:0)" name="gpio_bus_in(200:0)" />
@@ -691,17 +691,17 @@
             <wire x2="5248" y1="3184" y2="3184" x1="5168" />
             <wire x2="5248" y1="3184" y2="3408" x1="5248" />
         </branch>
+        <branch name="ext_pins_in(100:0)">
+            <wire x2="336" y1="96" y2="96" x1="304" />
+        </branch>
+        <iomarker fontsize="28" x="304" y="96" name="ext_pins_in(100:0)" orien="R180" />
+        <branch name="ext_pins_out(100:0)">
+            <wire x2="336" y1="128" y2="128" x1="304" />
+        </branch>
+        <iomarker fontsize="28" x="304" y="128" name="ext_pins_out(100:0)" orien="R180" />
         <branch name="ext_pins_inout(100:0)">
             <wire x2="336" y1="160" y2="160" x1="304" />
         </branch>
         <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
-        <branch name="ext_pins_in(5:0)">
-            <wire x2="336" y1="96" y2="96" x1="304" />
-        </branch>
-        <iomarker fontsize="28" x="304" y="96" name="ext_pins_in(5:0)" orien="R180" />
-        <branch name="ext_pins_out(5:0)">
-            <wire x2="336" y1="128" y2="128" x1="304" />
-        </branch>
-        <iomarker fontsize="28" x="304" y="128" name="ext_pins_out(5:0)" orien="R180" />
     </sheet>
 </drawing>

@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_One_500K.vhf
--- /___/   /\     Timestamp : 10/29/2014 19:14:15
+-- /___/   /\     Timestamp : 10/29/2014 22:37:36
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -26,8 +26,8 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Papilio_One_500K is
-   port ( ext_pins_in    : in    std_logic_vector (5 downto 0); 
-          ext_pins_out   : out   std_logic_vector (5 downto 0); 
+   port ( ext_pins_in    : in    std_logic_vector (100 downto 0); 
+          ext_pins_out   : out   std_logic_vector (100 downto 0); 
           ext_pins_inout : inout std_logic_vector (100 downto 0); 
           WING_AH0       : inout std_logic; 
           WING_AH1       : inout std_logic; 
@@ -221,8 +221,8 @@ architecture BEHAVIORAL of Papilio_One_500K is
       port ( clk_96Mhz               : out   std_logic; 
              clk_1Mhz                : out   std_logic; 
              clk_osc_32Mhz           : out   std_logic; 
-             ext_pins_in             : in    std_logic_vector (5 downto 0); 
-             ext_pins_out            : out   std_logic_vector (5 downto 0); 
+             ext_pins_in             : in    std_logic_vector (100 downto 0); 
+             ext_pins_out            : out   std_logic_vector (100 downto 0); 
              ext_pins_inout          : inout std_logic_vector (100 downto 0); 
              gpio_bus_out            : out   std_logic_vector (200 downto 0); 
              gpio_bus_in             : in    std_logic_vector (200 downto 0); 
@@ -356,7 +356,7 @@ begin
                 WING_CL7=>WING_CL7);
    
    XLXI_48 : ZPUino_Papilio_One_V2
-      port map (ext_pins_in(5 downto 0)=>ext_pins_in(5 downto 0),
+      port map (ext_pins_in(100 downto 0)=>ext_pins_in(100 downto 0),
                 gpio_bus_in(200 downto 0)=>XLXN_409(200 downto 0),
                 wishbone_slot_video_in(100 downto 
             0)=>XLXI_48_wishbone_slot_video_in_openSignal(100 downto 0),
@@ -381,7 +381,7 @@ begin
                 clk_osc_32Mhz=>open,
                 clk_1Mhz=>open,
                 clk_96Mhz=>open,
-                ext_pins_out(5 downto 0)=>ext_pins_out(5 downto 0),
+                ext_pins_out(100 downto 0)=>ext_pins_out(100 downto 0),
                 gpio_bus_out(200 downto 0)=>XLXN_408(200 downto 0),
                 vgaclkout=>open,
                 wishbone_slot_video_out=>open,

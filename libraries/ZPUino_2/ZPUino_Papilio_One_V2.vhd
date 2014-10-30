@@ -56,8 +56,8 @@ entity ZPUino_Papilio_One_V2 is
 --    SPI_MOSI:   out std_logic;
 --    SPI_CS:     out std_logic;
 	 
-	 ext_pins_in : in std_logic_vector(5 downto 0);
-	 ext_pins_out : out std_logic_vector(5 downto 0);
+	 ext_pins_in : in std_logic_vector(100 downto 0);
+	 ext_pins_out : out std_logic_vector(100 downto 0);
 	 ext_pins_inout : inout std_logic_vector(100 downto 0);
 
 	 gpio_bus_in : in std_logic_vector(200 downto 0);
