@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<symbol version="7" name="ZPUino_Papilio_One_V2">
+<symbol version="7" name="ZPUino_Papilio_One_500K_V2">
     <symboltype>BLOCK</symboltype>
     <timestamp>2014-10-30T4:20:36</timestamp>
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />

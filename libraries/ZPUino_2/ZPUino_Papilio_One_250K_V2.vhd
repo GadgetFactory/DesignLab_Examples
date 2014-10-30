@@ -40,7 +40,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity ZPUino_Papilio_One_V2 is
+entity ZPUino_Papilio_One_250K_V2 is
   port (
 	 --32Mhz input clock is converted to a 96Mhz clock
 --    CLK:        in std_logic;
@@ -121,9 +121,9 @@ entity ZPUino_Papilio_One_V2 is
  	
   );
 
-end entity ZPUino_Papilio_One_V2;
+end entity ZPUino_Papilio_One_250K_V2;
 
-architecture behave of ZPUino_Papilio_One_V2 is
+architecture behave of ZPUino_Papilio_One_250K_V2 is
 
 constant wordPower			: integer := 5;
 constant wordSize			: integer := 2**wordPower;
@@ -133,7 +133,7 @@ constant minIOBit: integer := 2;
 constant maxAddrBitBRAM		: integer := 22;
 
   
-	COMPONENT ZPUino_Papilio_One_V2_blackbox
+	COMPONENT ZPUino_Papilio_One_250K_V2_blackbox
 	PORT(
 		CLK : IN std_logic;
 		SPI_MISO : IN std_logic;
@@ -209,7 +209,7 @@ begin
 --	TXD <= ext_pins_out(3);
 	ext_pins_out <= (others => 'Z');
 
-	Inst_ZPUino_Papilio_One_V2_blackbox: ZPUino_Papilio_One_V2_blackbox PORT MAP(
+	Inst_ZPUino_Papilio_One_250K_V2_blackbox: ZPUino_Papilio_One_250K_V2_blackbox PORT MAP(
 		CLK => ext_pins_in(0),
 		clk_96Mhz => clk_96Mhz,
 		clk_1Mhz => clk_1Mhz,
