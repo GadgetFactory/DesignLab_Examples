@@ -2,6 +2,14 @@
 
 void setup() {
   // put your setup code here, to run once:
+  
+   // Configure pin as output
+   pinMode (WAL6 , OUTPUT );
+   // enable PPS on this pin
+   pinModePPS (WAL6 , HIGH );
+   // Map WAL6 to FlexPinOut0
+   outputPinForFunction (WAL6 , 0 );  
+  
    // Configure pin as output
    pinMode (WAL0 , OUTPUT );
    // enable PPS on this pin
