@@ -51,8 +51,10 @@ entity HQVGA is
     vgaclk_divider: integer := 1
   );
   port (
-	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0);
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
+	 
+	 VGA_Bus : inout std_logic_vector(32 downto 0);
 
     -- VGA interface
     clk_50Mhz:     in std_logic;
@@ -157,6 +159,8 @@ architecture behave of HQVGA is
   signal  wb_ack_o:    std_logic;                      -- Wishbone acknowledge out signal
   signal  wb_inta_o:   std_logic;
   
+  signal vga_hsync_r:   std_logic;
+  signal vga_vsync_r:   std_logic;
   signal vga_r:		  std_logic_vector(2 downto 0);
   signal vga_g:		  std_logic_vector(2 downto 0);
   signal vga_b:		  std_logic_vector(1 downto 0);
@@ -178,6 +182,15 @@ begin
 --    vga_r:      out std_logic_vector(2 downto 0);
 --    vga_g:      out std_logic_vector(2 downto 0);
 --    vga_b:      out std_logic_vector(1 downto 0)
+
+	vga_hsync <= vga_hsync_r;
+	vga_vsync <= vga_vsync_r;
+
+	VGA_Wing_Bus(30) <= vga_hsync_r;
+	VGA_Wing_Bus(31) <= vga_vsync_r;
+	VGA_Wing_Bus(2 downto 0) <= vga_r;
+	VGA_Wing_Bus(12 downto 10) <= vga_g;
+	VGA_Wing_Bus(21 downto 20) <= vga_b;
 
   vga_r2 <= vga_r(2);
   vga_r1 <= vga_r(1);
@@ -292,14 +305,14 @@ begin
   begin
     if rising_edge(clk_50Mhz) then
       if vgarst='1' then
-        vga_hsync<=h_polarity;
+        vga_hsync_r<=h_polarity;
       else
         h_sync_tick <= '0';
         if hcount_q = (VGA_H_DISPLAY + VGA_H_BACKPORCH) then
           h_sync_tick <= '1';
-          vga_hsync <= not h_polarity;
+          vga_hsync_r <= not h_polarity;
         elsif hcount_q = (VGA_HCOUNT - VGA_H_FRONTPORCH) then
-          vga_hsync <= h_polarity;
+          vga_hsync_r <= h_polarity;
         end if;
       end if;
     end if;
@@ -339,12 +352,12 @@ begin
   begin
     if rising_edge(clk_50Mhz) then
       if vgarst='1' then
-        vga_vsync<=v_polarity;
+        vga_vsync_r<=v_polarity;
       else
         if vcount_q = (VGA_V_DISPLAY + VGA_V_BACKPORCH) then
-          vga_vsync <= not v_polarity;
+          vga_vsync_r <= not v_polarity;
         elsif vcount_q = (VGA_VCOUNT - VGA_V_FRONTPORCH) then
-          vga_vsync <= v_polarity;
+          vga_vsync_r <= v_polarity;
         end if;
       end if;
     end if;

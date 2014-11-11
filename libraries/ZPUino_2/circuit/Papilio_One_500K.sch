@@ -125,7 +125,7 @@
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
         <blockdef name="Wing_GPIO">
-            <timestamp>2013-11-27T0:38:36</timestamp>
+            <timestamp>2014-10-31T16:12:30</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
             <rect width="64" x="160" y="-108" height="24" />
             <line x2="224" y1="-96" y2="-96" x1="160" />

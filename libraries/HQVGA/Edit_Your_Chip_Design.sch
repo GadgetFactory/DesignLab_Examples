@@ -7,18 +7,38 @@
     </attr>
     <netlist>
         <blockdef name="HQVGA">
-            <timestamp>2014-10-1T6:28:8</timestamp>
-            <rect width="160" x="52" y="-64" height="64" />
-            <line x2="52" y1="-48" y2="-48" x1="0" />
-            <line x2="256" y1="-16" y2="-16" x1="212" />
-            <line x2="128" y1="-112" y2="-64" x1="128" />
-            <line x2="144" y1="-112" y2="-64" x1="144" />
+            <timestamp>2014-11-11T23:28:55</timestamp>
+            <rect width="272" x="64" y="-256" height="292" />
+            <line x2="0" y1="-224" y2="-224" x1="64" />
+            <line x2="400" y1="-224" y2="-224" x1="336" />
+            <line x2="400" y1="-208" y2="-208" x1="336" />
+            <line x2="400" y1="-176" y2="-176" x1="336" />
+            <line x2="400" y1="-160" y2="-160" x1="336" />
+            <line x2="400" y1="-144" y2="-144" x1="336" />
+            <line x2="400" y1="-112" y2="-112" x1="336" />
+            <line x2="400" y1="-96" y2="-96" x1="336" />
+            <line x2="400" y1="-80" y2="-80" x1="336" />
+            <line x2="400" y1="-48" y2="-48" x1="336" />
+            <line x2="400" y1="-32" y2="-32" x1="336" />
+            <line x2="192" y1="-304" y2="-256" x1="192" />
+            <line x2="208" y1="-304" y2="-256" x1="208" />
+            <line x2="400" y1="16" y2="16" x1="336" />
         </blockdef>
         <block symbolname="HQVGA" name="XLXI_48">
-            <blockpin name="buttons(3:0)" />
-            <blockpin name="leds(3:0)" />
-            <blockpin name="wishbone_in(61:0)" />
-            <blockpin name="wishbone_out(33:0)" />
+            <blockpin name="clk_50Mhz" />
+            <blockpin name="vga_hsync" />
+            <blockpin name="vga_vsync" />
+            <blockpin name="vga_r2" />
+            <blockpin name="vga_r1" />
+            <blockpin name="vga_r0" />
+            <blockpin name="vga_g2" />
+            <blockpin name="vga_g1" />
+            <blockpin name="vga_g0" />
+            <blockpin name="vga_b1" />
+            <blockpin name="vga_b0" />
+            <blockpin name="wishbone_in(100:0)" />
+            <blockpin name="wishbone_out(100:0)" />
+            <blockpin name="VGA_Bus(32:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="1760" height="1360">

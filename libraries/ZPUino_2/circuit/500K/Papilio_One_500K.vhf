@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_One_500K.vhf
--- /___/   /\     Timestamp : 10/29/2014 22:37:36
+-- /___/   /\     Timestamp : 11/10/2014 18:06:38
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -115,25 +115,25 @@ architecture BEHAVIORAL of Papilio_One_500K is
    signal XLXI_47_Flex_Pin_out_3_openSignal         : std_logic;
    signal XLXI_47_Flex_Pin_out_4_openSignal         : std_logic;
    signal XLXI_47_Flex_Pin_out_5_openSignal         : std_logic;
-   signal XLXI_48_wishbone_slot_video_in_openSignal : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_video_in_openSignal : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_5_out_openSignal    : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_5_out_openSignal    : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_6_out_openSignal    : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_6_out_openSignal    : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_8_out_openSignal    : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_8_out_openSignal    : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_9_out_openSignal    : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_9_out_openSignal    : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_10_out_openSignal   : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_10_out_openSignal   : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_11_out_openSignal   : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_11_out_openSignal   : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_12_out_openSignal   : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_12_out_openSignal   : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_13_out_openSignal   : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_13_out_openSignal   : std_logic_vector (100 
          downto 0);
-   signal XLXI_48_wishbone_slot_14_out_openSignal   : std_logic_vector (100 
+   signal XLXI_50_wishbone_slot_14_out_openSignal   : std_logic_vector (100 
          downto 0);
    component Wing_GPIO
       port ( wt_miso : inout std_logic_vector (7 downto 0); 
@@ -217,7 +217,12 @@ architecture BEHAVIORAL of Papilio_One_500K is
              Flex_Pin_in_5    : out   std_logic);
    end component;
    
-   component ZPUino_Papilio_One_V2
+   component VCC
+      port ( P : out   std_logic);
+   end component;
+   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
+   
+   component ZPUino_Papilio_One_500K_V2
       port ( clk_96Mhz               : out   std_logic; 
              clk_1Mhz                : out   std_logic; 
              clk_osc_32Mhz           : out   std_logic; 
@@ -248,11 +253,6 @@ architecture BEHAVIORAL of Papilio_One_500K is
              wishbone_slot_video_out : out   std_logic_vector (100 downto 0); 
              vgaclkout               : out   std_logic);
    end component;
-   
-   component VCC
-      port ( P : out   std_logic);
-   end component;
-   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
    
 begin
    XLXI_22 : Wing_GPIO
@@ -355,29 +355,32 @@ begin
                 WING_CL6=>WING_CL6,
                 WING_CL7=>WING_CL7);
    
-   XLXI_48 : ZPUino_Papilio_One_V2
+   XLXI_49 : VCC
+      port map (P=>XLXN_410);
+   
+   XLXI_50 : ZPUino_Papilio_One_500K_V2
       port map (ext_pins_in(100 downto 0)=>ext_pins_in(100 downto 0),
                 gpio_bus_in(200 downto 0)=>XLXN_409(200 downto 0),
                 wishbone_slot_video_in(100 downto 
-            0)=>XLXI_48_wishbone_slot_video_in_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_video_in_openSignal(100 downto 0),
                 wishbone_slot_5_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_5_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_5_out_openSignal(100 downto 0),
                 wishbone_slot_6_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_6_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_6_out_openSignal(100 downto 0),
                 wishbone_slot_8_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_8_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_8_out_openSignal(100 downto 0),
                 wishbone_slot_9_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_9_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_9_out_openSignal(100 downto 0),
                 wishbone_slot_10_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_10_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_10_out_openSignal(100 downto 0),
                 wishbone_slot_11_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_11_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_11_out_openSignal(100 downto 0),
                 wishbone_slot_12_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_12_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_12_out_openSignal(100 downto 0),
                 wishbone_slot_13_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_13_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_13_out_openSignal(100 downto 0),
                 wishbone_slot_14_out(100 downto 
-            0)=>XLXI_48_wishbone_slot_14_out_openSignal(100 downto 0),
+            0)=>XLXI_50_wishbone_slot_14_out_openSignal(100 downto 0),
                 clk_osc_32Mhz=>open,
                 clk_1Mhz=>open,
                 clk_96Mhz=>open,
@@ -395,9 +398,6 @@ begin
                 wishbone_slot_13_in=>open,
                 wishbone_slot_14_in=>open,
                 ext_pins_inout(100 downto 0)=>ext_pins_inout(100 downto 0));
-   
-   XLXI_49 : VCC
-      port map (P=>XLXN_410);
    
 end BEHAVIORAL;
 
