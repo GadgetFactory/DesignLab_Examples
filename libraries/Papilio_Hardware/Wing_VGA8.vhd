@@ -39,7 +39,8 @@ entity Wing_VGA8 is
 			 vga_green0 : in std_logic;
 			 vga_blue1 : in std_logic;
 			 vga_blue0 : in std_logic;
-			 wt_miso: inout std_logic_vector(7 downto 0); 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);
+			 wt_miso: out std_logic_vector(7 downto 0); 
 			 wt_mosi: inout std_logic_vector(7 downto 0)			 
 			 );	
 end Wing_VGA8;
@@ -47,14 +48,26 @@ end Wing_VGA8;
 architecture Behavioral of Wing_VGA8 is
 
 begin
-wt_miso(0) <= vga_vsync;
-wt_miso(1) <= vga_hsync;
-wt_miso(2) <= vga_blue0;
-wt_miso(3) <= vga_blue1;
-wt_miso(4) <= vga_green1;
-wt_miso(5) <= vga_red1;
-wt_miso(6) <= vga_green0;
-wt_miso(7) <= vga_red0;
+
+
+wt_miso(0) <= vga_vsync OR VGA_Bus(31);
+wt_miso(1) <= vga_hsync OR VGA_Bus(30);
+wt_miso(2) <= vga_blue0 OR VGA_Bus(28);
+wt_miso(3) <= vga_blue1 OR VGA_Bus(29);
+wt_miso(4) <= vga_green1 OR VGA_Bus(19);
+wt_miso(5) <= vga_red1 OR VGA_Bus(9);
+wt_miso(6) <= vga_green0 OR VGA_Bus(18);
+wt_miso(7) <= vga_red0 OR VGA_Bus(8);
+
+--Always connect the highest bits of VGA for best results
+--wt_miso(0) <= VGA_Bus(31);	--vsync
+--wt_miso(1) <= VGA_Bus(30); --hsync
+--wt_miso(2) <= VGA_Bus(28);	--b0
+--wt_miso(3) <= VGA_Bus(29);	--b1
+--wt_miso(4) <= VGA_Bus(19);	--g1
+--wt_miso(5) <= VGA_Bus(9);	--r1
+--wt_miso(6) <= VGA_Bus(18);	--g0
+--wt_miso(7) <= VGA_Bus(8);	--r0
 
 end Behavioral;
 

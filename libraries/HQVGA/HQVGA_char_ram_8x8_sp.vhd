@@ -45,8 +45,8 @@ use board.zpuinopkg.all;
 
 entity HQVGA_char_ram_8x8_sp is
   port (
-	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0)
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0)
   );
 end entity HQVGA_char_ram_8x8_sp;
 

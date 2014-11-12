@@ -186,11 +186,16 @@ begin
 	vga_hsync <= vga_hsync_r;
 	vga_vsync <= vga_vsync_r;
 
-	VGA_Wing_Bus(30) <= vga_hsync_r;
-	VGA_Wing_Bus(31) <= vga_vsync_r;
-	VGA_Wing_Bus(2 downto 0) <= vga_r;
-	VGA_Wing_Bus(12 downto 10) <= vga_g;
-	VGA_Wing_Bus(21 downto 20) <= vga_b;
+	--Always connect the highest bits of VGA for best results
+--	VGA_Bus(9 downto 7) <= vga_r; 
+	VGA_Bus(9) <= vga_r(2); 
+	VGA_Bus(8) <= vga_r(1); 
+	VGA_Bus(7) <= vga_r(0); 
+	
+	VGA_Bus(19 downto 17) <= vga_g;
+	VGA_Bus(29 downto 28) <= vga_b;
+	VGA_Bus(30) <= vga_hsync_r;
+	VGA_Bus(31) <= vga_vsync_r;	
 
   vga_r2 <= vga_r(2);
   vga_r1 <= vga_r(1);

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="HQVGA_char_ram_8x8_sp">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2013-12-20T4:18:30</timestamp>
-    <pin polarity="Input" x="96" y="-112" name="wishbone_in(61:0)" />
-    <pin polarity="Output" x="112" y="-112" name="wishbone_out(33:0)" />
+    <timestamp>2014-11-12T0:5:41</timestamp>
+    <pin polarity="Input" x="96" y="-112" name="wishbone_in(100:0)" />
+    <pin polarity="Output" x="112" y="-112" name="wishbone_out(100:0)" />
     <graph>
         <line x2="96" y1="-112" y2="-64" x1="96" />
         <line x2="112" y1="-112" y2="-64" x1="112" />
