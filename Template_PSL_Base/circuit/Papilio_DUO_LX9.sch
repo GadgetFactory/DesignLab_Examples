@@ -177,7 +177,7 @@
         <port polarity="Output" name="ARD_RESET" />
         <port polarity="Input" name="DUO_SW1" />
         <blockdef name="Wing_GPIO">
-            <timestamp>2013-11-27T0:38:36</timestamp>
+            <timestamp>2014-10-31T16:12:30</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
             <rect width="64" x="160" y="-108" height="24" />
             <line x2="224" y1="-96" y2="-96" x1="160" />
@@ -185,7 +185,7 @@
             <line x2="224" y1="-32" y2="-32" x1="160" />
         </blockdef>
         <blockdef name="Wishbone_Empty_Slot">
-            <timestamp>2013-11-27T1:19:15</timestamp>
+            <timestamp>2014-10-28T2:29:42</timestamp>
             <rect width="140" x="0" y="-32" height="32" />
             <line x2="64" y1="-64" y2="-32" x1="64" />
             <line x2="80" y1="-64" y2="-32" x1="80" />
@@ -245,7 +245,7 @@
             <line x2="0" y1="-400" y2="-400" x1="64" />
         </blockdef>
         <blockdef name="Papilio_DUO_Wing_Pinout">
-            <timestamp>2014-8-28T20:58:4</timestamp>
+            <timestamp>2014-10-31T16:13:27</timestamp>
             <rect width="148" x="284" y="-2140" height="276" />
             <rect width="148" x="284" y="-1568" height="280" />
             <rect width="148" x="284" y="-1852" height="272" />
@@ -356,40 +356,40 @@
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_37">
-            <blockpin signalname="XLXN_430(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_431(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_430(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_431(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_36">
-            <blockpin signalname="XLXN_432(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_433(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_432(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_433(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_35">
-            <blockpin signalname="XLXN_434(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_435(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_434(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_435(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_34">
-            <blockpin signalname="XLXN_436(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_437(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_436(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_437(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_33">
-            <blockpin signalname="XLXN_438(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_439(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_438(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_439(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_32">
-            <blockpin signalname="XLXN_440(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_441(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_440(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_441(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_31">
-            <blockpin signalname="XLXN_442(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_443(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_442(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_443(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_30">
-            <blockpin signalname="XLXN_444(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_445(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_444(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_445(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_29">
-            <blockpin signalname="XLXN_446(61:0)" name="wishbone_in(61:0)" />
-            <blockpin signalname="XLXN_447(33:0)" name="wishbone_out(33:0)" />
+            <blockpin signalname="XLXN_446(61:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_447(33:0)" name="wishbone_out(100:0)" />
         </block>
         <block symbolname="Wing_GPIO" name="XLXI_27">
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
@@ -416,8 +416,8 @@
             <blockpin signalname="XLXN_326(7:0)" name="wt_mosi(7:0)" />
         </block>
         <block symbolname="ZPUino_Papilio_DUO_V1" name="XLXI_39">
-            <blockpin signalname="XLXN_408(165:0)" name="gpio_bus_out(165:0)" />
-            <blockpin signalname="XLXN_409(109:0)" name="gpio_bus_in(109:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin signalname="SPI_CS" name="SPI_CS" />
             <blockpin signalname="TXD" name="TXD" />
             <blockpin signalname="SPI_MOSI" name="SPI_MOSI" />
@@ -432,26 +432,26 @@
             <blockpin signalname="CLK" name="CLK" />
             <blockpin signalname="SPI_MISO" name="SPI_MISO" />
             <blockpin signalname="RXD" name="RXD" />
-            <blockpin signalname="XLXN_447(33:0)" name="wishbone_slot_5_out(33:0)" />
-            <blockpin signalname="XLXN_446(61:0)" name="wishbone_slot_5_in(61:0)" />
-            <blockpin signalname="XLXN_444(61:0)" name="wishbone_slot_6_in(61:0)" />
-            <blockpin signalname="XLXN_445(33:0)" name="wishbone_slot_6_out(33:0)" />
-            <blockpin signalname="XLXN_442(61:0)" name="wishbone_slot_8_in(61:0)" />
-            <blockpin signalname="XLXN_443(33:0)" name="wishbone_slot_8_out(33:0)" />
-            <blockpin signalname="XLXN_440(61:0)" name="wishbone_slot_9_in(61:0)" />
-            <blockpin signalname="XLXN_441(33:0)" name="wishbone_slot_9_out(33:0)" />
-            <blockpin signalname="XLXN_438(61:0)" name="wishbone_slot_10_in(61:0)" />
-            <blockpin signalname="XLXN_439(33:0)" name="wishbone_slot_10_out(33:0)" />
-            <blockpin signalname="XLXN_436(61:0)" name="wishbone_slot_11_in(61:0)" />
-            <blockpin signalname="XLXN_437(33:0)" name="wishbone_slot_11_out(33:0)" />
-            <blockpin signalname="XLXN_434(61:0)" name="wishbone_slot_12_in(61:0)" />
-            <blockpin signalname="XLXN_435(33:0)" name="wishbone_slot_12_out(33:0)" />
-            <blockpin signalname="XLXN_432(61:0)" name="wishbone_slot_13_in(61:0)" />
-            <blockpin signalname="XLXN_433(33:0)" name="wishbone_slot_13_out(33:0)" />
-            <blockpin signalname="XLXN_430(61:0)" name="wishbone_slot_14_in(61:0)" />
-            <blockpin signalname="XLXN_431(33:0)" name="wishbone_slot_14_out(33:0)" />
-            <blockpin name="wishbone_slot_video_in(63:0)" />
-            <blockpin name="wishbone_slot_video_out(33:0)" />
+            <blockpin name="wishbone_slot_5_out(100:0)" />
+            <blockpin name="wishbone_slot_5_in(100:0)" />
+            <blockpin name="wishbone_slot_6_in(100:0)" />
+            <blockpin name="wishbone_slot_6_out(100:0)" />
+            <blockpin name="wishbone_slot_8_in(100:0)" />
+            <blockpin name="wishbone_slot_8_out(100:0)" />
+            <blockpin name="wishbone_slot_9_in(100:0)" />
+            <blockpin name="wishbone_slot_9_out(100:0)" />
+            <blockpin name="wishbone_slot_10_in(100:0)" />
+            <blockpin name="wishbone_slot_10_out(100:0)" />
+            <blockpin name="wishbone_slot_11_in(100:0)" />
+            <blockpin name="wishbone_slot_11_out(100:0)" />
+            <blockpin name="wishbone_slot_12_in(100:0)" />
+            <blockpin name="wishbone_slot_12_out(100:0)" />
+            <blockpin name="wishbone_slot_13_in(100:0)" />
+            <blockpin name="wishbone_slot_13_out(100:0)" />
+            <blockpin name="wishbone_slot_14_in(100:0)" />
+            <blockpin name="wishbone_slot_14_out(100:0)" />
+            <blockpin name="wishbone_slot_video_in(100:0)" />
+            <blockpin name="wishbone_slot_video_out(100:0)" />
             <blockpin name="vgaclkout" />
             <blockpin signalname="sram_addr(18:0)" name="sram_addr(18:0)" />
         </block>

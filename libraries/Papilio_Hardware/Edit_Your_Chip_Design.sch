@@ -240,8 +240,8 @@
             <line x2="224" y1="-32" y2="-32" x1="160" />
         </blockdef>
         <blockdef name="Wing_VGA8">
-            <timestamp>2014-10-31T16:12:50</timestamp>
-            <rect width="288" x="48" y="-224" height="224" />
+            <timestamp>2014-11-11T23:39:25</timestamp>
+            <rect width="288" x="48" y="-224" height="260" />
             <line x2="-16" y1="-208" y2="-208" x1="48" />
             <line x2="-16" y1="-192" y2="-192" x1="48" />
             <line x2="-16" y1="-144" y2="-144" x1="48" />
@@ -254,6 +254,7 @@
             <line x2="400" y1="-80" y2="-80" x1="336" />
             <line x2="-16" y1="-32" y2="-32" x1="48" />
             <line x2="-16" y1="-16" y2="-16" x1="48" />
+            <line x2="-16" y1="16" y2="16" x1="48" />
         </blockdef>
         <blockdef name="Papilio_Default_Pinout">
             <timestamp>2014-10-31T16:18:48</timestamp>
@@ -679,6 +680,7 @@
             <blockpin name="wt_mosi(7:0)" />
             <blockpin name="vga_blue1" />
             <blockpin name="vga_blue0" />
+            <blockpin name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="Papilio_Default_Pinout" name="XLXI_57">
             <blockpin name="gpio_bus_out(147:0)" />

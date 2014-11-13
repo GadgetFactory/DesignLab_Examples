@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Papilio_DUO_Wing_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-31T16:13:27</timestamp>
+    <timestamp>2014-11-13T0:35:13</timestamp>
     <pin polarity="BiDirectional" x="496" y="-1824" name="WING_AH0" />
     <pin polarity="BiDirectional" x="496" y="-1792" name="WING_AH1" />
     <pin polarity="BiDirectional" x="496" y="-1760" name="WING_AH2" />
@@ -22,8 +22,8 @@
     <pin polarity="BiDirectional" x="496" y="-1376" name="WING_BL5" />
     <pin polarity="BiDirectional" x="496" y="-1344" name="WING_BL6" />
     <pin polarity="BiDirectional" x="496" y="-1312" name="WING_BL7" />
-    <pin polarity="Input" x="-64" y="-2160" name="gpio_bus_out(165:0)" />
-    <pin polarity="Output" x="-64" y="-2176" name="gpio_bus_in(109:0)" />
+    <pin polarity="Input" x="-64" y="-2160" name="gpio_bus_out(200:0)" />
+    <pin polarity="Output" x="-64" y="-2176" name="gpio_bus_in(200:0)" />
     <pin polarity="BiDirectional" x="-64" y="-1456" name="WingType_miso_BL(7:0)" />
     <pin polarity="BiDirectional" x="-64" y="-1728" name="WingType_miso_AH(7:0)" />
     <pin polarity="BiDirectional" x="-64" y="-1392" name="WingType_mosi_BL(7:0)" />
@@ -118,8 +118,8 @@
         <line x2="496" y1="-1312" y2="-1312" x1="432" />
         <rect width="432" x="0" y="-2200" height="2196" />
         <text style="fontsize:36;fontname:Arial" x="64" y="-2228">Papilio DUO Pinout</text>
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="40" y="-2156" type="pin gpio_bus_out(165:0)" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="232" y="-2180" type="pin gpio_bus_in(109:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="40" y="-2156" type="pin gpio_bus_out(200:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="232" y="-2180" type="pin gpio_bus_in(200:0)" />
         <line x2="0" y1="-2160" y2="-2160" x1="-64" />
         <line x2="0" y1="-2176" y2="-2176" x1="-64" />
         <rect width="64" x="-64" y="-2028" height="24" />

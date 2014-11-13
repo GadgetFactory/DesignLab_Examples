@@ -62,8 +62,8 @@ use zpuino.papilio_pkg.all;
 entity Papilio_DUO_Wing_Pinout is
    port (    
  
-			gpio_bus_in : out std_logic_vector(109 downto 0);
-			gpio_bus_out : in std_logic_vector(165 downto 0);	 			 
+			gpio_bus_in : out std_logic_vector(200 downto 0);
+			gpio_bus_out : in std_logic_vector(200 downto 0);	 			 
 
 			 WingType_miso_AH: inout std_logic_vector(7 downto 0); 
 			 WingType_mosi_AH: inout std_logic_vector(7 downto 0);			 

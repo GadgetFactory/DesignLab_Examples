@@ -1,81 +1,23 @@
 --------------------------------------------------------------------------------
--- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --------------------------------------------------------------------------------
 --   ____  ____ 
 --  /   /\/   / 
 -- /___/  \  /    Vendor: Xilinx 
--- \   \   \/     Version : 14.7
+-- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 10/01/2014 01:26:38
+-- /___/   /\     Timestamp : 11/12/2014 17:53:37
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory/GadgetFactory_Engineering/Papilio-Schematic-Library/examples/Template_Community_Core_Library/Papilio_DUO_LX9.sch
+--Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/ZPUino_2 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/VGA_Wing/circuit/DUO_LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/VGA_Wing/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/VGA_Wing/circuit/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:
 --    This vhdl netlist is translated from an ECS schematic. It can be 
 --    synthesized and simulated, but it should not be modified. 
 --
------ CELL IBUF4_HXILINX_Papilio_DUO_LX9 -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity IBUF4_HXILINX_Papilio_DUO_LX9 is
-  
-port(
-    O0  : out std_logic;
-    O1  : out std_logic;
-    O2  : out std_logic;
-    O3  : out std_logic;
-
-    I0  : in std_logic;
-    I1  : in std_logic;
-    I2  : in std_logic;
-    I3  : in std_logic
-  );
-end IBUF4_HXILINX_Papilio_DUO_LX9;
-
-architecture IBUF4_HXILINX_Papilio_DUO_LX9_V of IBUF4_HXILINX_Papilio_DUO_LX9 is
-begin
-
-  O0 <= I0;
-  O1 <= I1;
-  O2 <= I2;
-  O3 <= I3;
-
-end IBUF4_HXILINX_Papilio_DUO_LX9_V;
------ CELL OBUF4_HXILINX_Papilio_DUO_LX9 -----
-  
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-
-entity OBUF4_HXILINX_Papilio_DUO_LX9 is
-  
-port(
-    O0  : out std_logic;
-    O1  : out std_logic;
-    O2  : out std_logic;
-    O3  : out std_logic;
-
-    I0  : in std_logic;
-    I1  : in std_logic;
-    I2  : in std_logic;
-    I3  : in std_logic
-  );
-end OBUF4_HXILINX_Papilio_DUO_LX9;
-
-architecture OBUF4_HXILINX_Papilio_DUO_LX9_V of OBUF4_HXILINX_Papilio_DUO_LX9 is
-begin
-
-  O0 <= I0;
-  O1 <= I1;
-  O2 <= I2;
-  O3 <= I3;
-
-end OBUF4_HXILINX_Papilio_DUO_LX9_V;
 
 library ieee;
 use ieee.std_logic_1164.ALL;
@@ -85,12 +27,9 @@ use UNISIM.Vcomponents.ALL;
 
 entity Papilio_DUO_LX9 is
    port ( CLK        : in    std_logic; 
+          DUO_SW1    : in    std_logic; 
           RXD        : in    std_logic; 
           SPI_MISO   : in    std_logic; 
-          WING_AL1   : in    std_logic; 
-          WING_AL3   : in    std_logic; 
-          WING_AL5   : in    std_logic; 
-          WING_AL7   : in    std_logic; 
           ARD_RESET  : out   std_logic; 
           SPI_MOSI   : out   std_logic; 
           SPI_SCK    : out   std_logic; 
@@ -99,10 +38,6 @@ entity Papilio_DUO_LX9 is
           sram_oe    : out   std_logic; 
           sram_we    : out   std_logic; 
           TXD        : out   std_logic; 
-          WING_AL0   : out   std_logic; 
-          WING_AL2   : out   std_logic; 
-          WING_AL4   : out   std_logic; 
-          WING_AL6   : out   std_logic; 
           Arduino_8  : inout std_logic; 
           Arduino_9  : inout std_logic; 
           Arduino_10 : inout std_logic; 
@@ -154,22 +89,10 @@ entity Papilio_DUO_LX9 is
 end Papilio_DUO_LX9;
 
 architecture BEHAVIORAL of Papilio_DUO_LX9 is
-   attribute IOSTANDARD : string ;
-   attribute SLEW       : string ;
-   attribute DRIVE      : string ;
    attribute BOX_TYPE   : string ;
-   attribute HU_SET     : string ;
-   signal BUTTONS                                   : std_logic_vector (3 
-         downto 0);
-   signal leds                                      : std_logic_vector (3 
-         downto 0);
    signal XLXN_325                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_326                                  : std_logic_vector (7 
-         downto 0);
-   signal XLXN_327                                  : std_logic_vector (7 
-         downto 0);
-   signal XLXN_328                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_329                                  : std_logic_vector (7 
          downto 0);
@@ -187,66 +110,64 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
          downto 0);
    signal XLXN_336                                  : std_logic_vector (7 
          downto 0);
-   signal XLXN_408                                  : std_logic_vector (165 
+   signal XLXN_408                                  : std_logic_vector (200 
          downto 0);
-   signal XLXN_409                                  : std_logic_vector (109 
-         downto 0);
-   signal XLXN_430                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_431                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_432                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_433                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_434                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_435                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_436                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_437                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_438                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_439                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_440                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_441                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_442                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_443                                  : std_logic_vector (33 
-         downto 0);
-   signal XLXN_444                                  : std_logic_vector (61 
-         downto 0);
-   signal XLXN_445                                  : std_logic_vector (33 
+   signal XLXN_409                                  : std_logic_vector (200 
          downto 0);
    signal XLXN_448                                  : std_logic_vector (7 
          downto 0);
    signal XLXN_449                                  : std_logic_vector (7 
          downto 0);
-   signal XLXN_450                                  : std_logic_vector (61 
+   signal XLXN_457                                  : std_logic_vector (100 
          downto 0);
-   signal XLXN_451                                  : std_logic_vector (33 
+   signal XLXN_458                                  : std_logic_vector (100 
          downto 0);
-   signal XLXN_456                                  : std_logic;
-   signal XLXI_39_wishbone_slot_video_in_openSignal : std_logic_vector (63 
+   signal XLXN_459                                  : std_logic_vector (100 
          downto 0);
+   signal XLXN_460                                  : std_logic_vector (100 
+         downto 0);
+   signal XLXN_461                                  : std_logic_vector (7 
+         downto 0);
+   signal XLXN_462                                  : std_logic_vector (7 
+         downto 0);
+   signal XLXN_463                                  : std_logic_vector (32 
+         downto 0);
+   signal XLXN_464                                  : std_logic;
+   signal XLXN_465                                  : std_logic;
+   signal XLXI_39_gpio_bus_in_openSignal            : std_logic_vector (200 
+         downto 0);
+   signal XLXI_39_wishbone_slot_video_in_openSignal : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_5_out_openSignal    : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_6_out_openSignal    : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_8_out_openSignal    : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_11_out_openSignal   : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_12_out_openSignal   : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_13_out_openSignal   : std_logic_vector (100 
+         downto 0);
+   signal XLXI_39_wishbone_slot_14_out_openSignal   : std_logic_vector (100 
+         downto 0);
+   signal XLXI_53_vga_blue0_openSignal              : std_logic;
+   signal XLXI_53_vga_blue1_openSignal              : std_logic;
+   signal XLXI_53_vga_green0_openSignal             : std_logic;
+   signal XLXI_53_vga_green1_openSignal             : std_logic;
+   signal XLXI_53_vga_hsync_openSignal              : std_logic;
+   signal XLXI_53_vga_red0_openSignal               : std_logic;
+   signal XLXI_53_vga_red1_openSignal               : std_logic;
+   signal XLXI_53_vga_vsync_openSignal              : std_logic;
    component Wing_GPIO
       port ( wt_miso : inout std_logic_vector (7 downto 0); 
              wt_mosi : inout std_logic_vector (7 downto 0));
    end component;
    
-   component Wishbone_Empty_Slot
-      port ( wishbone_in  : in    std_logic_vector (61 downto 0); 
-             wishbone_out : out   std_logic_vector (33 downto 0));
-   end component;
-   
    component ZPUino_Papilio_DUO_V1
-      port ( gpio_bus_out            : out   std_logic_vector (165 downto 0); 
-             gpio_bus_in             : in    std_logic_vector (109 downto 0); 
+      port ( gpio_bus_out            : out   std_logic_vector (200 downto 0); 
+             gpio_bus_in             : in    std_logic_vector (200 downto 0); 
              SPI_CS                  : inout std_logic; 
              TXD                     : out   std_logic; 
              SPI_MOSI                : out   std_logic; 
@@ -261,26 +182,26 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              CLK                     : in    std_logic; 
              SPI_MISO                : in    std_logic; 
              RXD                     : in    std_logic; 
-             wishbone_slot_5_out     : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_5_in      : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_6_in      : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_6_out     : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_8_in      : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_8_out     : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_9_in      : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_9_out     : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_10_in     : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_10_out    : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_11_in     : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_11_out    : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_12_in     : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_12_out    : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_13_in     : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_13_out    : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_14_in     : out   std_logic_vector (61 downto 0); 
-             wishbone_slot_14_out    : in    std_logic_vector (33 downto 0); 
-             wishbone_slot_video_in  : in    std_logic_vector (63 downto 0); 
-             wishbone_slot_video_out : out   std_logic_vector (33 downto 0); 
+             wishbone_slot_5_out     : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_5_in      : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_6_in      : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_6_out     : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_8_in      : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_8_out     : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_9_in      : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_9_out     : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_10_in     : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_10_out    : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_11_in     : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_11_out    : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_12_in     : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_12_out    : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_13_in     : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_13_out    : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_14_in     : out   std_logic_vector (100 downto 0); 
+             wishbone_slot_14_out    : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_video_in  : in    std_logic_vector (100 downto 0); 
+             wishbone_slot_video_out : out   std_logic_vector (100 downto 0); 
              vgaclkout               : out   std_logic; 
              sram_addr               : out   std_logic_vector (18 downto 0));
    end component;
@@ -306,8 +227,8 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              WING_BL5         : inout std_logic; 
              WING_BL6         : inout std_logic; 
              WING_BL7         : inout std_logic; 
-             gpio_bus_out     : in    std_logic_vector (165 downto 0); 
-             gpio_bus_in      : out   std_logic_vector (109 downto 0); 
+             gpio_bus_out     : in    std_logic_vector (200 downto 0); 
+             gpio_bus_in      : out   std_logic_vector (200 downto 0); 
              WingType_miso_BL : inout std_logic_vector (7 downto 0); 
              WingType_miso_AH : inout std_logic_vector (7 downto 0); 
              WingType_mosi_BL : inout std_logic_vector (7 downto 0); 
@@ -358,59 +279,57 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
              WING_AL6         : inout std_logic);
    end component;
    
-   component OBUF
+   component INV
       port ( I : in    std_logic; 
              O : out   std_logic);
    end component;
-   attribute IOSTANDARD of OBUF : component is "DEFAULT";
-   attribute SLEW of OBUF : component is "SLOW";
-   attribute DRIVE of OBUF : component is "12";
-   attribute BOX_TYPE of OBUF : component is "BLACK_BOX";
+   attribute BOX_TYPE of INV : component is "BLACK_BOX";
    
-   component PULLDOWN
-      port ( O : out   std_logic);
-   end component;
-   attribute BOX_TYPE of PULLDOWN : component is "BLACK_BOX";
-   
-   component Wishbone_Symbol_Example
-      port ( buttons      : in    std_logic_vector (3 downto 0); 
-             leds         : out   std_logic_vector (3 downto 0); 
-             wishbone_in  : in    std_logic_vector (61 downto 0); 
-             wishbone_out : out   std_logic_vector (33 downto 0));
-   end component;
-   
-   component OBUF4_HXILINX_Papilio_DUO_LX9
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
+   component HQVGA
+      port ( clk_50Mhz    : in    std_logic; 
+             vga_hsync    : out   std_logic; 
+             vga_vsync    : out   std_logic; 
+             vga_r2       : out   std_logic; 
+             vga_r1       : out   std_logic; 
+             vga_r0       : out   std_logic; 
+             vga_g2       : out   std_logic; 
+             vga_g1       : out   std_logic; 
+             vga_g0       : out   std_logic; 
+             vga_b1       : out   std_logic; 
+             vga_b0       : out   std_logic; 
+             wishbone_in  : in    std_logic_vector (100 downto 0); 
+             wishbone_out : out   std_logic_vector (100 downto 0); 
+             VGA_Bus      : inout std_logic_vector (32 downto 0));
    end component;
    
-   component IBUF4_HXILINX_Papilio_DUO_LX9
-      port ( I0 : in    std_logic; 
-             I1 : in    std_logic; 
-             I2 : in    std_logic; 
-             I3 : in    std_logic; 
-             O0 : out   std_logic; 
-             O1 : out   std_logic; 
-             O2 : out   std_logic; 
-             O3 : out   std_logic);
+   component HQVGA_char_ram_8x8_sp
+      port ( wishbone_in  : in    std_logic_vector (100 downto 0); 
+             wishbone_out : out   std_logic_vector (100 downto 0));
    end component;
    
-   attribute HU_SET of XLXI_49 : label is "XLXI_49_0";
-   attribute HU_SET of XLXI_50 : label is "XLXI_50_1";
+   component Wing_VGA8
+      port ( vga_hsync  : in    std_logic; 
+             vga_vsync  : in    std_logic; 
+             vga_red1   : in    std_logic; 
+             vga_red0   : in    std_logic; 
+             vga_green1 : in    std_logic; 
+             vga_green0 : in    std_logic; 
+             wt_miso    : inout std_logic_vector (7 downto 0); 
+             wt_mosi    : inout std_logic_vector (7 downto 0); 
+             vga_blue1  : in    std_logic; 
+             vga_blue0  : in    std_logic; 
+             VGA_Bus    : inout std_logic_vector (32 downto 0));
+   end component;
+   
+   component clk_32to50_dcm
+      port ( CLK_IN1  : in    std_logic; 
+             CLK_OUT1 : out   std_logic);
+   end component;
+   
 begin
    XLXI_22 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_325(7 downto 0),
                 wt_mosi(7 downto 0)=>XLXN_326(7 downto 0));
-   
-   XLXI_23 : Wing_GPIO
-      port map (wt_miso(7 downto 0)=>XLXN_327(7 downto 0),
-                wt_mosi(7 downto 0)=>XLXN_328(7 downto 0));
    
    XLXI_24 : Wing_GPIO
       port map (wt_miso(7 downto 0)=>XLXN_329(7 downto 0),
@@ -428,58 +347,34 @@ begin
       port map (wt_miso(7 downto 0)=>XLXN_335(7 downto 0),
                 wt_mosi(7 downto 0)=>XLXN_336(7 downto 0));
    
-   XLXI_30 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_444(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_445(33 downto 0));
-   
-   XLXI_31 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_442(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_443(33 downto 0));
-   
-   XLXI_32 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_440(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_441(33 downto 0));
-   
-   XLXI_33 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_438(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_439(33 downto 0));
-   
-   XLXI_34 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_436(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_437(33 downto 0));
-   
-   XLXI_35 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_434(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_435(33 downto 0));
-   
-   XLXI_36 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_432(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_433(33 downto 0));
-   
-   XLXI_37 : Wishbone_Empty_Slot
-      port map (wishbone_in(61 downto 0)=>XLXN_430(61 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_431(33 downto 0));
-   
    XLXI_39 : ZPUino_Papilio_DUO_V1
       port map (CLK=>CLK,
-                gpio_bus_in(109 downto 0)=>XLXN_409(109 downto 0),
+                gpio_bus_in(200 downto 0)=>XLXI_39_gpio_bus_in_openSignal(200 
+            downto 0),
                 RXD=>RXD,
                 SPI_MISO=>SPI_MISO,
-                wishbone_slot_video_in(63 downto 
-            0)=>XLXI_39_wishbone_slot_video_in_openSignal(63 downto 0),
-                wishbone_slot_5_out(33 downto 0)=>XLXN_451(33 downto 0),
-                wishbone_slot_6_out(33 downto 0)=>XLXN_445(33 downto 0),
-                wishbone_slot_8_out(33 downto 0)=>XLXN_443(33 downto 0),
-                wishbone_slot_9_out(33 downto 0)=>XLXN_441(33 downto 0),
-                wishbone_slot_10_out(33 downto 0)=>XLXN_439(33 downto 0),
-                wishbone_slot_11_out(33 downto 0)=>XLXN_437(33 downto 0),
-                wishbone_slot_12_out(33 downto 0)=>XLXN_435(33 downto 0),
-                wishbone_slot_13_out(33 downto 0)=>XLXN_433(33 downto 0),
-                wishbone_slot_14_out(33 downto 0)=>XLXN_431(33 downto 0),
-                clk_osc_32Mhz=>open,
+                wishbone_slot_video_in(100 downto 
+            0)=>XLXI_39_wishbone_slot_video_in_openSignal(100 downto 0),
+                wishbone_slot_5_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_5_out_openSignal(100 downto 0),
+                wishbone_slot_6_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_6_out_openSignal(100 downto 0),
+                wishbone_slot_8_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_8_out_openSignal(100 downto 0),
+                wishbone_slot_9_out(100 downto 0)=>XLXN_458(100 downto 0),
+                wishbone_slot_10_out(100 downto 0)=>XLXN_460(100 downto 0),
+                wishbone_slot_11_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_11_out_openSignal(100 downto 0),
+                wishbone_slot_12_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_12_out_openSignal(100 downto 0),
+                wishbone_slot_13_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_13_out_openSignal(100 downto 0),
+                wishbone_slot_14_out(100 downto 
+            0)=>XLXI_39_wishbone_slot_14_out_openSignal(100 downto 0),
+                clk_osc_32Mhz=>XLXN_465,
                 clk_1Mhz=>open,
                 clk_96Mhz=>open,
-                gpio_bus_out(165 downto 0)=>XLXN_408(165 downto 0),
+                gpio_bus_out=>open,
                 SPI_MOSI=>SPI_MOSI,
                 SPI_SCK=>SPI_SCK,
                 sram_addr(18 downto 0)=>sram_addr(18 downto 0),
@@ -489,15 +384,15 @@ begin
                 TXD=>TXD,
                 vgaclkout=>open,
                 wishbone_slot_video_out=>open,
-                wishbone_slot_5_in(61 downto 0)=>XLXN_450(61 downto 0),
-                wishbone_slot_6_in(61 downto 0)=>XLXN_444(61 downto 0),
-                wishbone_slot_8_in(61 downto 0)=>XLXN_442(61 downto 0),
-                wishbone_slot_9_in(61 downto 0)=>XLXN_440(61 downto 0),
-                wishbone_slot_10_in(61 downto 0)=>XLXN_438(61 downto 0),
-                wishbone_slot_11_in(61 downto 0)=>XLXN_436(61 downto 0),
-                wishbone_slot_12_in(61 downto 0)=>XLXN_434(61 downto 0),
-                wishbone_slot_13_in(61 downto 0)=>XLXN_432(61 downto 0),
-                wishbone_slot_14_in(61 downto 0)=>XLXN_430(61 downto 0),
+                wishbone_slot_5_in=>open,
+                wishbone_slot_6_in=>open,
+                wishbone_slot_8_in=>open,
+                wishbone_slot_9_in(100 downto 0)=>XLXN_457(100 downto 0),
+                wishbone_slot_10_in(100 downto 0)=>XLXN_459(100 downto 0),
+                wishbone_slot_11_in=>open,
+                wishbone_slot_12_in=>open,
+                wishbone_slot_13_in=>open,
+                wishbone_slot_14_in=>open,
                 SPI_CS=>SPI_CS,
                 sram_data(7 downto 0)=>sram_data(7 downto 0));
    
@@ -506,19 +401,19 @@ begin
                 wt_mosi(7 downto 0)=>XLXN_449(7 downto 0));
    
    XLXI_44 : Papilio_DUO_Wing_Pinout
-      port map (gpio_bus_out(165 downto 0)=>XLXN_408(165 downto 0),
-                gpio_bus_in(109 downto 0)=>XLXN_409(109 downto 0),
+      port map (gpio_bus_out(200 downto 0)=>XLXN_408(200 downto 0),
+                gpio_bus_in(200 downto 0)=>XLXN_409(200 downto 0),
                 WingType_miso_AH(7 downto 0)=>XLXN_333(7 downto 0),
                 WingType_miso_AL(7 downto 0)=>XLXN_335(7 downto 0),
                 WingType_miso_BL(7 downto 0)=>XLXN_331(7 downto 0),
-                WingType_miso_CH(7 downto 0)=>XLXN_327(7 downto 0),
+                WingType_miso_CH(7 downto 0)=>XLXN_461(7 downto 0),
                 WingType_miso_CL(7 downto 0)=>XLXN_329(7 downto 0),
                 WingType_miso_DH(7 downto 0)=>XLXN_448(7 downto 0),
                 WingType_miso_DL(7 downto 0)=>XLXN_325(7 downto 0),
                 WingType_mosi_AH(7 downto 0)=>XLXN_334(7 downto 0),
                 WingType_mosi_AL(7 downto 0)=>XLXN_336(7 downto 0),
                 WingType_mosi_BL(7 downto 0)=>XLXN_332(7 downto 0),
-                WingType_mosi_CH(7 downto 0)=>XLXN_328(7 downto 0),
+                WingType_mosi_CH(7 downto 0)=>XLXN_462(7 downto 0),
                 WingType_mosi_CL(7 downto 0)=>XLXN_330(7 downto 0),
                 WingType_mosi_DH(7 downto 0)=>XLXN_449(7 downto 0),
                 WingType_mosi_DL(7 downto 0)=>XLXN_326(7 downto 0),
@@ -577,38 +472,46 @@ begin
                 WING_DL6=>Arduino_41,
                 WING_DL7=>Arduino_39);
    
-   XLXI_45 : OBUF
-      port map (I=>XLXN_456,
+   XLXI_48 : INV
+      port map (I=>DUO_SW1,
                 O=>ARD_RESET);
    
-   XLXI_47 : PULLDOWN
-      port map (O=>XLXN_456);
+   XLXI_51 : HQVGA
+      port map (clk_50Mhz=>XLXN_464,
+                wishbone_in(100 downto 0)=>XLXN_457(100 downto 0),
+                vga_b0=>open,
+                vga_b1=>open,
+                vga_g0=>open,
+                vga_g1=>open,
+                vga_g2=>open,
+                vga_hsync=>open,
+                vga_r0=>open,
+                vga_r1=>open,
+                vga_r2=>open,
+                vga_vsync=>open,
+                wishbone_out(100 downto 0)=>XLXN_458(100 downto 0),
+                VGA_Bus(32 downto 0)=>XLXN_463(32 downto 0));
    
-   XLXI_48 : Wishbone_Symbol_Example
-      port map (buttons(3 downto 0)=>BUTTONS(3 downto 0),
-                wishbone_in(61 downto 0)=>XLXN_450(61 downto 0),
-                leds(3 downto 0)=>leds(3 downto 0),
-                wishbone_out(33 downto 0)=>XLXN_451(33 downto 0));
+   XLXI_52 : HQVGA_char_ram_8x8_sp
+      port map (wishbone_in(100 downto 0)=>XLXN_459(100 downto 0),
+                wishbone_out(100 downto 0)=>XLXN_460(100 downto 0));
    
-   XLXI_49 : OBUF4_HXILINX_Papilio_DUO_LX9
-      port map (I0=>leds(0),
-                I1=>leds(1),
-                I2=>leds(2),
-                I3=>leds(3),
-                O0=>WING_AL0,
-                O1=>WING_AL2,
-                O2=>WING_AL4,
-                O3=>WING_AL6);
+   XLXI_53 : Wing_VGA8
+      port map (vga_blue0=>XLXI_53_vga_blue0_openSignal,
+                vga_blue1=>XLXI_53_vga_blue1_openSignal,
+                vga_green0=>XLXI_53_vga_green0_openSignal,
+                vga_green1=>XLXI_53_vga_green1_openSignal,
+                vga_hsync=>XLXI_53_vga_hsync_openSignal,
+                vga_red0=>XLXI_53_vga_red0_openSignal,
+                vga_red1=>XLXI_53_vga_red1_openSignal,
+                vga_vsync=>XLXI_53_vga_vsync_openSignal,
+                VGA_Bus(32 downto 0)=>XLXN_463(32 downto 0),
+                wt_miso(7 downto 0)=>XLXN_461(7 downto 0),
+                wt_mosi(7 downto 0)=>XLXN_462(7 downto 0));
    
-   XLXI_50 : IBUF4_HXILINX_Papilio_DUO_LX9
-      port map (I0=>WING_AL1,
-                I1=>WING_AL3,
-                I2=>WING_AL5,
-                I3=>WING_AL7,
-                O0=>BUTTONS(0),
-                O1=>BUTTONS(1),
-                O2=>BUTTONS(2),
-                O3=>BUTTONS(3));
+   XLXI_54 : clk_32to50_dcm
+      port map (CLK_IN1=>XLXN_465,
+                CLK_OUT1=>XLXN_464);
    
 end BEHAVIORAL;
 
