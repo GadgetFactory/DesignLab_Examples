@@ -206,8 +206,8 @@ begin
 	--WING_AH4 <= SPI_CS;
 	
 	--RS232 UART
-	WING_AL0 <= RS232_RX;
-	RS232_TX <= WING_AL1;	
+	WING_AL1 <= RS232_RX;
+	RS232_TX <= WING_AL0;	
 
 --  pin00: IOPAD port map(I => gpio_o(0), O => gpio_bus_in(0), T => gpio_t(0), C => gpio_clk,PAD => WING_AL0);
 --  pin01: IOPAD port map(I => gpio_o(1), O => gpio_bus_in(1), T => gpio_t(1), C => gpio_clk,PAD => WING_AL1);
@@ -245,9 +245,9 @@ begin
   pin31: IOPAD port map(I => gpio_o(31),O => gpio_bus_in(31),T => gpio_t(31),C => gpio_clk,PAD => WING_DH3);
 --  pin32: IOPAD port map(I => gpio_o(32),O => gpio_bus_in(32),T => gpio_t(32),C => gpio_clk,PAD => WING_CL5);
   pin33: IOPAD port map(I => gpio_o(33),O => gpio_bus_in(33),T => gpio_t(33),C => gpio_clk,PAD => WING_DH2);
-  -- pin34: IOPAD port map(I => gpio_o(34),O => gpio_bus_in(34),T => gpio_t(34),C => gpio_clk,PAD => WING_CL6);
+--  pin34: IOPAD port map(I => gpio_o(34),O => gpio_bus_in(34),T => gpio_t(34),C => gpio_clk,PAD => WING_CL6);
   pin35: IOPAD port map(I => gpio_o(35),O => gpio_bus_in(35),T => gpio_t(35),C => gpio_clk,PAD => WING_DH1);
-  -- pin36: IOPAD port map(I => gpio_o(36),O => gpio_bus_in(36),T => gpio_t(36),C => gpio_clk,PAD => WING_CL7);
+--  pin36: IOPAD port map(I => gpio_o(36),O => gpio_bus_in(36),T => gpio_t(36),C => gpio_clk,PAD => WING_CL7);
   pin37: IOPAD port map(I => gpio_o(37),O => gpio_bus_in(37),T => gpio_t(37),C => gpio_clk,PAD => WING_DH0);
   
 --  pin38: IOPAD port map(I => gpio_o(38),O => gpio_bus_in(38),T => gpio_t(38),C => gpio_clk,PAD => WING_CH0);
@@ -256,9 +256,9 @@ begin
   pin41: IOPAD port map(I => gpio_o(41),O => gpio_bus_in(41),T => gpio_t(41),C => gpio_clk,PAD => WING_DL6);
 --  pin42: IOPAD port map(I => gpio_o(42),O => gpio_bus_in(42),T => gpio_t(42),C => gpio_clk,PAD => WING_CH2);
 --  pin43: IOPAD port map(I => gpio_o(43),O => gpio_bus_in(43),T => gpio_t(43),C => gpio_clk,PAD => WING_DL5);
-  -- pin44: IOPAD port map(I => gpio_o(44),O => gpio_bus_in(44),T => gpio_t(44),C => gpio_clk,PAD => WING_CH3);
+--  pin44: IOPAD port map(I => gpio_o(44),O => gpio_bus_in(44),T => gpio_t(44),C => gpio_clk,PAD => WING_CH3);
 --  pin45: IOPAD port map(I => gpio_o(45),O => gpio_bus_in(45),T => gpio_t(45),C => gpio_clk,PAD => WING_DL4);
-  -- pin46: IOPAD port map(I => gpio_o(46),O => gpio_bus_in(46),T => gpio_t(46),C => gpio_clk,PAD => WING_CH4);
+--  pin46: IOPAD port map(I => gpio_o(46),O => gpio_bus_in(46),T => gpio_t(46),C => gpio_clk,PAD => WING_CH4);
   pin47: IOPAD port map(I => gpio_o(47),O => gpio_bus_in(47),T => gpio_t(47),C => gpio_clk,PAD => WING_DL3);
 --  pin48: IOPAD port map(I => gpio_o(48),O => gpio_bus_in(48),T => gpio_t(48),C => gpio_clk,PAD => WING_CH5);
   pin49: IOPAD port map(I => gpio_o(49),O => gpio_bus_in(49),T => gpio_t(49),C => gpio_clk,PAD => WING_DL2);
@@ -266,7 +266,6 @@ begin
   pin51: IOPAD port map(I => gpio_o(51),O => gpio_bus_in(51),T => gpio_t(51),C => gpio_clk,PAD => WING_DL1);
 --  pin52: IOPAD port map(I => gpio_o(52),O => gpio_bus_in(52),T => gpio_t(52),C => gpio_clk,PAD => WING_CH7);
   pin53: IOPAD port map(I => gpio_o(53),O => gpio_bus_in(53),T => gpio_t(53),C => gpio_clk,PAD => WING_DL0); 
-  
 
   process(gpio_spp_read)
 --          sigmadelta_spp_data,
