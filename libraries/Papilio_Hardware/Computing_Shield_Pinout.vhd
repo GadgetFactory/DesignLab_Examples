@@ -177,19 +177,17 @@ begin
 	WING_DL5 <= Audio2_Right;
 
 	--VGA
-	-- WING_CL1 <= VGA_Vsync;
-	-- WING_CL0 <= VGA_Hsync;
-	-- WING_CL2 <= VGA_Blue0;
-	-- WING_CL5 <= VGA_Blue1;
-	-- WING_CH0 <= VGA_Green0;
-	-- WING_CH1 <= VGA_Green1;
-	-- WING_CH2 <= VGA_Green2;
-	-- WING_CH7 <= VGA_Red0;
-	-- WING_CH6 <= VGA_Red1;
-	-- WING_CH5 <= VGA_Red2;
-	
 	WING_CL1 <= VGA_Vsync;
 	WING_CL0 <= VGA_Hsync;
+--	WING_CL2 <= VGA_Blue0;
+--	WING_CL5 <= VGA_Blue1;
+--	WING_CH0 <= VGA_Green0;
+--	WING_CH1 <= VGA_Green1;
+--	WING_CH2 <= VGA_Green2;
+--	WING_CH7 <= VGA_Red0;
+--	WING_CH6 <= VGA_Red1;
+--	WING_CH5 <= VGA_Red2;
+	
 	WING_CL6 <= VGA_Blue0;
 	WING_CL7 <= VGA_Blue1;
 	WING_CH1 <= VGA_Green0;
@@ -266,6 +264,7 @@ begin
   pin51: IOPAD port map(I => gpio_o(51),O => gpio_bus_in(51),T => gpio_t(51),C => gpio_clk,PAD => WING_DL1);
 --  pin52: IOPAD port map(I => gpio_o(52),O => gpio_bus_in(52),T => gpio_t(52),C => gpio_clk,PAD => WING_CH7);
   pin53: IOPAD port map(I => gpio_o(53),O => gpio_bus_in(53),T => gpio_t(53),C => gpio_clk,PAD => WING_DL0); 
+  
 
   process(gpio_spp_read)
 --          sigmadelta_spp_data,
