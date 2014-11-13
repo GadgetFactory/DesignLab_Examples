@@ -2,8 +2,8 @@
 <symbol version="7" name="AUDIO_zpuino_wb_pokey">
     <symboltype>BLOCK</symboltype>
     <timestamp>2014-10-30T17:27:57</timestamp>
-    <pin polarity="Input" x="112" y="-96" name="wishbone_in(61:0)" />
-    <pin polarity="Output" x="128" y="-96" name="wishbone_out(33:0)" />
+    <pin polarity="Input" x="112" y="-96" name="wishbone_in(100:0)" />
+    <pin polarity="Output" x="128" y="-96" name="wishbone_out(100:0)" />
     <pin polarity="Output" x="304" y="-32" name="data_out(7:0)" />
     <graph>
         <text style="fontsize:40;fontname:Arial" x="4" y="20">Pokey Audio Chip</text>

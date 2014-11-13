@@ -46,8 +46,8 @@ use board.zpupkg.all;
 
 entity AUDIO_zpuino_wb_sid6581 is
   port (
-	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0);
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
 
     clk_1MHZ: in std_logic;
     audio_data: out std_logic_vector(17 downto 0)

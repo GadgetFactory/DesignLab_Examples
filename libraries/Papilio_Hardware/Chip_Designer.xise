@@ -230,11 +230,6 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../Computing_Shield/Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-      <library xil_pn:name="DesignLab"/>
-    </file>
     <file xil_pn:name="../HQVGA/HQVGA.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -445,6 +440,14 @@
     <file xil_pn:name="Edit_Your_Chip_Design.sch" xil_pn:type="FILE_SCHEMATIC">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    </file>
+    <file xil_pn:name="Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="88"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="88"/>
+    </file>
+    <file xil_pn:name="LogicStart_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="89"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="89"/>
     </file>
   </files>
 

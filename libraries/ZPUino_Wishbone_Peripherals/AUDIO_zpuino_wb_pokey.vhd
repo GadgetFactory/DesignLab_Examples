@@ -55,8 +55,8 @@ library board;
 
 entity AUDIO_zpuino_wb_pokey is
   port (
-	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0);
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
 
 	 data_out: 		out std_logic_vector(7 downto 0)  	--Digital data out - this should be fed into an audio mixer or Delta-Sigma DAC.
   );

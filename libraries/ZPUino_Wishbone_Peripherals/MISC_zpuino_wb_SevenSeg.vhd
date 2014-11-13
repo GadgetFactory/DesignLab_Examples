@@ -51,8 +51,8 @@ entity MISC_zpuino_wb_SevenSeg is
     INVERT: boolean := true
   );
   port (
-	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0);
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
 
     segdata:  out std_logic_vector(6 downto 0);
     dot:      out std_logic;
