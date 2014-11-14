@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 11/14/2014 09:41:36
+-- /___/   /\     Timestamp : 11/14/2014 10:56:51
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/ZPUino_2 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Papilio_DUO_LogicStart_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Papilio_DUO_LogicStart_Shield/circuit/Papilio_DUO_LX9.sch
+--Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/ZPUino_2 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/LogicStart_Shield/circuit/DUO_LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/LogicStart_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/LogicStart_Shield/circuit/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:
@@ -158,8 +158,6 @@ architecture BEHAVIORAL of Papilio_DUO_LX9 is
    signal XLXI_39_wishbone_slot_6_out_openSignal    : std_logic_vector (100 
          downto 0);
    signal XLXI_39_wishbone_slot_8_out_openSignal    : std_logic_vector (100 
-         downto 0);
-   signal XLXI_75_gpio_bus_out_openSignal           : std_logic_vector (200 
          downto 0);
    component Wishbone_Empty_Slot
       port ( wishbone_in  : in    std_logic_vector (100 downto 0); 
@@ -422,8 +420,7 @@ begin
    XLXI_75 : LogicStart_Shield_Pinout
       port map (Audio_Left=>XLXN_624,
                 Audio_Right=>XLXN_625,
-                gpio_bus_out(200 downto 0)=>XLXI_75_gpio_bus_out_openSignal(200 
-            downto 0),
+                gpio_bus_out(200 downto 0)=>XLXN_408(200 downto 0),
                 Seg7_dot=>XLXN_544,
                 Seg7_enable(3 downto 0)=>XLXN_543(3 downto 0),
                 Seg7_segdata(6 downto 0)=>XLXN_542(6 downto 0),
@@ -437,7 +434,7 @@ begin
                 VGA_Red1=>XLXN_587,
                 VGA_Red2=>XLXN_586,
                 VGA_Vsync=>XLXN_585,
-                gpio_bus_in=>open,
+                gpio_bus_in(200 downto 0)=>XLXN_409(200 downto 0),
                 WING_AH0=>Arduino_8,
                 WING_AH1=>Arduino_9,
                 WING_AH2=>Arduino_10,

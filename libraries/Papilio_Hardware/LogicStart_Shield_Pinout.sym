@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="LogicStart_Shield_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-1T22:3:36</timestamp>
+    <timestamp>2014-11-14T17:56:19</timestamp>
     <pin polarity="Input" x="0" y="-1760" name="gpio_bus_out(200:0)" />
     <pin polarity="Output" x="0" y="-1776" name="gpio_bus_in(200:0)" />
     <pin polarity="BiDirectional" x="560" y="-1712" name="WING_AL0" />

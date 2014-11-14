@@ -239,7 +239,7 @@
             <line x2="0" y1="-400" y2="-400" x1="64" />
         </blockdef>
         <blockdef name="LogicStart_Shield_Pinout">
-            <timestamp>2014-10-1T22:3:36</timestamp>
+            <timestamp>2014-11-14T17:56:19</timestamp>
             <rect width="432" x="64" y="-1808" height="2104" />
             <rect width="188" x="308" y="-1452" height="272" />
             <rect width="188" x="308" y="-1168" height="280" />
@@ -475,8 +475,8 @@
             <blockpin signalname="XLXN_452" name="clk_96Mhz" />
         </block>
         <block symbolname="LogicStart_Shield_Pinout" name="XLXI_75">
-            <blockpin name="gpio_bus_out(200:0)" />
-            <blockpin name="gpio_bus_in(200:0)" />
+            <blockpin signalname="XLXN_408(200:0)" name="gpio_bus_out(200:0)" />
+            <blockpin signalname="XLXN_409(200:0)" name="gpio_bus_in(200:0)" />
             <blockpin signalname="Arduino_0" name="WING_AL0" />
             <blockpin signalname="Arduino_1" name="WING_AL1" />
             <blockpin signalname="Arduino_2" name="WING_AL2" />

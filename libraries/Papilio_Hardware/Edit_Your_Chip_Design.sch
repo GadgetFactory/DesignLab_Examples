@@ -505,7 +505,7 @@
             <rect width="220" x="68" y="-1188" height="236" />
         </blockdef>
         <blockdef name="Computing_Shield_Pinout">
-            <timestamp>2014-11-14T16:51:39</timestamp>
+            <timestamp>2014-11-14T17:10:12</timestamp>
             <rect width="432" x="64" y="-2176" height="2104" />
             <rect width="188" x="308" y="-1820" height="272" />
             <line x2="60" y1="-2144" y2="-2144" x1="0" />
@@ -1146,8 +1146,8 @@
             <blockpin name="WING_DH7" />
         </block>
         <block symbolname="LogicStart_Shield_Pinout" name="XLXI_62">
-            <blockpin name="gpio_bus_out(200:0)" />
-            <blockpin name="gpio_bus_in(200:0)" />
+            <blockpin name="gpio_bus_out(165:0)" />
+            <blockpin name="gpio_bus_in(109:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />

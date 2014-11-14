@@ -1,24 +1,23 @@
 /*
  Gadget Factory
- DesignLab New Project
- To learn more about using DesignLab please visit http://learn.gadgetfactory.net
+ LogicStart MegaWing Example
+ To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
 
  Tutorials:
    http://gadgetfactory.net/learn/2013/10/29/papilio-schematic-library-getting-started/
   
  Related library documentation:
+  http://papilio.cc/index.php?n=Papilio.VGA
 
- Hardware:
-   Connect the LogicStart Shield to your Papilio DUO for this sketch
-   
- Special Notes:
 
  created 2014
- by Jack Gassett
+ by Alvaro Lopes and Jack Gassett
  http://www.gadgetfactory.net
  
  This example code is in the public domain.
  */
+
+#define circuit LogicStart_Shield
 
 #define FREQ 17000          //Freq for all players 
 
