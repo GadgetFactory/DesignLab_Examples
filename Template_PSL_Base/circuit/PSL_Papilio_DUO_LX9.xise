@@ -15,6 +15,11 @@
   <version xil_pn:ise_version="14.1" xil_pn:schema_version="2"/>
 
   <files>
+    <file xil_pn:name="../../libraries/Audio_Wing/Audio_Wing.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
     <file xil_pn:name="../../libraries/Benchy/BENCHY_sa_SumpBlaze_LogicAnalyzer8.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -230,11 +235,6 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../libraries/Computing_Shield/Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-      <library xil_pn:name="DesignLab"/>
-    </file>
     <file xil_pn:name="../../libraries/HQVGA/generic_dp_ram.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -260,7 +260,17 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
+    <file xil_pn:name="../../libraries/Papilio_Hardware/Computing_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
     <file xil_pn:name="../../libraries/Papilio_Hardware/LogicStart_MegaWing_Pinout.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/Papilio_Hardware/LogicStart_Shield_Pinout.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
@@ -405,6 +415,31 @@
       <library xil_pn:name="DesignLab"/>
     </file>
     <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/prescaler.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/sid_6581.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/sid_coeffs.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/sid_components.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/sid_filters.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+      <library xil_pn:name="DesignLab"/>
+    </file>
+    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/sid_voice.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>

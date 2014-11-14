@@ -717,8 +717,6 @@
         <instance x="4640" y="3088" name="XLXI_38" orien="R0">
         </instance>
         <text style="fontsize:64;fontname:Arial" x="80" y="3448">Version: 1.0</text>
-        <instance x="336" y="752" name="XLXI_39" orien="R0">
-        </instance>
         <branch name="ext_pins_in(100:0)">
             <wire x2="336" y1="96" y2="96" x1="304" />
         </branch>
@@ -731,5 +729,7 @@
             <wire x2="336" y1="160" y2="160" x1="304" />
         </branch>
         <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
+        <instance x="336" y="752" name="XLXI_39" orien="R0">
+        </instance>
     </sheet>
 </drawing>
