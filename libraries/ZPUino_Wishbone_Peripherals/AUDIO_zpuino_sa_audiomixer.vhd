@@ -41,10 +41,6 @@ library ieee;
   use ieee.std_logic_arith.all;
   use ieee.std_logic_unsigned.all;
 
-library board;
-  use board.zpuino_config.all;
-  use board.zpu_config.all;
-  use board.zpupkg.all;
   
 entity AUDIO_zpuino_sa_audiomixer is
 	port (
@@ -115,7 +111,7 @@ begin
 	-- assign an input
 	p_chan_mixer : process(cnt_div, data_in1, data_in2, data_in3)
 	begin
-		current_input <= (others => DontCareValue);
+		current_input <= (others => 'X');
 		case cnt_div(1 downto 0) is
 			when "11" =>
 				current_input <= data_in1;

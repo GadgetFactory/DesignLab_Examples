@@ -39,11 +39,6 @@ use IEEE.std_logic_1164.all;
 use IEEE.std_logic_unsigned.all;
 use IEEE.numeric_std.all;
 
-library board;
-use board.zpuino_config.all;
-use board.zpu_config.all;
-use board.zpupkg.all;
-
 entity AUDIO_zpuino_wb_sid6581 is
   port (
 	 wishbone_in : in std_logic_vector(100 downto 0);
@@ -111,7 +106,7 @@ begin
   wishbone_out(1) <= wb_ack_o;
   wishbone_out(0) <= wb_inta_o; 
 
-  wb_dat_o(wordSize-1 downto 8) <= (others => '0');
+  wb_dat_o(32-1 downto 8) <= (others => '0');
   wb_dat_o(7 downto 0) <= do;
 
   cs        <= (wb_stb_i and wb_cyc_i) and not ack_i;

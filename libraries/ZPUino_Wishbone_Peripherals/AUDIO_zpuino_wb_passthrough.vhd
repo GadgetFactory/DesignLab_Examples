@@ -40,11 +40,6 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-library board;
-use board.zpupkg.all;
-use board.zpu_config.all;
-use board.zpuinopkg.all;
-
 entity AUDIO_zpuino_wb_passthrough is
 	port (
 	 wishbone_in : in std_logic_vector(100 downto 0);
