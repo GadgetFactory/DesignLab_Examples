@@ -2,8 +2,8 @@
 <symbol version="7" name="Computing_Shield_Pinout">
     <symboltype>BLOCK</symboltype>
     <timestamp>2014-10-10T20:30:13</timestamp>
-    <pin polarity="Input" x="0" y="-2128" name="gpio_bus_out(200:0)" />
-    <pin polarity="Output" x="0" y="-2144" name="gpio_bus_in(200:0)" />
+    <pin polarity="Input" x="0" y="-2128" name="gpio_bus_out(165:0)" />
+    <pin polarity="Output" x="0" y="-2144" name="gpio_bus_in(109:0)" />
     <pin polarity="BiDirectional" x="560" y="-2080" name="WING_AL0" />
     <pin polarity="BiDirectional" x="560" y="-2048" name="WING_AL1" />
     <pin polarity="BiDirectional" x="560" y="-2016" name="WING_AL2" />
@@ -81,7 +81,7 @@
         <rect width="432" x="64" y="-2176" height="2104" />
         <rect width="188" x="308" y="-1820" height="272" />
         <line x2="60" y1="-2144" y2="-2144" x1="0" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-2128" type="pin gpio_bus_out(200:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-2128" type="pin gpio_bus_out(165:0)" />
         <line x2="64" y1="-2128" y2="-2128" x1="0" />
         <line x2="560" y1="-2080" y2="-2080" x1="496" />
         <line x2="560" y1="-2048" y2="-2048" x1="496" />
@@ -143,7 +143,7 @@
         <rect width="188" x="308" y="-380" height="276" />
         <rect width="188" x="308" y="-956" height="276" />
         <rect width="188" x="308" y="-668" height="276" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="280" y="-2152" type="pin gpio_bus_in(200:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="280" y="-2152" type="pin gpio_bus_in(109:0)" />
         <rect width="164" x="64" y="-648" height="112" />
         <text style="fontsize:32;fontname:Arial" x="72" y="-672">Audio1</text>
         <rect width="188" x="308" y="-1536" height="280" />
