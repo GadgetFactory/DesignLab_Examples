@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_DUO_LX9.vhf
--- /___/   /\     Timestamp : 11/14/2014 09:52:10
+-- /___/   /\     Timestamp : 11/14/2014 10:11:57
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/ZPUino_2 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Computing_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Computing_Shield/circuit/Papilio_DUO_LX9.sch
+--Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/ZPUino_2 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Computing_Shield/circuit/DUO_LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Computing_Shield/circuit/DUO_LX9/Papilio_DUO_LX9.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Computing_Shield/circuit/Papilio_DUO_LX9.sch
 --Design Name: Papilio_DUO_LX9
 --Device: spartan6
 --Purpose:

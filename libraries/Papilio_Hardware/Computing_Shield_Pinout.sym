@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Computing_Shield_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-11-14T16:51:39</timestamp>
+    <timestamp>2014-11-14T17:10:12</timestamp>
     <pin polarity="Input" x="0" y="-2128" name="gpio_bus_out(200:0)" />
     <pin polarity="Output" x="0" y="-2144" name="gpio_bus_in(200:0)" />
     <pin polarity="BiDirectional" x="560" y="-2080" name="WING_AL0" />
@@ -216,21 +216,13 @@
         <text style="fontsize:24;fontname:Arial" x="312" y="-448">PS2_DAT2</text>
         <text style="fontsize:24;fontname:Arial" x="312" y="-416">PS2_CLK2</text>
         <line x2="560" y1="-1504" y2="-1504" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1504">SD_MOSI</text>
         <line x2="560" y1="-1472" y2="-1472" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1472">SD_SCK</text>
         <line x2="560" y1="-1440" y2="-1440" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1440">SD_nCS</text>
         <line x2="560" y1="-1408" y2="-1408" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1408">SW_LEFT</text>
         <line x2="560" y1="-1376" y2="-1376" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1376">SW_UP</text>
         <line x2="560" y1="-1344" y2="-1344" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1344">RESET</text>
         <line x2="560" y1="-1312" y2="-1312" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1312">SW_DOWN</text>
         <line x2="560" y1="-1280" y2="-1280" x1="496" />
-        <text style="fontsize:24;fontname:Arial" x="356" y="-1280">SW_RIGHT</text>
         <line x2="560" y1="-640" y2="-640" x1="496" />
         <line x2="560" y1="-608" y2="-608" x1="496" />
         <line x2="560" y1="-576" y2="-576" x1="496" />
@@ -247,5 +239,13 @@
         <line x2="560" y1="-192" y2="-192" x1="496" />
         <line x2="560" y1="-160" y2="-160" x1="496" />
         <line x2="560" y1="-128" y2="-128" x1="496" />
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1404">SW_UP</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1372">SW_LEFT</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1340">SD_nCS</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1308">SD_SCK</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1276">SD_MOSI</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1436">RESET</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1468">SW_DOWN</text>
+        <text style="fontsize:24;fontname:Arial" x="324" y="-1500">SW_RIGHT</text>
     </graph>
 </symbol>

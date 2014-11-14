@@ -505,7 +505,7 @@
             <rect width="220" x="68" y="-1188" height="236" />
         </blockdef>
         <blockdef name="Computing_Shield_Pinout">
-            <timestamp>2014-11-13T21:7:11</timestamp>
+            <timestamp>2014-11-14T16:51:39</timestamp>
             <rect width="432" x="64" y="-2176" height="2104" />
             <rect width="188" x="308" y="-1820" height="272" />
             <line x2="60" y1="-2144" y2="-2144" x1="0" />
@@ -578,14 +578,6 @@
             <line x2="560" y1="-1344" y2="-1344" x1="496" />
             <line x2="560" y1="-1312" y2="-1312" x1="496" />
             <line x2="560" y1="-1280" y2="-1280" x1="496" />
-            <line x2="560" y1="-352" y2="-352" x1="496" />
-            <line x2="560" y1="-320" y2="-320" x1="496" />
-            <line x2="560" y1="-288" y2="-288" x1="496" />
-            <line x2="560" y1="-256" y2="-256" x1="496" />
-            <line x2="560" y1="-224" y2="-224" x1="496" />
-            <line x2="560" y1="-192" y2="-192" x1="496" />
-            <line x2="560" y1="-160" y2="-160" x1="496" />
-            <line x2="560" y1="-128" y2="-128" x1="496" />
             <line x2="560" y1="-640" y2="-640" x1="496" />
             <line x2="560" y1="-608" y2="-608" x1="496" />
             <line x2="560" y1="-576" y2="-576" x1="496" />
@@ -594,6 +586,14 @@
             <line x2="560" y1="-480" y2="-480" x1="496" />
             <line x2="560" y1="-448" y2="-448" x1="496" />
             <line x2="560" y1="-416" y2="-416" x1="496" />
+            <line x2="560" y1="-352" y2="-352" x1="496" />
+            <line x2="560" y1="-320" y2="-320" x1="496" />
+            <line x2="560" y1="-288" y2="-288" x1="496" />
+            <line x2="560" y1="-256" y2="-256" x1="496" />
+            <line x2="560" y1="-224" y2="-224" x1="496" />
+            <line x2="560" y1="-192" y2="-192" x1="496" />
+            <line x2="560" y1="-160" y2="-160" x1="496" />
+            <line x2="560" y1="-128" y2="-128" x1="496" />
         </blockdef>
         <blockdef name="LogicStart_Shield_Pinout">
             <timestamp>2014-10-9T16:23:50</timestamp>
@@ -1120,34 +1120,34 @@
             <blockpin name="Audio1_Right" />
             <blockpin name="Audio2_Right" />
             <blockpin name="Audio2_Left" />
-            <blockpin name="WING_BL7" />
-            <blockpin name="WING_BL6" />
-            <blockpin name="WING_BL5" />
-            <blockpin name="WING_BL4" />
-            <blockpin name="WING_BL3" />
-            <blockpin name="WING_BL2" />
-            <blockpin name="WING_BL1" />
             <blockpin name="WING_BL0" />
-            <blockpin name="WING_DL7" />
-            <blockpin name="WING_DL6" />
-            <blockpin name="WING_DL5" />
-            <blockpin name="WING_DL4" />
-            <blockpin name="WING_DL3" />
-            <blockpin name="WING_DL2" />
-            <blockpin name="WING_DL1" />
+            <blockpin name="WING_BL1" />
+            <blockpin name="WING_BL2" />
+            <blockpin name="WING_BL3" />
+            <blockpin name="WING_BL4" />
+            <blockpin name="WING_BL5" />
+            <blockpin name="WING_BL6" />
+            <blockpin name="WING_BL7" />
             <blockpin name="WING_DL0" />
-            <blockpin name="WING_DH7" />
-            <blockpin name="WING_DH6" />
-            <blockpin name="WING_DH5" />
-            <blockpin name="WING_DH4" />
-            <blockpin name="WING_DH3" />
-            <blockpin name="WING_DH2" />
-            <blockpin name="WING_DH1" />
+            <blockpin name="WING_DL1" />
+            <blockpin name="WING_DL2" />
+            <blockpin name="WING_DL3" />
+            <blockpin name="WING_DL4" />
+            <blockpin name="WING_DL5" />
+            <blockpin name="WING_DL6" />
+            <blockpin name="WING_DL7" />
             <blockpin name="WING_DH0" />
+            <blockpin name="WING_DH1" />
+            <blockpin name="WING_DH2" />
+            <blockpin name="WING_DH3" />
+            <blockpin name="WING_DH4" />
+            <blockpin name="WING_DH5" />
+            <blockpin name="WING_DH6" />
+            <blockpin name="WING_DH7" />
         </block>
         <block symbolname="LogicStart_Shield_Pinout" name="XLXI_62">
-            <blockpin name="gpio_bus_out(165:0)" />
-            <blockpin name="gpio_bus_in(109:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
