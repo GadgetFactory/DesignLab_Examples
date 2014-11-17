@@ -51,7 +51,10 @@ void setup() {
     }     
     
   //Set what wishbone slot the sid device is connected to.
-  sidplayer.setup(8);  
+  if (deviceBegin(0x03, 0x01)!=0) {
+    //sidplayer.setup(8);  
+    sidplayer.setup(getSlot(0x03, 0x01));  
+  }
   
   sidplayer.loadFile("music.sid");
   sidplayer.play(true); 

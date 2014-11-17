@@ -57,6 +57,7 @@ bool timer(void*)
 {
   //Interrupt runs at 17KHz
   modplayer.zpu_interrupt();
+  return true;
 }
 
 void loop() {
