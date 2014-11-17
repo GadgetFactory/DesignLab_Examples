@@ -34,8 +34,8 @@ it�s not 100% sure it works in all conditions with combined effects.
 #include "ptplay.h"
 #include <string.h>
 #include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
+/* #include <stdio.h>
+#include <stdlib.h> */
 
 #define CHNF_SLIDESKIP 0x0001 /* skip slide fx in first tick */
 #define CHNF_APPLYTONEP 0x0002 /* tone-portamento is active */
