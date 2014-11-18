@@ -55,8 +55,8 @@ entity LogicStart_MegaWing_Pinout is
 			 SPI_MISO     : out    std_logic; 
 			 SPI_CS       : in    std_logic; 			 
 
-			gpio_bus_in : out std_logic_vector(97 downto 0);
-			gpio_bus_out : in std_logic_vector(147 downto 0);	
+			gpio_bus_in : out std_logic_vector(200 downto 0);
+			gpio_bus_out : in std_logic_vector(200 downto 0);	
 			 
 			 WING_AH0	: inout std_logic;
 			 WING_AH1	: inout std_logic;

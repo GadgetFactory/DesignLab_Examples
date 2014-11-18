@@ -9,8 +9,8 @@
     <pin polarity="Output" x="352" y="-384" name="sin_dac_out" />
     <pin polarity="Output" x="352" y="-320" name="cos_dac_out" />
     <pin polarity="Input" x="16" y="-448" name="clk_in" />
-    <pin polarity="Input" x="144" y="-528" name="wishbone_in(61:0)" />
-    <pin polarity="Output" x="160" y="-528" name="wishbone_out(33:0)" />
+    <pin polarity="Input" x="144" y="-528" name="wishbone_in(100:0)" />
+    <pin polarity="Output" x="160" y="-528" name="wishbone_out(100:0)" />
     <graph>
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="280" y="-64" type="pin saw_out(11:0)" />
         <rect width="224" x="64" y="-480" height="480" />
