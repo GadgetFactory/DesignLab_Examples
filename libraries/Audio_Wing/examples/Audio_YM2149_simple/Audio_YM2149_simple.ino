@@ -14,8 +14,6 @@
  */
 #define circuit Audio_Wing
 
- #define FREQ 17000          //Freq for ymplayer
- 
 #include <SD.h>
 #include <SPI.h>
 #include "YM2149.h"
@@ -23,6 +21,7 @@
 #include "ymplayer.h"
 #include "ramFS.h"
 #include "cbuffer.h"
+#include <Timer.h>
 
 YMPLAYER ymplayer;
 YM2149 ym2149;
@@ -50,20 +49,19 @@ void setup() {
   ymplayer.play(true);
   
  //Setup timer for YM and mod players, this generates an interrupt at 17Khz
-  TMR0CTL = 0;
-  TMR0CNT = 0;
-  TMR0CMP = ((CLK_FREQ/2) / FREQ )- 1;
-  TMR0CTL = _BV(TCTLENA)|_BV(TCTLCCM)|_BV(TCTLDIR)|
-  	_BV(TCTLCP0) | _BV(TCTLIEN);
-  INTRMASK = BIT(INTRLINE_TIMER0); // Enable Timer0 interrupt
-  INTRCTL=1;    
+  Timers.begin();
+    int r = Timers.periodicHz(17000, (bool(*)(void*))timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }    
 
 }
 
-void _zpu_interrupt()
+bool timer(void)
 {
   //Interrupt runs at 17KHz
   ymplayer.zpu_interrupt(); 
+  //Serial.println("In Timer");
 }
 
 void loop() {

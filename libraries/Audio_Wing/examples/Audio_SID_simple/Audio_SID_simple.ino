@@ -15,8 +15,6 @@
  This example code is in the public domain.
  */
 #define circuit Audio_Wing
- 
-#define FREQ 17000          //Freq for all players 
 
 #include <SD.h>
 #include <SPI.h>
@@ -25,13 +23,13 @@
 #include "ramFS.h"
 #include "cbuffer.h"
 #include "sidplayer.h"
+#include <Timer.h>
 
 SIDPLAYER sidplayer;
 
 int sidplayercounter = 0;
 
 void setup() {
-  //delay(3000);
   // put your setup code here, to run once:
   Serial.begin(9600);
   Serial.println("Starting");
@@ -45,13 +43,11 @@ void setup() {
   }  
   
  //Setup timer for YM and mod players, this generates an interrupt at 1700hz
-  TMR0CTL = 0;
-  TMR0CNT = 0;
-  TMR0CMP = ((CLK_FREQ/2) / FREQ )- 1;
-  TMR0CTL = _BV(TCTLENA)|_BV(TCTLCCM)|_BV(TCTLDIR)|
-  	_BV(TCTLCP0) | _BV(TCTLIEN);
-  INTRMASK = BIT(INTRLINE_TIMER0); // Enable Timer0 interrupt
-  INTRCTL=1;     
+  Timers.begin();
+    int r = Timers.periodicHz(50, timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }     
     
   //Set what wishbone slot the sid device is connected to.
   sidplayer.setup(8);  
@@ -61,20 +57,14 @@ void setup() {
   
 }
 
-void _zpu_interrupt()
+bool timer(void*)
 {
-  //Interrupt runs at 17KHz
-  sidplayercounter++;
   //We need 50Hz for SID
-  if (sidplayercounter == 340) {
-    sidplayer.zpu_interrupt(); 
-    sidplayercounter = 1;
-  }
-  TMR0CTL &= ~(BIT(TCTLIF));
+  sidplayer.zpu_interrupt(); 
+  return true;
 }
 
 void loop() {
-  Serial.println("running");
   // put your main code here, to run repeatedly: 
   if (sidplayer.getPlaying() == 1)    
     sidplayer.audiofill();  
