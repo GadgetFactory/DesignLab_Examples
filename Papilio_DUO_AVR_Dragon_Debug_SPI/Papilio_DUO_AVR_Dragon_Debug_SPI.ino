@@ -1,8 +1,6 @@
 /*
  Gadget Factory
  Use this circuit to connect an AVR Dragon debugger to the Papilio DUO. You can use this to program and debug the ATmega32U4 using AVR Studio.
- 
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
 
  Tutorials:
   http://gadgetfactory.net/learn/2014/08/28/papilio-duo-program-with-avr-dragon/

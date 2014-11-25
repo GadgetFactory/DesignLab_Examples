@@ -1,11 +1,7 @@
 /*
  Gadget Factory
- Papilio Schematic Library Example
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
- 
- Tutorials:
-   http://gadgetfactory.net/learn/2013/10/29/papilio-schematic-library-getting-started/
-  
+ Papilio DUO QuickStart Example
+
  created 2014
  by Jack Gassett
  http://www.gadgetfactory.net
