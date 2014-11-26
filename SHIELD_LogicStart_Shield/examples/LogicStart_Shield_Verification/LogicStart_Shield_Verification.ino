@@ -1,11 +1,7 @@
 /*
  Gadget Factory
  LogicStart MegaWing Example
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
 
- Tutorials:
-   http://gadgetfactory.net/learn/2013/10/29/papilio-schematic-library-getting-started/
-  
  Related library documentation:
   http://papilio.cc/index.php?n=Papilio.VGA
 

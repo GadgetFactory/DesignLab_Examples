@@ -1,3 +1,19 @@
+/*
+  Gadget Factory
+  Computing Shield Verification Example
+ 
+ This is used at the factory to verify all Computing Shield functionality works.
+ 
+ Hardware:
+ * Connect a Computing Shield to the Papilio DUO
+
+ created 2014
+ by Jack Gassett from existing Arduino code snippets
+ http://www.gadgetfactory.net
+ 
+ This example code is in the public domain.
+ */
+
 #define circuit Computing_Shield
 
 #include "HQVGA.h"
