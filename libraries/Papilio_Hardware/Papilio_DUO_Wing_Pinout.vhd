@@ -142,7 +142,21 @@ entity Papilio_DUO_Wing_Pinout is
 			 WING_DL4	: inout std_logic;
 			 WING_DL5	: inout std_logic;
 			 WING_DL6	: inout std_logic;
-			 WING_DL7	: inout std_logic	
+			 WING_DL7	: inout std_logic;
+
+			 Flex_Pin_out_0: in std_logic;
+			 Flex_Pin_out_1: in std_logic;
+			 Flex_Pin_out_2: in std_logic;
+			 Flex_Pin_out_3: in std_logic;
+			 Flex_Pin_out_4: in std_logic;
+			 Flex_Pin_out_5: in std_logic;
+			 
+			 Flex_Pin_in_0: out std_logic;
+			 Flex_Pin_in_1: out std_logic;
+			 Flex_Pin_in_2: out std_logic;
+			 Flex_Pin_in_3: out std_logic;
+			 Flex_Pin_in_4: out std_logic;
+			 Flex_Pin_in_5: out std_logic			 
 			 
 			 );			 
 end Papilio_DUO_Wing_Pinout;
@@ -352,26 +366,25 @@ begin
   WING_DH6 <= WingType_miso_DH(6);
   WING_DH7 <= WingType_miso_DH(7);  
 
-  process(gpio_spp_read)
+  process(Flex_Pin_out_0, Flex_Pin_out_1, Flex_Pin_out_2, Flex_Pin_out_3, Flex_Pin_out_4, Flex_Pin_out_5)
 --          sigmadelta_spp_data,
 --          timers_pwm,
 --          spi2_mosi,spi2_sck)
   begin
-	 --gpio_bus_in(109 downto 54) <= (others => DontCareValue);
-	-- gpio_bus_in(55) <= Flex_Pin_out_0;
-	-- gpio_bus_in(56) <= Flex_Pin_out_1;
-	-- gpio_bus_in(57) <= Flex_Pin_out_2;
-	-- gpio_bus_in(58) <= Flex_Pin_out_3;
-	-- gpio_bus_in(59) <= Flex_Pin_out_4;
-	-- gpio_bus_in(60) <= Flex_Pin_out_5;
-	gpio_bus_in(109 downto 61) <= (others => DontCareValue);
-
-	-- Flex_Pin_in_0 <= gpio_spp_read(0);
-	-- Flex_Pin_in_1 <= gpio_spp_read(1);
-	-- Flex_Pin_in_2 <= gpio_spp_read(2);
-	-- Flex_Pin_in_3 <= gpio_spp_read(3);
-	-- Flex_Pin_in_4 <= gpio_spp_read(4);
-	-- Flex_Pin_in_5 <= gpio_spp_read(5);
+	 gpio_bus_in(54) <= Flex_Pin_out_0;
+	 gpio_bus_in(55) <= Flex_Pin_out_1;
+	 gpio_bus_in(56) <= Flex_Pin_out_2;
+	 gpio_bus_in(57) <= Flex_Pin_out_3;
+	 gpio_bus_in(58) <= Flex_Pin_out_4;
+	 gpio_bus_in(59) <= Flex_Pin_out_5;
+	 gpio_bus_in(97 downto 60) <= (others => DontCareValue);
+	 
+	 Flex_Pin_in_0 <= gpio_spp_read(0);
+	 Flex_Pin_in_1 <= gpio_spp_read(1);
+	 Flex_Pin_in_2 <= gpio_spp_read(2);
+	 Flex_Pin_in_3 <= gpio_spp_read(3);
+	 Flex_Pin_in_4 <= gpio_spp_read(4);
+	 Flex_Pin_in_5 <= gpio_spp_read(5);
 
   end process;
 
