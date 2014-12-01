@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ZPUino_Papilio_DUO_V2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-27T23:46:19</timestamp>
+    <timestamp>2014-12-1T23:13:10</timestamp>
     <pin polarity="Output" x="4368" y="-400" name="gpio_bus_out(200:0)" />
     <pin polarity="Input" x="4368" y="-416" name="gpio_bus_in(200:0)" />
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />
@@ -106,8 +106,8 @@
         <text style="fontsize:40;fontname:Arial" x="3200" y="-360">2 DCM (clock)</text>
         <text style="fontsize:40;fontname:Arial" x="2060" y="-504">alvie.com/zpuino</text>
         <text style="fontsize:52;fontname:Arial" x="1828" y="-204">Visit Papilio.cc for Documentation</text>
-        <text style="fontsize:64;fontname:Arial" x="1484" y="-612">ZPUino Soft Processor - Papilio Pro - Vanilla - v2.0</text>
-        <text style="fontsize:52;fontname:Arial" x="1876" y="-384">8MB of Program Code Space</text>
+        <text style="fontsize:64;fontname:Arial" x="1484" y="-612">ZPUino Soft Processor - Papilio DUO - Vanilla - v2.0</text>
+        <text style="fontsize:52;fontname:Arial" x="1876" y="-384">512KB or 2MB of Program Code Space</text>
         <text style="fontsize:40;fontname:Arial" x="1980" y="-340">(code runs out of SDRAM)</text>
         <text style="fontsize:48;fontname:Arial" x="3484" y="-236">System Clock runs at 96Mhz</text>
         <attrtext style="fontsize:28;fontname:Arial" attrname="PinName" x="76" y="-656" type="pin ext_pins_in(100:0)" />
