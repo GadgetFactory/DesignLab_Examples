@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Wishbone_Symbol_Example">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-1T6:28:8</timestamp>
+    <timestamp>2014-12-2T18:55:59</timestamp>
     <pin polarity="Input" x="0" y="-48" name="buttons(3:0)" />
     <pin polarity="Output" x="256" y="-16" name="leds(3:0)" />
-    <pin polarity="Input" x="128" y="-112" name="wishbone_in(61:0)" />
-    <pin polarity="Output" x="144" y="-112" name="wishbone_out(33:0)" />
+    <pin polarity="Input" x="128" y="-112" name="wishbone_in(100:0)" />
+    <pin polarity="Output" x="144" y="-112" name="wishbone_out(100:0)" />
     <graph>
         <rect width="160" x="52" y="-64" height="64" />
         <text style="fontsize:32;fontname:Arial" x="-28" y="24">Wishbone_Symbol_Example</text>
