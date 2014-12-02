@@ -36,13 +36,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 
-
-library board;
-use board.zpu_config.all;
-use board.zpuino_config.all;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
-
 library UNISIM;
 use UNISIM.vcomponents.all;
 

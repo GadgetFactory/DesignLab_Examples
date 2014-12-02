@@ -37,11 +37,6 @@ use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-library board;
-use board.zpu_config.all;
-use board.zpuino_config.all;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
 
 entity HQVGA_char_ram_8x8_sp is
   port (
