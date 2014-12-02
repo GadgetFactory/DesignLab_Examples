@@ -1,6 +1,9 @@
 mkdir 250K\xst\projnav.tmp
 mkdir 500K\xst\projnav.tmp
 mkdir LX9\xst\projnav.tmp
+mkdir DUO_LX9\xst\projnav.tmp
+cd DUO_LX9
+start Papilio_DUO_LX9.cmd
 cd LX9
 start Papilio_Pro.cmd
 REM clean.bat

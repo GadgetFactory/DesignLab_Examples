@@ -16,8 +16,8 @@ for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "
 for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\PSL_Papilio_One_250K.xise copy ..\Template_PSL_Base\circuit\PSL_Papilio_One_250K.xise "%%F"\circuit\*
 for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\PSL_Papilio_One_500K.xise copy ..\Template_PSL_Base\circuit\PSL_Papilio_One_500K.xise "%%F"\circuit\*
 
-for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\*.xise copy Template_PSL_Base\circuit\clean.bat "%%F"\circuit\*
-for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\*.xise copy Template_PSL_Base\circuit\build_all.bat "%%F"\circuit\*
+for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\*.xise copy ..\Template_PSL_Base\circuit\clean.bat "%%F"\circuit\*
+for /f %%F in ('dir /AD /b  ^| findstr /vile "Template_PSL_Base"') do if exist "%%F"\circuit\*.xise copy ..\Template_PSL_Base\circuit\build_all.bat "%%F"\circuit\*
 
 REM Update library files - Not needed anymore
 REM for /f %%F in ('dir /AD /b') do xcopy ..\Libraries "%%F"\Libraries\ /E /Y
