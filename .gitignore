@@ -91,3 +91,5 @@ libraries/ZPUino_2/circuit/LX9/sch2HdlBatchFile
 *.cmd
 libraries/Computing_Shield/circuit/DUO_LX9/usage_statistics_webtalk.html
 libraries/Computing_Shield/circuit/DUO_LX9/par_usage_statistics.html
+*.vhf
+*.xst
