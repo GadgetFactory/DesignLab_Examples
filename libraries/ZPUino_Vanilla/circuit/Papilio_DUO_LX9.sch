@@ -6,11 +6,11 @@
         <trait edittrait="all:0" />
     </attr>
     <netlist>
-        <signal name="ARD_RESET" />
-        <signal name="DUO_SW1" />
         <signal name="ext_pins_in(100:0)" />
         <signal name="ext_pins_out(100:0)" />
         <signal name="ext_pins_inout(100:0)" />
+        <signal name="ARD_RESET" />
+        <signal name="DUO_SW1" />
         <signal name="Arduino_0" />
         <signal name="Arduino_1" />
         <signal name="Arduino_2" />
@@ -33,19 +33,12 @@
         <signal name="Arduino_16" />
         <signal name="Arduino_15" />
         <signal name="Arduino_14" />
-        <signal name="XLXN_335(7:0)" />
         <signal name="XLXN_336(7:0)" />
-        <signal name="XLXN_333(7:0)" />
         <signal name="XLXN_334(7:0)" />
-        <signal name="XLXN_331(7:0)" />
         <signal name="XLXN_332(7:0)" />
-        <signal name="XLXN_329(7:0)" />
         <signal name="XLXN_330(7:0)" />
-        <signal name="XLXN_327(7:0)" />
         <signal name="XLXN_328(7:0)" />
-        <signal name="XLXN_325(7:0)" />
         <signal name="XLXN_326(7:0)" />
-        <signal name="XLXN_448(7:0)" />
         <signal name="XLXN_449(7:0)" />
         <signal name="Arduino_22" />
         <signal name="Arduino_24" />
@@ -79,15 +72,20 @@
         <signal name="Arduino_27" />
         <signal name="Arduino_25" />
         <signal name="Arduino_23" />
-        <signal name="XLXN_518(200:0)" />
-        <signal name="XLXN_519(200:0)" />
-        <signal name="XLXN_520(200:0)" />
-        <signal name="XLXN_521(200:0)" />
-        <port polarity="Output" name="ARD_RESET" />
-        <port polarity="Input" name="DUO_SW1" />
+        <signal name="XLXN_448(7:0)" />
+        <signal name="XLXN_325(7:0)" />
+        <signal name="XLXN_327(7:0)" />
+        <signal name="XLXN_329(7:0)" />
+        <signal name="XLXN_331(7:0)" />
+        <signal name="XLXN_333(7:0)" />
+        <signal name="XLXN_335(7:0)" />
+        <signal name="XLXN_598(200:0)" />
+        <signal name="XLXN_599(200:0)" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
+        <port polarity="Output" name="ARD_RESET" />
+        <port polarity="Input" name="DUO_SW1" />
         <port polarity="BiDirectional" name="Arduino_0" />
         <port polarity="BiDirectional" name="Arduino_1" />
         <port polarity="BiDirectional" name="Arduino_2" />
@@ -318,13 +316,9 @@
             <line x2="64" y1="-588" y2="-588" x1="0" />
             <rect width="360" x="64" y="-676" height="116" />
         </blockdef>
-        <block symbolname="inv" name="XLXI_48">
-            <blockpin signalname="DUO_SW1" name="I" />
-            <blockpin signalname="ARD_RESET" name="O" />
-        </block>
-        <block symbolname="ZPUino_Papilio_DUO_V2" name="XLXI_58">
-            <blockpin signalname="XLXN_521(200:0)" name="gpio_bus_out(200:0)" />
-            <blockpin signalname="XLXN_520(200:0)" name="gpio_bus_in(200:0)" />
+        <block symbolname="ZPUino_Papilio_DUO_V2" name="XLXI_59">
+            <blockpin signalname="XLXN_599(200:0)" name="gpio_bus_out(200:0)" />
+            <blockpin signalname="XLXN_598(200:0)" name="gpio_bus_in(200:0)" />
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
             <blockpin name="clk_osc_32Mhz" />
@@ -352,6 +346,10 @@
             <blockpin signalname="ext_pins_in(100:0)" name="ext_pins_in(100:0)" />
             <blockpin signalname="ext_pins_out(100:0)" name="ext_pins_out(100:0)" />
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
+        </block>
+        <block symbolname="inv" name="XLXI_48">
+            <blockpin signalname="DUO_SW1" name="I" />
+            <blockpin signalname="ARD_RESET" name="O" />
         </block>
         <block symbolname="Wing_GPIO" name="XLXI_27">
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
@@ -402,8 +400,8 @@
             <blockpin signalname="Arduino_16" name="WING_BL5" />
             <blockpin signalname="Arduino_15" name="WING_BL6" />
             <blockpin signalname="Arduino_14" name="WING_BL7" />
-            <blockpin signalname="XLXN_521(200:0)" name="gpio_bus_out(200:0)" />
-            <blockpin signalname="XLXN_520(200:0)" name="gpio_bus_in(200:0)" />
+            <blockpin signalname="XLXN_599(200:0)" name="gpio_bus_out(200:0)" />
+            <blockpin signalname="XLXN_598(200:0)" name="gpio_bus_in(200:0)" />
             <blockpin signalname="XLXN_331(7:0)" name="WingType_miso_BL(7:0)" />
             <blockpin signalname="XLXN_333(7:0)" name="WingType_miso_AH(7:0)" />
             <blockpin signalname="XLXN_332(7:0)" name="WingType_mosi_BL(7:0)" />
@@ -467,6 +465,21 @@
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
+        <text style="fontsize:64;fontname:Arial" x="2108" y="3456">Version: 1.0</text>
+        <branch name="ext_pins_in(100:0)">
+            <wire x2="336" y1="96" y2="96" x1="304" />
+        </branch>
+        <branch name="ext_pins_out(100:0)">
+            <wire x2="336" y1="128" y2="128" x1="304" />
+        </branch>
+        <branch name="ext_pins_inout(100:0)">
+            <wire x2="336" y1="160" y2="160" x1="304" />
+        </branch>
+        <iomarker fontsize="28" x="304" y="96" name="ext_pins_in(100:0)" orien="R180" />
+        <iomarker fontsize="28" x="304" y="128" name="ext_pins_out(100:0)" orien="R180" />
+        <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
+        <instance x="336" y="752" name="XLXI_59" orien="R0">
+        </instance>
         <text style="fontsize:28;fontname:Arial" x="112" y="3364">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
         <branch name="ARD_RESET">
             <wire x2="624" y1="3072" y2="3072" x1="592" />
@@ -480,346 +493,361 @@
         <text style="fontsize:48;fontname:Arial" x="572" y="3464">Papilio DUO Reset</text>
         <iomarker fontsize="28" x="624" y="3072" name="ARD_RESET" orien="R0" />
         <iomarker fontsize="28" x="336" y="3072" name="DUO_SW1" orien="R180" />
-        <instance x="336" y="752" name="XLXI_58" orien="R0">
-        </instance>
-        <branch name="ext_pins_in(100:0)">
-            <wire x2="336" y1="96" y2="96" x1="304" />
-        </branch>
-        <branch name="ext_pins_out(100:0)">
-            <wire x2="336" y1="128" y2="128" x1="304" />
-        </branch>
-        <branch name="ext_pins_inout(100:0)">
-            <wire x2="336" y1="160" y2="160" x1="304" />
-        </branch>
-        <iomarker fontsize="28" x="304" y="96" name="ext_pins_in(100:0)" orien="R180" />
-        <iomarker fontsize="28" x="304" y="128" name="ext_pins_out(100:0)" orien="R180" />
-        <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
         <branch name="Arduino_0">
-            <wire x2="5168" y1="1232" y2="1232" x1="5152" />
-            <wire x2="5184" y1="1232" y2="1232" x1="5168" />
+            <wire x2="5136" y1="1232" y2="1232" x1="5120" />
+            <wire x2="5152" y1="1232" y2="1232" x1="5136" />
         </branch>
         <branch name="Arduino_1">
-            <wire x2="5168" y1="1264" y2="1264" x1="5152" />
-            <wire x2="5184" y1="1264" y2="1264" x1="5168" />
+            <wire x2="5136" y1="1264" y2="1264" x1="5120" />
+            <wire x2="5152" y1="1264" y2="1264" x1="5136" />
         </branch>
         <branch name="Arduino_2">
-            <wire x2="5168" y1="1296" y2="1296" x1="5152" />
-            <wire x2="5184" y1="1296" y2="1296" x1="5168" />
+            <wire x2="5136" y1="1296" y2="1296" x1="5120" />
+            <wire x2="5152" y1="1296" y2="1296" x1="5136" />
         </branch>
         <branch name="Arduino_3">
-            <wire x2="5168" y1="1328" y2="1328" x1="5152" />
-            <wire x2="5184" y1="1328" y2="1328" x1="5168" />
+            <wire x2="5136" y1="1328" y2="1328" x1="5120" />
+            <wire x2="5152" y1="1328" y2="1328" x1="5136" />
         </branch>
         <branch name="Arduino_4">
-            <wire x2="5168" y1="1360" y2="1360" x1="5152" />
-            <wire x2="5184" y1="1360" y2="1360" x1="5168" />
+            <wire x2="5136" y1="1360" y2="1360" x1="5120" />
+            <wire x2="5152" y1="1360" y2="1360" x1="5136" />
         </branch>
         <branch name="Arduino_5">
-            <wire x2="5168" y1="1392" y2="1392" x1="5152" />
-            <wire x2="5184" y1="1392" y2="1392" x1="5168" />
+            <wire x2="5136" y1="1392" y2="1392" x1="5120" />
+            <wire x2="5152" y1="1392" y2="1392" x1="5136" />
         </branch>
         <branch name="Arduino_6">
-            <wire x2="5168" y1="1424" y2="1424" x1="5152" />
-            <wire x2="5184" y1="1424" y2="1424" x1="5168" />
+            <wire x2="5136" y1="1424" y2="1424" x1="5120" />
+            <wire x2="5152" y1="1424" y2="1424" x1="5136" />
         </branch>
         <branch name="Arduino_7">
-            <wire x2="5168" y1="1456" y2="1456" x1="5152" />
-            <wire x2="5184" y1="1456" y2="1456" x1="5168" />
+            <wire x2="5136" y1="1456" y2="1456" x1="5120" />
+            <wire x2="5152" y1="1456" y2="1456" x1="5136" />
         </branch>
         <branch name="Arduino_8">
-            <wire x2="5168" y1="1520" y2="1520" x1="5152" />
-            <wire x2="5184" y1="1520" y2="1520" x1="5168" />
+            <wire x2="5136" y1="1520" y2="1520" x1="5120" />
+            <wire x2="5152" y1="1520" y2="1520" x1="5136" />
         </branch>
         <branch name="Arduino_9">
-            <wire x2="5168" y1="1552" y2="1552" x1="5152" />
-            <wire x2="5184" y1="1552" y2="1552" x1="5168" />
+            <wire x2="5136" y1="1552" y2="1552" x1="5120" />
+            <wire x2="5152" y1="1552" y2="1552" x1="5136" />
         </branch>
         <branch name="Arduino_10">
-            <wire x2="5168" y1="1584" y2="1584" x1="5152" />
-            <wire x2="5184" y1="1584" y2="1584" x1="5168" />
+            <wire x2="5136" y1="1584" y2="1584" x1="5120" />
+            <wire x2="5152" y1="1584" y2="1584" x1="5136" />
         </branch>
         <branch name="Arduino_11">
-            <wire x2="5168" y1="1616" y2="1616" x1="5152" />
-            <wire x2="5184" y1="1616" y2="1616" x1="5168" />
+            <wire x2="5136" y1="1616" y2="1616" x1="5120" />
+            <wire x2="5152" y1="1616" y2="1616" x1="5136" />
         </branch>
         <branch name="Arduino_12">
-            <wire x2="5168" y1="1648" y2="1648" x1="5152" />
-            <wire x2="5184" y1="1648" y2="1648" x1="5168" />
+            <wire x2="5136" y1="1648" y2="1648" x1="5120" />
+            <wire x2="5152" y1="1648" y2="1648" x1="5136" />
         </branch>
         <branch name="Arduino_13">
-            <wire x2="5168" y1="1680" y2="1680" x1="5152" />
-            <wire x2="5184" y1="1680" y2="1680" x1="5168" />
+            <wire x2="5136" y1="1680" y2="1680" x1="5120" />
+            <wire x2="5152" y1="1680" y2="1680" x1="5136" />
         </branch>
         <branch name="Arduino_21">
-            <wire x2="5168" y1="1808" y2="1808" x1="5152" />
-            <wire x2="5184" y1="1808" y2="1808" x1="5168" />
+            <wire x2="5136" y1="1808" y2="1808" x1="5120" />
+            <wire x2="5152" y1="1808" y2="1808" x1="5136" />
         </branch>
         <branch name="Arduino_20">
-            <wire x2="5168" y1="1840" y2="1840" x1="5152" />
-            <wire x2="5184" y1="1840" y2="1840" x1="5168" />
+            <wire x2="5136" y1="1840" y2="1840" x1="5120" />
+            <wire x2="5152" y1="1840" y2="1840" x1="5136" />
         </branch>
         <branch name="Arduino_19">
-            <wire x2="5168" y1="1872" y2="1872" x1="5152" />
-            <wire x2="5184" y1="1872" y2="1872" x1="5168" />
+            <wire x2="5136" y1="1872" y2="1872" x1="5120" />
+            <wire x2="5152" y1="1872" y2="1872" x1="5136" />
         </branch>
         <branch name="Arduino_18">
-            <wire x2="5168" y1="1904" y2="1904" x1="5152" />
-            <wire x2="5184" y1="1904" y2="1904" x1="5168" />
+            <wire x2="5136" y1="1904" y2="1904" x1="5120" />
+            <wire x2="5152" y1="1904" y2="1904" x1="5136" />
         </branch>
         <branch name="Arduino_17">
-            <wire x2="5168" y1="1936" y2="1936" x1="5152" />
-            <wire x2="5184" y1="1936" y2="1936" x1="5168" />
+            <wire x2="5136" y1="1936" y2="1936" x1="5120" />
+            <wire x2="5152" y1="1936" y2="1936" x1="5136" />
         </branch>
         <branch name="Arduino_16">
-            <wire x2="5168" y1="1968" y2="1968" x1="5152" />
-            <wire x2="5184" y1="1968" y2="1968" x1="5168" />
+            <wire x2="5136" y1="1968" y2="1968" x1="5120" />
+            <wire x2="5152" y1="1968" y2="1968" x1="5136" />
         </branch>
         <branch name="Arduino_15">
-            <wire x2="5168" y1="2000" y2="2000" x1="5152" />
-            <wire x2="5184" y1="2000" y2="2000" x1="5168" />
+            <wire x2="5136" y1="2000" y2="2000" x1="5120" />
+            <wire x2="5152" y1="2000" y2="2000" x1="5136" />
         </branch>
         <branch name="Arduino_14">
-            <wire x2="5168" y1="2032" y2="2032" x1="5152" />
-            <wire x2="5184" y1="2032" y2="2032" x1="5168" />
-        </branch>
-        <branch name="XLXN_335(7:0)">
-            <wire x2="4592" y1="1328" y2="1328" x1="4560" />
+            <wire x2="5136" y1="2032" y2="2032" x1="5120" />
+            <wire x2="5152" y1="2032" y2="2032" x1="5136" />
         </branch>
         <branch name="XLXN_336(7:0)">
-            <wire x2="4592" y1="1392" y2="1392" x1="4560" />
-        </branch>
-        <branch name="XLXN_333(7:0)">
-            <wire x2="4592" y1="1616" y2="1616" x1="4560" />
+            <wire x2="4544" y1="1392" y2="1392" x1="4528" />
+            <wire x2="4560" y1="1392" y2="1392" x1="4544" />
         </branch>
         <branch name="XLXN_334(7:0)">
-            <wire x2="4592" y1="1680" y2="1680" x1="4560" />
-        </branch>
-        <branch name="XLXN_331(7:0)">
-            <wire x2="4592" y1="1888" y2="1888" x1="4560" />
+            <wire x2="4544" y1="1680" y2="1680" x1="4528" />
+            <wire x2="4560" y1="1680" y2="1680" x1="4544" />
         </branch>
         <branch name="XLXN_332(7:0)">
-            <wire x2="4592" y1="1952" y2="1952" x1="4560" />
-        </branch>
-        <branch name="XLXN_329(7:0)">
-            <wire x2="4592" y1="2192" y2="2192" x1="4560" />
+            <wire x2="4544" y1="1952" y2="1952" x1="4528" />
+            <wire x2="4560" y1="1952" y2="1952" x1="4544" />
         </branch>
         <branch name="XLXN_330(7:0)">
-            <wire x2="4592" y1="2256" y2="2256" x1="4560" />
-        </branch>
-        <branch name="XLXN_327(7:0)">
-            <wire x2="4592" y1="2480" y2="2480" x1="4560" />
+            <wire x2="4544" y1="2256" y2="2256" x1="4528" />
+            <wire x2="4560" y1="2256" y2="2256" x1="4544" />
         </branch>
         <branch name="XLXN_328(7:0)">
-            <wire x2="4592" y1="2544" y2="2544" x1="4560" />
-        </branch>
-        <branch name="XLXN_325(7:0)">
-            <wire x2="4592" y1="2768" y2="2768" x1="4560" />
+            <wire x2="4544" y1="2544" y2="2544" x1="4528" />
+            <wire x2="4560" y1="2544" y2="2544" x1="4544" />
         </branch>
         <branch name="XLXN_326(7:0)">
-            <wire x2="4592" y1="2832" y2="2832" x1="4560" />
+            <wire x2="4544" y1="2832" y2="2832" x1="4528" />
+            <wire x2="4560" y1="2832" y2="2832" x1="4544" />
         </branch>
-        <instance x="4336" y="1424" name="XLXI_27" orien="R0">
+        <instance x="4304" y="1424" name="XLXI_27" orien="R0">
         </instance>
-        <instance x="4336" y="1712" name="XLXI_26" orien="R0">
+        <instance x="4304" y="1712" name="XLXI_26" orien="R0">
         </instance>
-        <instance x="4336" y="1984" name="XLXI_25" orien="R0">
+        <instance x="4304" y="1984" name="XLXI_25" orien="R0">
         </instance>
-        <instance x="4336" y="2288" name="XLXI_24" orien="R0">
+        <instance x="4304" y="2288" name="XLXI_24" orien="R0">
         </instance>
-        <instance x="4336" y="2576" name="XLXI_23" orien="R0">
+        <instance x="4304" y="2576" name="XLXI_23" orien="R0">
         </instance>
-        <instance x="4336" y="2864" name="XLXI_22" orien="R0">
+        <instance x="4304" y="2864" name="XLXI_22" orien="R0">
         </instance>
-        <branch name="XLXN_448(7:0)">
-            <wire x2="4592" y1="3056" y2="3056" x1="4560" />
-        </branch>
         <branch name="XLXN_449(7:0)">
-            <wire x2="4592" y1="3120" y2="3120" x1="4560" />
+            <wire x2="4544" y1="3120" y2="3120" x1="4528" />
+            <wire x2="4560" y1="3120" y2="3120" x1="4544" />
         </branch>
-        <instance x="4336" y="3152" name="XLXI_41" orien="R0">
+        <instance x="4304" y="3152" name="XLXI_41" orien="R0">
         </instance>
         <branch name="Arduino_22">
-            <wire x2="5168" y1="2096" y2="2096" x1="5152" />
-            <wire x2="5184" y1="2096" y2="2096" x1="5168" />
+            <wire x2="5136" y1="2096" y2="2096" x1="5120" />
+            <wire x2="5152" y1="2096" y2="2096" x1="5136" />
         </branch>
         <branch name="Arduino_24">
-            <wire x2="5168" y1="2128" y2="2128" x1="5152" />
-            <wire x2="5184" y1="2128" y2="2128" x1="5168" />
+            <wire x2="5136" y1="2128" y2="2128" x1="5120" />
+            <wire x2="5152" y1="2128" y2="2128" x1="5136" />
         </branch>
         <branch name="Arduino_26">
-            <wire x2="5168" y1="2160" y2="2160" x1="5152" />
-            <wire x2="5184" y1="2160" y2="2160" x1="5168" />
+            <wire x2="5136" y1="2160" y2="2160" x1="5120" />
+            <wire x2="5152" y1="2160" y2="2160" x1="5136" />
         </branch>
         <branch name="Arduino_28">
-            <wire x2="5168" y1="2192" y2="2192" x1="5152" />
-            <wire x2="5184" y1="2192" y2="2192" x1="5168" />
+            <wire x2="5136" y1="2192" y2="2192" x1="5120" />
+            <wire x2="5152" y1="2192" y2="2192" x1="5136" />
         </branch>
         <branch name="Arduino_30">
-            <wire x2="5168" y1="2224" y2="2224" x1="5152" />
-            <wire x2="5184" y1="2224" y2="2224" x1="5168" />
+            <wire x2="5136" y1="2224" y2="2224" x1="5120" />
+            <wire x2="5152" y1="2224" y2="2224" x1="5136" />
         </branch>
         <branch name="Arduino_32">
-            <wire x2="5168" y1="2256" y2="2256" x1="5152" />
-            <wire x2="5184" y1="2256" y2="2256" x1="5168" />
+            <wire x2="5136" y1="2256" y2="2256" x1="5120" />
+            <wire x2="5152" y1="2256" y2="2256" x1="5136" />
         </branch>
         <branch name="Arduino_34">
-            <wire x2="5168" y1="2288" y2="2288" x1="5152" />
-            <wire x2="5184" y1="2288" y2="2288" x1="5168" />
+            <wire x2="5136" y1="2288" y2="2288" x1="5120" />
+            <wire x2="5152" y1="2288" y2="2288" x1="5136" />
         </branch>
         <branch name="Arduino_36">
-            <wire x2="5168" y1="2320" y2="2320" x1="5152" />
-            <wire x2="5184" y1="2320" y2="2320" x1="5168" />
+            <wire x2="5136" y1="2320" y2="2320" x1="5120" />
+            <wire x2="5152" y1="2320" y2="2320" x1="5136" />
         </branch>
         <branch name="Arduino_38">
-            <wire x2="5168" y1="2384" y2="2384" x1="5152" />
-            <wire x2="5184" y1="2384" y2="2384" x1="5168" />
+            <wire x2="5136" y1="2384" y2="2384" x1="5120" />
+            <wire x2="5152" y1="2384" y2="2384" x1="5136" />
         </branch>
         <branch name="Arduino_40">
-            <wire x2="5168" y1="2416" y2="2416" x1="5152" />
-            <wire x2="5184" y1="2416" y2="2416" x1="5168" />
+            <wire x2="5136" y1="2416" y2="2416" x1="5120" />
+            <wire x2="5152" y1="2416" y2="2416" x1="5136" />
         </branch>
         <branch name="Arduino_42">
-            <wire x2="5168" y1="2448" y2="2448" x1="5152" />
-            <wire x2="5184" y1="2448" y2="2448" x1="5168" />
+            <wire x2="5136" y1="2448" y2="2448" x1="5120" />
+            <wire x2="5152" y1="2448" y2="2448" x1="5136" />
         </branch>
         <branch name="Arduino_44">
-            <wire x2="5168" y1="2480" y2="2480" x1="5152" />
-            <wire x2="5184" y1="2480" y2="2480" x1="5168" />
+            <wire x2="5136" y1="2480" y2="2480" x1="5120" />
+            <wire x2="5152" y1="2480" y2="2480" x1="5136" />
         </branch>
         <branch name="Arduino_46">
-            <wire x2="5168" y1="2512" y2="2512" x1="5152" />
-            <wire x2="5184" y1="2512" y2="2512" x1="5168" />
+            <wire x2="5136" y1="2512" y2="2512" x1="5120" />
+            <wire x2="5152" y1="2512" y2="2512" x1="5136" />
         </branch>
         <branch name="Arduino_48">
-            <wire x2="5168" y1="2544" y2="2544" x1="5152" />
-            <wire x2="5184" y1="2544" y2="2544" x1="5168" />
+            <wire x2="5136" y1="2544" y2="2544" x1="5120" />
+            <wire x2="5152" y1="2544" y2="2544" x1="5136" />
         </branch>
         <branch name="Arduino_50">
-            <wire x2="5168" y1="2576" y2="2576" x1="5152" />
-            <wire x2="5184" y1="2576" y2="2576" x1="5168" />
+            <wire x2="5136" y1="2576" y2="2576" x1="5120" />
+            <wire x2="5152" y1="2576" y2="2576" x1="5136" />
         </branch>
         <branch name="Arduino_52">
-            <wire x2="5168" y1="2608" y2="2608" x1="5152" />
-            <wire x2="5184" y1="2608" y2="2608" x1="5168" />
+            <wire x2="5136" y1="2608" y2="2608" x1="5120" />
+            <wire x2="5152" y1="2608" y2="2608" x1="5136" />
         </branch>
         <branch name="Arduino_53">
-            <wire x2="5184" y1="2672" y2="2672" x1="5152" />
+            <wire x2="5136" y1="2672" y2="2672" x1="5120" />
+            <wire x2="5152" y1="2672" y2="2672" x1="5136" />
         </branch>
         <branch name="Arduino_51">
-            <wire x2="5184" y1="2704" y2="2704" x1="5152" />
+            <wire x2="5136" y1="2704" y2="2704" x1="5120" />
+            <wire x2="5152" y1="2704" y2="2704" x1="5136" />
         </branch>
         <branch name="Arduino_49">
-            <wire x2="5184" y1="2736" y2="2736" x1="5152" />
+            <wire x2="5136" y1="2736" y2="2736" x1="5120" />
+            <wire x2="5152" y1="2736" y2="2736" x1="5136" />
         </branch>
         <branch name="Arduino_47">
-            <wire x2="5184" y1="2768" y2="2768" x1="5152" />
+            <wire x2="5136" y1="2768" y2="2768" x1="5120" />
+            <wire x2="5152" y1="2768" y2="2768" x1="5136" />
         </branch>
         <branch name="Arduino_45">
-            <wire x2="5184" y1="2800" y2="2800" x1="5152" />
+            <wire x2="5136" y1="2800" y2="2800" x1="5120" />
+            <wire x2="5152" y1="2800" y2="2800" x1="5136" />
         </branch>
         <branch name="Arduino_43">
-            <wire x2="5184" y1="2832" y2="2832" x1="5152" />
+            <wire x2="5136" y1="2832" y2="2832" x1="5120" />
+            <wire x2="5152" y1="2832" y2="2832" x1="5136" />
         </branch>
         <branch name="Arduino_41">
-            <wire x2="5184" y1="2864" y2="2864" x1="5152" />
+            <wire x2="5136" y1="2864" y2="2864" x1="5120" />
+            <wire x2="5152" y1="2864" y2="2864" x1="5136" />
         </branch>
         <branch name="Arduino_39">
-            <wire x2="5184" y1="2896" y2="2896" x1="5152" />
+            <wire x2="5136" y1="2896" y2="2896" x1="5120" />
+            <wire x2="5152" y1="2896" y2="2896" x1="5136" />
         </branch>
         <branch name="Arduino_37">
-            <wire x2="5184" y1="2960" y2="2960" x1="5152" />
+            <wire x2="5136" y1="2960" y2="2960" x1="5120" />
+            <wire x2="5152" y1="2960" y2="2960" x1="5136" />
         </branch>
         <branch name="Arduino_35">
-            <wire x2="5184" y1="2992" y2="2992" x1="5152" />
+            <wire x2="5136" y1="2992" y2="2992" x1="5120" />
+            <wire x2="5152" y1="2992" y2="2992" x1="5136" />
         </branch>
         <branch name="Arduino_33">
-            <wire x2="5184" y1="3024" y2="3024" x1="5152" />
+            <wire x2="5136" y1="3024" y2="3024" x1="5120" />
+            <wire x2="5152" y1="3024" y2="3024" x1="5136" />
         </branch>
         <branch name="Arduino_31">
-            <wire x2="5184" y1="3056" y2="3056" x1="5152" />
+            <wire x2="5136" y1="3056" y2="3056" x1="5120" />
+            <wire x2="5152" y1="3056" y2="3056" x1="5136" />
         </branch>
         <branch name="Arduino_29">
-            <wire x2="5184" y1="3088" y2="3088" x1="5152" />
+            <wire x2="5136" y1="3088" y2="3088" x1="5120" />
+            <wire x2="5152" y1="3088" y2="3088" x1="5136" />
         </branch>
         <branch name="Arduino_27">
-            <wire x2="5184" y1="3120" y2="3120" x1="5152" />
+            <wire x2="5136" y1="3120" y2="3120" x1="5120" />
+            <wire x2="5152" y1="3120" y2="3120" x1="5136" />
         </branch>
         <branch name="Arduino_25">
-            <wire x2="5184" y1="3152" y2="3152" x1="5152" />
+            <wire x2="5136" y1="3152" y2="3152" x1="5120" />
+            <wire x2="5152" y1="3152" y2="3152" x1="5136" />
         </branch>
         <branch name="Arduino_23">
-            <wire x2="5184" y1="3184" y2="3184" x1="5152" />
+            <wire x2="5136" y1="3184" y2="3184" x1="5120" />
+            <wire x2="5152" y1="3184" y2="3184" x1="5136" />
         </branch>
-        <instance x="4656" y="3344" name="XLXI_44" orien="R0">
+        <branch name="XLXN_448(7:0)">
+            <wire x2="4544" y1="3056" y2="3056" x1="4528" />
+            <wire x2="4560" y1="3056" y2="3056" x1="4544" />
+        </branch>
+        <branch name="XLXN_325(7:0)">
+            <wire x2="4544" y1="2768" y2="2768" x1="4528" />
+            <wire x2="4560" y1="2768" y2="2768" x1="4544" />
+        </branch>
+        <branch name="XLXN_327(7:0)">
+            <wire x2="4544" y1="2480" y2="2480" x1="4528" />
+            <wire x2="4560" y1="2480" y2="2480" x1="4544" />
+        </branch>
+        <branch name="XLXN_329(7:0)">
+            <wire x2="4544" y1="2192" y2="2192" x1="4528" />
+            <wire x2="4560" y1="2192" y2="2192" x1="4544" />
+        </branch>
+        <branch name="XLXN_331(7:0)">
+            <wire x2="4544" y1="1888" y2="1888" x1="4528" />
+            <wire x2="4560" y1="1888" y2="1888" x1="4544" />
+        </branch>
+        <branch name="XLXN_333(7:0)">
+            <wire x2="4544" y1="1616" y2="1616" x1="4528" />
+            <wire x2="4560" y1="1616" y2="1616" x1="4544" />
+        </branch>
+        <branch name="XLXN_335(7:0)">
+            <wire x2="4544" y1="1328" y2="1328" x1="4528" />
+            <wire x2="4560" y1="1328" y2="1328" x1="4544" />
+        </branch>
+        <instance x="4624" y="3344" name="XLXI_44" orien="R0">
         </instance>
-        <iomarker fontsize="28" x="5184" y="1232" name="Arduino_0" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1264" name="Arduino_1" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1296" name="Arduino_2" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1328" name="Arduino_3" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1360" name="Arduino_4" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1392" name="Arduino_5" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1424" name="Arduino_6" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1456" name="Arduino_7" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1520" name="Arduino_8" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1552" name="Arduino_9" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1584" name="Arduino_10" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1616" name="Arduino_11" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1648" name="Arduino_12" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1680" name="Arduino_13" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1808" name="Arduino_21" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1840" name="Arduino_20" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1872" name="Arduino_19" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1904" name="Arduino_18" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1936" name="Arduino_17" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="1968" name="Arduino_16" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2000" name="Arduino_15" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2032" name="Arduino_14" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2096" name="Arduino_22" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2128" name="Arduino_24" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2160" name="Arduino_26" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2192" name="Arduino_28" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2224" name="Arduino_30" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2256" name="Arduino_32" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2288" name="Arduino_34" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2320" name="Arduino_36" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2384" name="Arduino_38" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2416" name="Arduino_40" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2448" name="Arduino_42" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2480" name="Arduino_44" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2512" name="Arduino_46" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2544" name="Arduino_48" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2576" name="Arduino_50" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2608" name="Arduino_52" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2672" name="Arduino_53" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2704" name="Arduino_51" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2736" name="Arduino_49" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2768" name="Arduino_47" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2800" name="Arduino_45" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2832" name="Arduino_43" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2864" name="Arduino_41" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2896" name="Arduino_39" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2960" name="Arduino_37" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="2992" name="Arduino_35" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3024" name="Arduino_33" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3056" name="Arduino_31" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3088" name="Arduino_29" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3120" name="Arduino_27" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3152" name="Arduino_25" orien="R0" />
-        <iomarker fontsize="28" x="5184" y="3184" name="Arduino_23" orien="R0" />
-        <branch name="XLXN_520(200:0)">
-            <wire x2="5280" y1="1040" y2="1040" x1="4544" />
-            <wire x2="4544" y1="1040" y2="1168" x1="4544" />
-            <wire x2="4592" y1="1168" y2="1168" x1="4544" />
-            <wire x2="5280" y1="336" y2="336" x1="4704" />
-            <wire x2="5280" y1="336" y2="1024" x1="5280" />
-            <wire x2="5280" y1="1024" y2="1040" x1="5280" />
+        <iomarker fontsize="28" x="5152" y="1232" name="Arduino_0" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1264" name="Arduino_1" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1296" name="Arduino_2" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1328" name="Arduino_3" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1360" name="Arduino_4" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1392" name="Arduino_5" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1424" name="Arduino_6" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1456" name="Arduino_7" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1520" name="Arduino_8" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1552" name="Arduino_9" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1584" name="Arduino_10" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1616" name="Arduino_11" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1648" name="Arduino_12" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1680" name="Arduino_13" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1808" name="Arduino_21" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1840" name="Arduino_20" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1872" name="Arduino_19" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1904" name="Arduino_18" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1936" name="Arduino_17" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="1968" name="Arduino_16" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2000" name="Arduino_15" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2032" name="Arduino_14" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2096" name="Arduino_22" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2128" name="Arduino_24" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2160" name="Arduino_26" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2192" name="Arduino_28" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2224" name="Arduino_30" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2256" name="Arduino_32" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2288" name="Arduino_34" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2320" name="Arduino_36" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2384" name="Arduino_38" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2416" name="Arduino_40" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2448" name="Arduino_42" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2480" name="Arduino_44" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2512" name="Arduino_46" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2544" name="Arduino_48" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2576" name="Arduino_50" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2608" name="Arduino_52" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2672" name="Arduino_53" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2704" name="Arduino_51" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2736" name="Arduino_49" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2768" name="Arduino_47" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2800" name="Arduino_45" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2832" name="Arduino_43" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2864" name="Arduino_41" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2896" name="Arduino_39" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2960" name="Arduino_37" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="2992" name="Arduino_35" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3024" name="Arduino_33" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3056" name="Arduino_31" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3088" name="Arduino_29" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3120" name="Arduino_27" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3152" name="Arduino_25" orien="R0" />
+        <iomarker fontsize="28" x="5152" y="3184" name="Arduino_23" orien="R0" />
+        <branch name="XLXN_598(200:0)">
+            <wire x2="5216" y1="1056" y2="1056" x1="4512" />
+            <wire x2="4512" y1="1056" y2="1168" x1="4512" />
+            <wire x2="4560" y1="1168" y2="1168" x1="4512" />
+            <wire x2="5216" y1="336" y2="336" x1="4704" />
+            <wire x2="5216" y1="336" y2="1056" x1="5216" />
         </branch>
-        <branch name="XLXN_521(200:0)">
-            <wire x2="5264" y1="1024" y2="1024" x1="4528" />
-            <wire x2="4528" y1="1024" y2="1184" x1="4528" />
-            <wire x2="4592" y1="1184" y2="1184" x1="4528" />
-            <wire x2="5264" y1="352" y2="352" x1="4704" />
-            <wire x2="5264" y1="352" y2="1024" x1="5264" />
+        <branch name="XLXN_599(200:0)">
+            <wire x2="5200" y1="1040" y2="1040" x1="4496" />
+            <wire x2="4496" y1="1040" y2="1184" x1="4496" />
+            <wire x2="4560" y1="1184" y2="1184" x1="4496" />
+            <wire x2="5200" y1="352" y2="352" x1="4704" />
+            <wire x2="5200" y1="352" y2="1040" x1="5200" />
         </branch>
     </sheet>
 </drawing>
