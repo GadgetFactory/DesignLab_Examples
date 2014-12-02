@@ -45,4 +45,3 @@ if exist DUO_LX9 (
 	for /f %%F in ('dir /b  ^| findstr /vile "Sketch saved_bitfiles rebuild LX9 500K 250K"') do rmdir /q /s "%%F"
 	cd ..
 )
-pause
