@@ -28,6 +28,7 @@
 #include "modplayer.h"
 #include "ramFS.h"
 #include "cbuffer.h"
+#include <Timer.h>
 
 MODPLAYER modplayer;
 HardwareSerial mySerial1(11);
@@ -177,10 +178,11 @@ void setStatus(int pin, int x, int y,const char *name, int highLow)
         }  
 }
 
-void _zpu_interrupt()
+bool timer(void)
 {
   modplayer.zpu_interrupt();
   timerTicks++;
+  return true;
 }
 
 
@@ -261,14 +263,12 @@ void setup()
   
   VGA.printtext(10, 110, "Comp Shield Test");
   
-  //Setup timer for YM and mod players, this generates an interrupt at 1700hz
-  TMR0CTL = 0;
-  TMR0CNT = 0;
-  TMR0CMP = ((CLK_FREQ/2) / FREQ )- 1;
-  TMR0CTL = _BV(TCTLENA)|_BV(TCTLCCM)|_BV(TCTLDIR)|
-  	_BV(TCTLCP0) | _BV(TCTLIEN);
-  INTRMASK = BIT(INTRLINE_TIMER0); // Enable Timer0 interrupt
-  INTRCTL=1;     
+ //Setup timer for YM and mod players, this generates an interrupt at 17000hz
+  Timers.begin();
+    int r = Timers.periodicHz(17000, (bool(*)(void*))timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }    
    
   //Set what wishbone slot the audio passthrough device is connected to.
   modplayer.setup(5);
