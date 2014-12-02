@@ -93,3 +93,5 @@ libraries/Computing_Shield/circuit/DUO_LX9/usage_statistics_webtalk.html
 libraries/Computing_Shield/circuit/DUO_LX9/par_usage_statistics.html
 *.vhf
 *.xst
+libraries/ZPUino_1.zip
+libraries/audio libraries -2.0-v1.zip
