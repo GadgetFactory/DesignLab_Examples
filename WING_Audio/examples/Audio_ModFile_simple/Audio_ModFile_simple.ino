@@ -63,7 +63,7 @@ bool timer(void)
 }
 
 void loop() {
-  Serial.println("Running");
+
   // put your main code here, to run repeatedly: 
   if (modplayer.getPlaying() == 1)
     modplayer.audiofill();
