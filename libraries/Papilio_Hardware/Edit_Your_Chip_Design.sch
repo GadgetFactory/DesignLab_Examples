@@ -596,7 +596,7 @@
             <line x2="560" y1="-128" y2="-128" x1="496" />
         </blockdef>
         <blockdef name="LogicStart_Shield_Pinout">
-            <timestamp>2014-10-9T16:23:50</timestamp>
+            <timestamp>2014-11-14T17:56:19</timestamp>
             <rect width="432" x="64" y="-1808" height="2104" />
             <rect width="188" x="308" y="-1452" height="272" />
             <rect width="188" x="308" y="-1168" height="280" />
@@ -927,8 +927,8 @@
             <blockpin name="AUDIO_RIGHT" />
         </block>
         <block symbolname="LogicStart_MegaWing_Pinout" name="XLXI_60">
-            <blockpin name="gpio_bus_out(147:0)" />
-            <blockpin name="gpio_bus_in(97:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
@@ -1146,8 +1146,8 @@
             <blockpin name="WING_DH7" />
         </block>
         <block symbolname="LogicStart_Shield_Pinout" name="XLXI_62">
-            <blockpin name="gpio_bus_out(165:0)" />
-            <blockpin name="gpio_bus_in(109:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
