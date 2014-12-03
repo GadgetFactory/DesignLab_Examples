@@ -5,17 +5,14 @@
  
  In the case of using the JTAG Logic Analyzer you will need to run the network server that acts as the communication bridge between the Papilio and the Logic Analyzer client.
  The network server will make a connection with Channel A of the Papilio, which is connected to the JTAG port of the FPGA, and will forward all data to the Logic Analyzer client.
-   1) Load the bit file:  sketchdir://LX9/papilio_pro.bit
+   1) Load the bit file by hitting the icon above.
    2) Start the JTAG server
      For Windows: tools://papilio-prog-jtag-server/papilio-prog-jtag-server.exe
      For Linux: Coming soon
    3) Start Logic Analyzer client:
      For Windows: tools://Logic_Analyzer.sh
      For Linux: Coming soon 
- 
- If you want to modify the circuit then make sure you have Xilinx ISE Webpack installed and click on the appropriate link below to modify the schematic.
- If you do not have Xilinx ISE Webpack installed visit this tutorial to learn how. http://gadgetfactory.net/learn/2013/10/23/install-xilinxs-free-ise-webpack/
-
+     
  Tutorials:
   
  Related library documentation:
@@ -26,18 +23,15 @@
    
  Hardware:
    
- Board Type:
-   ZPUino Vanilla Variant for your hardware type
-   
  Special Application Notes:
  Detailed notes for using the JTAG Logic Analyzer
  The network server will make a connection with Channel A of the Papilio, which is connected to the JTAG port of the FPGA, and will forward all data to the Logic Analyzer client.
-   1) Load the bit file:  sketchdir://LX9/papilio_pro.bit
+   1) Load the bit file
    2) Start the JTAG server
-     For Windows: sketchdir://papilio-prog-jtag-server/papilio-prog-jtag-server.exe
+     For Windows: tools://papilio-prog-jtag-server/papilio-prog-jtag-server.exe
      For Linux: Coming soon
    3) Start Logic Analyzer client:
-     For Windows: sketchdir://ols-0.9.7/run.bat
+     For Windows: tools://Logic_Analyzer.sh
      For Linux: Coming soon 
    4) In the OLS Capture Settings - Connection page set the following:
        a)Connection Type = Network
@@ -68,17 +62,10 @@
  This example code is in the public domain.
  */
 
-HardwareSerial mySerial1(5);
-//HardwareSerial bscanSerial(6);
-
 int counter = 0;
 
 void setup() {
   // put your setup code here, to run once:
-//  delay(3000);  
-  Serial.begin(115200);
-  mySerial1.begin(115200);
-  //bscanSerial.begin(115200); 
   pinMode(WAL0, OUTPUT);
   pinMode(WAL1, OUTPUT);
   pinMode(WAL2, OUTPUT);
@@ -87,25 +74,15 @@ void setup() {
   pinMode(WAL5, OUTPUT);
   pinMode(WAL6, OUTPUT);
   pinMode(WAL7, OUTPUT);  
-  GPIODATA(0) = 170;
 }
 
 void loop() {
   // put your main code here, to run repeatedly: 
-//  if (mySerial1.available()) {
-//   Serial.write(mySerial1.read()); 
-//  }
-//  if (Serial.available()) {
-//   mySerial1.write(Serial.read()); 
-//  }  
+
+  //This just puts a simple waveform up to capture.
   GPIODATA(0) = counter;
   counter++;
   if (counter >= 255)
     counter == 0;
-
-  Serial.println("Hello");
-  delay(1);
-
-  //bscanSerial.print("1");
 
 }
