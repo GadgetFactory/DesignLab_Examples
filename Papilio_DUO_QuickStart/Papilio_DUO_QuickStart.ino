@@ -8,6 +8,7 @@
  
  This example code is in the public domain.
  */
+#define circuit ZPUino_Vanilla
 
 int ledPins[] = { 
   0, 2, 4, 6, 15, 17, 19, 21, 25, 29, 33, 37, 41, 45, 49, 53, 22, 26, 30, 34, 38, 42, 46, 50  };       // an array of pin numbers to which LEDs are attached
