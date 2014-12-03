@@ -7,11 +7,11 @@
 -- \   \   \/     Version : 14.1
 --  \   \         Application : sch2hdl
 --  /   /         Filename : Papilio_Pro.vhf
--- /___/   /\     Timestamp : 12/01/2014 19:40:26
+-- /___/   /\     Timestamp : 12/03/2014 10:36:29
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
---Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Benchy -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Clocks -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/HQVGA -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Papilio_Hardware -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/ZPUino_1 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/ZPUino_2 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/ZPUino_Wishbone_Peripherals -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Benchy_Waveform_Generator/circuit/LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Benchy_Waveform_Generator/circuit/LX9/Papilio_Pro.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/Benchy_Waveform_Generator/circuit/Papilio_Pro.sch
+--Command: sch2hdl -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Benchy -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Clocks -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/HQVGA -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/Papilio_Hardware -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/ZPUino_2 -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/libraries/ZPUino_Wishbone_Peripherals -sympath C:/Users/Jack/Documents/Arduino/libraries/TestLib -sympath D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/examples/Benchy_Waveform_Generator/circuit/LX9 -intstyle ise -family spartan6 -flat -suppress -vhdl D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/examples/Benchy_Waveform_Generator/circuit/LX9/Papilio_Pro.vhf -w D:/Dropbox/GadgetFactory_Engineering/DesignLab/build/windows/work/examples/Benchy_Waveform_Generator/circuit/Papilio_Pro.sch
 --Design Name: Papilio_Pro
 --Device: spartan6
 --Purpose:
@@ -150,11 +150,6 @@ architecture BEHAVIORAL of Papilio_Pro is
              wishbone_out : out   std_logic_vector (100 downto 0));
    end component;
    
-   component clk_32to960_pll
-      port ( CLK_IN1  : in    std_logic; 
-             CLK_OUT1 : out   std_logic);
-   end component;
-   
    component Papilio_Default_Wing_Pinout
       port ( WING_AH0         : inout std_logic; 
              WING_AH1         : inout std_logic; 
@@ -269,6 +264,11 @@ architecture BEHAVIORAL of Papilio_Pro is
              vgaclkout               : out   std_logic);
    end component;
    
+   component clk_32to300_pll
+      port ( CLK_IN1  : in    std_logic; 
+             CLK_OUT1 : out   std_logic);
+   end component;
+   
 begin
    XLXI_48 : BENCHY_zpuino_wb_waveform_generator
       port map (clk_in=>XLXN_475,
@@ -280,10 +280,6 @@ begin
                 sin_dac_out=>WING_CL0,
                 sin_out=>open,
                 wishbone_out(100 downto 0)=>XLXN_522(100 downto 0));
-   
-   XLXI_50 : clk_32to960_pll
-      port map (CLK_IN1=>XLXN_466,
-                CLK_OUT1=>XLXN_475);
    
    XLXI_51 : Papilio_Default_Wing_Pinout
       port map (Flex_Pin_out_0=>XLXI_51_Flex_Pin_out_0_openSignal,
@@ -424,6 +420,10 @@ begin
                 wishbone_slot_13_in=>open,
                 wishbone_slot_14_in=>open,
                 ext_pins_inout(100 downto 0)=>ext_pins_inout(100 downto 0));
+   
+   XLXI_79 : clk_32to300_pll
+      port map (CLK_IN1=>XLXN_466,
+                CLK_OUT1=>XLXN_475);
    
 end BEHAVIORAL;
 

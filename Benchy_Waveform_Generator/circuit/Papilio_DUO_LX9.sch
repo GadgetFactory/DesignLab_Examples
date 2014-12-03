@@ -78,7 +78,6 @@
         <signal name="XLXN_598(200:0)" />
         <signal name="XLXN_599(200:0)" />
         <signal name="XLXN_475" />
-        <signal name="XLXN_612" />
         <signal name="XLXN_466" />
         <signal name="XLXN_522(100:0)" />
         <signal name="XLXN_521(100:0)" />
@@ -337,8 +336,8 @@
             <line x2="144" y1="-528" y2="-480" x1="144" />
             <line x2="160" y1="-528" y2="-476" x1="160" />
         </blockdef>
-        <blockdef name="clk_32to960_pll">
-            <timestamp>2014-11-10T23:29:28</timestamp>
+        <blockdef name="clk_32to300_pll">
+            <timestamp>2014-12-3T1:11:6</timestamp>
             <rect width="256" x="64" y="-64" height="64" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
@@ -501,7 +500,7 @@
             <blockpin signalname="XLXN_521(100:0)" name="wishbone_in(100:0)" />
             <blockpin signalname="XLXN_522(100:0)" name="wishbone_out(100:0)" />
         </block>
-        <block symbolname="clk_32to960_pll" name="XLXI_50">
+        <block symbolname="clk_32to300_pll" name="XLXI_64">
             <blockpin signalname="XLXN_466" name="CLK_IN1" />
             <blockpin signalname="XLXN_475" name="CLK_OUT1" />
         </block>
@@ -815,8 +814,6 @@
             <wire x2="784" y1="1776" y2="1920" x1="784" />
             <wire x2="848" y1="1920" y2="1920" x1="784" />
         </branch>
-        <instance x="352" y="1808" name="XLXI_50" orien="R0">
-        </instance>
         <branch name="XLXN_466">
             <wire x2="5008" y1="976" y2="976" x1="304" />
             <wire x2="304" y1="976" y2="1776" x1="304" />
@@ -849,5 +846,7 @@
             <wire x2="1216" y1="2048" y2="2048" x1="1184" />
         </branch>
         <iomarker fontsize="28" x="1216" y="2048" name="Arduino_1" orien="R0" />
+        <instance x="352" y="1808" name="XLXI_64" orien="R0">
+        </instance>
     </sheet>
 </drawing>

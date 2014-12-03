@@ -55,7 +55,7 @@ void setup() {
   
   delay(1000);
   Serial.begin(115200);
-  analog.begin(CS(WCH4),WISHBONESLOT(5),ADCBITS(SPIADC_12BIT));
+  analog.begin(CS(WING_CH4),WISHBONESLOT(5),ADCBITS(SPIADC_12BIT));
   Serial.println("Channel 0\t1\t2\t3\t4\t5\t6\t7");
   
 }

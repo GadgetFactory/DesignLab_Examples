@@ -17,7 +17,7 @@
  This example code is in the public domain.
  */
 
-HardwareSerial mySerial1(5);
+HardwareSerial mySerial1(2);  //This finds the second instance of a serial port - in our case connected to wishbone slot 5
 
 int counter = 0;
 
