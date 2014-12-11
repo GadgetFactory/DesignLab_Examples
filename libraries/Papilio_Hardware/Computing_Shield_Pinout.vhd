@@ -29,16 +29,21 @@ entity Computing_Shield_Pinout is
 			 Audio2_Left   : in    std_logic; 
 			 Audio2_Right  : in    std_logic; 			 
 
+			 VGA_Red3	  : in 	 std_logic;
 			 VGA_Red2	  : in 	 std_logic;
 			 VGA_Red1	  : in 	 std_logic;
 			 VGA_Red0	  : in 	 std_logic;
+			 VGA_Green3	  : in 	 std_logic;
 			 VGA_Green2	  : in 	 std_logic;
 			 VGA_Green1	  : in 	 std_logic;
 			 VGA_Green0	  : in 	 std_logic;
+			 VGA_Blue3	  : in 	 std_logic;
+			 VGA_Blue2	  : in 	 std_logic;
 			 VGA_Blue1	  : in 	 std_logic;
 			 VGA_Blue0	  : in 	 std_logic;
           VGA_Hsync    : in    std_logic; 
-          VGA_Vsync    : in    std_logic; 	
+          VGA_Vsync    : in    std_logic; 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);			 
 			 
 			 SD_SCK      : in    std_logic; 
 			 SD_MOSI     : in    std_logic; 
@@ -187,25 +192,32 @@ begin
 	WING_DL5 <= Audio2_Right;
 
 	--VGA
-	WING_CL1 <= VGA_Vsync;
-	WING_CL0 <= VGA_Hsync;
---	WING_CL2 <= VGA_Blue0;
---	WING_CL5 <= VGA_Blue1;
---	WING_CH0 <= VGA_Green0;
---	WING_CH1 <= VGA_Green1;
---	WING_CH2 <= VGA_Green2;
---	WING_CH7 <= VGA_Red0;
---	WING_CH6 <= VGA_Red1;
---	WING_CH5 <= VGA_Red2;
+--	WING_CL1 <= VGA_Vsync;
+--	WING_CL0 <= VGA_Hsync;
+--	WING_CL6 <= VGA_Blue0;
+--	WING_CL7 <= VGA_Blue1;
+--	WING_CH1 <= VGA_Green0;
+--	WING_CH2 <= VGA_Green1;
+--	WING_CH3 <= VGA_Green2;
+--	WING_CH6 <= VGA_Red0;
+--	WING_CH5 <= VGA_Red1;
+--	WING_CH4 <= VGA_Red2;
+
+	WING_CL1 <= vga_vsync OR VGA_Bus(31);
+	WING_CL0 <= vga_hsync OR VGA_Bus(30);
+	WING_CH4 <= vga_red3 OR VGA_Bus(9);	
+	WING_CH5 <= vga_red2 OR VGA_Bus(8);	
+	WING_CH6 <= vga_red1 OR VGA_Bus(7);	
+	WING_CH7 <= vga_red0 OR VGA_Bus(6);	
+	WING_CH3 <= vga_green3 OR VGA_Bus(19);
+	WING_CH2 <= vga_green2 OR VGA_Bus(18);
+	WING_CH1 <= vga_green1 OR VGA_Bus(17);
+	WING_CH0 <= vga_green0 OR VGA_Bus(16);	
+	WING_CL7 <= vga_blue3 OR VGA_Bus(29);
+	WING_CL6 <= vga_blue2 OR VGA_Bus(28);
+	WING_CL5 <= vga_blue1 OR VGA_Bus(27);
+	WING_CL2 <= vga_blue0 OR VGA_Bus(26);
 	
-	WING_CL6 <= VGA_Blue0;
-	WING_CL7 <= VGA_Blue1;
-	WING_CH1 <= VGA_Green0;
-	WING_CH2 <= VGA_Green1;
-	WING_CH3 <= VGA_Green2;
-	WING_CH6 <= VGA_Red0;
-	WING_CH5 <= VGA_Red1;
-	WING_CH4 <= VGA_Red2;	
 	
 	--SPI ADC
 	WING_BL6 <= SD_SCK;

@@ -811,11 +811,12 @@ begin
 end
 endmodule
 
-module top(
-  input papilio_CLKA,
+module Gameduino(
+  input clk_25Mhz,
   output [2:0] vga_red,
   output [2:0] vga_green,
   output [2:0] vga_blue,
+  inout [32:0] VGA_Bus,
   output vga_hsync_n,
   output vga_vsync_n,
 
@@ -835,13 +836,13 @@ module top(
   );
 
 //clk32to50 papilio_clock (
-//    .CLKIN_IN(papilio_CLKA), 
+//    .CLKIN_IN(clk_25Mhz), 
 //    .CLKFX_OUT(CLKA), 
 //    .CLKIN_IBUFG_OUT(CLKIN_IBUFG_OUT), 
 //    .CLK0_OUT(CLK0_OUT)
 //    );
 
-  assign clka = papilio_CLKA;
+  assign clka = clk_25Mhz;
 
   wire mem_clk;
   wire [7:0] host_mem_data_wr;
@@ -1567,6 +1568,12 @@ module top(
   assign vga_blue =   vga_active ? f_b : 0;
   assign vga_hsync_n = ~vga_HS;
   assign vga_vsync_n = ~vga_VS;
+  
+  assign VGA_Bus[9:7] =    vga_active ? f_r : 0;
+  assign VGA_Bus[19:17] =  vga_active ? f_g : 0;
+  assign VGA_Bus[29:27] =   vga_active ? f_b : 0;
+  assign VGA_Bus[30] = ~vga_HS;
+  assign VGA_Bus[31] = ~vga_VS;  
 
   /*
   An 18-bit counter, multiplied by the frequency gives a single bit
@@ -1849,4 +1856,4 @@ ROM64X1 #(.INIT(64'b000000000001111111111111111111111111111111111111111111000000
 
   assign AUX = (pin2j & (j1_p2_dir == 0)) ? j1_p2_o : 1'bz;
 
-endmodule // top
+endmodule // Gameduino

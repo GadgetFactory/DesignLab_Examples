@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Computing_Shield_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-11-14T17:10:12</timestamp>
+    <timestamp>2014-12-10T19:26:18</timestamp>
     <pin polarity="Input" x="0" y="-2128" name="gpio_bus_out(200:0)" />
     <pin polarity="Output" x="0" y="-2144" name="gpio_bus_in(200:0)" />
     <pin polarity="BiDirectional" x="560" y="-2080" name="WING_AL0" />
@@ -24,8 +24,6 @@
     <pin polarity="Input" x="0" y="-1856" name="VGA_Green2" />
     <pin polarity="Input" x="0" y="-1840" name="VGA_Green1" />
     <pin polarity="Input" x="0" y="-1824" name="VGA_Green0" />
-    <pin polarity="Input" x="0" y="-1792" name="VGA_Blue1" />
-    <pin polarity="Input" x="0" y="-1776" name="VGA_Blue0" />
     <pin polarity="Input" x="0" y="-1968" name="VGA_Hsync" />
     <pin polarity="Input" x="0" y="-1952" name="VGA_Vsync" />
     <pin polarity="Input" x="0" y="-624" name="Audio1_Left" />
@@ -77,6 +75,13 @@
     <pin polarity="BiDirectional" x="560" y="-192" name="WING_DH5" />
     <pin polarity="BiDirectional" x="560" y="-160" name="WING_DH6" />
     <pin polarity="BiDirectional" x="560" y="-128" name="WING_DH7" />
+    <pin polarity="Input" x="0" y="-1936" name="VGA_Red3" />
+    <pin polarity="Input" x="0" y="-1872" name="VGA_Green3" />
+    <pin polarity="Input" x="0" y="-1808" name="VGA_Blue3" />
+    <pin polarity="Input" x="0" y="-1776" name="VGA_Blue1" />
+    <pin polarity="Input" x="0" y="-1760" name="VGA_Blue0" />
+    <pin polarity="Input" x="0" y="-1792" name="VGA_Blue2" />
+    <pin polarity="BiDirectional" x="0" y="-1712" name="VGA_Bus(32:0)" />
     <graph>
         <rect width="432" x="64" y="-2176" height="2104" />
         <rect width="188" x="308" y="-1820" height="272" />
@@ -97,18 +102,13 @@
         <line x2="560" y1="-1664" y2="-1664" x1="496" />
         <line x2="560" y1="-1632" y2="-1632" x1="496" />
         <line x2="496" y1="-1792" y2="-1792" x1="560" />
-        <rect width="208" x="64" y="-1992" height="232" />
-        <text style="fontsize:40;fontname:Arial" x="124" y="-2012">VGA</text>
+        <rect width="208" x="64" y="-1992" height="244" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1920" type="pin VGA_Red2" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1904" type="pin VGA_Red1" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1888" type="pin VGA_Red0" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1856" type="pin VGA_Green2" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1840" type="pin VGA_Green1" />
         <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1824" type="pin VGA_Green0" />
-        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1792" type="pin VGA_Blue1" />
-        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1776" type="pin VGA_Blue0" />
-        <line x2="0" y1="-1776" y2="-1776" x1="64" />
-        <line x2="0" y1="-1792" y2="-1792" x1="64" />
         <line x2="0" y1="-1824" y2="-1824" x1="64" />
         <line x2="0" y1="-1840" y2="-1840" x1="64" />
         <line x2="0" y1="-1856" y2="-1856" x1="64" />
@@ -247,5 +247,26 @@
         <text style="fontsize:24;fontname:Arial" x="324" y="-1436">RESET</text>
         <text style="fontsize:24;fontname:Arial" x="324" y="-1468">SW_DOWN</text>
         <text style="fontsize:24;fontname:Arial" x="324" y="-1500">SW_RIGHT</text>
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1936" type="pin VGA_Red3" />
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1872" type="pin VGA_Green3" />
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1808" type="pin VGA_Blue3" />
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1760" type="pin VGA_Blue0" />
+        <line x2="0" y1="-1760" y2="-1760" x1="64" />
+        <line x2="0" y1="-1776" y2="-1776" x1="64" />
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1776" type="pin VGA_Blue1" />
+        <attrtext style="fontsize:20;fontname:Arial" attrname="PinName" x="72" y="-1792" type="pin VGA_Blue2" />
+        <line x2="0" y1="-1712" y2="-1712" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-1712" type="pin VGA_Bus(32:0)" />
+        <line x2="0" y1="-1936" y2="-1936" x1="64" />
+        <line x2="0" y1="-1872" y2="-1872" x1="64" />
+        <line x2="0" y1="-1808" y2="-1808" x1="64" />
+        <line x2="0" y1="-1792" y2="-1792" x1="64" />
+        <text style="fontsize:32;fontname:Arial" x="80" y="-2012">(Optional)</text>
+        <text style="fontsize:40;fontname:Arial" x="68" y="-2040">VGA Pins</text>
+        <rect width="208" x="64" y="-1728" height="32" />
+        <text style="fontsize:32;fontname:Arial" x="80" y="-1644">(Preferred)</text>
+        <text style="fontsize:40;fontname:Arial" x="68" y="-1672">VGA Bus</text>
+        <text style="fontsize:20;fontname:Arial" x="80" y="-1604">Note: Don't use both</text>
+        <text style="fontsize:20;fontname:Arial" x="80" y="-1588">VGA options.</text>
     </graph>
 </symbol>

@@ -1,3 +1,8 @@
+//Put your preferred Shield first
+#define circuit Gameduino_Computing_Shield
+#define circuit Gameduino_LogicStart_Shield
+
+
 #include <SPI.h>
 #include <GD.h>
 

@@ -28,24 +28,22 @@ entity LogicStart_Shield_Pinout is
           Seg7_dot     : in    std_logic; 
           Seg7_enable  : in    std_logic_vector (3 downto 0); 
           Seg7_segdata : in    std_logic_vector (6 downto 0); 
---          VGA_Red      : in    std_logic_vector (2 downto 0); 
---          VGA_Green    : in    std_logic_vector (2 downto 0); 			 
---          VGA_Blue     : in    std_logic_vector (1 downto 0); 
+			 VGA_Red3	  : in 	 std_logic;
 			 VGA_Red2	  : in 	 std_logic;
 			 VGA_Red1	  : in 	 std_logic;
 			 VGA_Red0	  : in 	 std_logic;
+			 VGA_Green3	  : in 	 std_logic;
 			 VGA_Green2	  : in 	 std_logic;
 			 VGA_Green1	  : in 	 std_logic;
 			 VGA_Green0	  : in 	 std_logic;
+			 VGA_Blue3	  : in 	 std_logic;
+			 VGA_Blue2	  : in 	 std_logic;
 			 VGA_Blue1	  : in 	 std_logic;
 			 VGA_Blue0	  : in 	 std_logic;
           VGA_Hsync    : in    std_logic; 
-          VGA_Vsync    : in    std_logic; 	
-			 
---			 SPI_CLK      : in    std_logic; 
---			 SPI_MOSI     : in    std_logic; 
---			 SPI_MISO     : out    std_logic; 
---			 SPI_CS       : in    std_logic; 			 
+          VGA_Vsync    : in    std_logic; 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);	
+			 		 
 
 			gpio_bus_in : out std_logic_vector(200 downto 0);
 			gpio_bus_out : in std_logic_vector(200 downto 0);	
@@ -198,25 +196,31 @@ begin
 	WING_CH1 <= Seg7_enable(0);
 
 	--VGA
-	WING_DL1 <= VGA_Vsync;
-	WING_DL0 <= VGA_Hsync;
---	WING_DL2 <= VGA_Blue0;
---	WING_DL5 <= VGA_Blue1;
---	WING_DH0 <= VGA_Green0;
---	WING_DH1 <= VGA_Green1;
---	WING_DH2 <= VGA_Green2;
---	WING_DH7 <= VGA_Red0;
---	WING_DH6 <= VGA_Red1;
---	WING_DH5 <= VGA_Red2;
-
-	WING_DL6 <= VGA_Blue0;
-	WING_DL7 <= VGA_Blue1;
-	WING_DH1 <= VGA_Green0;
-	WING_DH2 <= VGA_Green1;
-	WING_DH3 <= VGA_Green2;
-	WING_DH6 <= VGA_Red0;
-	WING_DH5 <= VGA_Red1;
-	WING_DH4 <= VGA_Red2;
+--	WING_DL1 <= VGA_Vsync;
+--	WING_DL0 <= VGA_Hsync;
+--	WING_DL6 <= VGA_Blue0;
+--	WING_DL7 <= VGA_Blue1;
+--	WING_DH1 <= VGA_Green0;
+--	WING_DH2 <= VGA_Green1;
+--	WING_DH3 <= VGA_Green2;
+--	WING_DH6 <= VGA_Red0;
+--	WING_DH5 <= VGA_Red1;
+--	WING_DH4 <= VGA_Red2;
+	
+	WING_DL1 <= vga_vsync OR VGA_Bus(31);
+	WING_DL0 <= vga_hsync OR VGA_Bus(30);
+	WING_DH4 <= vga_red3 OR VGA_Bus(9);	
+	WING_DH5 <= vga_red2 OR VGA_Bus(8);	
+	WING_DH6 <= vga_red1 OR VGA_Bus(7);	
+	WING_DH7 <= vga_red0 OR VGA_Bus(6);	
+	WING_DH3 <= vga_green3 OR VGA_Bus(19);
+	WING_DH2 <= vga_green2 OR VGA_Bus(18);
+	WING_DH1 <= vga_green1 OR VGA_Bus(17);
+	WING_DH0 <= vga_green0 OR VGA_Bus(16);	
+	WING_DL7 <= vga_blue3 OR VGA_Bus(29);
+	WING_DL6 <= vga_blue2 OR VGA_Bus(28);
+	WING_DL5 <= vga_blue1 OR VGA_Bus(27);
+	WING_DL2 <= vga_blue0 OR VGA_Bus(26);	
 
   pin00: IOPAD port map(I => gpio_o(0), O => gpio_bus_in(0), T => gpio_t(0), C => gpio_clk,PAD => WING_AL0);
   pin01: IOPAD port map(I => gpio_o(1), O => gpio_bus_in(1), T => gpio_t(1), C => gpio_clk,PAD => WING_AL1);
