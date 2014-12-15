@@ -84,6 +84,7 @@ void setup()
 {
   int i;
 
+  delay(2000);
   GD.begin();
   
   GD.wr(JK_MODE, 0);

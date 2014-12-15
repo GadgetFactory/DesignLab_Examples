@@ -1,5 +1,5 @@
 //Put your preferred Shield first
-#define circuit Gameduino_Computing_Shield
+
 #define circuit Gameduino_LogicStart_Shield
 
 #include <SPI.h>
@@ -49,10 +49,10 @@ static void controller_init()
   }
 }
 
-#define CONTROL_LEFT  1
-#define CONTROL_RIGHT 2
-#define CONTROL_UP    4
-#define CONTROL_DOWN  8
+#define CONTROL_LEFT  13
+#define CONTROL_RIGHT 10
+#define CONTROL_UP    11
+#define CONTROL_DOWN  12
 
 
 static byte controller_sense(uint16_t clock)
@@ -709,7 +709,7 @@ static void start_level()
 
 void setup()
 {
-
+  delay(7000);
   GD.begin();
   controller_init();
 
