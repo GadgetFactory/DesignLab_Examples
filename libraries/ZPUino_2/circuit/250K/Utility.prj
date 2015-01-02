@@ -1,0 +1,2 @@
+vhdl zpuino "../Libraries/ZPUino_1/Wing_GPIO.vhd"
+vhdl work "Utility.vhf"

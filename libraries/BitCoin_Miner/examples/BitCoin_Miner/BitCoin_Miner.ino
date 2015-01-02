@@ -24,12 +24,7 @@
  Tutorials:
    http://learn.gadgetfactory.net
    http://gadgetfactory.net/learn/2013/10/29/papilio-schematic-library-getting-started/
- 
- Sources:
-   Original source downloaded from (12/23/2014):
-   https://github.com/teknohog/Open-Source-FPGA-Bitcoin-Miner
-   Source code is from the projects/Verilog_Xilinx_Port folder.
-   The project has a GPL license.
+  
 
  created 2014
  by Jack Gassett
