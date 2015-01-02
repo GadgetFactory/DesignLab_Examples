@@ -13,7 +13,7 @@ always @(posedge clk) begin
 end
 endmodule
 
-module oldram256x1s(
+/*module oldram256x1s(
   input d,
   input we,
   input wclk,
@@ -38,7 +38,7 @@ module oldram256x1s(
 
   assign o = (a[7] == 0) ? ((a[6] == 0) ? o0 : o1) : ((a[6] == 0) ? o2 : o3);
 endmodule
-
+*/
 module ring64(
   input clk,
   input i,
@@ -70,7 +70,7 @@ module ram256x1s(
   assign o = oo[rsel];
 endmodule
 
-module ram448x1s(
+/*module ram448x1s(
   input d,
   input we,
   input wclk,
@@ -87,7 +87,7 @@ module ram448x1s(
   endgenerate
 
   assign o = oo[rsel];
-endmodule
+endmodule*/
 
 module ram400x1s(
   input d,
@@ -128,7 +128,7 @@ module ram256x8s(
   endgenerate
 endmodule
 
-module ram32x8s(
+/*module ram32x8s(
   input [7:0] d,
   input we,
   input wclk,
@@ -140,9 +140,9 @@ module ram32x8s(
       RAM32X1S r0(.O(o[i]), .A0(a[0]), .A1(a[1]), .A2(a[2]), .A3(a[3]), .A4(a[4]), .D(d[i]), .WCLK(wclk), .WE(we));
     end
   endgenerate
-endmodule
+endmodule*/
 
-module ram64x8s(
+/*module ram64x8s(
   input [7:0] d,
   input we,
   input wclk,
@@ -154,7 +154,7 @@ module ram64x8s(
       RAM64X1S r0(.O(o[i]), .A0(a[0]), .A1(a[1]), .A2(a[2]), .A3(a[3]), .A4(a[4]), .A5(a[5]), .D(d[i]), .WCLK(wclk), .WE(we));
     end
   endgenerate
-endmodule
+endmodule*/
 
 module mRAM32X1D(
   input D,
@@ -346,7 +346,7 @@ module mRAM128X1D(
     .SPO(hSPO));
   assign DPO = DPRA6 ? hDPO : lDPO;
   assign SPO = A6 ? hSPO : lSPO;
-endmodule
+endmodule/*
 
 
 module mRAM256X1D(
@@ -420,7 +420,7 @@ module mRAM256X1D(
     .SPO(hSPO));
   assign DPO = DPRA7 ? hDPO : lDPO;
   assign SPO = A7 ? hSPO : lSPO;
-endmodule
+endmodule*/
 
 module ram32x8d(
   input [7:0] ad,
@@ -489,7 +489,7 @@ module ram64x8d(
 endmodule
 
 // Same but latched read port, for CPU
-module ram32x8rd(
+/*module ram32x8rd(
   input wclk,
   input [15:0] ad,
   input wea,
@@ -526,9 +526,9 @@ module ram32x8rd(
         .DPO(_bo[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
-module ram128x8rd(
+/*module ram128x8rd(
   input wclk,
   input [15:0] ad,
   input wea,
@@ -569,9 +569,9 @@ module ram128x8rd(
         .DPO(_bo[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
-module ram256x8rd(
+/*module ram256x8rd(
   input wclk,
   input [7:0] ad,
   input wea,
@@ -614,9 +614,9 @@ module ram256x8rd(
         .DPO(_bo[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
-module ram448x9s(
+/*module ram448x9s(
   input [8:0] d,
   input we,
   input wclk,
@@ -633,7 +633,7 @@ module ram448x9s(
         .o(o[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
 module ram400x9s(
   input [8:0] d,
@@ -654,7 +654,7 @@ module ram400x9s(
   endgenerate
 endmodule
 
-module ram400x8s(
+/*module ram400x8s(
   input [7:0] d,
   input we,
   input wclk,
@@ -671,9 +671,9 @@ module ram400x8s(
         .o(o[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
-module ram400x7s(
+/*module ram400x7s(
   input [6:0] d,
   input we,
   input wclk,
@@ -690,7 +690,7 @@ module ram400x7s(
         .o(o[i]));
     end
   endgenerate
-endmodule
+endmodule*/
 
 
 // SPI can be many things, so to be clear, this implementation:
