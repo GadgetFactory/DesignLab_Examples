@@ -26,7 +26,7 @@ Wishbone_Symbol_Example Wishbone_Symbol_Example;
  
 void setup() {
   // put your setup code here, to run once:
-  
+  Serial.begin(9600);
   Wishbone_Symbol_Example.setup(5);   
   
 }
