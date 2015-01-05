@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ZPUino_Papilio_DUO_V2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-12-1T23:13:10</timestamp>
+    <timestamp>2015-1-5T19:17:28</timestamp>
     <pin polarity="Output" x="4368" y="-400" name="gpio_bus_out(200:0)" />
     <pin polarity="Input" x="4368" y="-416" name="gpio_bus_in(200:0)" />
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />
@@ -31,6 +31,7 @@
     <pin polarity="Input" x="0" y="-656" name="ext_pins_in(100:0)" />
     <pin polarity="Output" x="0" y="-624" name="ext_pins_out(100:0)" />
     <pin polarity="BiDirectional" x="0" y="-592" name="ext_pins_inout(100:0)" />
+    <pin polarity="Input" x="0" y="-272" name="AVR_Wishbone_Bridge_Enable" />
     <graph>
         <line x2="4368" y1="-400" y2="-400" x1="4304" />
         <line x2="4304" y1="-416" y2="-416" x1="4368" />
@@ -120,5 +121,11 @@
         <text style="fontsize:28;fontname:Arial" x="152" y="-536">External Pins</text>
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="4092" y="-424" type="pin gpio_bus_in(200:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="4296" y="-400" type="pin gpio_bus_out(200:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-272" type="pin AVR_Wishbone_Bridge_Enable" />
+        <line x2="64" y1="-272" y2="-272" x1="0" />
+        <text style="fontsize:24;fontname:Arial" x="84" y="-240">Connect VCC or a Pullup to enable the AVR Wishbone Bridge</text>
+        <rect width="696" x="64" y="-288" height="124" />
+        <text style="fontsize:28;fontname:Arial" x="84" y="-212">The AVR Wishbone Bridge uses pins 10-13</text>
+        <text style="fontsize:28;fontname:Arial" x="84" y="-184">Remove Arduino_10-13 IO Markers to use.</text>
     </graph>
 </symbol>

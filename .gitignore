@@ -95,3 +95,5 @@ libraries/Computing_Shield/circuit/DUO_LX9/par_usage_statistics.html
 *.xst
 libraries/ZPUino_1.zip
 libraries/audio libraries -2.0-v1.zip
+libraries/AVR_Wishbone_Bridge.zip
+libraries/AVR_Wishbone_Bridge.zip
