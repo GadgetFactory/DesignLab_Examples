@@ -40,7 +40,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity ZPUino_Papilio_DUO_V2 is
+entity AVR_Wishbone_Bridge is
   port (
 	 --32Mhz input clock is converted to a 96Mhz clock
 --    CLK:        in std_logic;
@@ -121,9 +121,9 @@ entity ZPUino_Papilio_DUO_V2 is
  	
   );
 
-end entity ZPUino_Papilio_DUO_V2;
+end entity AVR_Wishbone_Bridge;
 
-architecture behave of ZPUino_Papilio_DUO_V2 is
+architecture behave of AVR_Wishbone_Bridge is
 
 constant wordPower			: integer := 5;
 constant wordSize			: integer := 2**wordPower;
@@ -199,7 +199,7 @@ constant maxAddrBitBRAM		: integer := 20;
 		AVRSPI_MISOTRIS: out std_logic;
 		AVRSPI_MOSI:   in std_logic;
 		AVRSPI_NCS:    in std_logic;
-		AVRSPI_CS:     in std_logic;			
+		AVRSPI_CS:     in std_logic;		
 		sram_wb_dat_i : OUT std_logic_vector(wordSize-1 downto 0);
 		sram_wb_adr_i : OUT std_logic_vector(maxAddrBitIncIO downto 0);
 		sram_wb_we_i : OUT std_logic;
@@ -262,13 +262,10 @@ constant maxAddrBitBRAM		: integer := 20;
   signal sram_wb_stall_o:     std_logic;	
   signal clk_off_3ns, sram_wb_clk_i, sram_wb_rst_i:			std_logic;
   signal sysclk_sram_we, sysclk_sram_wen: std_ulogic;
-  signal ext_pins_in_reg:		std_logic_vector(5 downto 3);
-  signal T:							std_logic;
+  signal AVRSPI_MISO, AVRSPI_MISOTRIS: std_logic;
 
 begin
-
-	-- Force XST to trim out these unused pins before going to MAP. 
-	ext_pins_inout(11 downto 8) <= "ZZZZ";
+	ext_pins_inout(11) <= 'Z' when AVRSPI_MISOTRIS='1' else AVRSPI_MISO;
 
 	Inst_ZPUino_Papilio_DUO_V2_blackbox: ZPUino_Papilio_DUO_V2_blackbox PORT MAP(
 		CLK => ext_pins_in(0),
@@ -285,12 +282,12 @@ begin
 		RXD => ext_pins_in(2),
 		--LED => ext_pins_out(26),
 		LED => OPEN,
-		AVRSPI_SCK => '0',
-		AVRSPI_MISO => OPEN,
-		AVRSPI_MISOTRIS => OPEN,
-		AVRSPI_MOSI => '0',
-		AVRSPI_NCS => '0',
-		AVRSPI_CS => '0',		
+		AVRSPI_SCK => ext_pins_inout(9),
+		AVRSPI_MISO => AVRSPI_MISO,
+		AVRSPI_MISOTRIS => AVRSPI_MISOTRIS,
+		AVRSPI_MOSI => ext_pins_inout(10),
+		AVRSPI_NCS => ext_pins_inout(8),
+		AVRSPI_CS => '1',
 		sram_wb_clk_i => sram_wb_clk_i,
 		sram_wb_rst_i => sram_wb_rst_i,
 		sram_wb_dat_o => sram_wb_dat_o,
