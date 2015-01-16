@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Arcade_MegaWing_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2013-12-14T0:35:47</timestamp>
-    <pin polarity="Input" x="0" y="-1760" name="gpio_bus_out(147:0)" />
-    <pin polarity="Output" x="0" y="-1776" name="gpio_bus_in(97:0)" />
+    <timestamp>2015-1-16T19:34:3</timestamp>
+    <pin polarity="Input" x="0" y="-1760" name="gpio_bus_out(200:0)" />
+    <pin polarity="Output" x="0" y="-1776" name="gpio_bus_in(200:0)" />
     <pin polarity="BiDirectional" x="560" y="-1712" name="WING_AL0" />
     <pin polarity="BiDirectional" x="560" y="-1680" name="WING_AL1" />
     <pin polarity="BiDirectional" x="560" y="-1648" name="WING_AL2" />
@@ -96,8 +96,8 @@
         <rect width="148" x="348" y="-300" height="276" />
         <text style="fontsize:40;fontname:Arial" x="-60" y="40">Papilio Arcade MegaWing Pinout</text>
         <line x2="60" y1="-1776" y2="-1776" x1="0" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1760" type="pin gpio_bus_out(147:0)" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="264" y="-1784" type="pin gpio_bus_in(97:0)" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-1760" type="pin gpio_bus_out(200:0)" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="264" y="-1784" type="pin gpio_bus_in(200:0)" />
         <line x2="64" y1="-1760" y2="-1760" x1="0" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="488" y="-1712" type="pin WING_AL0" />
         <line x2="560" y1="-1712" y2="-1712" x1="496" />

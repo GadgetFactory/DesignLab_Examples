@@ -20,15 +20,8 @@ use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
-library board;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
-use board.zpuino_config.all;
-use board.zpu_config.all;
 
-library zpuino;
-use zpuino.pad.all;
-use zpuino.papilio_pkg.all;
+
 
 entity Arcade_MegaWing_Pinout is
    port (    
@@ -82,8 +75,8 @@ entity Arcade_MegaWing_Pinout is
           VGA_Hsync    : in    std_logic; 
           VGA_Vsync    : in    std_logic; 			 
 
-			gpio_bus_in : out std_logic_vector(97 downto 0);
-			gpio_bus_out : in std_logic_vector(147 downto 0);	
+			gpio_bus_in : out std_logic_vector(200 downto 0);
+			gpio_bus_out : in std_logic_vector(200 downto 0);	
 			 
 			 WING_AH0	: inout std_logic;
 			 WING_AH1	: inout std_logic;
@@ -160,6 +153,24 @@ architecture BEHAVIORAL of Arcade_MegaWing_Pinout is
 --    "1111111111111111" &
 --    "1111111111111111" &
 --    "1111111111111111";  
+
+constant wordPower			: integer := 5;
+constant wordSize			: integer := 2**wordPower;
+constant maxAddrBitIncIO		: integer := 27;
+constant maxIOBit: integer := maxAddrBitIncIO - 1;
+constant minIOBit: integer := 2;
+constant maxAddrBitBRAM		: integer := 22;
+constant	DontCareValue		: std_logic := 'X';
+
+component iopad is
+  port(
+    I: in std_logic;
+    O: out std_logic;
+    T: in std_logic;
+    C: in std_logic;
+    PAD: inout std_logic
+  );
+end component iopad;
 
   signal gpio_o:      std_logic_vector(48 downto 0);
   signal gpio_t:      std_logic_vector(48 downto 0);
