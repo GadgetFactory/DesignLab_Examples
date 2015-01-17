@@ -272,7 +272,7 @@
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
         <blockdef name="ZPUino_Papilio_DUO_V2">
-            <timestamp>2014-12-1T23:13:10</timestamp>
+            <timestamp>2015-1-5T19:17:28</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
@@ -315,6 +315,8 @@
             <line x2="64" y1="-624" y2="-624" x1="0" />
             <line x2="64" y1="-588" y2="-588" x1="0" />
             <rect width="360" x="64" y="-676" height="116" />
+            <line x2="64" y1="-272" y2="-272" x1="0" />
+            <rect width="696" x="64" y="-288" height="124" />
         </blockdef>
         <block symbolname="ZPUino_Papilio_DUO_V2" name="XLXI_59">
             <blockpin signalname="XLXN_599(200:0)" name="gpio_bus_out(200:0)" />
@@ -346,6 +348,7 @@
             <blockpin signalname="ext_pins_in(100:0)" name="ext_pins_in(100:0)" />
             <blockpin signalname="ext_pins_out(100:0)" name="ext_pins_out(100:0)" />
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
+            <blockpin name="AVR_Wishbone_Bridge_Enable" />
         </block>
         <block symbolname="inv" name="XLXI_48">
             <blockpin signalname="DUO_SW1" name="I" />

@@ -266,7 +266,7 @@
             <line x2="32" y1="-64" y2="-64" x1="96" />
         </blockdef>
         <blockdef name="Computing_Shield_Pinout">
-            <timestamp>2014-11-14T17:10:12</timestamp>
+            <timestamp>2015-1-2T17:17:51</timestamp>
             <rect width="432" x="64" y="-2176" height="2104" />
             <rect width="188" x="308" y="-1820" height="272" />
             <line x2="60" y1="-2144" y2="-2144" x1="0" />
@@ -285,9 +285,7 @@
             <line x2="560" y1="-1664" y2="-1664" x1="496" />
             <line x2="560" y1="-1632" y2="-1632" x1="496" />
             <line x2="496" y1="-1792" y2="-1792" x1="560" />
-            <rect width="208" x="64" y="-1992" height="232" />
-            <line x2="0" y1="-1776" y2="-1776" x1="64" />
-            <line x2="0" y1="-1792" y2="-1792" x1="64" />
+            <rect width="208" x="64" y="-1992" height="244" />
             <line x2="0" y1="-1824" y2="-1824" x1="64" />
             <line x2="0" y1="-1840" y2="-1840" x1="64" />
             <line x2="0" y1="-1856" y2="-1856" x1="64" />
@@ -355,6 +353,14 @@
             <line x2="560" y1="-192" y2="-192" x1="496" />
             <line x2="560" y1="-160" y2="-160" x1="496" />
             <line x2="560" y1="-128" y2="-128" x1="496" />
+            <line x2="0" y1="-1760" y2="-1760" x1="64" />
+            <line x2="0" y1="-1776" y2="-1776" x1="64" />
+            <line x2="0" y1="-1712" y2="-1712" x1="64" />
+            <line x2="0" y1="-1936" y2="-1936" x1="64" />
+            <line x2="0" y1="-1872" y2="-1872" x1="64" />
+            <line x2="0" y1="-1808" y2="-1808" x1="64" />
+            <line x2="0" y1="-1792" y2="-1792" x1="64" />
+            <rect width="208" x="64" y="-1728" height="32" />
         </blockdef>
         <blockdef name="HQVGA">
             <timestamp>2014-11-11T23:28:55</timestamp>
@@ -390,7 +396,7 @@
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
         <blockdef name="ZPUino_Papilio_DUO_V2">
-            <timestamp>2014-12-2T22:6:15</timestamp>
+            <timestamp>2015-1-5T19:17:28</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
@@ -433,6 +439,8 @@
             <line x2="64" y1="-624" y2="-624" x1="0" />
             <line x2="64" y1="-588" y2="-588" x1="0" />
             <rect width="360" x="64" y="-676" height="116" />
+            <line x2="64" y1="-272" y2="-272" x1="0" />
+            <rect width="696" x="64" y="-288" height="124" />
         </blockdef>
         <block symbolname="Wishbone_Empty_Slot" name="XLXI_37">
             <blockpin signalname="XLXN_679(100:0)" name="wishbone_in(100:0)" />
@@ -520,8 +528,6 @@
             <blockpin signalname="XLXN_589" name="VGA_Green2" />
             <blockpin signalname="XLXN_590" name="VGA_Green1" />
             <blockpin signalname="XLXN_591" name="VGA_Green0" />
-            <blockpin signalname="XLXN_592" name="VGA_Blue1" />
-            <blockpin signalname="XLXN_593" name="VGA_Blue0" />
             <blockpin signalname="XLXN_584" name="VGA_Hsync" />
             <blockpin signalname="XLXN_585" name="VGA_Vsync" />
             <blockpin signalname="XLXN_639" name="Audio1_Left" />
@@ -573,6 +579,13 @@
             <blockpin signalname="Arduino_27" name="WING_DH5" />
             <blockpin signalname="Arduino_25" name="WING_DH6" />
             <blockpin signalname="Arduino_23" name="WING_DH7" />
+            <blockpin name="VGA_Red3" />
+            <blockpin name="VGA_Green3" />
+            <blockpin name="VGA_Blue3" />
+            <blockpin signalname="XLXN_593" name="VGA_Blue1" />
+            <blockpin name="VGA_Blue0" />
+            <blockpin signalname="XLXN_592" name="VGA_Blue2" />
+            <blockpin name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="HQVGA" name="XLXI_96">
             <blockpin signalname="XLXN_596" name="clk_50Mhz" />
@@ -628,6 +641,7 @@
             <blockpin signalname="ext_pins_in(100:0)" name="ext_pins_in(100:0)" />
             <blockpin signalname="ext_pins_out(100:0)" name="ext_pins_out(100:0)" />
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
+            <blockpin name="AVR_Wishbone_Bridge_Enable" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
