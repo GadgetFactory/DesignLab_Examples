@@ -29,51 +29,67 @@ entity Arcade_MegaWing_Pinout is
 			 Audio_Left        : in    std_logic; 
 			 Audio_Right       : in    std_logic; 
  
-			 --Buttons
-			 BTN_Left		: in	std_logic;
-			 BTN_Right		: in	std_logic;
-			 BTN_Up			: in	std_logic;
-			 BTN_Down		: in	std_logic;
-			 BTN_Reset		: in	std_logic;
-			 
-			 --Joystick A
-			 JOYA_Left		: in	std_logic;
-			 JOYA_Right		: in	std_logic;
-			 JOYA_Up			: in	std_logic;
-			 JOYA_Down		: in	std_logic;
-			 JOYA_Fire1		: in	std_logic;
-			 JOYA_Fire2		: in	std_logic;			 
-			 JOYA_GND		: in	std_logic;			 
-			 
-			 --Joystick B
-			 JOYB_Left		: in	std_logic;
-			 JOYB_Right		: in	std_logic;
-			 JOYB_Up			: in	std_logic;
-			 JOYB_Down		: in	std_logic;
-			 JOYB_Fire1		: in	std_logic;
-			 JOYB_Fire2		: in	std_logic;			 
-			 JOYB_GND		: in	std_logic;	
+--			 --Buttons
+--			 BTN_Left		: in	std_logic;
+--			 BTN_Right		: in	std_logic;
+--			 BTN_Up			: in	std_logic;
+--			 BTN_Down		: in	std_logic;
+--			 BTN_Reset		: in	std_logic;
+--			 
+--			 --Joystick A
+--			 JOYA_Left		: in	std_logic;
+--			 JOYA_Right		: in	std_logic;
+--			 JOYA_Up			: in	std_logic;
+--			 JOYA_Down		: in	std_logic;
+--			 JOYA_Fire1		: in	std_logic;
+--			 JOYA_Fire2		: in	std_logic;			 
+--			 JOYA_GND		: in	std_logic;			 
+--			 
+--			 --Joystick B
+--			 JOYB_Left		: in	std_logic;
+--			 JOYB_Right		: in	std_logic;
+--			 JOYB_Up			: in	std_logic;
+--			 JOYB_Down		: in	std_logic;
+--			 JOYB_Fire1		: in	std_logic;
+--			 JOYB_Fire2		: in	std_logic;			 
+--			 JOYB_GND		: in	std_logic;	
+--
+--			 --LED's
+--			 LED1				: in	std_logic;
+--			 LED2				: in	std_logic;
+--			 LED3				: in	std_logic;
+--			 LED4				: in	std_logic;
+--			 
+--			 --PS2 A
+--			 PS2A_CLK		: in	std_logic;
+--			 PS2A_Data		: out	std_logic;
+--
+--			 --PS2 B
+--			 PS2B_CLK		: in	std_logic;
+--			 PS2B_Data		: out	std_logic;			 
+--			 
+--			 --VGA
+--			 VGA_Red      : in    std_logic_vector (2 downto 0); 
+--          VGA_Green    : in    std_logic_vector (2 downto 0); 
+--			 VGA_Blue     : in    std_logic_vector (1 downto 0); 
+--          VGA_Hsync    : in    std_logic; 
+--          VGA_Vsync    : in    std_logic; 			 
 
-			 --LED's
-			 LED1				: in	std_logic;
-			 LED2				: in	std_logic;
-			 LED3				: in	std_logic;
-			 LED4				: in	std_logic;
-			 
-			 --PS2 A
-			 PS2A_CLK		: in	std_logic;
-			 PS2A_Data		: out	std_logic;
-
-			 --PS2 B
-			 PS2B_CLK		: in	std_logic;
-			 PS2B_Data		: out	std_logic;			 
-			 
-			 --VGA
-			 VGA_Red      : in    std_logic_vector (2 downto 0); 
-          VGA_Green    : in    std_logic_vector (2 downto 0); 
-			 VGA_Blue     : in    std_logic_vector (1 downto 0); 
+			 VGA_Red3	  : in 	 std_logic;
+			 VGA_Red2	  : in 	 std_logic;
+			 VGA_Red1	  : in 	 std_logic;
+			 VGA_Red0	  : in 	 std_logic;
+			 VGA_Green3	  : in 	 std_logic;
+			 VGA_Green2	  : in 	 std_logic;
+			 VGA_Green1	  : in 	 std_logic;
+			 VGA_Green0	  : in 	 std_logic;
+			 VGA_Blue3	  : in 	 std_logic;
+			 VGA_Blue2	  : in 	 std_logic;
+			 VGA_Blue1	  : in 	 std_logic;
+			 VGA_Blue0	  : in 	 std_logic;
           VGA_Hsync    : in    std_logic; 
-          VGA_Vsync    : in    std_logic; 			 
+          VGA_Vsync    : in    std_logic; 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);	
 
 			gpio_bus_in : out std_logic_vector(200 downto 0);
 			gpio_bus_out : in std_logic_vector(200 downto 0);	
@@ -194,75 +210,90 @@ begin
 	WING_AH6 <= Audio_Left;
 	WING_AH7 <= Audio_Right;
 
-	 --Buttons
-	 WING_BH0 <= BTN_Left;
-	 WING_BH3 <= BTN_Right;
-	 WING_BH1 <= BTN_Up;
-	 WING_BH2 <= BTN_Down;
-	 WING_AH4 <= BTN_Reset;
-			 
-	 --Joystick A
-	 WING_CH3 <= JOYA_Left;
-	 WING_CH5 <= JOYA_Right;
-	 WING_CH0 <= JOYA_Up	;
-	 WING_CH2 <= JOYA_Down;
-	 WING_CH1 <= JOYA_Fire1;
-	 WING_CH7 <= JOYA_Fire2;			 
-	 WING_CH4 <= JOYA_GND;			 
-			 
-	 --Joystick B
-	 WING_BH7 <= JOYB_Left;
-	 WING_AL1 <= JOYB_Right;
-	 WING_BH4 <= JOYB_Up	;
-	 WING_BH6 <= JOYB_Down;
-	 WING_BH5 <= JOYB_Fire1;
-	 WING_AL3 <= JOYB_Fire2;			 
-	 WING_AL0 <= JOYB_GND;
-
-	 --LED's
-	 WING_AL7 <= LED1;
-	 WING_AL6 <= LED2;
-	 WING_AL5 <= LED3;
-	 WING_AL4 <= LED4;
-			 
-	 --PS2 A
-	 WING_CL1 <= PS2A_CLK;
-	 PS2A_Data <= WING_CL0;
-
-	 --PS2 B
-	 WING_AH5 <= PS2B_CLK;
-	 PS2B_Data <= WING_AH4;		 	
+--	 --Buttons
+--	 WING_BH0 <= BTN_Left;
+--	 WING_BH3 <= BTN_Right;
+--	 WING_BH1 <= BTN_Up;
+--	 WING_BH2 <= BTN_Down;
+--	 WING_AH4 <= BTN_Reset;
+--			 
+--	 --Joystick A
+--	 WING_CH3 <= JOYA_Left;
+--	 WING_CH5 <= JOYA_Right;
+--	 WING_CH0 <= JOYA_Up	;
+--	 WING_CH2 <= JOYA_Down;
+--	 WING_CH1 <= JOYA_Fire1;
+--	 WING_CH7 <= JOYA_Fire2;			 
+--	 WING_CH4 <= JOYA_GND;			 
+--			 
+--	 --Joystick B
+--	 WING_BH7 <= JOYB_Left;
+--	 WING_AL1 <= JOYB_Right;
+--	 WING_BH4 <= JOYB_Up	;
+--	 WING_BH6 <= JOYB_Down;
+--	 WING_BH5 <= JOYB_Fire1;
+--	 WING_AL3 <= JOYB_Fire2;			 
+--	 WING_AL0 <= JOYB_GND;
+--
+--	 --LED's
+--	 WING_AL7 <= LED1;
+--	 WING_AL6 <= LED2;
+--	 WING_AL5 <= LED3;
+--	 WING_AL4 <= LED4;
+--			 
+--	 --PS2 A
+--	 WING_CL1 <= PS2A_CLK;
+--	 PS2A_Data <= WING_CL0;
+--
+--	 --PS2 B
+--	 WING_AH5 <= PS2B_CLK;
+--	 PS2B_Data <= WING_AH4;		 	
 
 	--VGA
-	WING_CL2 <= VGA_Vsync;
-	WING_CL3 <= VGA_Hsync;
-	WING_BL0 <= VGA_Blue(0);
-	WING_BL1 <= VGA_Blue(1);
-	--WING_BL2 <= VGA_Blue(2);
-	--WING_BL3 <= VGA_Blue(3);	
-	WING_BL4 <= VGA_Green(0);
-	WING_BL5 <= VGA_Green(1);
-	WING_BL6 <= VGA_Green(2);
-	--WING_BL7 <= VGA_Green(3);
-	WING_CL4 <= VGA_Red(0);
-	WING_CL5 <= VGA_Red(1);
-	WING_CL6 <= VGA_Red(2);
-	--WING_CL7 <= VGA_Red(3);
+--	WING_CL2 <= VGA_Vsync;
+--	WING_CL3 <= VGA_Hsync;
+--	WING_BL0 <= VGA_Blue(0);
+--	WING_BL1 <= VGA_Blue(1);
+--	--WING_BL2 <= VGA_Blue(2);
+--	--WING_BL3 <= VGA_Blue(3);	
+--	WING_BL4 <= VGA_Green(0);
+--	WING_BL5 <= VGA_Green(1);
+--	WING_BL6 <= VGA_Green(2);
+--	--WING_BL7 <= VGA_Green(3);
+--	WING_CL4 <= VGA_Red(0);
+--	WING_CL5 <= VGA_Red(1);
+--	WING_CL6 <= VGA_Red(2);
+--	--WING_CL7 <= VGA_Red(3);
+	
+	WING_CL2 <= vga_vsync OR VGA_Bus(31);
+	WING_CL3 <= vga_hsync OR VGA_Bus(30);
+	WING_CL7 <= vga_red3 OR VGA_Bus(9);	
+	WING_CL6 <= vga_red2 OR VGA_Bus(8);	
+	WING_CL5 <= vga_red1 OR VGA_Bus(7);	
+	WING_CL4 <= vga_red0 OR VGA_Bus(6);	
+	WING_BL7 <= vga_green3 OR VGA_Bus(19);
+	WING_BL6 <= vga_green2 OR VGA_Bus(18);
+	WING_BL5 <= vga_green1 OR VGA_Bus(17);
+	WING_BL4 <= vga_green0 OR VGA_Bus(16);	
+	WING_BL3 <= vga_blue3 OR VGA_Bus(29);
+	WING_BL2 <= vga_blue2 OR VGA_Bus(28);
+	WING_BL1 <= vga_blue1 OR VGA_Bus(27);
+	WING_BL0 <= vga_blue0 OR VGA_Bus(26);	
   
---  pin00: IOPAD port map(I => gpio_o(0), O => gpio_i(0), T => gpio_t(0), C => gpio_clk,PAD => WING_AL0 );
---  pin01: IOPAD port map(I => gpio_o(1), O => gpio_i(1), T => gpio_t(1), C => gpio_clk,PAD => WING_AL1 );
---  pin02: IOPAD port map(I => gpio_o(2), O => gpio_i(2), T => gpio_t(2), C => gpio_clk,PAD => WING_AL2 );
---  pin03: IOPAD port map(I => gpio_o(3), O => gpio_i(3), T => gpio_t(3), C => gpio_clk,PAD => WING_AL3 );
---  pin04: IOPAD port map(I => gpio_o(4), O => gpio_i(4), T => gpio_t(4), C => gpio_clk,PAD => WING_AL4 );
---  pin05: IOPAD port map(I => gpio_o(5), O => gpio_i(5), T => gpio_t(5), C => gpio_clk,PAD => WING_AL5 );
---  pin06: IOPAD port map(I => gpio_o(6), O => gpio_i(6), T => gpio_t(6), C => gpio_clk,PAD => WING_AL6 );
---  pin07: IOPAD port map(I => gpio_o(7), O => gpio_i(7), T => gpio_t(7), C => gpio_clk,PAD => WING_AL7 );
+  pin00: IOPAD port map(I => gpio_o(0), O => gpio_i(0), T => gpio_t(0), C => gpio_clk,PAD => WING_AL0 );
+  pin01: IOPAD port map(I => gpio_o(1), O => gpio_i(1), T => gpio_t(1), C => gpio_clk,PAD => WING_AL1 );
+  pin02: IOPAD port map(I => gpio_o(2), O => gpio_i(2), T => gpio_t(2), C => gpio_clk,PAD => WING_AL2 );
+  pin03: IOPAD port map(I => gpio_o(3), O => gpio_i(3), T => gpio_t(3), C => gpio_clk,PAD => WING_AL3 );
+  pin04: IOPAD port map(I => gpio_o(4), O => gpio_i(4), T => gpio_t(4), C => gpio_clk,PAD => WING_AL4 );
+  pin05: IOPAD port map(I => gpio_o(5), O => gpio_i(5), T => gpio_t(5), C => gpio_clk,PAD => WING_AL5 );
+  pin06: IOPAD port map(I => gpio_o(6), O => gpio_i(6), T => gpio_t(6), C => gpio_clk,PAD => WING_AL6 );
+  pin07: IOPAD port map(I => gpio_o(7), O => gpio_i(7), T => gpio_t(7), C => gpio_clk,PAD => WING_AL7 );
   pin08: IOPAD port map(I => gpio_o(8), O => gpio_i(8), T => gpio_t(8), C => gpio_clk,PAD => WING_AH0 );
   pin09: IOPAD port map(I => gpio_o(9), O => gpio_i(9), T => gpio_t(9), C => gpio_clk,PAD => WING_AH1 );
   pin10: IOPAD port map(I => gpio_o(10),O => gpio_i(10),T => gpio_t(10),C => gpio_clk,PAD => WING_AH2 );
---  pin11: IOPAD port map(I => gpio_o(11),O => gpio_i(11),T => gpio_t(11),C => gpio_clk,PAD => WING_AH3 );
---  pin12: IOPAD port map(I => gpio_o(12),O => gpio_i(12),T => gpio_t(12),C => gpio_clk,PAD => WING_AH4 );
---  pin13: IOPAD port map(I => gpio_o(13),O => gpio_i(13),T => gpio_t(13),C => gpio_clk,PAD => WING_AH5 );
+  pin11: IOPAD port map(I => gpio_o(11),O => gpio_i(11),T => gpio_t(11),C => gpio_clk,PAD => WING_AH3 );
+  pin12: IOPAD port map(I => gpio_o(12),O => gpio_i(12),T => gpio_t(12),C => gpio_clk,PAD => WING_AH4 );
+  pin13: IOPAD port map(I => gpio_o(13),O => gpio_i(13),T => gpio_t(13),C => gpio_clk,PAD => WING_AH5 );
 --  pin14: IOPAD port map(I => gpio_o(14),O => gpio_i(14),T => gpio_t(14),C => gpio_clk,PAD => WING_AH6 );
 --  pin15: IOPAD port map(I => gpio_o(15),O => gpio_i(15),T => gpio_t(15),C => gpio_clk,PAD => WING_AH7 );
 
@@ -274,31 +305,31 @@ begin
 --  pin21: IOPAD port map(I => gpio_o(21),O => gpio_i(21),T => gpio_t(21),C => gpio_clk,PAD => WING_BL5 );
 --  pin22: IOPAD port map(I => gpio_o(22),O => gpio_i(22),T => gpio_t(22),C => gpio_clk,PAD => WING_BL6 );
 --  pin23: IOPAD port map(I => gpio_o(23),O => gpio_i(23),T => gpio_t(23),C => gpio_clk,PAD => WING_BL7 );
---  pin24: IOPAD port map(I => gpio_o(24),O => gpio_i(24),T => gpio_t(24),C => gpio_clk,PAD => WING_BH0 );
---  pin25: IOPAD port map(I => gpio_o(25),O => gpio_i(25),T => gpio_t(25),C => gpio_clk,PAD => WING_BH1 );
---  pin26: IOPAD port map(I => gpio_o(26),O => gpio_i(26),T => gpio_t(26),C => gpio_clk,PAD => WING_BH2 );
---  pin27: IOPAD port map(I => gpio_o(27),O => gpio_i(27),T => gpio_t(27),C => gpio_clk,PAD => WING_BH3 );
---  pin28: IOPAD port map(I => gpio_o(28),O => gpio_i(28),T => gpio_t(28),C => gpio_clk,PAD => WING_BH4 );
---  pin29: IOPAD port map(I => gpio_o(29),O => gpio_i(29),T => gpio_t(29),C => gpio_clk,PAD => WING_BH5 );
---  pin30: IOPAD port map(I => gpio_o(30),O => gpio_i(30),T => gpio_t(30),C => gpio_clk,PAD => WING_BH6 );
---  pin31: IOPAD port map(I => gpio_o(31),O => gpio_i(31),T => gpio_t(31),C => gpio_clk,PAD => WING_BH7 );
+  pin24: IOPAD port map(I => gpio_o(24),O => gpio_i(24),T => gpio_t(24),C => gpio_clk,PAD => WING_BH0 );
+  pin25: IOPAD port map(I => gpio_o(25),O => gpio_i(25),T => gpio_t(25),C => gpio_clk,PAD => WING_BH1 );
+  pin26: IOPAD port map(I => gpio_o(26),O => gpio_i(26),T => gpio_t(26),C => gpio_clk,PAD => WING_BH2 );
+  pin27: IOPAD port map(I => gpio_o(27),O => gpio_i(27),T => gpio_t(27),C => gpio_clk,PAD => WING_BH3 );
+  pin28: IOPAD port map(I => gpio_o(28),O => gpio_i(28),T => gpio_t(28),C => gpio_clk,PAD => WING_BH4 );
+  pin29: IOPAD port map(I => gpio_o(29),O => gpio_i(29),T => gpio_t(29),C => gpio_clk,PAD => WING_BH5 );
+  pin30: IOPAD port map(I => gpio_o(30),O => gpio_i(30),T => gpio_t(30),C => gpio_clk,PAD => WING_BH6 );
+  pin31: IOPAD port map(I => gpio_o(31),O => gpio_i(31),T => gpio_t(31),C => gpio_clk,PAD => WING_BH7 );
 
---  pin32: IOPAD port map(I => gpio_o(32),O => gpio_i(32),T => gpio_t(32),C => gpio_clk,PAD => WING_CL0 );
---  pin33: IOPAD port map(I => gpio_o(33),O => gpio_i(33),T => gpio_t(33),C => gpio_clk,PAD => WING_CL1 );
+  pin32: IOPAD port map(I => gpio_o(32),O => gpio_i(32),T => gpio_t(32),C => gpio_clk,PAD => WING_CL0 );
+  pin33: IOPAD port map(I => gpio_o(33),O => gpio_i(33),T => gpio_t(33),C => gpio_clk,PAD => WING_CL1 );
 --  pin34: IOPAD port map(I => gpio_o(34),O => gpio_i(34),T => gpio_t(34),C => gpio_clk,PAD => WING_CL2 );
 --  pin35: IOPAD port map(I => gpio_o(35),O => gpio_i(35),T => gpio_t(35),C => gpio_clk,PAD => WING_CL3 );
 --  pin36: IOPAD port map(I => gpio_o(36),O => gpio_i(36),T => gpio_t(36),C => gpio_clk,PAD => WING_CL4 );
 --  pin37: IOPAD port map(I => gpio_o(37),O => gpio_i(37),T => gpio_t(37),C => gpio_clk,PAD => WING_CL5 );
 --  pin38: IOPAD port map(I => gpio_o(38),O => gpio_i(38),T => gpio_t(38),C => gpio_clk,PAD => WING_CL6 );
 --  pin39: IOPAD port map(I => gpio_o(39),O => gpio_i(39),T => gpio_t(39),C => gpio_clk,PAD => WING_CL7 );
---  pin40: IOPAD port map(I => gpio_o(40),O => gpio_i(40),T => gpio_t(40),C => gpio_clk,PAD => WING_CH0 );
---  pin41: IOPAD port map(I => gpio_o(41),O => gpio_i(41),T => gpio_t(41),C => gpio_clk,PAD => WING_CH1 );
---  pin42: IOPAD port map(I => gpio_o(42),O => gpio_i(42),T => gpio_t(42),C => gpio_clk,PAD => WING_CH2 );
---  pin43: IOPAD port map(I => gpio_o(43),O => gpio_i(43),T => gpio_t(43),C => gpio_clk,PAD => WING_CH3 );
---  pin44: IOPAD port map(I => gpio_o(44),O => gpio_i(44),T => gpio_t(44),C => gpio_clk,PAD => WING_CH4 );
---  pin45: IOPAD port map(I => gpio_o(45),O => gpio_i(45),T => gpio_t(45),C => gpio_clk,PAD => WING_CH5 );
---  pin46: IOPAD port map(I => gpio_o(46),O => gpio_i(46),T => gpio_t(46),C => gpio_clk,PAD => WING_CH6 );
---  pin47: IOPAD port map(I => gpio_o(47),O => gpio_i(47),T => gpio_t(47),C => gpio_clk,PAD => WING_CH7 );
+  pin40: IOPAD port map(I => gpio_o(40),O => gpio_i(40),T => gpio_t(40),C => gpio_clk,PAD => WING_CH0 );
+  pin41: IOPAD port map(I => gpio_o(41),O => gpio_i(41),T => gpio_t(41),C => gpio_clk,PAD => WING_CH1 );
+  pin42: IOPAD port map(I => gpio_o(42),O => gpio_i(42),T => gpio_t(42),C => gpio_clk,PAD => WING_CH2 );
+  pin43: IOPAD port map(I => gpio_o(43),O => gpio_i(43),T => gpio_t(43),C => gpio_clk,PAD => WING_CH3 );
+  pin44: IOPAD port map(I => gpio_o(44),O => gpio_i(44),T => gpio_t(44),C => gpio_clk,PAD => WING_CH4 );
+  pin45: IOPAD port map(I => gpio_o(45),O => gpio_i(45),T => gpio_t(45),C => gpio_clk,PAD => WING_CH5 );
+  pin46: IOPAD port map(I => gpio_o(46),O => gpio_i(46),T => gpio_t(46),C => gpio_clk,PAD => WING_CH6 );
+  pin47: IOPAD port map(I => gpio_o(47),O => gpio_i(47),T => gpio_t(47),C => gpio_clk,PAD => WING_CH7 );
 --  ospics:   OPAD port map ( I => gpio_o(48),   PAD => SPI_CS );
   
 
