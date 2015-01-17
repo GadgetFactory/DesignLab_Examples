@@ -25,7 +25,7 @@
 #define LS_JOY_UP    WB14
 #define LS_JOY_SELECT WB15
 
-#include "VGA.h"
+#include "HQVGA.h"
 #include <SevenSegHW.h>
 #include "SPIADC.h"
 #include "SPI.h"

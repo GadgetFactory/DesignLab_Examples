@@ -40,7 +40,8 @@ entity LogicStart_MegaWing_Pinout is
 			 VGA_Blue1	  : in 	 std_logic;
 			 VGA_Blue0	  : in 	 std_logic;
           VGA_Hsync    : in    std_logic; 
-          VGA_Vsync    : in    std_logic; 	
+          VGA_Vsync    : in    std_logic; 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);				 
 			 
 			 SPI_CLK      : in    std_logic; 
 			 SPI_MOSI     : in    std_logic; 
@@ -181,16 +182,16 @@ begin
 	WING_AH3 <= Seg7_enable(0);
 
 	--VGA
-	WING_BL0 <= VGA_Vsync;
-	WING_BL1 <= VGA_Hsync;
-	WING_BL2 <= VGA_Blue0;
-	WING_BL3 <= VGA_Blue1;
-	WING_BL4 <= VGA_Green0;
-	WING_BL5 <= VGA_Green1;
-	WING_BL6 <= VGA_Green2;
-	WING_BL7 <= VGA_Red0;
-	WING_BH0 <= VGA_Red1;
-	WING_BH1 <= VGA_Red2;
+	WING_BL0 <= VGA_Vsync OR VGA_Bus(31);
+	WING_BL1 <= VGA_Hsync OR VGA_Bus(30);
+	WING_BL2 <= VGA_Blue0 OR VGA_Bus(28);
+	WING_BL3 <= VGA_Blue1 OR VGA_Bus(29);
+	WING_BL4 <= VGA_Green0 OR VGA_Bus(17);
+	WING_BL5 <= VGA_Green1 OR VGA_Bus(18);
+	WING_BL6 <= VGA_Green2 OR VGA_Bus(19);
+	WING_BL7 <= VGA_Red0 OR VGA_Bus(7);
+	WING_BH0 <= VGA_Red1 OR VGA_Bus(8);
+	WING_BH1 <= VGA_Red2 OR VGA_Bus(9);
 	
 	--SPI ADC
 	WING_AH7 <= SPI_CLK;
