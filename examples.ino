@@ -115,6 +115,11 @@ HARDWARE
 	This is a demo project that shows you how to use draw a circuit that uses all of the LogicStart MegaWing components.
 	example://MegaWing_Logicstart/MegaWing_Logicstart.ino
 
+  Arcade MegaWing
+	Hardware Project - Arcade MegaWing 
+	This is a demo project that shows you how to use draw a circuit that uses all of the Arcade MegaWing components.
+	example://MegaWing_Logicstart/MegaWing_Arcade.ino
+
   Analog SPI Wing
 	Hardware Project - Analog Wing 
 	This is a demo project that shows you how to use draw a circuit to use the SPI ADC Analog Wing.
