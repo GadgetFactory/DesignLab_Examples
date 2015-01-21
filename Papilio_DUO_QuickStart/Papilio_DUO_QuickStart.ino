@@ -1,17 +1,14 @@
 /*
  Gadget Factory
- Papilio Schematic Library Example
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
- 
- Tutorials:
-   http://gadgetfactory.net/learn/2013/10/29/papilio-schematic-library-getting-started/
-  
+ Papilio DUO QuickStart Example
+
  created 2014
  by Jack Gassett
  http://www.gadgetfactory.net
  
  This example code is in the public domain.
  */
+#define circuit ZPUino_Vanilla
 
 int ledPins[] = { 
   0, 2, 4, 6, 15, 17, 19, 21, 25, 29, 33, 37, 41, 45, 49, 53, 22, 26, 30, 34, 38, 42, 46, 50  };       // an array of pin numbers to which LEDs are attached

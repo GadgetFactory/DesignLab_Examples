@@ -1,7 +1,7 @@
 /*
  Gadget Factory
- Papilio Schematic Library Example
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
+ HappyJTAG2 Example
+ Use this circuit to debug the ATmega32U4 using the HappyJTAG2 software debugger. No debugging hardware required!
  
  Tools:
  HappyJtag2: sketchdir://happyjtag2/happyjtag2.exe

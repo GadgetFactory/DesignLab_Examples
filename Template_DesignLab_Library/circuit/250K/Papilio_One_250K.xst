@@ -15,7 +15,7 @@ run
 -rtlview Yes
 -glob_opt AllClockNets
 -read_cores YES
--sd {"../../../../../../../../../../DesignLab_Examples/libraries/ZPUino_2"  }
+-sd {"../../../Benchy" "../../../Clocks" "../../../HQVGA" "../../../Papilio_Hardware" "../.." "../../../ZPUino_1" "../../../ZPUino_2" "../../../ZPUino_Wishbone_Peripherals"  }
 -write_timing_constraints NO
 -cross_clock_analysis NO
 -hierarchy_separator /

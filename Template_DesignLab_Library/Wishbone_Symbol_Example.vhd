@@ -22,8 +22,8 @@ library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
 entity Wishbone_Symbol_Example is
-   port ( wishbone_in  : in    std_logic_vector (61 downto 0); 
-          wishbone_out : out   std_logic_vector (33 downto 0);
+   port ( wishbone_in  : in    std_logic_vector (100 downto 0); 
+          wishbone_out : out   std_logic_vector (100 downto 0);
 			 
 			 --Put your external connections here
 			 leds : out std_logic_vector(3 downto 0);
@@ -35,11 +35,11 @@ architecture BEHAVIORAL of Wishbone_Symbol_Example is
 
 	COMPONENT Wishbone_to_Registers
 	PORT(
-		wishbone_in : IN std_logic_vector(61 downto 0);
+		wishbone_in : IN std_logic_vector(100 downto 0);
 		register0_in : IN std_logic_vector(31 downto 0);
 		register1_in : IN std_logic_vector(31 downto 0);
 		register2_in : IN std_logic_vector(31 downto 0);          
-		wishbone_out : OUT std_logic_vector(33 downto 0);
+		wishbone_out : OUT std_logic_vector(100 downto 0);
 		register0_out : OUT std_logic_vector(31 downto 0);
 		register1_out : OUT std_logic_vector(31 downto 0);
 		register2_out : OUT std_logic_vector(31 downto 0)

@@ -36,12 +36,6 @@ use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-library board;
-use board.zpu_config.all;
-use board.zpuino_config.all;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
-
 entity zpuino_vga_ram is
   port (
     -- Scan
@@ -70,6 +64,28 @@ end entity zpuino_vga_ram;
 --
 
 architecture behave of zpuino_vga_ram is
+
+  component generic_dp_ram is
+  generic (
+    address_bits: integer := 8;
+    data_bits: integer := 32
+  );
+  port (
+    clka:             in std_logic;
+    ena:              in std_logic;
+    wea:              in std_logic;
+    addra:            in std_logic_vector(address_bits-1 downto 0);
+    dia:              in std_logic_vector(data_bits-1 downto 0);
+    doa:              out std_logic_vector(data_bits-1 downto 0);
+    clkb:             in std_logic;
+    enb:              in std_logic;
+    web:              in std_logic;
+    addrb:            in std_logic_vector(address_bits-1 downto 0);
+    dib:              in std_logic_vector(data_bits-1 downto 0);
+    dob:              out std_logic_vector(data_bits-1 downto 0)
+  );
+
+  end component generic_dp_ram;
 
   signal v_ram_0_en, v_ram_1_en: std_logic;
   signal v_ram_0_data, v_ram_1_data: std_logic_vector(7 downto 0);

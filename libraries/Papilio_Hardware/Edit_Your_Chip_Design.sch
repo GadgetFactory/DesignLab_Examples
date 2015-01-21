@@ -109,7 +109,7 @@
             <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
         <blockdef name="Papilio_DUO_Wing_Pinout">
-            <timestamp>2014-11-13T0:35:13</timestamp>
+            <timestamp>2014-12-1T23:29:47</timestamp>
             <rect width="148" x="284" y="-2140" height="276" />
             <rect width="148" x="284" y="-1568" height="280" />
             <rect width="148" x="284" y="-1852" height="272" />
@@ -133,7 +133,7 @@
             <line x2="496" y1="-1376" y2="-1376" x1="432" />
             <line x2="496" y1="-1344" y2="-1344" x1="432" />
             <line x2="496" y1="-1312" y2="-1312" x1="432" />
-            <rect width="432" x="0" y="-2200" height="2196" />
+            <rect width="432" x="0" y="-2200" height="2320" />
             <line x2="0" y1="-2160" y2="-2160" x1="-64" />
             <line x2="0" y1="-2176" y2="-2176" x1="-64" />
             <rect width="64" x="-64" y="-2028" height="24" />
@@ -209,6 +209,18 @@
             <line x2="496" y1="-160" y2="-160" x1="432" />
             <line x2="496" y1="-1888" y2="-1888" x1="432" />
             <line x2="496" y1="-1920" y2="-1920" x1="432" />
+            <line x2="496" y1="-80" y2="-80" x1="432" />
+            <line x2="496" y1="-48" y2="-48" x1="432" />
+            <line x2="496" y1="-16" y2="-16" x1="432" />
+            <line x2="496" y1="16" y2="16" x1="432" />
+            <line x2="496" y1="48" y2="48" x1="432" />
+            <line x2="496" y1="80" y2="80" x1="432" />
+            <line x2="0" y1="-80" y2="-80" x1="-64" />
+            <line x2="0" y1="-48" y2="-48" x1="-64" />
+            <line x2="0" y1="-16" y2="-16" x1="-64" />
+            <line x2="0" y1="16" y2="16" x1="-64" />
+            <line x2="0" y1="48" y2="48" x1="-64" />
+            <line x2="0" y1="80" y2="80" x1="-64" />
         </blockdef>
         <blockdef name="Wing_Analog">
             <timestamp>2014-10-31T16:11:36</timestamp>
@@ -317,14 +329,14 @@
             <line x2="384" y1="-32" y2="-32" x1="320" />
         </blockdef>
         <blockdef name="Arcade_MegaWing_Pinout">
-            <timestamp>2014-10-31T16:22:5</timestamp>
+            <timestamp>2015-1-17T0:14:5</timestamp>
             <rect width="432" x="64" y="-1808" height="1804" />
-            <rect width="148" x="348" y="-1740" height="276" />
-            <rect width="148" x="348" y="-1452" height="272" />
-            <rect width="148" x="348" y="-1168" height="280" />
-            <rect width="148" x="348" y="-876" height="276" />
-            <rect width="148" x="348" y="-588" height="276" />
-            <rect width="148" x="348" y="-300" height="276" />
+            <rect width="176" x="320" y="-1740" height="276" />
+            <rect width="176" x="320" y="-1452" height="272" />
+            <rect width="176" x="320" y="-1168" height="280" />
+            <rect width="176" x="320" y="-876" height="276" />
+            <rect width="176" x="320" y="-588" height="276" />
+            <rect width="176" x="320" y="-300" height="276" />
             <line x2="60" y1="-1776" y2="-1776" x1="0" />
             <line x2="64" y1="-1760" y2="-1760" x1="0" />
             <line x2="560" y1="-1712" y2="-1712" x1="496" />
@@ -375,50 +387,26 @@
             <line x2="560" y1="-112" y2="-112" x1="496" />
             <line x2="560" y1="-80" y2="-80" x1="496" />
             <line x2="560" y1="-48" y2="-48" x1="496" />
-            <line x2="0" y1="-1472" y2="-1472" x1="64" />
-            <line x2="0" y1="-1408" y2="-1408" x1="64" />
-            <rect width="64" x="0" y="-1612" height="24" />
-            <line x2="0" y1="-1600" y2="-1600" x1="64" />
-            <rect width="208" x="68" y="-1692" height="504" />
-            <line x2="0" y1="-1536" y2="-1536" x1="64" />
-            <rect width="64" x="0" y="-1676" height="24" />
-            <line x2="0" y1="-1664" y2="-1664" x1="64" />
-            <rect width="164" x="64" y="-1136" height="164" />
-            <rect width="164" x="64" y="-960" height="224" />
-            <rect width="164" x="64" y="-480" height="124" />
-            <rect width="164" x="64" y="-720" height="224" />
-            <rect width="164" x="64" y="-336" height="64" />
-            <rect width="164" x="64" y="-256" height="64" />
             <rect width="184" x="64" y="-140" height="120" />
             <line x2="0" y1="-112" y2="-112" x1="64" />
             <line x2="0" y1="-48" y2="-48" x1="64" />
-            <line x2="0" y1="-1120" y2="-1120" x1="64" />
-            <line x2="0" y1="-1088" y2="-1088" x1="64" />
-            <line x2="0" y1="-1056" y2="-1056" x1="64" />
-            <line x2="0" y1="-1024" y2="-1024" x1="64" />
-            <line x2="0" y1="-992" y2="-992" x1="64" />
-            <line x2="0" y1="-944" y2="-944" x1="64" />
-            <line x2="0" y1="-912" y2="-912" x1="64" />
-            <line x2="0" y1="-880" y2="-880" x1="64" />
-            <line x2="0" y1="-848" y2="-848" x1="64" />
-            <line x2="0" y1="-816" y2="-816" x1="64" />
-            <line x2="0" y1="-784" y2="-784" x1="64" />
-            <line x2="0" y1="-752" y2="-752" x1="64" />
-            <line x2="0" y1="-704" y2="-704" x1="64" />
-            <line x2="0" y1="-672" y2="-672" x1="64" />
-            <line x2="0" y1="-640" y2="-640" x1="64" />
-            <line x2="0" y1="-608" y2="-608" x1="64" />
-            <line x2="0" y1="-576" y2="-576" x1="64" />
-            <line x2="0" y1="-544" y2="-544" x1="64" />
-            <line x2="0" y1="-512" y2="-512" x1="64" />
-            <line x2="0" y1="-464" y2="-464" x1="64" />
-            <line x2="0" y1="-432" y2="-432" x1="64" />
-            <line x2="0" y1="-400" y2="-400" x1="64" />
-            <line x2="0" y1="-368" y2="-368" x1="64" />
-            <line x2="0" y1="-320" y2="-320" x1="64" />
-            <line x2="0" y1="-288" y2="-288" x1="64" />
-            <line x2="0" y1="-240" y2="-240" x1="64" />
-            <line x2="0" y1="-208" y2="-208" x1="64" />
+            <rect width="208" x="64" y="-1624" height="244" />
+            <line x2="0" y1="-1456" y2="-1456" x1="64" />
+            <line x2="0" y1="-1472" y2="-1472" x1="64" />
+            <line x2="0" y1="-1488" y2="-1488" x1="64" />
+            <line x2="0" y1="-1520" y2="-1520" x1="64" />
+            <line x2="0" y1="-1536" y2="-1536" x1="64" />
+            <line x2="0" y1="-1552" y2="-1552" x1="64" />
+            <line x2="0" y1="-1600" y2="-1600" x1="64" />
+            <line x2="0" y1="-1584" y2="-1584" x1="64" />
+            <line x2="0" y1="-1392" y2="-1392" x1="64" />
+            <line x2="0" y1="-1408" y2="-1408" x1="64" />
+            <line x2="0" y1="-1344" y2="-1344" x1="64" />
+            <line x2="0" y1="-1568" y2="-1568" x1="64" />
+            <line x2="0" y1="-1504" y2="-1504" x1="64" />
+            <line x2="0" y1="-1440" y2="-1440" x1="64" />
+            <line x2="0" y1="-1424" y2="-1424" x1="64" />
+            <rect width="208" x="64" y="-1360" height="32" />
         </blockdef>
         <blockdef name="LogicStart_MegaWing_Pinout">
             <timestamp>2014-10-31T16:23:14</timestamp>
@@ -505,7 +493,7 @@
             <rect width="220" x="68" y="-1188" height="236" />
         </blockdef>
         <blockdef name="Computing_Shield_Pinout">
-            <timestamp>2014-11-14T17:10:12</timestamp>
+            <timestamp>2014-12-10T19:26:18</timestamp>
             <rect width="432" x="64" y="-2176" height="2104" />
             <rect width="188" x="308" y="-1820" height="272" />
             <line x2="60" y1="-2144" y2="-2144" x1="0" />
@@ -524,9 +512,7 @@
             <line x2="560" y1="-1664" y2="-1664" x1="496" />
             <line x2="560" y1="-1632" y2="-1632" x1="496" />
             <line x2="496" y1="-1792" y2="-1792" x1="560" />
-            <rect width="208" x="64" y="-1992" height="232" />
-            <line x2="0" y1="-1776" y2="-1776" x1="64" />
-            <line x2="0" y1="-1792" y2="-1792" x1="64" />
+            <rect width="208" x="64" y="-1992" height="244" />
             <line x2="0" y1="-1824" y2="-1824" x1="64" />
             <line x2="0" y1="-1840" y2="-1840" x1="64" />
             <line x2="0" y1="-1856" y2="-1856" x1="64" />
@@ -594,9 +580,17 @@
             <line x2="560" y1="-192" y2="-192" x1="496" />
             <line x2="560" y1="-160" y2="-160" x1="496" />
             <line x2="560" y1="-128" y2="-128" x1="496" />
+            <line x2="0" y1="-1760" y2="-1760" x1="64" />
+            <line x2="0" y1="-1776" y2="-1776" x1="64" />
+            <line x2="0" y1="-1712" y2="-1712" x1="64" />
+            <line x2="0" y1="-1936" y2="-1936" x1="64" />
+            <line x2="0" y1="-1872" y2="-1872" x1="64" />
+            <line x2="0" y1="-1808" y2="-1808" x1="64" />
+            <line x2="0" y1="-1792" y2="-1792" x1="64" />
+            <rect width="208" x="64" y="-1728" height="32" />
         </blockdef>
         <blockdef name="LogicStart_Shield_Pinout">
-            <timestamp>2014-10-9T16:23:50</timestamp>
+            <timestamp>2015-1-2T17:17:51</timestamp>
             <rect width="432" x="64" y="-1808" height="2104" />
             <rect width="188" x="308" y="-1452" height="272" />
             <rect width="188" x="308" y="-1168" height="280" />
@@ -624,17 +618,6 @@
             <line x2="560" y1="-976" y2="-976" x1="496" />
             <line x2="560" y1="-944" y2="-944" x1="496" />
             <line x2="560" y1="-912" y2="-912" x1="496" />
-            <rect width="208" x="64" y="-1624" height="232" />
-            <line x2="0" y1="-1408" y2="-1408" x1="64" />
-            <line x2="0" y1="-1424" y2="-1424" x1="64" />
-            <line x2="0" y1="-1456" y2="-1456" x1="64" />
-            <line x2="0" y1="-1472" y2="-1472" x1="64" />
-            <line x2="0" y1="-1488" y2="-1488" x1="64" />
-            <line x2="0" y1="-1520" y2="-1520" x1="64" />
-            <line x2="0" y1="-1536" y2="-1536" x1="64" />
-            <line x2="0" y1="-1552" y2="-1552" x1="64" />
-            <line x2="0" y1="-1600" y2="-1600" x1="64" />
-            <line x2="0" y1="-1584" y2="-1584" x1="64" />
             <line x2="0" y1="-256" y2="-256" x1="64" />
             <line x2="0" y1="-1168" y2="-1168" x1="64" />
             <rect width="64" x="0" y="-988" height="24" />
@@ -681,6 +664,23 @@
             <rect width="188" x="308" y="-300" height="276" />
             <line x2="0" y1="-192" y2="-192" x1="64" />
             <rect width="148" x="64" y="-280" height="112" />
+            <rect width="208" x="64" y="-1624" height="244" />
+            <line x2="0" y1="-1344" y2="-1344" x1="64" />
+            <rect width="208" x="64" y="-1360" height="32" />
+            <line x2="0" y1="-1456" y2="-1456" x1="64" />
+            <line x2="0" y1="-1472" y2="-1472" x1="64" />
+            <line x2="0" y1="-1488" y2="-1488" x1="64" />
+            <line x2="0" y1="-1520" y2="-1520" x1="64" />
+            <line x2="0" y1="-1536" y2="-1536" x1="64" />
+            <line x2="0" y1="-1552" y2="-1552" x1="64" />
+            <line x2="0" y1="-1600" y2="-1600" x1="64" />
+            <line x2="0" y1="-1584" y2="-1584" x1="64" />
+            <line x2="0" y1="-1392" y2="-1392" x1="64" />
+            <line x2="0" y1="-1408" y2="-1408" x1="64" />
+            <line x2="0" y1="-1568" y2="-1568" x1="64" />
+            <line x2="0" y1="-1504" y2="-1504" x1="64" />
+            <line x2="0" y1="-1440" y2="-1440" x1="64" />
+            <line x2="0" y1="-1424" y2="-1424" x1="64" />
         </blockdef>
         <block symbolname="Wing_Analog" name="XLXI_52">
             <blockpin name="wt_miso(7:0)" />
@@ -841,8 +841,8 @@
             <blockpin name="WING_CH7" />
         </block>
         <block symbolname="Arcade_MegaWing_Pinout" name="XLXI_58">
-            <blockpin name="gpio_bus_out(147:0)" />
-            <blockpin name="gpio_bus_in(97:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
@@ -891,44 +891,27 @@
             <blockpin name="WING_CH5" />
             <blockpin name="WING_CH6" />
             <blockpin name="WING_CH7" />
-            <blockpin name="VGA_Hsync" />
-            <blockpin name="VGA_Vsync" />
-            <blockpin name="VGA_Green(2:0)" />
-            <blockpin name="VGA_Blue(1:0)" />
-            <blockpin name="VGA_Red(2:0)" />
-            <blockpin name="BTN_Left" />
-            <blockpin name="BTN_Right" />
-            <blockpin name="BTN_Up" />
-            <blockpin name="BTN_Down" />
-            <blockpin name="BTN_Reset" />
-            <blockpin name="JOYA_Left" />
-            <blockpin name="JOYA_Right" />
-            <blockpin name="JOYA_Up" />
-            <blockpin name="JOYA_Down" />
-            <blockpin name="JOYA_Fire1" />
-            <blockpin name="JOYA_Fire2" />
-            <blockpin name="JOYA_GND" />
-            <blockpin name="JOYB_Left" />
-            <blockpin name="JOYB_Right" />
-            <blockpin name="JOYB_Up" />
-            <blockpin name="JOYB_Down" />
-            <blockpin name="JOYB_Fire1" />
-            <blockpin name="JOYB_Fire2" />
-            <blockpin name="JOYB_GND" />
-            <blockpin name="LED1" />
-            <blockpin name="LED2" />
-            <blockpin name="LED3" />
-            <blockpin name="LED4" />
-            <blockpin name="PS2A_CLK" />
-            <blockpin name="PS2A_Data" />
-            <blockpin name="PS2B_CLK" />
-            <blockpin name="PS2B_Data" />
             <blockpin name="AUDIO_LEFT" />
             <blockpin name="AUDIO_RIGHT" />
+            <blockpin name="VGA_Red2" />
+            <blockpin name="VGA_Red1" />
+            <blockpin name="VGA_Red0" />
+            <blockpin name="VGA_Green2" />
+            <blockpin name="VGA_Green1" />
+            <blockpin name="VGA_Green0" />
+            <blockpin name="VGA_Hsync" />
+            <blockpin name="VGA_Vsync" />
+            <blockpin name="VGA_Red3" />
+            <blockpin name="VGA_Green3" />
+            <blockpin name="VGA_Blue3" />
+            <blockpin name="VGA_Blue1" />
+            <blockpin name="VGA_Blue0" />
+            <blockpin name="VGA_Blue2" />
+            <blockpin name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="LogicStart_MegaWing_Pinout" name="XLXI_60">
-            <blockpin name="gpio_bus_out(147:0)" />
-            <blockpin name="gpio_bus_in(97:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
@@ -1067,6 +1050,18 @@
             <blockpin name="WingType_miso_DL(7:0)" />
             <blockpin name="WING_AL7" />
             <blockpin name="WING_AL6" />
+            <blockpin name="Flex_Pin_out_0" />
+            <blockpin name="Flex_Pin_out_1" />
+            <blockpin name="Flex_Pin_out_2" />
+            <blockpin name="Flex_Pin_out_3" />
+            <blockpin name="Flex_Pin_out_4" />
+            <blockpin name="Flex_Pin_out_5" />
+            <blockpin name="Flex_Pin_in_0" />
+            <blockpin name="Flex_Pin_in_1" />
+            <blockpin name="Flex_Pin_in_2" />
+            <blockpin name="Flex_Pin_in_3" />
+            <blockpin name="Flex_Pin_in_4" />
+            <blockpin name="Flex_Pin_in_5" />
         </block>
         <block symbolname="Computing_Shield_Pinout" name="XLXI_61">
             <blockpin name="gpio_bus_out(200:0)" />
@@ -1091,8 +1086,6 @@
             <blockpin name="VGA_Green2" />
             <blockpin name="VGA_Green1" />
             <blockpin name="VGA_Green0" />
-            <blockpin name="VGA_Blue1" />
-            <blockpin name="VGA_Blue0" />
             <blockpin name="VGA_Hsync" />
             <blockpin name="VGA_Vsync" />
             <blockpin name="Audio1_Left" />
@@ -1144,10 +1137,17 @@
             <blockpin name="WING_DH5" />
             <blockpin name="WING_DH6" />
             <blockpin name="WING_DH7" />
+            <blockpin name="VGA_Red3" />
+            <blockpin name="VGA_Green3" />
+            <blockpin name="VGA_Blue3" />
+            <blockpin name="VGA_Blue1" />
+            <blockpin name="VGA_Blue0" />
+            <blockpin name="VGA_Blue2" />
+            <blockpin name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="LogicStart_Shield_Pinout" name="XLXI_62">
-            <blockpin name="gpio_bus_out(165:0)" />
-            <blockpin name="gpio_bus_in(109:0)" />
+            <blockpin name="gpio_bus_out(200:0)" />
+            <blockpin name="gpio_bus_in(200:0)" />
             <blockpin name="WING_AL0" />
             <blockpin name="WING_AL1" />
             <blockpin name="WING_AL2" />
@@ -1170,16 +1170,6 @@
             <blockpin name="WING_BL5" />
             <blockpin name="WING_BL6" />
             <blockpin name="WING_BL7" />
-            <blockpin name="VGA_Red2" />
-            <blockpin name="VGA_Red1" />
-            <blockpin name="VGA_Red0" />
-            <blockpin name="VGA_Green2" />
-            <blockpin name="VGA_Green1" />
-            <blockpin name="VGA_Green0" />
-            <blockpin name="VGA_Blue1" />
-            <blockpin name="VGA_Blue0" />
-            <blockpin name="VGA_Hsync" />
-            <blockpin name="VGA_Vsync" />
             <blockpin name="Audio_Left" />
             <blockpin name="Seg7_dot" />
             <blockpin name="Seg7_enable(3:0)" />
@@ -1217,6 +1207,21 @@
             <blockpin name="WING_DH6" />
             <blockpin name="WING_DH7" />
             <blockpin name="Audio_Right" />
+            <blockpin name="VGA_Bus(32:0)" />
+            <blockpin name="VGA_Red2" />
+            <blockpin name="VGA_Red1" />
+            <blockpin name="VGA_Red0" />
+            <blockpin name="VGA_Green2" />
+            <blockpin name="VGA_Green1" />
+            <blockpin name="VGA_Green0" />
+            <blockpin name="VGA_Hsync" />
+            <blockpin name="VGA_Vsync" />
+            <blockpin name="VGA_Red3" />
+            <blockpin name="VGA_Green3" />
+            <blockpin name="VGA_Blue3" />
+            <blockpin name="VGA_Blue1" />
+            <blockpin name="VGA_Blue0" />
+            <blockpin name="VGA_Blue2" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">

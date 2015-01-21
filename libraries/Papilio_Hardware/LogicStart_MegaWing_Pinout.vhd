@@ -20,15 +20,7 @@ use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
-library board;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
-use board.zpuino_config.all;
-use board.zpu_config.all;
 
-library zpuino;
-use zpuino.pad.all;
-use zpuino.papilio_pkg.all;
 
 entity LogicStart_MegaWing_Pinout is
    port (    
@@ -48,7 +40,8 @@ entity LogicStart_MegaWing_Pinout is
 			 VGA_Blue1	  : in 	 std_logic;
 			 VGA_Blue0	  : in 	 std_logic;
           VGA_Hsync    : in    std_logic; 
-          VGA_Vsync    : in    std_logic; 	
+          VGA_Vsync    : in    std_logic; 
+			 VGA_Bus : inout std_logic_vector(32 downto 0);				 
 			 
 			 SPI_CLK      : in    std_logic; 
 			 SPI_MOSI     : in    std_logic; 
@@ -134,6 +127,24 @@ architecture BEHAVIORAL of LogicStart_MegaWing_Pinout is
 --    "1111111111111111" &
 --    "1111111111111111";  
 
+constant wordPower			: integer := 5;
+constant wordSize			: integer := 2**wordPower;
+constant maxAddrBitIncIO		: integer := 27;
+constant maxIOBit: integer := maxAddrBitIncIO - 1;
+constant minIOBit: integer := 2;
+constant maxAddrBitBRAM		: integer := 22;
+constant	DontCareValue		: std_logic := 'X';
+
+component iopad is
+  port(
+    I: in std_logic;
+    O: out std_logic;
+    T: in std_logic;
+    C: in std_logic;
+    PAD: inout std_logic
+  );
+end component iopad;
+
   signal gpio_o:      std_logic_vector(48 downto 0);
   signal gpio_t:      std_logic_vector(48 downto 0);
   signal gpio_i:      std_logic_vector(48 downto 0);
@@ -144,6 +155,8 @@ architecture BEHAVIORAL of LogicStart_MegaWing_Pinout is
   signal gpio_clk: std_logic;  
 
 begin
+
+
 	--gpio_bus_in(97 downto 49) <= gpio_spp_data;
 	--gpio_bus_in(48 downto 0) <= gpio_i;
 	
@@ -169,16 +182,16 @@ begin
 	WING_AH3 <= Seg7_enable(0);
 
 	--VGA
-	WING_BL0 <= VGA_Vsync;
-	WING_BL1 <= VGA_Hsync;
-	WING_BL2 <= VGA_Blue0;
-	WING_BL3 <= VGA_Blue1;
-	WING_BL4 <= VGA_Green0;
-	WING_BL5 <= VGA_Green1;
-	WING_BL6 <= VGA_Green2;
-	WING_BL7 <= VGA_Red0;
-	WING_BH0 <= VGA_Red1;
-	WING_BH1 <= VGA_Red2;
+	WING_BL0 <= VGA_Vsync OR VGA_Bus(31);
+	WING_BL1 <= VGA_Hsync OR VGA_Bus(30);
+	WING_BL2 <= VGA_Blue0 OR VGA_Bus(28);
+	WING_BL3 <= VGA_Blue1 OR VGA_Bus(29);
+	WING_BL4 <= VGA_Green0 OR VGA_Bus(17);
+	WING_BL5 <= VGA_Green1 OR VGA_Bus(18);
+	WING_BL6 <= VGA_Green2 OR VGA_Bus(19);
+	WING_BL7 <= VGA_Red0 OR VGA_Bus(7);
+	WING_BH0 <= VGA_Red1 OR VGA_Bus(8);
+	WING_BH1 <= VGA_Red2 OR VGA_Bus(9);
 	
 	--SPI ADC
 	WING_AH7 <= SPI_CLK;

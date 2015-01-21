@@ -37,10 +37,6 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-library board;
-use board.zpu_config.all;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
 
 entity MISC_zpuino_wb_SevenSeg is
   generic (
@@ -62,6 +58,7 @@ entity MISC_zpuino_wb_SevenSeg is
 end entity MISC_zpuino_wb_SevenSeg;
 
 architecture behave of MISC_zpuino_wb_SevenSeg is
+	constant	DontCareValue		: std_logic := 'X';
 
   -- Timer
   constant COUNT: integer := 2**BITS;

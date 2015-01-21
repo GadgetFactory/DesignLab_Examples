@@ -20,15 +20,6 @@ use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
-library board;
-use board.zpupkg.all;
-use board.zpuinopkg.all;
-use board.zpuino_config.all;
-use board.zpu_config.all;
-
-library zpuino;
-use zpuino.pad.all;
-use zpuino.papilio_pkg.all;
 
 -- Unfortunately the Xilinx Schematic Editor does not support records, so we have to put all wishbone signals into one array.
 -- This is a little cumbersome but is better then dealing with all the signals in the schematic editor.
@@ -151,12 +142,44 @@ entity Papilio_DUO_Wing_Pinout is
 			 WING_DL4	: inout std_logic;
 			 WING_DL5	: inout std_logic;
 			 WING_DL6	: inout std_logic;
-			 WING_DL7	: inout std_logic	
+			 WING_DL7	: inout std_logic;
+
+			 Flex_Pin_out_0: in std_logic;
+			 Flex_Pin_out_1: in std_logic;
+			 Flex_Pin_out_2: in std_logic;
+			 Flex_Pin_out_3: in std_logic;
+			 Flex_Pin_out_4: in std_logic;
+			 Flex_Pin_out_5: in std_logic;
+			 
+			 Flex_Pin_in_0: out std_logic;
+			 Flex_Pin_in_1: out std_logic;
+			 Flex_Pin_in_2: out std_logic;
+			 Flex_Pin_in_3: out std_logic;
+			 Flex_Pin_in_4: out std_logic;
+			 Flex_Pin_in_5: out std_logic			 
 			 
 			 );			 
 end Papilio_DUO_Wing_Pinout;
 
 architecture BEHAVIORAL of Papilio_DUO_Wing_Pinout is
+
+constant wordPower			: integer := 5;
+constant wordSize			: integer := 2**wordPower;
+constant maxAddrBitIncIO		: integer := 27;
+constant maxIOBit: integer := maxAddrBitIncIO - 1;
+constant minIOBit: integer := 2;
+constant maxAddrBitBRAM		: integer := 20;
+constant	DontCareValue		: std_logic := 'X';
+
+component iopad is
+  port(
+    I: in std_logic;
+    O: out std_logic;
+    T: in std_logic;
+    C: in std_logic;
+    PAD: inout std_logic
+  );
+end component iopad;
 
   signal gpio_o:      std_logic_vector(54 downto 0);
   signal gpio_t:      std_logic_vector(54 downto 0);
@@ -343,12 +366,25 @@ begin
   WING_DH6 <= WingType_miso_DH(6);
   WING_DH7 <= WingType_miso_DH(7);  
 
-  process(gpio_spp_read)
+  process(Flex_Pin_out_0, Flex_Pin_out_1, Flex_Pin_out_2, Flex_Pin_out_3, Flex_Pin_out_4, Flex_Pin_out_5)
 --          sigmadelta_spp_data,
 --          timers_pwm,
 --          spi2_mosi,spi2_sck)
   begin
-	 gpio_bus_in(109 downto 54) <= (others => DontCareValue);
+	 gpio_bus_in(54) <= Flex_Pin_out_0;
+	 gpio_bus_in(55) <= Flex_Pin_out_1;
+	 gpio_bus_in(56) <= Flex_Pin_out_2;
+	 gpio_bus_in(57) <= Flex_Pin_out_3;
+	 gpio_bus_in(58) <= Flex_Pin_out_4;
+	 gpio_bus_in(59) <= Flex_Pin_out_5;
+	 gpio_bus_in(97 downto 60) <= (others => DontCareValue);
+	 
+	 Flex_Pin_in_0 <= gpio_spp_read(0);
+	 Flex_Pin_in_1 <= gpio_spp_read(1);
+	 Flex_Pin_in_2 <= gpio_spp_read(2);
+	 Flex_Pin_in_3 <= gpio_spp_read(3);
+	 Flex_Pin_in_4 <= gpio_spp_read(4);
+	 Flex_Pin_in_5 <= gpio_spp_read(5);
 
   end process;
 

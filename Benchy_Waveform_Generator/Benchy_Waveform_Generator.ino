@@ -1,7 +1,7 @@
 /*
  Gadget Factory
  Waveform Generator Example
- To learn more about the Papilio Schematic Library please visit http://learn.gadgetfactory.net
+ To learn more about DesignLab please visit http://learn.gadgetfactory.net
 
  Hardware:
   Papilio Pro, Papilio One 500K

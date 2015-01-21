@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="Papilio_DUO_Wing_Pinout">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-11-13T0:35:13</timestamp>
+    <timestamp>2014-12-1T23:29:47</timestamp>
     <pin polarity="BiDirectional" x="496" y="-1824" name="WING_AH0" />
     <pin polarity="BiDirectional" x="496" y="-1792" name="WING_AH1" />
     <pin polarity="BiDirectional" x="496" y="-1760" name="WING_AH2" />
@@ -72,6 +72,18 @@
     <pin polarity="BiDirectional" x="-64" y="-576" name="WingType_miso_DL(7:0)" />
     <pin polarity="BiDirectional" x="496" y="-1888" name="WING_AL7" />
     <pin polarity="BiDirectional" x="496" y="-1920" name="WING_AL6" />
+    <pin polarity="Input" x="-64" y="-80" name="Flex_Pin_out_0" />
+    <pin polarity="Input" x="-64" y="-48" name="Flex_Pin_out_1" />
+    <pin polarity="Input" x="-64" y="-16" name="Flex_Pin_out_2" />
+    <pin polarity="Input" x="-64" y="16" name="Flex_Pin_out_3" />
+    <pin polarity="Input" x="-64" y="48" name="Flex_Pin_out_4" />
+    <pin polarity="Input" x="-64" y="80" name="Flex_Pin_out_5" />
+    <pin polarity="Output" x="496" y="-80" name="Flex_Pin_in_0" />
+    <pin polarity="Output" x="496" y="-48" name="Flex_Pin_in_1" />
+    <pin polarity="Output" x="496" y="-16" name="Flex_Pin_in_2" />
+    <pin polarity="Output" x="496" y="16" name="Flex_Pin_in_3" />
+    <pin polarity="Output" x="496" y="48" name="Flex_Pin_in_4" />
+    <pin polarity="Output" x="496" y="80" name="Flex_Pin_in_5" />
     <graph>
         <rect width="148" x="284" y="-2140" height="276" />
         <rect width="148" x="284" y="-1568" height="280" />
@@ -116,7 +128,7 @@
         <line x2="496" y1="-1344" y2="-1344" x1="432" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="424" y="-1312" type="pin WING_BL7" />
         <line x2="496" y1="-1312" y2="-1312" x1="432" />
-        <rect width="432" x="0" y="-2200" height="2196" />
+        <rect width="432" x="0" y="-2200" height="2320" />
         <text style="fontsize:36;fontname:Arial" x="64" y="-2228">Papilio DUO Pinout</text>
         <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="40" y="-2156" type="pin gpio_bus_out(200:0)" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="232" y="-2180" type="pin gpio_bus_in(200:0)" />
@@ -243,5 +255,29 @@
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="424" y="-1888" type="pin WING_AL7" />
         <line x2="496" y1="-1920" y2="-1920" x1="432" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="424" y="-1920" type="pin WING_AL6" />
+        <line x2="496" y1="-80" y2="-80" x1="432" />
+        <line x2="496" y1="-48" y2="-48" x1="432" />
+        <line x2="496" y1="-16" y2="-16" x1="432" />
+        <line x2="496" y1="16" y2="16" x1="432" />
+        <line x2="496" y1="48" y2="48" x1="432" />
+        <line x2="496" y1="80" y2="80" x1="432" />
+        <line x2="0" y1="-80" y2="-80" x1="-64" />
+        <line x2="0" y1="-48" y2="-48" x1="-64" />
+        <line x2="0" y1="-16" y2="-16" x1="-64" />
+        <line x2="0" y1="16" y2="16" x1="-64" />
+        <line x2="0" y1="48" y2="48" x1="-64" />
+        <line x2="0" y1="80" y2="80" x1="-64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="-80" type="pin Flex_Pin_out_0" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="-48" type="pin Flex_Pin_out_1" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="-16" type="pin Flex_Pin_out_2" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="16" type="pin Flex_Pin_out_3" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="48" type="pin Flex_Pin_out_4" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="12" y="80" type="pin Flex_Pin_out_5" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="-80" type="pin Flex_Pin_in_0" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="-48" type="pin Flex_Pin_in_1" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="-16" type="pin Flex_Pin_in_2" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="16" type="pin Flex_Pin_in_3" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="48" type="pin Flex_Pin_in_4" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="420" y="80" type="pin Flex_Pin_in_5" />
     </graph>
 </symbol>
