@@ -16,6 +16,7 @@
  
  This example code is in the public domain.
  */
+#define circuit Arcade_MegaWing
 
 #ifndef __ZPUINO_PAPILIO_ONE__
 #include <SD.h>

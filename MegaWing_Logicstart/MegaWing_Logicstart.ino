@@ -16,6 +16,7 @@
  
  This example code is in the public domain.
  */
+#define circuit LogicStart_MegaWing
 
 #define FREQ 17000          //Freq for all players 
 
