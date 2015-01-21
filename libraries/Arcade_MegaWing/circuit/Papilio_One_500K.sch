@@ -776,7 +776,7 @@
             <wire x2="4896" y1="352" y2="352" x1="4704" />
             <wire x2="4896" y1="352" y2="1168" x1="4896" />
         </branch>
-        <text style="fontsize:64;fontname:Arial" x="80" y="3448">Version: 1.0</text>
+        <text style="fontsize:64;fontname:Arial" x="80" y="3448">Version: 1.1</text>
         <branch name="ext_pins_in(100:0)">
             <wire x2="336" y1="96" y2="96" x1="304" />
         </branch>

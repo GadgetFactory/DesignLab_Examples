@@ -80,13 +80,7 @@
         <signal name="XLXN_541(100:0)" />
         <signal name="XLXN_543" />
         <signal name="XLXN_544" />
-        <signal name="XLXN_547(200:0)" />
-        <signal name="XLXN_548(200:0)" />
         <signal name="XLXN_549(200:0)" />
-        <signal name="XLXN_550" />
-        <signal name="XLXN_554" />
-        <signal name="XLXN_555" />
-        <signal name="XLXN_558" />
         <signal name="WING_BH3" />
         <port polarity="BiDirectional" name="WING_AL0" />
         <port polarity="BiDirectional" name="WING_AL1" />
@@ -801,7 +795,7 @@
             <wire x2="4896" y1="352" y2="352" x1="4704" />
             <wire x2="4896" y1="352" y2="1168" x1="4896" />
         </branch>
-        <text style="fontsize:64;fontname:Arial" x="80" y="3448">Version: 1.0</text>
+        <text style="fontsize:64;fontname:Arial" x="80" y="3448">Version: 1.1</text>
         <instance x="336" y="752" name="XLXI_39" orien="R0">
         </instance>
         <branch name="ext_pins_in(100:0)">
