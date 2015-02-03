@@ -3,49 +3,56 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-library work;
-use work.zpu_config.all;
-use work.zpuino_config.all;
-use work.zpupkg.all;
-use work.zpuinopkg.all;
 
-entity vga_640_480 is
+entity VGA_640_480_zpuino is
   port(
-    wb_clk_i: in std_logic;
-	 	wb_rst_i: in std_logic;
-    wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
-    wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
-    wb_adr_i: in std_logic_vector(maxIObit downto minIObit);
-    wb_we_i:  in std_logic;
-    wb_cyc_i: in std_logic;
-    wb_stb_i: in std_logic;
-    wb_ack_o: out std_logic;
-    id:       out slot_id;
+--    wb_clk_i: in std_logic;
+--	 	wb_rst_i: in std_logic;
+--    wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
+--    wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
+--    wb_adr_i: in std_logic_vector(maxIObit downto minIObit);
+--    wb_we_i:  in std_logic;
+--    wb_cyc_i: in std_logic;
+--    wb_stb_i: in std_logic;
+--    wb_ack_o: out std_logic;
+--    id:       out slot_id;
+--
+--    -- Wishbone MASTER interface
+--    mi_wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
+--    mi_wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
+--    mi_wb_adr_o: out std_logic_vector(maxAddrBitIncIO downto 0);
+--    mi_wb_sel_o: out std_logic_vector(3 downto 0);
+--    mi_wb_cti_o: out std_logic_vector(2 downto 0);
+--    mi_wb_we_o:  out std_logic;
+--    mi_wb_cyc_o: out std_logic;
+--    mi_wb_stb_o: out std_logic;
+--    mi_wb_ack_i: in std_logic;
+--    mi_wb_stall_i: in std_logic;
 
-    -- Wishbone MASTER interface
-    mi_wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
-    mi_wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
-    mi_wb_adr_o: out std_logic_vector(maxAddrBitIncIO downto 0);
-    mi_wb_sel_o: out std_logic_vector(3 downto 0);
-    mi_wb_cti_o: out std_logic_vector(2 downto 0);
-    mi_wb_we_o:  out std_logic;
-    mi_wb_cyc_o: out std_logic;
-    mi_wb_stb_o: out std_logic;
-    mi_wb_ack_i: in std_logic;
-    mi_wb_stall_i: in std_logic;
+	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
+	 
+	 wishbone_slot_video_in : out std_logic_vector(100 downto 0);
+	 wishbone_slot_video_out : in std_logic_vector(100 downto 0);
+	 vgaclkout: in std_logic;		 
+	 
+	 VGA_Bus : inout std_logic_vector(32 downto 0)
+
+    -- VGA interface
+--    clk_50Mhz:     in std_logic;
 
     -- VGA signals
-    vgaclk:     in std_logic;
-    vga_hsync:  out std_logic;
-    vga_vsync:  out std_logic;
-    vga_b:      out std_logic_vector(4 downto 0);
-    vga_r:      out std_logic_vector(4 downto 0);
-    vga_g:      out std_logic_vector(4 downto 0);
-    blank:      out std_logic
+--    vgaclk:     in std_logic;
+--    vga_hsync:  out std_logic;
+--    vga_vsync:  out std_logic;
+--    vga_b:      out std_logic_vector(4 downto 0);
+--    vga_r:      out std_logic_vector(4 downto 0);
+--    vga_g:      out std_logic_vector(4 downto 0);
+--    blank:      out std_logic
   );
 end entity;
 
-architecture behave of vga_640_480 is
+architecture behave of VGA_640_480_zpuino is
 
   component gh_fifo_async_rrd_sr_wf is
 	GENERIC (add_width: INTEGER :=8; -- min value is 2 (4 memory locations)
@@ -195,8 +202,59 @@ architecture behave of vga_640_480 is
   signal hflip: std_logic;
 
   constant BURST_SIZE: integer := 16;
+  
+  signal  wb_clk_i:    std_logic;                     -- Wishbone clock
+  signal  wb_rst_i:    std_logic;                     -- Wishbone reset (synchronous)
+  signal  wb_dat_i:    std_logic_vector(31 downto 0); -- Wishbone data input  (32 bits)
+  signal  wb_adr_i:    std_logic_vector(26 downto 2); -- Wishbone address input  (32 bits)
+  signal  wb_we_i:     std_logic;                     -- Wishbone write enable signal
+  signal  wb_cyc_i:    std_logic;                     -- Wishbone cycle signal
+  signal  wb_stb_i:    std_logic;                     -- Wishbone strobe signal  
+
+  signal  wb_dat_o:    std_logic_vector(31 downto 0); -- Wishbone data output (32 bits)
+  signal  wb_ack_o:    std_logic;                      -- Wishbone acknowledge out signal
+  signal  wb_inta_o:   std_logic;
+
+  signal vga_r:		  std_logic_vector(2 downto 0);
+  signal vga_g:		  std_logic_vector(2 downto 0);
+  signal vga_b:		  std_logic_vector(1 downto 0);  
 
 begin
+-- Unpack the wishbone array into signals so the modules code is not confusing.
+  wb_clk_i <= wishbone_in(61);
+  wb_rst_i <= wishbone_in(60);
+  wb_dat_i <= wishbone_in(59 downto 28);
+  wb_adr_i <= wishbone_in(27 downto 3);
+  wb_we_i <= wishbone_in(2);
+  wb_cyc_i <= wishbone_in(1);
+  wb_stb_i <= wishbone_in(0); 
+  
+  wishbone_out(33 downto 2) <= wb_dat_o;
+  wishbone_out(1) <= wb_ack_o;
+  wishbone_out(0) <= wb_inta_o;
+-- Finish unpacking Wishbone signals.
+
+	VGA_Bus(9 downto 6) <= vga_r; 
+	VGA_Bus(19 downto 16) <= vga_g;
+	VGA_Bus(29 downto 26) <= vga_b;
+	VGA_Bus(30) <= vga_hsync_r;
+	VGA_Bus(31) <= vga_vsync_r;	
+
+  vga_r3 <= vga_r(3);
+  vga_r2 <= vga_r(2);
+  vga_r1 <= vga_r(1);
+  vga_r0 <= vga_r(0);
+  
+  vga_g3 <= vga_g(3);
+  vga_g2 <= vga_g(2);
+  vga_g1 <= vga_g(1);
+  vga_g0 <= vga_g(0);  
+
+  vga_b3 <= vga_b(3);
+  vga_b2 <= vga_b(2);
+  vga_b1 <= vga_b(1);
+  vga_b0 <= vga_b(0);
+
 
       -- Wishbone register access
   id <= x"08" & x"1A"; -- Vendor: ZPUIno  Product: VGA 640x480 16-bit

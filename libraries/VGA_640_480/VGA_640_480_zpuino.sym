@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<symbol version="7" name="VGA_640_480">
+<symbol version="7" name="VGA_640_480_zpuino">
     <symboltype>BLOCK</symboltype>
     <timestamp>2014-12-2T18:55:59</timestamp>
     <pin polarity="Input" x="0" y="-48" name="buttons(3:0)" />
