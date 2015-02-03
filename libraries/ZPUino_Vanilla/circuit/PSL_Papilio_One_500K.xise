@@ -15,6 +15,30 @@
   <version xil_pn:ise_version="14.1" xil_pn:schema_version="2"/>
 
   <files>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuinopkg.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="180"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="180"/>
+    </file>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuino_config.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="181"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="181"/>
+    </file>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="182"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="182"/>
+    </file>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg_hyperion.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="183"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="183"/>
+    </file>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="184"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="184"/>
+    </file>
+    <file xil_pn:name="../../Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config_hyperion.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="185"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="185"/>
+    </file>  
     <file xil_pn:name="Papilio_One_500K.sch" xil_pn:type="FILE_SCHEMATIC">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="6"/>
