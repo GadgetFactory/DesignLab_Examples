@@ -40,6 +40,12 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library work;
+use work.zpu_config.all;
+use work.zpuino_config.all;
+use work.zpupkg.all;
+use work.zpuinopkg.all;
+
 entity ZPUino_Papilio_DUO_V2 is
   port (
 	 --32Mhz input clock is converted to a 96Mhz clock
@@ -86,7 +92,7 @@ entity ZPUino_Papilio_DUO_V2 is
 	 --There are more bits in the address for this wishbone connection
 	 wishbone_slot_video_in : in std_logic_vector(100 downto 0);
 	 wishbone_slot_video_out : out std_logic_vector(100 downto 0);
-	 vgaclkout: out std_logic;	
+--	 vgaclkout: out std_logic;	
 
 	 --Input and output reversed for the master
 	 wishbone_slot_5_in : out std_logic_vector(100 downto 0);
@@ -127,12 +133,12 @@ end entity ZPUino_Papilio_DUO_V2;
 
 architecture behave of ZPUino_Papilio_DUO_V2 is
 
-constant wordPower			: integer := 5;
-constant wordSize			: integer := 2**wordPower;
-constant maxAddrBitIncIO		: integer := 27;
-constant maxIOBit: integer := maxAddrBitIncIO - 1;
-constant minIOBit: integer := 2;
-constant maxAddrBitBRAM		: integer := 20;
+--constant wordPower			: integer := 5;
+--constant wordSize			: integer := 2**wordPower;
+--constant maxAddrBitIncIO		: integer := 27;
+--constant maxIOBit: integer := maxAddrBitIncIO - 1;
+--constant minIOBit: integer := 2;
+--constant maxAddrBitBRAM		: integer := 20;
 
   component sdram_ctrl is
   port (
@@ -213,7 +219,7 @@ constant maxAddrBitBRAM		: integer := 20;
 		clk_sysclk_sram_we : OUT std_logic;
 		clk_sysclk_sram_wen : OUT std_logic;
 		wishbone_slot_video_out : OUT std_logic_vector(100 downto 0);
-		vgaclkout : OUT std_logic;
+--		vgaclkout : OUT std_logic;
 		wishbone_slot_5_in : OUT std_logic_vector(100 downto 0);
 		wishbone_slot_6_in : OUT std_logic_vector(100 downto 0);
 		wishbone_slot_8_in : OUT std_logic_vector(100 downto 0);
@@ -245,7 +251,7 @@ constant maxAddrBitBRAM		: integer := 20;
     clk_wen: in std_logic;
 
     -- SRAM signals
-    sram_addr:  out std_logic_vector(18 downto 0);
+    sram_addr:  out std_logic_vector(20 downto 0);
     sram_data:  inout std_logic_vector(7 downto 0);
     sram_ce:    out std_logic;
     sram_we:    out std_logic;
@@ -307,7 +313,7 @@ begin
 		clk_sysclk_sram_wen => sysclk_sram_wen,
 		wishbone_slot_video_in => wishbone_slot_video_in,
 		wishbone_slot_video_out => wishbone_slot_video_out,
-		vgaclkout => vgaclkout,
+--		vgaclkout => vgaclkout,
 		wishbone_slot_5_in => wishbone_slot_5_in,
 		wishbone_slot_5_out => wishbone_slot_5_out,
 		wishbone_slot_6_in => wishbone_slot_6_in,
@@ -344,7 +350,7 @@ begin
       wb_stall_o  => sram_wb_stall_o,
 
       -- SRAM signals
-      sram_addr   => ext_pins_out(18 downto 0),
+      sram_addr   => ext_pins_out(70 downto 50),
       sram_data   => ext_pins_inout(7 downto 0),
       sram_ce     => ext_pins_out(19),
       sram_we     => ext_pins_out(20),

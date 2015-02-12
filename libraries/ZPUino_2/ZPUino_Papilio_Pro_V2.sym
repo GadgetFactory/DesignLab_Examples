@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="ZPUino_Papilio_Pro_V2">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2014-10-30T0:3:5</timestamp>
+    <timestamp>2015-2-11T22:59:51</timestamp>
     <pin polarity="Output" x="4368" y="-400" name="gpio_bus_out(200:0)" />
     <pin polarity="Input" x="4368" y="-416" name="gpio_bus_in(200:0)" />
     <pin polarity="Output" x="4368" y="-272" name="clk_96Mhz" />
@@ -30,7 +30,6 @@
     <pin polarity="Input" x="3776" y="64" name="wishbone_slot_14_out(100:0)" />
     <pin polarity="Input" x="3872" y="64" name="wishbone_slot_video_in(100:0)" />
     <pin polarity="Output" x="3888" y="64" name="wishbone_slot_video_out(100:0)" />
-    <pin polarity="Output" x="3904" y="64" name="vgaclkout" />
     <graph>
         <line x2="4368" y1="-400" y2="-400" x1="4304" />
         <line x2="4304" y1="-416" y2="-416" x1="4368" />
@@ -119,7 +118,6 @@
         <rect width="240" x="3680" y="-92" height="92" />
         <line x2="3872" y1="64" y2="0" x1="3872" />
         <line x2="3888" y1="64" y2="0" x1="3888" />
-        <line x2="3904" y1="64" y2="0" x1="3904" />
         <text style="fontsize:24;fontname:Arial" x="3724" y="-104">With VGA DMA</text>
     </graph>
 </symbol>
