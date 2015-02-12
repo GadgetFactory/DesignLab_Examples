@@ -6,6 +6,12 @@ use ieee.std_logic_unsigned.all;
 library unisim;
 use unisim.vcomponents.all;
 
+library work;
+use work.zpu_config.all;
+use work.zpuino_config.all;
+use work.zpupkg.all;
+use work.zpuinopkg.all;
+
 entity sram_ctrl8 is
   port (
     wb_clk_i: in std_logic;
@@ -25,7 +31,7 @@ entity sram_ctrl8 is
     clk_we: in std_logic;
     clk_wen: in std_logic;
     -- SRAM signals
-    sram_addr:  out std_logic_vector(18 downto 0);
+    sram_addr:  out std_logic_vector(20 downto 0);
     sram_data:  inout std_logic_vector(7 downto 0);
     sram_ce:    out std_logic := '1';
     sram_we:    out std_logic;
@@ -37,13 +43,13 @@ end entity sram_ctrl8;
 
 architecture behave of sram_ctrl8 is
 
-constant wordPower			: integer := 5;
-constant wordSize			: integer := 2**wordPower;
-constant maxAddrBitIncIO		: integer := 27;
-constant maxIOBit: integer := maxAddrBitIncIO - 1;
-constant minIOBit: integer := 2;
-constant maxAddrBitBRAM		: integer := 20;
-constant	DontCareValue		: std_logic := 'X';
+--constant wordPower			: integer := 5;
+--constant wordSize			: integer := 2**wordPower;
+--constant maxAddrBitIncIO		: integer := 27;
+--constant maxIOBit: integer := maxAddrBitIncIO - 1;
+--constant minIOBit: integer := 2;
+--constant maxAddrBitBRAM		: integer := 20;
+--constant	DontCareValue		: std_logic := 'X';
 
 signal sram_data_write: std_logic_vector(7 downto 0);
 signal out_write_enable: std_logic;
@@ -60,7 +66,7 @@ signal state: state_type;
 
 signal strobe_addr: std_logic;
 signal even_odd: std_logic_vector(1 downto 0);
-signal sram_addr_q: std_logic_vector(18 downto 0);
+signal sram_addr_q: std_logic_vector(20 downto 0);
 signal bus_tristate: std_logic;
 signal sram_data_read: std_logic_vector(7 downto 0);
 signal sram_data_write_i: std_logic_vector(7 downto 0);
@@ -149,7 +155,7 @@ ODDR2_nWE : ODDR2
    );
 
 
-saq: for index in 2 to 18 generate
+saq: for index in 2 to 20 generate
 
   addrff: ODDR2
     generic map (
