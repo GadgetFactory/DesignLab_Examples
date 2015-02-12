@@ -3,60 +3,48 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
+library work;
+use work.zpu_config.all;
+use work.zpuino_config.all;
+use work.zpupkg.all;
+use work.zpuinopkg.all;
+
 entity vga_zxspectrum is
   port(
---    wb_clk_i: in std_logic;
---	 	wb_rst_i: in std_logic;
---    wb_dat_o: out std_logic_vector(32-1 downto 0);
---    wb_dat_i: in std_logic_vector(32-1 downto 0);
---    wb_adr_i: in std_logic_vector(26 downto 2);
---    wb_we_i:  in std_logic;
---    wb_cyc_i: in std_logic;
---    wb_stb_i: in std_logic;
---    wb_ack_o: out std_logic;
---    id:       out std_logic;
---
---    -- Wishbone MASTER interface
---    mi_wb_dat_i: in std_logic_vector(32-1 downto 0);
---    mi_wb_dat_o: out std_logic_vector(32-1 downto 0);
---    mi_wb_adr_o: out std_logic_vector(27 downto 0);
---    mi_wb_sel_o: out std_logic_vector(3 downto 0);
---    mi_wb_cti_o: out std_logic_vector(2 downto 0);
---    mi_wb_we_o:  out std_logic;
---    mi_wb_cyc_o: out std_logic;
---    mi_wb_stb_o: out std_logic;
---    mi_wb_ack_i: in std_logic;
+    wb_clk_i: in std_logic;
+	 	wb_rst_i: in std_logic;
+    wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
+    wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
+    wb_adr_i: in std_logic_vector(maxIObit downto minIObit);
+    wb_we_i:  in std_logic;
+    wb_cyc_i: in std_logic;
+    wb_stb_i: in std_logic;
+    wb_ack_o: out std_logic;
+    id:       out slot_id;
 
-	 wishbone_in : in std_logic_vector(100 downto 0);
-	 wishbone_out : out std_logic_vector(100 downto 0);
-	 
-	 wishbone_slot_video_in : out std_logic_vector(100 downto 0);
-	 wishbone_slot_video_out : in std_logic_vector(100 downto 0);
-	 --vgaclkout: in std_logic;
-
-	 VGA_Bus : inout std_logic_vector(32 downto 0);	 
+    -- Wishbone MASTER interface
+    mi_wb_dat_i: in std_logic_vector(wordSize-1 downto 0);
+    mi_wb_dat_o: out std_logic_vector(wordSize-1 downto 0);
+    mi_wb_adr_o: out std_logic_vector(maxAddrBitIncIO downto 0);
+    mi_wb_sel_o: out std_logic_vector(3 downto 0);
+    mi_wb_cti_o: out std_logic_vector(2 downto 0);
+    mi_wb_we_o:  out std_logic;
+    mi_wb_cyc_o: out std_logic;
+    mi_wb_stb_o: out std_logic;
+    mi_wb_ack_i: in std_logic;
 
     -- VGA signals
     vgaclk:     in std_logic;
     vga_hsync:  out std_logic;
     vga_vsync:  out std_logic;
-    vga_b0:      out std_logic;
-    vga_r0:      out std_logic;
-    vga_g0:      out std_logic;
+    vga_b:      out std_logic;
+    vga_r:      out std_logic;
+    vga_g:      out std_logic;
     vga_bright: out std_logic
   );
 end entity;
 
 architecture behave of vga_zxspectrum is
-
-constant wordPower			: integer := 5;
-constant wordSize			: integer := 2**wordPower;
-constant maxAddrBitIncIO		: integer := 27;
-constant maxIOBit: integer := maxAddrBitIncIO - 1;
-constant minIOBit: integer := 2;
-constant maxAddrBitBRAM		: integer := 22;
-constant	DontCareValue		: std_logic := 'X';
-constant maxAddrBit			: integer := maxAddrBitBRAM;
 
   component gh_fifo_async_rrd_sr_wf is
 	GENERIC (add_width: INTEGER :=8; -- min value is 2 (4 memory locations)
@@ -204,80 +192,10 @@ constant maxAddrBit			: integer := maxAddrBitBRAM;
   signal hdup: std_logic := '1';
 
   signal hflip: std_logic;
-  
-  signal vga_hsync_r:   std_logic;
-  signal vga_vsync_r:   std_logic;
-  signal vga_r:		  std_logic;
-  signal vga_g:		  std_logic;
-  signal vga_b:		  std_logic;  
-
---signals for unpacking the wishbone array
-  signal  wb_clk_i:    std_logic;                     -- Wishbone clock
-  signal  wb_rst_i:    std_logic;                     -- Wishbone reset (synchronous)
-  signal  wb_dat_i:    std_logic_vector(31 downto 0); -- Wishbone data input  (32 bits)
-  signal  wb_adr_i:    std_logic_vector(26 downto 2); -- Wishbone address input  (32 bits)
-  signal  wb_we_i:     std_logic;                     -- Wishbone write enable signal
-  signal  wb_cyc_i:    std_logic;                     -- Wishbone cycle signal
-  signal  wb_stb_i:    std_logic;                     -- Wishbone strobe signal  
-
-  signal  wb_dat_o:    std_logic_vector(31 downto 0); -- Wishbone data output (32 bits)
-  signal  wb_ack_o:    std_logic;                      -- Wishbone acknowledge out signal
-  signal  wb_inta_o:   std_logic;
---end signals for unpacking the wishbone array
-
---signals for unpacking DMA array
-	signal mi_wb_dat_i: std_logic_vector(31 downto 0);
-	signal mi_wb_dat_o: std_logic_vector(31 downto 0);
-	signal mi_wb_adr_o: std_logic_vector(27 downto 0);
-	signal mi_wb_sel_o: std_logic_vector(3 downto 0);
-	signal mi_wb_cti_o: std_logic_vector(2 downto 0);
-	signal mi_wb_we_o: std_logic;
-	signal mi_wb_cyc_o: std_logic;
-	signal mi_wb_stb_o: std_logic;
-	signal mi_wb_ack_i: std_logic;
 
 begin
--- Unpack the wishbone array into signals so the modules code is not confusing.
-  wb_clk_i <= wishbone_in(61);
-  wb_rst_i <= wishbone_in(60);
-  wb_dat_i <= wishbone_in(59 downto 28);
-  wb_adr_i <= wishbone_in(27 downto 3);
-  wb_we_i <= wishbone_in(2);
-  wb_cyc_i <= wishbone_in(1);
-  wb_stb_i <= wishbone_in(0); 
-  
-  wishbone_out(49 downto 34) <= x"08" & x"1C"; -- Vendor: ZPUIno  Product: ZX Spectrum over VGA
-  wishbone_out(33 downto 2) <= wb_dat_o;
-  wishbone_out(1) <= wb_ack_o;
-  wishbone_out(0) <= wb_inta_o;
--- End unpacking Wishbone array 
 
---Unpack DMA array
-	wishbone_slot_video_in(31 downto 0) <= mi_wb_dat_o;
-	wishbone_slot_video_in(77 downto 50) <= mi_wb_adr_o;
-	wishbone_slot_video_in(100) <= mi_wb_we_o;
-	wishbone_slot_video_in(99) <= mi_wb_cyc_o;
-	wishbone_slot_video_in(98) <= mi_wb_stb_o;
-	
-	mi_wb_dat_i <= wishbone_slot_video_out(31 downto 0);
-	mi_wb_ack_i <= wishbone_slot_video_out(100);
---End upack DMA array 
-
---VGA Bus
-	VGA_Bus(9) <= vga_r; 
-	VGA_Bus(19) <= vga_g;
-	VGA_Bus(29) <= vga_b;
-	VGA_Bus(30) <= vga_hsync_r;
-	VGA_Bus(31) <= vga_vsync_r;
-	
-	vga_hsync <= vga_hsync_r;
-	vga_vsync <= vga_vsync_r;
-	vga_r0 <= vga_r;	
-	vga_g0 <= vga_g;	
-	vga_b0 <= vga_b;	
---End VGA Bus
-
---  id <= x"08" & x"1C"; -- Vendor: ZPUIno  Product: ZX Spectrum over VGA
+  id <= x"08" & x"1C"; -- Vendor: ZPUIno  Product: ZX Spectrum over VGA
       -- Wishbone register access
 
   wb_dat_o(31 downto 1) <= (others => DontCareValue);
@@ -570,14 +488,14 @@ begin
   begin
     if rising_edge(vgaclk) then
       if vgarst='1' then
-        vga_hsync_r<=h_polarity;
+        vga_hsync<=h_polarity;
       else
         h_sync_tick <= '0';
         if hcount_q = (VGA_H_DISPLAY + VGA_H_FRONTPORCH) then
           h_sync_tick <= '1';
-          vga_hsync_r <= not h_polarity;
+          vga_hsync <= not h_polarity;
         elsif hcount_q = (VGA_HCOUNT - VGA_H_BACKPORCH) then
-          vga_hsync_r <= h_polarity;
+          vga_hsync <= h_polarity;
         end if;
       end if;
     end if;
@@ -624,14 +542,14 @@ begin
   begin
     if rising_edge(vgaclk) then
       if vgarst='1' then
-        vga_vsync_r<=v_polarity;
+        vga_vsync<=v_polarity;
         --cache_clear <= '1';
       else
         --cache_clear <= '0';
         if vcount_q = (VGA_V_DISPLAY + VGA_V_FRONTPORCH) then
-          vga_vsync_r <= not v_polarity;
+          vga_vsync <= not v_polarity;
         elsif vcount_q = (VGA_VCOUNT - VGA_V_BACKPORCH) then
-          vga_vsync_r <= v_polarity;
+          vga_vsync <= v_polarity;
           --cache_clear <= '1';
         end if;
       end if;
