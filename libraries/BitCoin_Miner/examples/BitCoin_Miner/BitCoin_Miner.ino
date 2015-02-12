@@ -33,3 +33,4 @@
  There is no code for this project.
  */
 #define circuit BitCoin_Miner
+
