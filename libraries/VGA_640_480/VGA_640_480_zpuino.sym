@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="VGA_640_480_zpuino">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2015-2-4T16:36:42</timestamp>
-    <pin polarity="BiDirectional" x="400" y="16" name="VGA_Bus(32:0)" />
+    <timestamp>2015-2-5T17:40:45</timestamp>
     <pin polarity="Input" x="128" y="-304" name="wishbone_in(100:0)" />
     <pin polarity="Output" x="144" y="-304" name="wishbone_out(100:0)" />
     <pin polarity="Output" x="240" y="-304" name="wishbone_slot_video_in(100:0)" />
     <pin polarity="Input" x="256" y="-304" name="wishbone_slot_video_out(100:0)" />
     <pin polarity="Input" x="272" y="-304" name="vgaclk" />
+    <pin polarity="BiDirectional" x="400" y="-128" name="VGA_Bus(32:0)" />
     <graph>
-        <rect width="272" x="64" y="-256" height="292" />
-        <text style="fontsize:32;fontname:Arial" x="88" y="-112">Requires</text>
-        <text style="fontsize:32;fontname:Arial" x="84" y="-76">10 BRAM </text>
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="324" y="16" type="pin VGA_Bus(32:0)" />
-        <line x2="400" y1="16" y2="16" x1="336" />
-        <text style="fontsize:40;fontname:Arial" x="8" y="72">VGA_640_480 Adapter</text>
+        <rect width="272" x="64" y="-256" height="156" />
         <line x2="128" y1="-304" y2="-256" x1="128" />
         <line x2="144" y1="-304" y2="-256" x1="144" />
         <line x2="240" y1="-304" y2="-256" x1="240" />
         <line x2="256" y1="-304" y2="-256" x1="256" />
         <line x2="272" y1="-304" y2="-256" x1="272" />
+        <text style="fontsize:32;fontname:Arial" x="96" y="-180">DMA Memory</text>
+        <text style="fontsize:32;fontname:Arial" x="96" y="-216">Requires 614K</text>
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="324" y="-128" type="pin VGA_Bus(32:0)" />
+        <line x2="400" y1="-128" y2="-128" x1="336" />
+        <text style="fontsize:40;fontname:Arial" x="4" y="-56">VGA_640_480 Adapter</text>
     </graph>
 </symbol>

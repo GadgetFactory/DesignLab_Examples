@@ -19,7 +19,7 @@
  
  This example code is in the public domain.
  */
-
+#define circuit VGA_640_480
 #include <SmallFS.h>
 #include <Adafruit_GFX.h>
 
