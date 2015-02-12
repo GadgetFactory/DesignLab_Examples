@@ -97,3 +97,4 @@ libraries/ZPUino_1.zip
 libraries/audio libraries -2.0-v1.zip
 libraries/AVR_Wishbone_Bridge.zip
 libraries/AVR_Wishbone_Bridge.zip
+*.zip
