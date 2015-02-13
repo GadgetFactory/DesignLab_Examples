@@ -239,7 +239,7 @@
             <line x2="32" y1="224" y2="224" x1="-32" />
         </blockdef>
         <blockdef name="ZPUino_Papilio_Pro_V2">
-            <timestamp>2014-11-10T23:27:39</timestamp>
+            <timestamp>2015-2-12T19:27:37</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
@@ -281,17 +281,16 @@
             <rect width="240" x="3680" y="-92" height="92" />
             <line x2="3872" y1="64" y2="0" x1="3872" />
             <line x2="3888" y1="64" y2="0" x1="3888" />
-            <line x2="3904" y1="64" y2="0" x1="3904" />
         </blockdef>
         <blockdef name="VGA_640_480_zpuino">
-            <timestamp>2015-2-4T23:21:2</timestamp>
-            <rect width="272" x="64" y="-256" height="292" />
-            <line x2="400" y1="16" y2="16" x1="336" />
+            <timestamp>2015-2-12T19:27:37</timestamp>
+            <rect width="272" x="64" y="-256" height="156" />
             <line x2="128" y1="-304" y2="-256" x1="128" />
             <line x2="144" y1="-304" y2="-256" x1="144" />
             <line x2="240" y1="-304" y2="-256" x1="240" />
             <line x2="256" y1="-304" y2="-256" x1="256" />
             <line x2="272" y1="-304" y2="-256" x1="272" />
+            <line x2="400" y1="-128" y2="-128" x1="336" />
         </blockdef>
         <blockdef name="Wing_VGA8">
             <timestamp>2015-1-21T16:33:38</timestamp>
@@ -435,15 +434,14 @@
             <blockpin signalname="XLXN_411(100:0)" name="wishbone_slot_14_out(100:0)" />
             <blockpin signalname="XLXN_412(100:0)" name="wishbone_slot_video_in(100:0)" />
             <blockpin signalname="XLXN_413(100:0)" name="wishbone_slot_video_out(100:0)" />
-            <blockpin signalname="XLXN_414" name="vgaclkout" />
         </block>
         <block symbolname="VGA_640_480_zpuino" name="XLXI_54">
-            <blockpin signalname="XLXN_418(32:0)" name="VGA_Bus(32:0)" />
             <blockpin signalname="XLXN_410(100:0)" name="wishbone_in(100:0)" />
             <blockpin signalname="XLXN_411(100:0)" name="wishbone_out(100:0)" />
             <blockpin signalname="XLXN_412(100:0)" name="wishbone_slot_video_in(100:0)" />
             <blockpin signalname="XLXN_413(100:0)" name="wishbone_slot_video_out(100:0)" />
             <blockpin signalname="XLXN_414" name="vgaclk" />
+            <blockpin signalname="XLXN_418(32:0)" name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="Wing_VGA8" name="XLXI_56">
             <blockpin name="vga_hsync" />
@@ -719,8 +717,8 @@
             <wire x2="3888" y1="1344" y2="1648" x1="3888" />
             <wire x2="3952" y1="1648" y2="1648" x1="3888" />
             <wire x2="4448" y1="1344" y2="1344" x1="3888" />
-            <wire x2="4448" y1="1168" y2="1168" x1="4368" />
-            <wire x2="4448" y1="1168" y2="1344" x1="4448" />
+            <wire x2="4448" y1="1024" y2="1024" x1="4368" />
+            <wire x2="4448" y1="1024" y2="1344" x1="4448" />
         </branch>
         <branch name="WING_AL0">
             <wire x2="5184" y1="1392" y2="1392" x1="5168" />

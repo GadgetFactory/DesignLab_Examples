@@ -299,7 +299,7 @@
             <line x2="128" y1="-96" y2="-96" x1="224" />
         </blockdef>
         <blockdef name="ZPUino_Papilio_Pro_V2">
-            <timestamp>2014-11-10T23:27:39</timestamp>
+            <timestamp>2015-2-12T19:27:37</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
             <line x2="4304" y1="-416" y2="-416" x1="4368" />
             <rect width="248" x="4056" y="-448" height="76" />
@@ -341,7 +341,6 @@
             <rect width="240" x="3680" y="-92" height="92" />
             <line x2="3872" y1="64" y2="0" x1="3872" />
             <line x2="3888" y1="64" y2="0" x1="3888" />
-            <line x2="3904" y1="64" y2="0" x1="3904" />
         </blockdef>
         <block symbolname="Wing_GPIO" name="XLXI_27">
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
@@ -472,7 +471,6 @@
             <blockpin name="wishbone_slot_14_out(100:0)" />
             <blockpin name="wishbone_slot_video_in(100:0)" />
             <blockpin name="wishbone_slot_video_out(100:0)" />
-            <blockpin name="vgaclkout" />
         </block>
         <block symbolname="Wishbone_Symbol_Example" name="XLXI_41">
             <blockpin signalname="BUTTONS(3:0)" name="buttons(3:0)" />
@@ -728,8 +726,7 @@
         </instance>
         <instance x="336" y="752" name="XLXI_51" orien="R0">
         </instance>
-        <instance x="768" y="1888" name="XLXI_41" orien="R0">
-        </instance>
+        <instance x="768" y="1888" name="XLXI_41" orien="R0" />
         <branch name="leds(3:0)">
             <wire x2="1184" y1="1872" y2="1872" x1="1024" />
             <wire x2="1184" y1="1872" y2="1904" x1="1184" />
