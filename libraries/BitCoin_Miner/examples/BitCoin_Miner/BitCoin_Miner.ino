@@ -34,3 +34,4 @@
  */
 #define circuit BitCoin_Miner
 
+
