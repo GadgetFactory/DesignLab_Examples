@@ -4,14 +4,13 @@ use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 
-entity VGA_640_480_zpuino is
+entity VGA_ZPUino is
   port(
 	 wishbone_in : in std_logic_vector(100 downto 0);
 	 wishbone_out : out std_logic_vector(100 downto 0);
 	 
 	 wishbone_slot_video_in : out std_logic_vector(100 downto 0);
-	 wishbone_slot_video_out : in std_logic_vector(100 downto 0);
-	 vgaclk: in std_logic;		 
+	 wishbone_slot_video_out : in std_logic_vector(100 downto 0);	 
 	 
 	 VGA_Bus : inout std_logic_vector(32 downto 0)
 
@@ -26,9 +25,9 @@ entity VGA_640_480_zpuino is
   );
 end entity;
 
-architecture behave of VGA_640_480_zpuino is
+architecture behave of VGA_ZPUino is
 
-	COMPONENT vga_640_480
+	COMPONENT vga_generic
 	PORT(
 		wb_clk_i : IN std_logic;
 		wb_rst_i : IN std_logic;
@@ -40,7 +39,7 @@ architecture behave of VGA_640_480_zpuino is
 		mi_wb_dat_i : IN std_logic_vector(31 downto 0);
 		mi_wb_ack_i : IN std_logic;
 		mi_wb_stall_i : IN std_logic;
-		vgaclk : IN std_logic;          
+		clk_42mhz : IN std_logic;          
 		wb_dat_o : OUT std_logic_vector(31 downto 0);
 		wb_ack_o : OUT std_logic;
 		id : OUT std_logic_vector(15 downto 0);
@@ -55,7 +54,7 @@ architecture behave of VGA_640_480_zpuino is
 		vga_vsync : OUT std_logic;
 		vga_b : OUT std_logic_vector(4 downto 0);
 		vga_r : OUT std_logic_vector(4 downto 0);
-		vga_g : OUT std_logic_vector(4 downto 0);
+		vga_g : OUT std_logic_vector(5 downto 0);
 		blank : OUT std_logic
 		);
 	END COMPONENT;
@@ -89,7 +88,7 @@ architecture behave of VGA_640_480_zpuino is
 --end signals for unpacking DMA array
 
   signal vga_r:		  std_logic_vector(4 downto 0);
-  signal vga_g:		  std_logic_vector(4 downto 0);
+  signal vga_g:		  std_logic_vector(5 downto 0);
   signal vga_b:		  std_logic_vector(4 downto 0); 
   signal vga_hsync_r:   std_logic;
   signal vga_vsync_r:   std_logic;  
@@ -124,7 +123,7 @@ begin
 
 --VGA Bus
 	VGA_Bus(9 downto 5) <= vga_r; 
-	VGA_Bus(19 downto 15) <= vga_g;
+	VGA_Bus(19 downto 14) <= vga_g;
 	VGA_Bus(29 downto 25) <= vga_b;
 	VGA_Bus(30) <= vga_hsync_r;
 	VGA_Bus(31) <= vga_vsync_r;
@@ -152,7 +151,7 @@ begin
 --  vga_b0 <= vga_b(0);
   
 
-	Inst_vga_640_480: vga_640_480 PORT MAP(
+	Inst_vga_generic: vga_generic PORT MAP(
 		wb_clk_i => wb_clk_i,
 		wb_rst_i => wb_rst_i,
 		wb_dat_o => wb_dat_o,
@@ -173,7 +172,7 @@ begin
 		mi_wb_stb_o => mi_wb_stb_o,
 		mi_wb_ack_i => mi_wb_ack_i,
 		mi_wb_stall_i => mi_wb_stall_i,
-		vgaclk => vgaclk,
+		clk_42mhz => wishbone_slot_video_out(97),
 		vga_hsync => vga_hsync_r,
 		vga_vsync => vga_vsync_r,
 		vga_b => vga_b,

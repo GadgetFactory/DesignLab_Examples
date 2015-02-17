@@ -55,29 +55,23 @@
         <signal name="Arduino_27" />
         <signal name="Arduino_25" />
         <signal name="Arduino_23" />
-        <signal name="XLXN_449(7:0)" />
-        <signal name="XLXN_448(7:0)" />
-        <signal name="XLXN_326(7:0)" />
-        <signal name="XLXN_325(7:0)" />
-        <signal name="XLXN_328(7:0)" />
-        <signal name="XLXN_327(7:0)" />
-        <signal name="XLXN_332(7:0)" />
-        <signal name="XLXN_331(7:0)" />
-        <signal name="XLXN_334(7:0)" />
-        <signal name="XLXN_333(7:0)" />
-        <signal name="XLXN_336(7:0)" />
-        <signal name="XLXN_335(7:0)" />
         <signal name="ARD_RESET" />
         <signal name="DUO_SW1" />
-        <signal name="XLXN_536(7:0)" />
-        <signal name="XLXN_537(7:0)" />
-        <signal name="XLXN_539(100:0)" />
-        <signal name="XLXN_540(100:0)" />
-        <signal name="XLXN_541(100:0)" />
-        <signal name="XLXN_542(100:0)" />
-        <signal name="XLXN_548(32:0)" />
         <signal name="XLXN_523(200:0)" />
         <signal name="XLXN_522(200:0)" />
+        <signal name="Arduino_0" />
+        <signal name="Arduino_1" />
+        <signal name="Arduino_2" />
+        <signal name="Arduino_3" />
+        <signal name="Arduino_4" />
+        <signal name="Arduino_5" />
+        <signal name="Arduino_6" />
+        <signal name="Arduino_7" />
+        <signal name="XLXN_565(100:0)" />
+        <signal name="XLXN_566(100:0)" />
+        <signal name="XLXN_567(100:0)" />
+        <signal name="XLXN_568(100:0)" />
+        <signal name="XLXN_569(32:0)" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
@@ -129,128 +123,14 @@
         <port polarity="BiDirectional" name="Arduino_23" />
         <port polarity="Output" name="ARD_RESET" />
         <port polarity="Input" name="DUO_SW1" />
-        <blockdef name="Wing_GPIO">
-            <timestamp>2014-11-10T23:31:50</timestamp>
-            <rect width="160" x="0" y="-128" height="128" />
-            <rect width="64" x="160" y="-108" height="24" />
-            <line x2="224" y1="-96" y2="-96" x1="160" />
-            <rect width="64" x="160" y="-44" height="24" />
-            <line x2="224" y1="-32" y2="-32" x1="160" />
-        </blockdef>
-        <blockdef name="Papilio_DUO_Wing_Pinout">
-            <timestamp>2014-12-1T23:29:47</timestamp>
-            <rect width="148" x="284" y="-2140" height="276" />
-            <rect width="148" x="284" y="-1568" height="280" />
-            <rect width="148" x="284" y="-1852" height="272" />
-            <line x2="496" y1="-1824" y2="-1824" x1="432" />
-            <line x2="496" y1="-1792" y2="-1792" x1="432" />
-            <line x2="496" y1="-1760" y2="-1760" x1="432" />
-            <line x2="496" y1="-1728" y2="-1728" x1="432" />
-            <line x2="496" y1="-1696" y2="-1696" x1="432" />
-            <line x2="496" y1="-1664" y2="-1664" x1="432" />
-            <line x2="496" y1="-2112" y2="-2112" x1="432" />
-            <line x2="496" y1="-2080" y2="-2080" x1="432" />
-            <line x2="496" y1="-2048" y2="-2048" x1="432" />
-            <line x2="496" y1="-2016" y2="-2016" x1="432" />
-            <line x2="496" y1="-1984" y2="-1984" x1="432" />
-            <line x2="496" y1="-1952" y2="-1952" x1="432" />
-            <line x2="496" y1="-1536" y2="-1536" x1="432" />
-            <line x2="496" y1="-1504" y2="-1504" x1="432" />
-            <line x2="496" y1="-1472" y2="-1472" x1="432" />
-            <line x2="496" y1="-1440" y2="-1440" x1="432" />
-            <line x2="496" y1="-1408" y2="-1408" x1="432" />
-            <line x2="496" y1="-1376" y2="-1376" x1="432" />
-            <line x2="496" y1="-1344" y2="-1344" x1="432" />
-            <line x2="496" y1="-1312" y2="-1312" x1="432" />
-            <rect width="432" x="0" y="-2200" height="2320" />
-            <line x2="0" y1="-2160" y2="-2160" x1="-64" />
-            <line x2="0" y1="-2176" y2="-2176" x1="-64" />
-            <rect width="64" x="-64" y="-2028" height="24" />
-            <line x2="0" y1="-2016" y2="-2016" x1="-64" />
-            <rect width="64" x="-64" y="-1964" height="24" />
-            <line x2="0" y1="-1952" y2="-1952" x1="-64" />
-            <rect width="64" x="-64" y="-1740" height="24" />
-            <line x2="0" y1="-1728" y2="-1728" x1="-64" />
-            <rect width="64" x="-64" y="-1676" height="24" />
-            <line x2="0" y1="-1664" y2="-1664" x1="-64" />
-            <rect width="64" x="-64" y="-1468" height="24" />
-            <line x2="0" y1="-1456" y2="-1456" x1="-64" />
-            <rect width="64" x="-64" y="-1404" height="24" />
-            <line x2="0" y1="-1392" y2="-1392" x1="-64" />
-            <rect width="88" x="0" y="-2032" height="96" />
-            <rect width="88" x="0" y="-1744" height="96" />
-            <rect width="88" x="0" y="-1472" height="96" />
-            <rect width="148" x="284" y="-1276" height="276" />
-            <rect width="148" x="284" y="-988" height="276" />
-            <line x2="496" y1="-1248" y2="-1248" x1="432" />
-            <line x2="496" y1="-1216" y2="-1216" x1="432" />
-            <line x2="496" y1="-1184" y2="-1184" x1="432" />
-            <line x2="496" y1="-1152" y2="-1152" x1="432" />
-            <line x2="496" y1="-1120" y2="-1120" x1="432" />
-            <line x2="496" y1="-1088" y2="-1088" x1="432" />
-            <line x2="496" y1="-1056" y2="-1056" x1="432" />
-            <line x2="496" y1="-1024" y2="-1024" x1="432" />
-            <line x2="496" y1="-960" y2="-960" x1="432" />
-            <line x2="496" y1="-928" y2="-928" x1="432" />
-            <line x2="496" y1="-896" y2="-896" x1="432" />
-            <line x2="496" y1="-864" y2="-864" x1="432" />
-            <line x2="496" y1="-832" y2="-832" x1="432" />
-            <line x2="496" y1="-800" y2="-800" x1="432" />
-            <line x2="496" y1="-768" y2="-768" x1="432" />
-            <line x2="496" y1="-736" y2="-736" x1="432" />
-            <rect width="64" x="-64" y="-812" height="24" />
-            <line x2="0" y1="-800" y2="-800" x1="-64" />
-            <rect width="64" x="-64" y="-876" height="24" />
-            <line x2="0" y1="-864" y2="-864" x1="-64" />
-            <rect width="64" x="-64" y="-1100" height="24" />
-            <line x2="0" y1="-1088" y2="-1088" x1="-64" />
-            <rect width="64" x="-64" y="-1164" height="24" />
-            <line x2="0" y1="-1152" y2="-1152" x1="-64" />
-            <rect width="88" x="0" y="-1168" height="96" />
-            <rect width="88" x="0" y="-880" height="96" />
-            <rect width="148" x="284" y="-700" height="276" />
-            <rect width="148" x="284" y="-412" height="276" />
-            <rect width="88" x="0" y="-592" height="96" />
-            <rect width="88" x="0" y="-304" height="96" />
-            <line x2="0" y1="-576" y2="-576" x1="-64" />
-            <rect width="64" x="-64" y="-588" height="24" />
-            <line x2="0" y1="-512" y2="-512" x1="-64" />
-            <rect width="64" x="-64" y="-524" height="24" />
-            <line x2="0" y1="-288" y2="-288" x1="-64" />
-            <rect width="64" x="-64" y="-300" height="24" />
-            <line x2="0" y1="-224" y2="-224" x1="-64" />
-            <rect width="64" x="-64" y="-236" height="24" />
-            <line x2="496" y1="-672" y2="-672" x1="432" />
-            <line x2="496" y1="-640" y2="-640" x1="432" />
-            <line x2="496" y1="-608" y2="-608" x1="432" />
-            <line x2="496" y1="-576" y2="-576" x1="432" />
-            <line x2="496" y1="-544" y2="-544" x1="432" />
-            <line x2="496" y1="-512" y2="-512" x1="432" />
-            <line x2="496" y1="-480" y2="-480" x1="432" />
-            <line x2="496" y1="-448" y2="-448" x1="432" />
-            <line x2="496" y1="-384" y2="-384" x1="432" />
-            <line x2="496" y1="-352" y2="-352" x1="432" />
-            <line x2="496" y1="-320" y2="-320" x1="432" />
-            <line x2="496" y1="-288" y2="-288" x1="432" />
-            <line x2="496" y1="-256" y2="-256" x1="432" />
-            <line x2="496" y1="-224" y2="-224" x1="432" />
-            <line x2="496" y1="-192" y2="-192" x1="432" />
-            <line x2="496" y1="-160" y2="-160" x1="432" />
-            <line x2="496" y1="-1888" y2="-1888" x1="432" />
-            <line x2="496" y1="-1920" y2="-1920" x1="432" />
-            <line x2="496" y1="-80" y2="-80" x1="432" />
-            <line x2="496" y1="-48" y2="-48" x1="432" />
-            <line x2="496" y1="-16" y2="-16" x1="432" />
-            <line x2="496" y1="16" y2="16" x1="432" />
-            <line x2="496" y1="48" y2="48" x1="432" />
-            <line x2="496" y1="80" y2="80" x1="432" />
-            <line x2="0" y1="-80" y2="-80" x1="-64" />
-            <line x2="0" y1="-48" y2="-48" x1="-64" />
-            <line x2="0" y1="-16" y2="-16" x1="-64" />
-            <line x2="0" y1="16" y2="16" x1="-64" />
-            <line x2="0" y1="48" y2="48" x1="-64" />
-            <line x2="0" y1="80" y2="80" x1="-64" />
-        </blockdef>
+        <port polarity="BiDirectional" name="Arduino_0" />
+        <port polarity="BiDirectional" name="Arduino_1" />
+        <port polarity="BiDirectional" name="Arduino_2" />
+        <port polarity="BiDirectional" name="Arduino_3" />
+        <port polarity="BiDirectional" name="Arduino_4" />
+        <port polarity="BiDirectional" name="Arduino_5" />
+        <port polarity="BiDirectional" name="Arduino_6" />
+        <port polarity="BiDirectional" name="Arduino_7" />
         <blockdef name="ZPUino_Papilio_DUO_V2">
             <timestamp>2015-2-12T19:27:37</timestamp>
             <line x2="4368" y1="-400" y2="-400" x1="4304" />
@@ -306,165 +186,115 @@
             <line x2="64" y1="0" y2="-64" x1="64" />
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
-        <blockdef name="VGA_640_480_zpuino">
-            <timestamp>2015-2-5T17:40:45</timestamp>
+        <blockdef name="Computing_Shield_Pinout">
+            <timestamp>2015-1-21T16:33:38</timestamp>
+            <rect width="432" x="64" y="-2176" height="2104" />
+            <rect width="188" x="308" y="-1820" height="272" />
+            <line x2="60" y1="-2144" y2="-2144" x1="0" />
+            <line x2="64" y1="-2128" y2="-2128" x1="0" />
+            <line x2="560" y1="-2080" y2="-2080" x1="496" />
+            <line x2="560" y1="-2048" y2="-2048" x1="496" />
+            <line x2="560" y1="-2016" y2="-2016" x1="496" />
+            <line x2="560" y1="-1984" y2="-1984" x1="496" />
+            <line x2="560" y1="-1952" y2="-1952" x1="496" />
+            <line x2="560" y1="-1920" y2="-1920" x1="496" />
+            <line x2="560" y1="-1888" y2="-1888" x1="496" />
+            <line x2="560" y1="-1856" y2="-1856" x1="496" />
+            <line x2="560" y1="-1760" y2="-1760" x1="496" />
+            <line x2="560" y1="-1728" y2="-1728" x1="496" />
+            <line x2="560" y1="-1696" y2="-1696" x1="496" />
+            <line x2="560" y1="-1664" y2="-1664" x1="496" />
+            <line x2="560" y1="-1632" y2="-1632" x1="496" />
+            <line x2="496" y1="-1792" y2="-1792" x1="560" />
+            <rect width="208" x="64" y="-1992" height="244" />
+            <line x2="0" y1="-1824" y2="-1824" x1="64" />
+            <line x2="0" y1="-1840" y2="-1840" x1="64" />
+            <line x2="0" y1="-1856" y2="-1856" x1="64" />
+            <line x2="0" y1="-1888" y2="-1888" x1="64" />
+            <line x2="0" y1="-1904" y2="-1904" x1="64" />
+            <line x2="0" y1="-1920" y2="-1920" x1="64" />
+            <line x2="0" y1="-1968" y2="-1968" x1="64" />
+            <line x2="0" y1="-1952" y2="-1952" x1="64" />
+            <line x2="0" y1="-624" y2="-624" x1="64" />
+            <rect width="188" x="308" y="-2108" height="276" />
+            <rect width="188" x="308" y="-1244" height="276" />
+            <line x2="560" y1="-1216" y2="-1216" x1="496" />
+            <line x2="560" y1="-1184" y2="-1184" x1="496" />
+            <line x2="560" y1="-1152" y2="-1152" x1="496" />
+            <line x2="560" y1="-1120" y2="-1120" x1="496" />
+            <line x2="560" y1="-1088" y2="-1088" x1="496" />
+            <line x2="560" y1="-1056" y2="-1056" x1="496" />
+            <line x2="560" y1="-1024" y2="-1024" x1="496" />
+            <line x2="560" y1="-992" y2="-992" x1="496" />
+            <line x2="560" y1="-928" y2="-928" x1="496" />
+            <line x2="560" y1="-896" y2="-896" x1="496" />
+            <line x2="560" y1="-864" y2="-864" x1="496" />
+            <line x2="560" y1="-832" y2="-832" x1="496" />
+            <line x2="560" y1="-800" y2="-800" x1="496" />
+            <line x2="560" y1="-768" y2="-768" x1="496" />
+            <line x2="560" y1="-736" y2="-736" x1="496" />
+            <line x2="560" y1="-704" y2="-704" x1="496" />
+            <rect width="188" x="308" y="-380" height="276" />
+            <rect width="188" x="308" y="-956" height="276" />
+            <rect width="188" x="308" y="-668" height="276" />
+            <rect width="164" x="64" y="-648" height="112" />
+            <rect width="188" x="308" y="-1536" height="280" />
+            <rect width="164" x="64" y="-488" height="112" />
+            <rect width="184" x="64" y="-1196" height="180" />
+            <line x2="0" y1="-1104" y2="-1104" x1="64" />
+            <line x2="0" y1="-1168" y2="-1168" x1="64" />
+            <line x2="0" y1="-848" y2="-848" x1="64" />
+            <line x2="0" y1="-784" y2="-784" x1="64" />
+            <rect width="184" x="64" y="-876" height="124" />
+            <line x2="0" y1="-1040" y2="-1040" x1="64" />
+            <line x2="0" y1="-560" y2="-560" x1="64" />
+            <line x2="0" y1="-400" y2="-400" x1="64" />
+            <line x2="0" y1="-464" y2="-464" x1="64" />
+            <line x2="560" y1="-1504" y2="-1504" x1="496" />
+            <line x2="560" y1="-1472" y2="-1472" x1="496" />
+            <line x2="560" y1="-1440" y2="-1440" x1="496" />
+            <line x2="560" y1="-1408" y2="-1408" x1="496" />
+            <line x2="560" y1="-1376" y2="-1376" x1="496" />
+            <line x2="560" y1="-1344" y2="-1344" x1="496" />
+            <line x2="560" y1="-1312" y2="-1312" x1="496" />
+            <line x2="560" y1="-1280" y2="-1280" x1="496" />
+            <line x2="560" y1="-640" y2="-640" x1="496" />
+            <line x2="560" y1="-608" y2="-608" x1="496" />
+            <line x2="560" y1="-576" y2="-576" x1="496" />
+            <line x2="560" y1="-544" y2="-544" x1="496" />
+            <line x2="560" y1="-512" y2="-512" x1="496" />
+            <line x2="560" y1="-480" y2="-480" x1="496" />
+            <line x2="560" y1="-448" y2="-448" x1="496" />
+            <line x2="560" y1="-416" y2="-416" x1="496" />
+            <line x2="560" y1="-352" y2="-352" x1="496" />
+            <line x2="560" y1="-320" y2="-320" x1="496" />
+            <line x2="560" y1="-288" y2="-288" x1="496" />
+            <line x2="560" y1="-256" y2="-256" x1="496" />
+            <line x2="560" y1="-224" y2="-224" x1="496" />
+            <line x2="560" y1="-192" y2="-192" x1="496" />
+            <line x2="560" y1="-160" y2="-160" x1="496" />
+            <line x2="560" y1="-128" y2="-128" x1="496" />
+            <line x2="0" y1="-1760" y2="-1760" x1="64" />
+            <line x2="0" y1="-1776" y2="-1776" x1="64" />
+            <line x2="0" y1="-1712" y2="-1712" x1="64" />
+            <line x2="0" y1="-1936" y2="-1936" x1="64" />
+            <line x2="0" y1="-1872" y2="-1872" x1="64" />
+            <line x2="0" y1="-1808" y2="-1808" x1="64" />
+            <line x2="0" y1="-1792" y2="-1792" x1="64" />
+            <rect width="208" x="64" y="-1728" height="32" />
+        </blockdef>
+        <blockdef name="VGA_ZPUino">
+            <timestamp>2015-2-17T22:2:15</timestamp>
             <rect width="272" x="64" y="-256" height="156" />
             <line x2="128" y1="-304" y2="-256" x1="128" />
             <line x2="144" y1="-304" y2="-256" x1="144" />
             <line x2="240" y1="-304" y2="-256" x1="240" />
             <line x2="256" y1="-304" y2="-256" x1="256" />
-            <line x2="272" y1="-304" y2="-256" x1="272" />
             <line x2="400" y1="-128" y2="-128" x1="336" />
         </blockdef>
-        <blockdef name="Wing_VGA8">
-            <timestamp>2015-1-21T16:33:38</timestamp>
-            <rect width="288" x="48" y="-224" height="260" />
-            <line x2="-16" y1="-208" y2="-208" x1="48" />
-            <line x2="-16" y1="-192" y2="-192" x1="48" />
-            <line x2="-16" y1="-144" y2="-144" x1="48" />
-            <line x2="-16" y1="-128" y2="-128" x1="48" />
-            <line x2="-16" y1="-80" y2="-80" x1="48" />
-            <line x2="-16" y1="-64" y2="-64" x1="48" />
-            <rect width="64" x="336" y="-156" height="24" />
-            <line x2="400" y1="-144" y2="-144" x1="336" />
-            <rect width="64" x="336" y="-92" height="24" />
-            <line x2="400" y1="-80" y2="-80" x1="336" />
-            <line x2="-16" y1="-32" y2="-32" x1="48" />
-            <line x2="-16" y1="-16" y2="-16" x1="48" />
-            <line x2="-16" y1="16" y2="16" x1="48" />
-        </blockdef>
-        <block symbolname="Wing_GPIO" name="XLXI_27">
-            <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_336(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Wing_GPIO" name="XLXI_26">
-            <blockpin signalname="XLXN_333(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_334(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Wing_GPIO" name="XLXI_25">
-            <blockpin signalname="XLXN_331(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_332(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Wing_GPIO" name="XLXI_23">
-            <blockpin signalname="XLXN_327(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_328(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Wing_GPIO" name="XLXI_22">
-            <blockpin signalname="XLXN_325(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_326(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Wing_GPIO" name="XLXI_41">
-            <blockpin signalname="XLXN_448(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_449(7:0)" name="wt_mosi(7:0)" />
-        </block>
-        <block symbolname="Papilio_DUO_Wing_Pinout" name="XLXI_44">
-            <blockpin signalname="Arduino_8" name="WING_AH0" />
-            <blockpin signalname="Arduino_9" name="WING_AH1" />
-            <blockpin signalname="Arduino_10" name="WING_AH2" />
-            <blockpin signalname="Arduino_11" name="WING_AH3" />
-            <blockpin signalname="Arduino_12" name="WING_AH4" />
-            <blockpin signalname="Arduino_13" name="WING_AH5" />
-            <blockpin name="WING_AL0" />
-            <blockpin name="WING_AL1" />
-            <blockpin name="WING_AL2" />
-            <blockpin name="WING_AL3" />
-            <blockpin name="WING_AL4" />
-            <blockpin name="WING_AL5" />
-            <blockpin signalname="Arduino_21" name="WING_BL0" />
-            <blockpin signalname="Arduino_20" name="WING_BL1" />
-            <blockpin signalname="Arduino_19" name="WING_BL2" />
-            <blockpin signalname="Arduino_18" name="WING_BL3" />
-            <blockpin signalname="Arduino_17" name="WING_BL4" />
-            <blockpin signalname="Arduino_16" name="WING_BL5" />
-            <blockpin signalname="Arduino_15" name="WING_BL6" />
-            <blockpin signalname="Arduino_14" name="WING_BL7" />
-            <blockpin signalname="XLXN_523(200:0)" name="gpio_bus_out(200:0)" />
-            <blockpin signalname="XLXN_522(200:0)" name="gpio_bus_in(200:0)" />
-            <blockpin signalname="XLXN_331(7:0)" name="WingType_miso_BL(7:0)" />
-            <blockpin signalname="XLXN_333(7:0)" name="WingType_miso_AH(7:0)" />
-            <blockpin signalname="XLXN_332(7:0)" name="WingType_mosi_BL(7:0)" />
-            <blockpin signalname="XLXN_334(7:0)" name="WingType_mosi_AH(7:0)" />
-            <blockpin signalname="XLXN_336(7:0)" name="WingType_mosi_AL(7:0)" />
-            <blockpin signalname="XLXN_335(7:0)" name="WingType_miso_AL(7:0)" />
-            <blockpin signalname="Arduino_22" name="WING_CL0" />
-            <blockpin signalname="Arduino_24" name="WING_CL1" />
-            <blockpin signalname="Arduino_26" name="WING_CL2" />
-            <blockpin signalname="Arduino_28" name="WING_CL3" />
-            <blockpin signalname="Arduino_30" name="WING_CL4" />
-            <blockpin signalname="Arduino_32" name="WING_CL5" />
-            <blockpin signalname="Arduino_34" name="WING_CL6" />
-            <blockpin signalname="Arduino_36" name="WING_CL7" />
-            <blockpin signalname="Arduino_38" name="WING_CH0" />
-            <blockpin signalname="Arduino_40" name="WING_CH1" />
-            <blockpin signalname="Arduino_42" name="WING_CH2" />
-            <blockpin signalname="Arduino_44" name="WING_CH3" />
-            <blockpin signalname="Arduino_46" name="WING_CH4" />
-            <blockpin signalname="Arduino_48" name="WING_CH5" />
-            <blockpin signalname="Arduino_50" name="WING_CH6" />
-            <blockpin signalname="Arduino_52" name="WING_CH7" />
-            <blockpin signalname="XLXN_537(7:0)" name="WingType_mosi_CL(7:0)" />
-            <blockpin signalname="XLXN_536(7:0)" name="WingType_miso_CL(7:0)" />
-            <blockpin signalname="XLXN_327(7:0)" name="WingType_miso_CH(7:0)" />
-            <blockpin signalname="XLXN_328(7:0)" name="WingType_mosi_CH(7:0)" />
-            <blockpin signalname="Arduino_53" name="WING_DL0" />
-            <blockpin signalname="Arduino_51" name="WING_DL1" />
-            <blockpin signalname="Arduino_49" name="WING_DL2" />
-            <blockpin signalname="Arduino_47" name="WING_DL3" />
-            <blockpin signalname="Arduino_45" name="WING_DL4" />
-            <blockpin signalname="Arduino_43" name="WING_DL5" />
-            <blockpin signalname="Arduino_41" name="WING_DL6" />
-            <blockpin signalname="Arduino_39" name="WING_DL7" />
-            <blockpin signalname="Arduino_37" name="WING_DH0" />
-            <blockpin signalname="Arduino_35" name="WING_DH1" />
-            <blockpin signalname="Arduino_33" name="WING_DH2" />
-            <blockpin signalname="Arduino_31" name="WING_DH3" />
-            <blockpin signalname="Arduino_29" name="WING_DH4" />
-            <blockpin signalname="Arduino_27" name="WING_DH5" />
-            <blockpin signalname="Arduino_25" name="WING_DH6" />
-            <blockpin signalname="Arduino_23" name="WING_DH7" />
-            <blockpin signalname="XLXN_326(7:0)" name="WingType_mosi_DL(7:0)" />
-            <blockpin signalname="XLXN_449(7:0)" name="WingType_mosi_DH(7:0)" />
-            <blockpin signalname="XLXN_448(7:0)" name="WingType_miso_DH(7:0)" />
-            <blockpin signalname="XLXN_325(7:0)" name="WingType_miso_DL(7:0)" />
-            <blockpin name="WING_AL7" />
-            <blockpin name="WING_AL6" />
-            <blockpin name="Flex_Pin_out_0" />
-            <blockpin name="Flex_Pin_out_1" />
-            <blockpin name="Flex_Pin_out_2" />
-            <blockpin name="Flex_Pin_out_3" />
-            <blockpin name="Flex_Pin_out_4" />
-            <blockpin name="Flex_Pin_out_5" />
-            <blockpin name="Flex_Pin_in_0" />
-            <blockpin name="Flex_Pin_in_1" />
-            <blockpin name="Flex_Pin_in_2" />
-            <blockpin name="Flex_Pin_in_3" />
-            <blockpin name="Flex_Pin_in_4" />
-            <blockpin name="Flex_Pin_in_5" />
-        </block>
         <block symbolname="inv" name="XLXI_60">
             <blockpin signalname="DUO_SW1" name="I" />
             <blockpin signalname="ARD_RESET" name="O" />
-        </block>
-        <block symbolname="VGA_640_480_zpuino" name="XLXI_61">
-            <blockpin signalname="XLXN_539(100:0)" name="wishbone_in(100:0)" />
-            <blockpin signalname="XLXN_540(100:0)" name="wishbone_out(100:0)" />
-            <blockpin signalname="XLXN_541(100:0)" name="wishbone_slot_video_in(100:0)" />
-            <blockpin signalname="XLXN_542(100:0)" name="wishbone_slot_video_out(100:0)" />
-            <blockpin name="vgaclk" />
-            <blockpin signalname="XLXN_548(32:0)" name="VGA_Bus(32:0)" />
-        </block>
-        <block symbolname="Wing_VGA8" name="XLXI_62">
-            <blockpin name="vga_hsync" />
-            <blockpin name="vga_vsync" />
-            <blockpin name="vga_red1" />
-            <blockpin name="vga_red0" />
-            <blockpin name="vga_green1" />
-            <blockpin name="vga_green0" />
-            <blockpin signalname="XLXN_536(7:0)" name="wt_miso(7:0)" />
-            <blockpin signalname="XLXN_537(7:0)" name="wt_mosi(7:0)" />
-            <blockpin name="vga_blue1" />
-            <blockpin name="vga_blue0" />
-            <blockpin signalname="XLXN_548(32:0)" name="VGA_Bus(32:0)" />
         </block>
         <block symbolname="ZPUino_Papilio_DUO_V2" name="XLXI_51">
             <blockpin signalname="XLXN_523(200:0)" name="gpio_bus_out(200:0)" />
@@ -492,10 +322,99 @@
             <blockpin name="wishbone_slot_12_out(100:0)" />
             <blockpin name="wishbone_slot_13_in(100:0)" />
             <blockpin name="wishbone_slot_13_out(100:0)" />
-            <blockpin signalname="XLXN_539(100:0)" name="wishbone_slot_14_in(100:0)" />
-            <blockpin signalname="XLXN_540(100:0)" name="wishbone_slot_14_out(100:0)" />
-            <blockpin signalname="XLXN_541(100:0)" name="wishbone_slot_video_in(100:0)" />
-            <blockpin signalname="XLXN_542(100:0)" name="wishbone_slot_video_out(100:0)" />
+            <blockpin signalname="XLXN_565(100:0)" name="wishbone_slot_14_in(100:0)" />
+            <blockpin signalname="XLXN_566(100:0)" name="wishbone_slot_14_out(100:0)" />
+            <blockpin signalname="XLXN_567(100:0)" name="wishbone_slot_video_in(100:0)" />
+            <blockpin signalname="XLXN_568(100:0)" name="wishbone_slot_video_out(100:0)" />
+        </block>
+        <block symbolname="Computing_Shield_Pinout" name="XLXI_63">
+            <blockpin signalname="XLXN_523(200:0)" name="gpio_bus_out(200:0)" />
+            <blockpin signalname="XLXN_522(200:0)" name="gpio_bus_in(200:0)" />
+            <blockpin signalname="Arduino_0" name="WING_AL0" />
+            <blockpin signalname="Arduino_1" name="WING_AL1" />
+            <blockpin signalname="Arduino_2" name="WING_AL2" />
+            <blockpin signalname="Arduino_3" name="WING_AL3" />
+            <blockpin signalname="Arduino_4" name="WING_AL4" />
+            <blockpin signalname="Arduino_5" name="WING_AL5" />
+            <blockpin signalname="Arduino_6" name="WING_AL6" />
+            <blockpin signalname="Arduino_7" name="WING_AL7" />
+            <blockpin signalname="Arduino_8" name="WING_AH0" />
+            <blockpin signalname="Arduino_9" name="WING_AH1" />
+            <blockpin signalname="Arduino_10" name="WING_AH2" />
+            <blockpin signalname="Arduino_11" name="WING_AH3" />
+            <blockpin signalname="Arduino_12" name="WING_AH4" />
+            <blockpin signalname="Arduino_13" name="WING_AH5" />
+            <blockpin name="VGA_Red2" />
+            <blockpin name="VGA_Red1" />
+            <blockpin name="VGA_Red0" />
+            <blockpin name="VGA_Green2" />
+            <blockpin name="VGA_Green1" />
+            <blockpin name="VGA_Green0" />
+            <blockpin name="VGA_Hsync" />
+            <blockpin name="VGA_Vsync" />
+            <blockpin name="Audio1_Left" />
+            <blockpin signalname="Arduino_22" name="WING_CL0" />
+            <blockpin signalname="Arduino_24" name="WING_CL1" />
+            <blockpin signalname="Arduino_26" name="WING_CL2" />
+            <blockpin signalname="Arduino_28" name="WING_CL3" />
+            <blockpin signalname="Arduino_30" name="WING_CL4" />
+            <blockpin signalname="Arduino_32" name="WING_CL5" />
+            <blockpin signalname="Arduino_34" name="WING_CL6" />
+            <blockpin signalname="Arduino_36" name="WING_CL7" />
+            <blockpin signalname="Arduino_38" name="WING_CH0" />
+            <blockpin signalname="Arduino_40" name="WING_CH1" />
+            <blockpin signalname="Arduino_42" name="WING_CH2" />
+            <blockpin signalname="Arduino_44" name="WING_CH3" />
+            <blockpin signalname="Arduino_46" name="WING_CH4" />
+            <blockpin signalname="Arduino_48" name="WING_CH5" />
+            <blockpin signalname="Arduino_50" name="WING_CH6" />
+            <blockpin signalname="Arduino_52" name="WING_CH7" />
+            <blockpin name="SD_MISO" />
+            <blockpin name="SD_MOSI" />
+            <blockpin name="RS232_RX" />
+            <blockpin name="RS232_TX" />
+            <blockpin name="SD_SCK" />
+            <blockpin name="Audio1_Right" />
+            <blockpin name="Audio2_Right" />
+            <blockpin name="Audio2_Left" />
+            <blockpin signalname="Arduino_21" name="WING_BL0" />
+            <blockpin signalname="Arduino_20" name="WING_BL1" />
+            <blockpin signalname="Arduino_19" name="WING_BL2" />
+            <blockpin signalname="Arduino_18" name="WING_BL3" />
+            <blockpin signalname="Arduino_17" name="WING_BL4" />
+            <blockpin signalname="Arduino_16" name="WING_BL5" />
+            <blockpin signalname="Arduino_15" name="WING_BL6" />
+            <blockpin signalname="Arduino_14" name="WING_BL7" />
+            <blockpin signalname="Arduino_53" name="WING_DL0" />
+            <blockpin signalname="Arduino_51" name="WING_DL1" />
+            <blockpin signalname="Arduino_49" name="WING_DL2" />
+            <blockpin signalname="Arduino_47" name="WING_DL3" />
+            <blockpin signalname="Arduino_45" name="WING_DL4" />
+            <blockpin signalname="Arduino_43" name="WING_DL5" />
+            <blockpin signalname="Arduino_41" name="WING_DL6" />
+            <blockpin signalname="Arduino_39" name="WING_DL7" />
+            <blockpin signalname="Arduino_37" name="WING_DH0" />
+            <blockpin signalname="Arduino_35" name="WING_DH1" />
+            <blockpin signalname="Arduino_33" name="WING_DH2" />
+            <blockpin signalname="Arduino_31" name="WING_DH3" />
+            <blockpin signalname="Arduino_29" name="WING_DH4" />
+            <blockpin signalname="Arduino_27" name="WING_DH5" />
+            <blockpin signalname="Arduino_25" name="WING_DH6" />
+            <blockpin signalname="Arduino_23" name="WING_DH7" />
+            <blockpin name="VGA_Red3" />
+            <blockpin name="VGA_Green3" />
+            <blockpin name="VGA_Blue3" />
+            <blockpin name="VGA_Blue1" />
+            <blockpin name="VGA_Blue0" />
+            <blockpin name="VGA_Blue2" />
+            <blockpin signalname="XLXN_569(32:0)" name="VGA_Bus(32:0)" />
+        </block>
+        <block symbolname="VGA_ZPUino" name="XLXI_64">
+            <blockpin signalname="XLXN_565(100:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_566(100:0)" name="wishbone_out(100:0)" />
+            <blockpin signalname="XLXN_567(100:0)" name="wishbone_slot_video_in(100:0)" />
+            <blockpin signalname="XLXN_568(100:0)" name="wishbone_slot_video_out(100:0)" />
+            <blockpin signalname="XLXN_569(32:0)" name="VGA_Bus(32:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
@@ -553,18 +472,6 @@
         <branch name="Arduino_14">
             <wire x2="5200" y1="2048" y2="2048" x1="5168" />
         </branch>
-        <instance x="4352" y="1440" name="XLXI_27" orien="R0">
-        </instance>
-        <instance x="4352" y="1728" name="XLXI_26" orien="R0">
-        </instance>
-        <instance x="4352" y="2000" name="XLXI_25" orien="R0">
-        </instance>
-        <instance x="4352" y="2592" name="XLXI_23" orien="R0">
-        </instance>
-        <instance x="4352" y="2880" name="XLXI_22" orien="R0">
-        </instance>
-        <instance x="4352" y="3168" name="XLXI_41" orien="R0">
-        </instance>
         <branch name="Arduino_22">
             <wire x2="5200" y1="2112" y2="2112" x1="5168" />
         </branch>
@@ -661,44 +568,6 @@
         <branch name="Arduino_23">
             <wire x2="5200" y1="3200" y2="3200" x1="5168" />
         </branch>
-        <branch name="XLXN_449(7:0)">
-            <wire x2="4608" y1="3136" y2="3136" x1="4576" />
-        </branch>
-        <branch name="XLXN_448(7:0)">
-            <wire x2="4608" y1="3072" y2="3072" x1="4576" />
-        </branch>
-        <branch name="XLXN_326(7:0)">
-            <wire x2="4608" y1="2848" y2="2848" x1="4576" />
-        </branch>
-        <branch name="XLXN_325(7:0)">
-            <wire x2="4608" y1="2784" y2="2784" x1="4576" />
-        </branch>
-        <branch name="XLXN_328(7:0)">
-            <wire x2="4608" y1="2560" y2="2560" x1="4576" />
-        </branch>
-        <branch name="XLXN_327(7:0)">
-            <wire x2="4608" y1="2496" y2="2496" x1="4576" />
-        </branch>
-        <branch name="XLXN_332(7:0)">
-            <wire x2="4608" y1="1968" y2="1968" x1="4576" />
-        </branch>
-        <branch name="XLXN_331(7:0)">
-            <wire x2="4608" y1="1904" y2="1904" x1="4576" />
-        </branch>
-        <branch name="XLXN_334(7:0)">
-            <wire x2="4608" y1="1696" y2="1696" x1="4576" />
-        </branch>
-        <branch name="XLXN_333(7:0)">
-            <wire x2="4608" y1="1632" y2="1632" x1="4576" />
-        </branch>
-        <branch name="XLXN_336(7:0)">
-            <wire x2="4608" y1="1408" y2="1408" x1="4576" />
-        </branch>
-        <branch name="XLXN_335(7:0)">
-            <wire x2="4608" y1="1344" y2="1344" x1="4576" />
-        </branch>
-        <instance x="4672" y="3360" name="XLXI_44" orien="R0">
-        </instance>
         <iomarker fontsize="28" x="5200" y="1536" name="Arduino_8" orien="R0" />
         <iomarker fontsize="28" x="5200" y="1568" name="Arduino_9" orien="R0" />
         <iomarker fontsize="28" x="5200" y="1600" name="Arduino_10" orien="R0" />
@@ -758,41 +627,6 @@
         <text style="fontsize:48;fontname:Arial" x="597" y="3470">Papilio DUO Reset</text>
         <iomarker fontsize="28" x="656" y="3072" name="ARD_RESET" orien="R0" />
         <iomarker fontsize="28" x="368" y="3072" name="DUO_SW1" orien="R180" />
-        <branch name="XLXN_536(7:0)">
-            <wire x2="4608" y1="2208" y2="2208" x1="4384" />
-        </branch>
-        <branch name="XLXN_537(7:0)">
-            <wire x2="4608" y1="2272" y2="2272" x1="4384" />
-        </branch>
-        <branch name="XLXN_539(100:0)">
-            <wire x2="3472" y1="912" y2="1264" x1="3472" />
-            <wire x2="4336" y1="912" y2="912" x1="3472" />
-            <wire x2="4336" y1="816" y2="912" x1="4336" />
-        </branch>
-        <instance x="3344" y="1568" name="XLXI_61" orien="R0">
-        </instance>
-        <branch name="XLXN_540(100:0)">
-            <wire x2="3488" y1="1040" y2="1264" x1="3488" />
-            <wire x2="4352" y1="1040" y2="1040" x1="3488" />
-            <wire x2="4352" y1="816" y2="1040" x1="4352" />
-        </branch>
-        <branch name="XLXN_541(100:0)">
-            <wire x2="3584" y1="1056" y2="1264" x1="3584" />
-            <wire x2="4448" y1="1056" y2="1056" x1="3584" />
-            <wire x2="4448" y1="816" y2="1056" x1="4448" />
-        </branch>
-        <branch name="XLXN_542(100:0)">
-            <wire x2="3600" y1="1072" y2="1264" x1="3600" />
-            <wire x2="4464" y1="1072" y2="1072" x1="3600" />
-            <wire x2="4464" y1="816" y2="1072" x1="4464" />
-        </branch>
-        <branch name="XLXN_548(32:0)">
-            <wire x2="3760" y1="1440" y2="1440" x1="3744" />
-            <wire x2="3760" y1="1440" y2="2368" x1="3760" />
-            <wire x2="3968" y1="2368" y2="2368" x1="3760" />
-        </branch>
-        <instance x="3984" y="2352" name="XLXI_62" orien="R0">
-        </instance>
         <branch name="XLXN_523(200:0)">
             <wire x2="4576" y1="1072" y2="1200" x1="4576" />
             <wire x2="4608" y1="1200" y2="1200" x1="4576" />
@@ -809,5 +643,64 @@
         </branch>
         <instance x="576" y="752" name="XLXI_51" orien="R0">
         </instance>
+        <instance x="4608" y="3328" name="XLXI_63" orien="R0">
+        </instance>
+        <branch name="Arduino_0">
+            <wire x2="5200" y1="1248" y2="1248" x1="5168" />
+        </branch>
+        <branch name="Arduino_1">
+            <wire x2="5200" y1="1280" y2="1280" x1="5168" />
+        </branch>
+        <branch name="Arduino_2">
+            <wire x2="5200" y1="1312" y2="1312" x1="5168" />
+        </branch>
+        <branch name="Arduino_3">
+            <wire x2="5200" y1="1344" y2="1344" x1="5168" />
+        </branch>
+        <branch name="Arduino_4">
+            <wire x2="5200" y1="1376" y2="1376" x1="5168" />
+        </branch>
+        <branch name="Arduino_5">
+            <wire x2="5200" y1="1408" y2="1408" x1="5168" />
+        </branch>
+        <branch name="Arduino_6">
+            <wire x2="5200" y1="1440" y2="1440" x1="5168" />
+        </branch>
+        <branch name="Arduino_7">
+            <wire x2="5200" y1="1472" y2="1472" x1="5168" />
+        </branch>
+        <iomarker fontsize="28" x="5200" y="1248" name="Arduino_0" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1280" name="Arduino_1" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1312" name="Arduino_2" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1344" name="Arduino_3" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1376" name="Arduino_4" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1408" name="Arduino_5" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1440" name="Arduino_6" orien="R0" />
+        <iomarker fontsize="28" x="5200" y="1472" name="Arduino_7" orien="R0" />
+        <branch name="XLXN_565(100:0)">
+            <wire x2="4336" y1="832" y2="832" x1="4304" />
+            <wire x2="4304" y1="832" y2="1440" x1="4304" />
+            <wire x2="4336" y1="816" y2="832" x1="4336" />
+        </branch>
+        <branch name="XLXN_567(100:0)">
+            <wire x2="4448" y1="832" y2="832" x1="4416" />
+            <wire x2="4416" y1="832" y2="1440" x1="4416" />
+            <wire x2="4448" y1="816" y2="832" x1="4448" />
+        </branch>
+        <branch name="XLXN_569(32:0)">
+            <wire x2="4608" y1="1616" y2="1616" x1="4576" />
+        </branch>
+        <instance x="4176" y="1744" name="XLXI_64" orien="R0">
+        </instance>
+        <branch name="XLXN_566(100:0)">
+            <wire x2="4320" y1="1136" y2="1440" x1="4320" />
+            <wire x2="4352" y1="1136" y2="1136" x1="4320" />
+            <wire x2="4352" y1="816" y2="1136" x1="4352" />
+        </branch>
+        <branch name="XLXN_568(100:0)">
+            <wire x2="4432" y1="1136" y2="1440" x1="4432" />
+            <wire x2="4464" y1="1136" y2="1136" x1="4432" />
+            <wire x2="4464" y1="816" y2="1136" x1="4464" />
+        </branch>
     </sheet>
 </drawing>
