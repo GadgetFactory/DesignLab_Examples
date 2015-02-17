@@ -71,6 +71,7 @@ public:
   boolean begin(uint8_t csPin = SD_CHIP_SELECT_PIN);
 #else
   boolean begin(uint8_t csPin);
+  boolean begin(uint8_t csPin, uint8_t wishboneSlot);
 #endif
   // Open the specified file/directory with the supplied mode (e.g. read or
   // write, etc). Returns a File object for interacting with the file.

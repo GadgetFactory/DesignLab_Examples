@@ -4,16 +4,7 @@
  This example shows how use the utility libraries on which the'
  SD library is based in order to get info about your SD card.
  Very useful for testing a card when you're not sure whether its working or not.
- 	
- The circuit:
- A microSD Wing connected to AL ( http://www.papilio.cc/index.php?n=Papilio.MicroSDWing )
- or
- A RetroCade MegaWing ( http://retrocade.gadgetfactory.net/index.php?n=Main.RetroCadeMegaWing )
- 
- Soft Processor:
- This example is for the ZPUino Soft Processor, it will work with any variant that has SPI connected to Wishbone slot 6 such as the Hyperion variant.
-  ( http://papilio.gadgetfactory.net/index.php?n=Papilio.Hyperion )
- 
+
  created  28 Mar 2011
  by Limor Fried 
  modified 9 Apr 2012
@@ -23,20 +14,13 @@
  */
  // include the SD library:
 #include <SD.h>
+#include "SPI.h"
 
-//SD Card on RetroCade MegaWing
-//#define CSPIN  WING_C_13
-//#define SDIPIN WING_C_12
-//#define SCKPIN WING_C_11
-//#define SDOPIN WING_C_10
-//Uncomment for RetroCade MegaWing
+//Uncomment for the SD card on the Papilio DUO Computing Shield
+#define circuit Computing_Shield
+#define CSPIN  16
+#define WISHBONESLOT 12
 
-//SD Card on microSD Wing connected to AL
-#define CSPIN  WING_A_4
-#define SDIPIN WING_A_3
-#define SCKPIN WING_A_2
-#define SDOPIN WING_A_1
-//Uncomment for microSD Wing
 
 // set up variables using the SD utility library functions:
 Sd2Card card;
@@ -49,27 +33,13 @@ void setup()
  // Open serial communications and wait for port to open:
   Serial.begin(9600);
 
-  USPICTL=BIT(SPICP1)|BIT(SPICPOL)|BIT(SPISRE)|BIT(SPIEN)|BIT(SPIBLOCK);
-  outputPinForFunction( SDIPIN, IOPIN_USPI_MOSI );
-  pinModePPS(SDIPIN,HIGH);
-  pinMode(SDIPIN,OUTPUT);
-
-  outputPinForFunction( SCKPIN, IOPIN_USPI_SCK);
-  pinModePPS(SCKPIN,HIGH);
-  pinMode(SCKPIN,OUTPUT);
-
-  pinModePPS(CSPIN,LOW);
   pinMode(CSPIN,OUTPUT);
-
-  inputPinForFunction( SDOPIN, IOPIN_USPI_MISO );
-  pinMode(SDOPIN,INPUT);   
-
 
   Serial.print("\nInitializing SD card...");
 
   // we'll use the initialization code from the utility libraries
   // since we're just testing if the card is working!
-  if (!card.init(SPI_HALF_SPEED, CSPIN)) {
+  if (!card.init(SPI_HALF_SPEED, CSPIN, WISHBONESLOT)) {
     Serial.println("initialization failed. Things to check:");
     Serial.println("* is a card is inserted?");
     Serial.println("* Is your wiring correct?");
@@ -115,6 +85,7 @@ void loop(void) {
   Serial.println();
   
   volumesize = volume.blocksPerCluster();    // clusters are collections of blocks
+  
   volumesize *= volume.clusterCount();       // we'll have a lot of clusters
   volumesize *= 512;                            // SD card blocks are always 512 bytes
   Serial.print("Volume size (bytes): ");

@@ -308,7 +308,9 @@ int Sd2Card::init(uint8_t sckRateID, uint8_t chipSelectPin) {
   SPSR &= ~(1 << SPI2X);
 #endif // defined ZPU
 #else // USE_SPI_LIB
-  SPI.begin(wishboneSlot_);
+  //SPI.begin();
+  SPI.begin(WishboneSlot(wishboneSlot_));
+  //SPI.begin(wishboneSlot_);
   REGISTER(IO_SLOT(wishboneSlot_),0)=BIT(SPICP1)|BIT(SPICPOL)|BIT(SPISRE)|BIT(SPIEN)|BIT(SPIBLOCK);
 #ifdef SPI_CLOCK_DIV128
     SPI.setClockDivider(SPI_CLOCK_DIV128);

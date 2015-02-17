@@ -346,7 +346,20 @@ boolean SDClass::begin(uint8_t csPin) {
          root.openRoot(&volume);
 }
 
+boolean SDClass::begin(uint8_t csPin, uint8_t wishboneSlot) {
+  /*
 
+    Performs the initialisation required by the sdfatlib library.
+
+    Return true if initialization succeeds, false otherwise.
+
+   */
+    root.close();
+    boolean ret = false;
+    ret =card.init(SPI_HALF_SPEED, csPin, wishboneSlot) &&
+         ( volume.init(card) || volume.init(card,1)) &&
+        root.openRoot(&volume);
+}
 
 // this little helper is used to traverse paths
 SdFile SDClass::getParentDir(const char *filepath, int *index) {
