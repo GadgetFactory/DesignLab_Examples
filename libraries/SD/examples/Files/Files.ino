@@ -22,20 +22,13 @@
  	 
  */
 #include <SD.h>
+#include "SPI.h"
 
-//SD Card on RetroCade MegaWing
-//#define CSPIN  WING_C_13
-//#define SDIPIN WING_C_12
-//#define SCKPIN WING_C_11
-//#define SDOPIN WING_C_10
-//Uncomment for RetroCade MegaWing
+//Uncomment for the SD card on the Papilio DUO Computing Shield
+#define circuit Computing_Shield
+#define CSPIN  16
+#define WISHBONESLOT 12
 
-//SD Card on microSD Wing connected to AL
-#define CSPIN  WING_A_4
-#define SDIPIN WING_A_3
-#define SCKPIN WING_A_2
-#define SDOPIN WING_A_1
-//Uncomment for microSD Wing
 
 File myFile;
 
@@ -44,26 +37,10 @@ void setup()
  // Open serial communications and wait for port to open:
   Serial.begin(9600);
 
-
-  USPICTL=BIT(SPICP1)|BIT(SPICPOL)|BIT(SPISRE)|BIT(SPIEN)|BIT(SPIBLOCK);
-  outputPinForFunction( SDIPIN, IOPIN_USPI_MOSI );
-  pinModePPS(SDIPIN,HIGH);
-  pinMode(SDIPIN,OUTPUT);
-
-  outputPinForFunction( SCKPIN, IOPIN_USPI_SCK);
-  pinModePPS(SCKPIN,HIGH);
-  pinMode(SCKPIN,OUTPUT);
-
-  pinModePPS(CSPIN,LOW);
-  pinMode(CSPIN,OUTPUT);
-
-  inputPinForFunction( SDOPIN, IOPIN_USPI_MISO );
-  pinMode(SDOPIN,INPUT);   
-
   Serial.print("Initializing SD card...");
 
 
-  if (!SD.begin(CSPIN)) {
+  if (!SD.begin(CSPIN, WISHBONESLOT)) {
     Serial.println("initialization failed!");
     return;
   }

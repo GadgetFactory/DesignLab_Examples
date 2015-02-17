@@ -3,16 +3,7 @@
  
  This example shows how to read a file from the SD card using the
  SD library and send it over the serial port.
- 	
- The circuit:
- A microSD Wing connected to AL ( http://www.papilio.cc/index.php?n=Papilio.MicroSDWing )
- or
- A RetroCade MegaWing ( http://retrocade.gadgetfactory.net/index.php?n=Main.RetroCadeMegaWing )
- 
- Soft Processor:
- This example is for the ZPUino Soft Processor, it will work with any variant that has SPI connected to Wishbone slot 6 such as the Hyperion variant.
-  ( http://papilio.gadgetfactory.net/index.php?n=Papilio.Hyperion )
- 
+
  created  22 December 2010
  by Limor Fried
  modified 9 Apr 2012
@@ -25,49 +16,27 @@
  */
 
 #include <SD.h>
+#include "SPI.h"
 
-//SD Card on RetroCade MegaWing
-//#define CSPIN  WING_C_13
-//#define SDIPIN WING_C_12
-//#define SCKPIN WING_C_11
-//#define SDOPIN WING_C_10
-//Uncomment for RetroCade MegaWing
-
-//SD Card on microSD Wing connected to AL
-#define CSPIN  WING_A_4
-#define SDIPIN WING_A_3
-#define SCKPIN WING_A_2
-#define SDOPIN WING_A_1
-//Uncomment for microSD Wing
+//Uncomment for the SD card on the Papilio DUO Computing Shield
+#define circuit Computing_Shield
+#define CSPIN  16
+#define WISHBONESLOT 12
 
 void setup()
 {
  // Open serial communications and wait for port to open:
-  Serial.begin(9600);
-
-  USPICTL=BIT(SPICP1)|BIT(SPICPOL)|BIT(SPISRE)|BIT(SPIEN)|BIT(SPIBLOCK);
-  outputPinForFunction( SDIPIN, IOPIN_USPI_MOSI );
-  pinModePPS(SDIPIN,HIGH);
-  pinMode(SDIPIN,OUTPUT);
-
-  outputPinForFunction( SCKPIN, IOPIN_USPI_SCK);
-  pinModePPS(SCKPIN,HIGH);
-  pinMode(SCKPIN,OUTPUT);
-
-  pinModePPS(CSPIN,LOW);
-  pinMode(CSPIN,OUTPUT);
-
-  inputPinForFunction( SDOPIN, IOPIN_USPI_MISO );
-  pinMode(SDOPIN,INPUT);   
+  Serial.begin(9600); 
 
   Serial.print("Initializing SD card...");
 
+  pinMode(CSPIN,OUTPUT);
   
   // see if the card is present and can be initialized:
-  if (!SD.begin(CSPIN)) {
+  if (!SD.begin(CSPIN, WISHBONESLOT)) {
     Serial.println("Card failed, or not present");
     // don't do anything more:
-    return;
+    //return;
   }
   Serial.println("card initialized.");
   
