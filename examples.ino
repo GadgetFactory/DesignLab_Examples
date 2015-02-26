@@ -35,6 +35,12 @@ http://forum.gadgetfactory.net
 
 TABLE OF CONTENTS FOR EXAMPLE PROJECTS
 
+UTILITY PROJECTS
+  Wishbone Slots
+        This is a very useful sketch that shows what is connected to the ZPUino Wishbone Slots.
+        example://Show_Wishbone_Devices/Show_Wishbone_Devices.ino
+  
+
 PAPILIO DUO PROJECTS
   QuickStart
 	QuickStart Project - Try out the basic Papilio DUO functionality
@@ -164,6 +170,19 @@ ZPUINO SOFT PROCESSOR PROJECTS
   Audio Project - RetroCade Synth
 	How about putting all of these audio chips together and putting them under MIDI control? That's what this project does, there is even a special MegaWing to provide high quality audio jacks, MIDI connnectors, and a Digital readout.
 	example://Audio_RetroCade_Synth/Audio_RetroCade_Synth.ino
+	
+  Serial Ports Project
+	A project with 9 serial ports all connected to the ZPUino at once.
+	example://Multiple_Serial_Ports/Multiple_Serial_Ports.ino
+	
+  ZPUino Flex Pins
+	The ZPUino lets you move certain pins, called Flex Pins, to any other pin on your Papilio board with a couple lines of code.
+	This example sketch shows how Flex pins work.
+	example://Flex_Pins/Flex_Pins.ino	
+	
+  Jet Set Willy
+	Its the Jet Set Willy game recreated with the help of a ZXSpectrum VGA adapter.
+	Go to File/Examples/VGA_ZXSpectrum
 
 BENCHY DEBUGGING PROJECTS
   Waveform Generator
