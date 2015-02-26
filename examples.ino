@@ -68,6 +68,10 @@ PAPILIO DUO PROJECTS
   AVR to Wishbone Bridge
         How to access Wishbone peripherals from the AVR.
         Go to File/Examples/AVR_Wishbone_Bridge
+		
+  ZPUino VGA Adapter
+		This exciting VGA adapter lets you change resolutions on the fly and use the AdaFruit GFX library to program it. This is the latest and greatest VGA adapter.
+		Go to File/Examples/ZPUino_VGA_Adapter
   
   Debugging
         AVR Dragon JTAG Debug - Debug the ATmega32U4 chip
@@ -126,6 +130,10 @@ HARDWARE
 	VGA Wing - Space Invaders Demo
 	An alien marches across a virtual LCD on the 8 color VGA Wing. This is an example of how easy it is to convert LiquidCrystal code to run on a virtual VGA LCD screen.
 	example://WING_VGA/examples/spaceinvaders_simple/spaceinvaders_simple.ino
+	
+	ZPUino VGA Adapter
+		This exciting VGA adapter lets you change resolutions on the fly and use the AdaFruit GFX library to program it. This is the latest and greatest VGA adapter.
+		Go to File/Examples/ZPUino_VGA_Adapter	
     
   LogicStart MegaWing
 	Hardware Project - LogicStart MegaWing 
@@ -135,13 +143,18 @@ HARDWARE
   Arcade MegaWing
 	Hardware Project - Arcade MegaWing 
 	This is a demo project that shows you how to use draw a circuit that uses all of the Arcade MegaWing components.
-	example://MegaWing_Logicstart/MegaWing_Arcade.ino
+	example://MegaWing_Arcade/MegaWing_Arcade.ino
 
   Analog SPI Wing
 	Hardware Project - Analog Wing 
 	This is a demo project that shows you how to use draw a circuit to use the SPI ADC Analog Wing.
 	example://WING_Analog/WING_Analog.ino	
 	
+  SD Card Wing
+	Hardware Project - SD Card Wing 
+	See examples of how to access a SD card in DesignLab
+	Go to File/Examples/SD
+
 ZPUINO SOFT PROCESSOR PROJECTS
   QuickStart Project - Try out the basic Papilio functionality
         This is the project that comes pre-loaded on the Papilio One and Papilio Pro boards.
