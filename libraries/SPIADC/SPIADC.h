@@ -13,14 +13,14 @@
 
 typedef unsigned char byte ;
 
-INTVAL(CS);
+//INTVAL(CS);
 INTVAL(WISHBONESLOT);
 INTVAL(ADCBITS);
 
 class SPIADC {
   public    :
 
-    void       begin     (CS cs, WISHBONESLOT wishboneSlot, ADCBITS bits);
+    void       begin     (CS cs, WISHBONESLOT wishboneSlot_, ADCBITS bits);
     uint16_t   read      (byte pin);
     SPIClass SPI;
 
