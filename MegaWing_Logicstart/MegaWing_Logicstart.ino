@@ -30,7 +30,9 @@
 #include <SevenSegHW.h>
 #include "SPIADC.h"
 #include "SPI.h"
+#include <Timer.h>
 
+//Comment out this section for Papilio One.
 #ifdef __ZPUINO_PAPILIO_PRO__
   #include <SD.h>
   #include "SmallFS.h"
@@ -77,17 +79,18 @@ void setup() {
   modplayer.setup(5);
 
   modplayer.loadFile("music.mod");
-  modplayer.play(true);  
+  modplayer.play(true); 
+ 
+ //Setup timer for YM and mod players, this generates an interrupt at 1700hz
+  Timers.begin();
+    int r = Timers.periodicHz(17000, (bool(*)(void*))timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }   
+  
 #endif  
   
- //Setup timer for YM and mod players, this generates an interrupt at 1700hz
-  TMR0CTL = 0;
-  TMR0CNT = 0;
-  TMR0CMP = ((CLK_FREQ/2) / FREQ )- 1;
-  TMR0CTL = _BV(TCTLENA)|_BV(TCTLCCM)|_BV(TCTLDIR)|
-  	_BV(TCTLCP0) | _BV(TCTLIEN);
-  INTRMASK = BIT(INTRLINE_TIMER0); // Enable Timer0 interrupt
-  INTRCTL=1;     
+
   
   //Setup VGA Hello World
   VGA.begin(VGAWISHBONESLOT(9),CHARMAPWISHBONESLOT(10));
@@ -132,10 +135,11 @@ void setup() {
 }
 
 #ifdef __ZPUINO_PAPILIO_PRO__
-void _zpu_interrupt()
+bool timer(void)
 {
   //Interrupt runs at 17KHz
   modplayer.zpu_interrupt();
+  return true;
 }
 #endif 
 
