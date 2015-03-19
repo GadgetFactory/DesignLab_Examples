@@ -25,6 +25,9 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
+library DesignLab;
+use DesignLab.ALL;
+
 entity Wishbone_to_Registers is
   port (
   	 wishbone_in : in std_logic_vector(100 downto 0);

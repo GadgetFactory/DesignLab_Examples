@@ -16,8 +16,8 @@ architecture sim of Simulate_Your_CCL_Design is
 
 	COMPONENT Wishbone_Symbol_Example
 	PORT(
-		wishbone_in : IN std_logic_vector(61 downto 0);          
-		wishbone_out : OUT std_logic_vector(33 downto 0);
+		wishbone_in : IN std_logic_vector(100 downto 0);          
+		wishbone_out : OUT std_logic_vector(100 downto 0);
 		
 		--Put your custom external connections here
 		buttons : IN std_logic_vector(3 downto 0);          
@@ -33,8 +33,8 @@ architecture sim of Simulate_Your_CCL_Design is
   signal wb_stb_i:   std_logic := '0';
   signal wb_ack_o:   std_logic;
   
-  signal wb_in:   std_logic_vector(61 downto 0);
-  signal wb_out:   std_logic_vector(33 downto 0);
+  signal wb_in:   std_logic_vector(100 downto 0);
+  signal wb_out:   std_logic_vector(100 downto 0);
   
   signal wb_dat_o_dly:   std_logic_vector(31 downto 0);
   

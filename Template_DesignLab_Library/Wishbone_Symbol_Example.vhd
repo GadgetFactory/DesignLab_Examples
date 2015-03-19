@@ -21,6 +21,9 @@ use ieee.numeric_std.ALL;
 library UNISIM;
 use UNISIM.Vcomponents.ALL;
 
+library DesignLab;
+use DesignLab.ALL;
+
 entity Wishbone_Symbol_Example is
    port ( wishbone_in  : in    std_logic_vector (100 downto 0); 
           wishbone_out : out   std_logic_vector (100 downto 0);
