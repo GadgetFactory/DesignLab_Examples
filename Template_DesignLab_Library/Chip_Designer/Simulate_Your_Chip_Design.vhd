@@ -3,6 +3,9 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
+library DesignLab;
+use DesignLab.ALL;
+
 entity Simulate_Your_CCL_Design is
 end entity;
 
