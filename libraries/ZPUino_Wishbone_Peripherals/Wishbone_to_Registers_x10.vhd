@@ -25,10 +25,13 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity Wishbone_to_Registers is
+library DesignLab;
+use DesignLab.ALL;
+
+entity Wishbone_to_Registers_x10 is
   port (
-  	 wishbone_in : in std_logic_vector(61 downto 0);
-	 wishbone_out : out std_logic_vector(33 downto 0);
+  	 wishbone_in : in std_logic_vector(100 downto 0);
+	 wishbone_out : out std_logic_vector(100 downto 0);
 	 
 	 --Registers
 	 register0_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
@@ -36,18 +39,30 @@ entity Wishbone_to_Registers is
 	 register1_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
 	 register1_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
 	 register2_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
-	 register2_out : out std_logic_vector(31 downto 0) -- Register 0 (32 bits)	 
+	 register2_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register3_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register3_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register4_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register4_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register5_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register5_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register6_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register6_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register7_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register7_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register8_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register8_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
+	 register9_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
+	 register9_out : out std_logic_vector(31 downto 0) -- Register 0 (32 bits) 
   );
-end entity Wishbone_to_Registers;
+end entity Wishbone_to_Registers_x10;
 
 
 
-architecture rtl of Wishbone_to_Registers is
+architecture rtl of Wishbone_to_Registers_x10 is
 
 --Define your registers here
---  signal register0: std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---  signal register1: std_logic_vector(31 downto 0); -- Register 1 (32 bits)
---  signal register2: std_logic_vector(7 downto 0);  -- Register 2 (8 bits)
+
 
 --Wishbone signals - Don't touch.
   signal  wb_clk_i:    std_logic;                     -- Wishbone clock
@@ -83,20 +98,32 @@ begin
   -- Multiplex the data output (asynchronous)
 
   --This is for a Wishbone read
-  process(register0_in,register1_in,register2_in, wb_adr_i)
+  process(register0_in,register1_in,register2_in,register3_in,register4_in,register5_in,register6_in,register7_in,register8_in,register9_in, wb_adr_i)
   begin
 
     -- Multiplex the read depending on the address. Use only the 2 lowest bits of addr
 
-    case wb_adr_i(3 downto 2) is
-      when "00" =>
+    case wb_adr_i(9 downto 2) is
+      when x"00" =>
         wb_dat_o <= register0_in;  -- Output register0
-      when "01" =>
-        wb_dat_o <= register1_in;  -- Output register1
-      when "10" =>
-		  wb_dat_o <= register2_in;  -- Output register1
-        --wb_dat_o(31 downto 0) <= (others => '0'); -- We put all upper 24 bits to zero
-        --wb_dat_o(7 downto 0) <= register2;        -- since register2 only has 8 bits
+      when x"01" =>
+        wb_dat_o <= register1_in;  
+      when x"02" =>
+		  wb_dat_o <= register2_in;  
+      when x"03" =>
+		  wb_dat_o <= register3_in;  
+      when x"04" =>
+		  wb_dat_o <= register4_in;  
+      when x"05" =>
+		  wb_dat_o <= register5_in; 
+      when x"06" =>
+		  wb_dat_o <= register6_in;  
+      when x"07" =>
+		  wb_dat_o <= register7_in;  
+      when x"08" =>
+		  wb_dat_o <= register8_in;  
+      when x"09" =>
+		  wb_dat_o <= register9_in;  
       when others =>
         wb_dat_o <= (others => 'X'); -- Return undefined for all other addresses
     end case;
@@ -123,13 +150,27 @@ begin
         -- Check if someone is writing
         if wb_cyc_i='1' and wb_stb_i='1' and wb_we_i='1' then
           -- Yes, it's a write. See for which register based on address
-          case wb_adr_i(3 downto 2) is
-            when "00" =>
-              register0_out <= wb_dat_i;  -- Set register0
-            when "01" =>
-              register1_out <= wb_dat_i;  -- Set register1
-            when "10" =>
-              register2_out <= wb_dat_i; -- Only lower 8 bits for register2
+          case wb_adr_i(9 downto 2) is
+            when x"00" =>
+              register0_out <= wb_dat_i;  -- Input for register 0
+            when x"01" =>
+              register1_out <= wb_dat_i;  
+            when x"02" =>
+              register2_out <= wb_dat_i; 
+            when x"03" =>
+              register3_out <= wb_dat_i; 
+            when x"04" =>
+              register4_out <= wb_dat_i; 
+            when x"05" =>
+              register5_out <= wb_dat_i; 
+            when x"06" =>
+              register6_out <= wb_dat_i; 
+            when x"07" =>
+              register7_out <= wb_dat_i; 
+            when x"08" =>
+              register8_out <= wb_dat_i; 
+            when x"09" =>
+              register9_out <= wb_dat_i; 			  
             when others =>
               null; -- Nothing to do for other addresses
           end case;
