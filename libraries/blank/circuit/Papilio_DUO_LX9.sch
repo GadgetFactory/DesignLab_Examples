@@ -24,19 +24,19 @@
             <blockpin signalname="ARD_RESET" name="O" />
         </block>
     </netlist>
-    <sheet sheetnum="1" width="1760" height="1360">
-        <text style="fontsize:28;fontname:Arial" x="208" y="812">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
+    <sheet sheetnum="1" width="3520" height="2720">
+        <text style="fontsize:28;fontname:Arial" x="144" y="2556">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
         <branch name="ARD_RESET">
-            <wire x2="727" y1="514" y2="514" x1="695" />
+            <wire x2="656" y1="2256" y2="2256" x1="624" />
         </branch>
-        <instance x="471" y="546" name="XLXI_60" orien="R0" />
+        <instance x="400" y="2288" name="XLXI_60" orien="R0" />
         <branch name="DUO_SW1">
-            <wire x2="471" y1="514" y2="514" x1="439" />
+            <wire x2="400" y1="2256" y2="2256" x1="368" />
         </branch>
-        <text style="fontsize:28;fontname:Arial" x="208" y="844">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
-        <rect width="1468" x="116" y="476" height="472" />
-        <text style="fontsize:48;fontname:Arial" x="668" y="912">Papilio DUO Reset</text>
-        <iomarker fontsize="28" x="727" y="514" name="ARD_RESET" orien="R0" />
-        <iomarker fontsize="28" x="439" y="514" name="DUO_SW1" orien="R180" />
+        <text style="fontsize:28;fontname:Arial" x="144" y="2588">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
+        <rect width="1468" x="52" y="2220" height="472" />
+        <text style="fontsize:48;fontname:Arial" x="604" y="2656">Papilio DUO Reset</text>
+        <iomarker fontsize="28" x="656" y="2256" name="ARD_RESET" orien="R0" />
+        <iomarker fontsize="28" x="368" y="2256" name="DUO_SW1" orien="R180" />
     </sheet>
 </drawing>

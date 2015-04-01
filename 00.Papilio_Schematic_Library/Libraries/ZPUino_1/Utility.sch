@@ -9,8 +9,62 @@
         <signal name="ext_pins_in(100:0)" />
         <signal name="ext_pins_out(100:0)" />
         <signal name="ext_pins_inout(100:0)" />
-        <signal name="ARD_RESET" />
+        <signal name="Arduino_0" />
+        <signal name="Arduino_1" />
+        <signal name="Arduino_2" />
+        <signal name="Arduino_3" />
+        <signal name="Arduino_4" />
+        <signal name="Arduino_5" />
+        <signal name="Arduino_6" />
+        <signal name="Arduino_7" />
+        <signal name="Arduino_8" />
+        <signal name="Arduino_9" />
+        <signal name="Arduino_10" />
+        <signal name="Arduino_11" />
+        <signal name="Arduino_12" />
+        <signal name="Arduino_13" />
+        <signal name="Arduino_21" />
+        <signal name="Arduino_20" />
+        <signal name="Arduino_19" />
+        <signal name="Arduino_18" />
+        <signal name="Arduino_17" />
+        <signal name="Arduino_16" />
+        <signal name="Arduino_15" />
+        <signal name="Arduino_14" />
+        <signal name="Arduino_22" />
+        <signal name="Arduino_24" />
+        <signal name="Arduino_26" />
+        <signal name="Arduino_28" />
+        <signal name="Arduino_30" />
+        <signal name="Arduino_32" />
+        <signal name="Arduino_34" />
+        <signal name="Arduino_36" />
+        <signal name="Arduino_38" />
+        <signal name="Arduino_40" />
+        <signal name="Arduino_42" />
+        <signal name="Arduino_44" />
+        <signal name="Arduino_46" />
+        <signal name="Arduino_48" />
+        <signal name="Arduino_50" />
+        <signal name="Arduino_52" />
+        <signal name="Arduino_53" />
+        <signal name="Arduino_51" />
+        <signal name="Arduino_49" />
+        <signal name="Arduino_47" />
+        <signal name="Arduino_45" />
+        <signal name="Arduino_43" />
+        <signal name="Arduino_41" />
+        <signal name="Arduino_39" />
+        <signal name="Arduino_37" />
+        <signal name="Arduino_35" />
+        <signal name="Arduino_33" />
+        <signal name="Arduino_31" />
+        <signal name="Arduino_29" />
+        <signal name="Arduino_27" />
+        <signal name="Arduino_25" />
+        <signal name="Arduino_23" />
         <signal name="DUO_SW1" />
+        <signal name="ARD_RESET" />
         <signal name="XLXN_335(7:0)" />
         <signal name="XLXN_336(7:0)" />
         <signal name="XLXN_333(7:0)" />
@@ -71,113 +125,14 @@
         <signal name="WING_CH5" />
         <signal name="WING_CH6" />
         <signal name="WING_CH7" />
-        <signal name="Arduino_0" />
-        <signal name="Arduino_1" />
-        <signal name="Arduino_2" />
-        <signal name="Arduino_3" />
-        <signal name="Arduino_4" />
-        <signal name="Arduino_5" />
-        <signal name="Arduino_6" />
-        <signal name="Arduino_7" />
-        <signal name="Arduino_8" />
-        <signal name="Arduino_9" />
-        <signal name="Arduino_10" />
-        <signal name="Arduino_11" />
-        <signal name="Arduino_12" />
-        <signal name="Arduino_13" />
-        <signal name="Arduino_21" />
-        <signal name="Arduino_20" />
-        <signal name="Arduino_19" />
-        <signal name="Arduino_18" />
-        <signal name="Arduino_17" />
-        <signal name="Arduino_16" />
-        <signal name="Arduino_15" />
-        <signal name="Arduino_14" />
-        <signal name="Arduino_22" />
-        <signal name="Arduino_24" />
-        <signal name="Arduino_26" />
-        <signal name="Arduino_28" />
-        <signal name="Arduino_30" />
-        <signal name="Arduino_32" />
-        <signal name="Arduino_34" />
-        <signal name="Arduino_36" />
-        <signal name="Arduino_38" />
-        <signal name="Arduino_40" />
-        <signal name="Arduino_42" />
-        <signal name="Arduino_44" />
-        <signal name="Arduino_46" />
-        <signal name="Arduino_48" />
-        <signal name="Arduino_50" />
-        <signal name="Arduino_52" />
-        <signal name="Arduino_53" />
-        <signal name="Arduino_51" />
-        <signal name="Arduino_49" />
-        <signal name="Arduino_47" />
-        <signal name="Arduino_45" />
-        <signal name="Arduino_43" />
-        <signal name="Arduino_41" />
-        <signal name="Arduino_39" />
-        <signal name="Arduino_37" />
-        <signal name="Arduino_35" />
-        <signal name="Arduino_33" />
-        <signal name="Arduino_31" />
-        <signal name="Arduino_29" />
-        <signal name="Arduino_27" />
-        <signal name="Arduino_25" />
-        <signal name="Arduino_23" />
+        <signal name="CLK" />
+        <signal name="LED" />
+        <signal name="RXD" />
+        <signal name="TXD" />
+        <signal name="DUO_LED" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
-        <port polarity="Output" name="ARD_RESET" />
-        <port polarity="Input" name="DUO_SW1" />
-        <port polarity="BiDirectional" name="WING_AL0" />
-        <port polarity="BiDirectional" name="WING_AL1" />
-        <port polarity="BiDirectional" name="WING_AL2" />
-        <port polarity="BiDirectional" name="WING_AL3" />
-        <port polarity="BiDirectional" name="WING_AL4" />
-        <port polarity="BiDirectional" name="WING_AL5" />
-        <port polarity="BiDirectional" name="WING_AL6" />
-        <port polarity="BiDirectional" name="WING_AL7" />
-        <port polarity="BiDirectional" name="WING_AH0" />
-        <port polarity="BiDirectional" name="WING_AH1" />
-        <port polarity="BiDirectional" name="WING_AH2" />
-        <port polarity="BiDirectional" name="WING_AH3" />
-        <port polarity="BiDirectional" name="WING_AH4" />
-        <port polarity="BiDirectional" name="WING_AH5" />
-        <port polarity="BiDirectional" name="WING_AH6" />
-        <port polarity="BiDirectional" name="WING_AH7" />
-        <port polarity="BiDirectional" name="WING_BL0" />
-        <port polarity="BiDirectional" name="WING_BL1" />
-        <port polarity="BiDirectional" name="WING_BL2" />
-        <port polarity="BiDirectional" name="WING_BL3" />
-        <port polarity="BiDirectional" name="WING_BL4" />
-        <port polarity="BiDirectional" name="WING_BL5" />
-        <port polarity="BiDirectional" name="WING_BL6" />
-        <port polarity="BiDirectional" name="WING_BL7" />
-        <port polarity="BiDirectional" name="WING_BH0" />
-        <port polarity="BiDirectional" name="WING_BH1" />
-        <port polarity="BiDirectional" name="WING_BH2" />
-        <port polarity="BiDirectional" name="WING_BH3" />
-        <port polarity="BiDirectional" name="WING_BH4" />
-        <port polarity="BiDirectional" name="WING_BH5" />
-        <port polarity="BiDirectional" name="WING_BH6" />
-        <port polarity="BiDirectional" name="WING_BH7" />
-        <port polarity="BiDirectional" name="WING_CL0" />
-        <port polarity="BiDirectional" name="WING_CL1" />
-        <port polarity="BiDirectional" name="WING_CL2" />
-        <port polarity="BiDirectional" name="WING_CL3" />
-        <port polarity="BiDirectional" name="WING_CL4" />
-        <port polarity="BiDirectional" name="WING_CL5" />
-        <port polarity="BiDirectional" name="WING_CL6" />
-        <port polarity="BiDirectional" name="WING_CL7" />
-        <port polarity="BiDirectional" name="WING_CH0" />
-        <port polarity="BiDirectional" name="WING_CH1" />
-        <port polarity="BiDirectional" name="WING_CH2" />
-        <port polarity="BiDirectional" name="WING_CH3" />
-        <port polarity="BiDirectional" name="WING_CH4" />
-        <port polarity="BiDirectional" name="WING_CH5" />
-        <port polarity="BiDirectional" name="WING_CH6" />
-        <port polarity="BiDirectional" name="WING_CH7" />
         <port polarity="BiDirectional" name="Arduino_0" />
         <port polarity="BiDirectional" name="Arduino_1" />
         <port polarity="BiDirectional" name="Arduino_2" />
@@ -232,6 +187,61 @@
         <port polarity="BiDirectional" name="Arduino_27" />
         <port polarity="BiDirectional" name="Arduino_25" />
         <port polarity="BiDirectional" name="Arduino_23" />
+        <port polarity="Input" name="DUO_SW1" />
+        <port polarity="Output" name="ARD_RESET" />
+        <port polarity="BiDirectional" name="WING_AL0" />
+        <port polarity="BiDirectional" name="WING_AL1" />
+        <port polarity="BiDirectional" name="WING_AL2" />
+        <port polarity="BiDirectional" name="WING_AL3" />
+        <port polarity="BiDirectional" name="WING_AL4" />
+        <port polarity="BiDirectional" name="WING_AL5" />
+        <port polarity="BiDirectional" name="WING_AL6" />
+        <port polarity="BiDirectional" name="WING_AL7" />
+        <port polarity="BiDirectional" name="WING_AH0" />
+        <port polarity="BiDirectional" name="WING_AH1" />
+        <port polarity="BiDirectional" name="WING_AH2" />
+        <port polarity="BiDirectional" name="WING_AH3" />
+        <port polarity="BiDirectional" name="WING_AH4" />
+        <port polarity="BiDirectional" name="WING_AH5" />
+        <port polarity="BiDirectional" name="WING_AH6" />
+        <port polarity="BiDirectional" name="WING_AH7" />
+        <port polarity="BiDirectional" name="WING_BL0" />
+        <port polarity="BiDirectional" name="WING_BL1" />
+        <port polarity="BiDirectional" name="WING_BL2" />
+        <port polarity="BiDirectional" name="WING_BL3" />
+        <port polarity="BiDirectional" name="WING_BL4" />
+        <port polarity="BiDirectional" name="WING_BL5" />
+        <port polarity="BiDirectional" name="WING_BL6" />
+        <port polarity="BiDirectional" name="WING_BL7" />
+        <port polarity="BiDirectional" name="WING_BH0" />
+        <port polarity="BiDirectional" name="WING_BH1" />
+        <port polarity="BiDirectional" name="WING_BH2" />
+        <port polarity="BiDirectional" name="WING_BH3" />
+        <port polarity="BiDirectional" name="WING_BH4" />
+        <port polarity="BiDirectional" name="WING_BH5" />
+        <port polarity="BiDirectional" name="WING_BH6" />
+        <port polarity="BiDirectional" name="WING_BH7" />
+        <port polarity="BiDirectional" name="WING_CL0" />
+        <port polarity="BiDirectional" name="WING_CL1" />
+        <port polarity="BiDirectional" name="WING_CL2" />
+        <port polarity="BiDirectional" name="WING_CL3" />
+        <port polarity="BiDirectional" name="WING_CL4" />
+        <port polarity="BiDirectional" name="WING_CL5" />
+        <port polarity="BiDirectional" name="WING_CL6" />
+        <port polarity="BiDirectional" name="WING_CL7" />
+        <port polarity="BiDirectional" name="WING_CH0" />
+        <port polarity="BiDirectional" name="WING_CH1" />
+        <port polarity="BiDirectional" name="WING_CH2" />
+        <port polarity="BiDirectional" name="WING_CH3" />
+        <port polarity="BiDirectional" name="WING_CH4" />
+        <port polarity="BiDirectional" name="WING_CH5" />
+        <port polarity="BiDirectional" name="WING_CH6" />
+        <port polarity="BiDirectional" name="WING_CH7" />
+        <port polarity="Input" name="CLK" />
+        <port polarity="Output" name="LED" />
+        <port polarity="Input" name="RXD" />
+        <port polarity="Output" name="TXD" />
+        <port polarity="Output" name="DUO_LED" />
         <blockdef name="Wing_GPIO">
             <timestamp>2014-10-31T16:12:30</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
@@ -293,275 +303,6 @@
         <iomarker fontsize="28" x="544" y="240" name="ext_pins_inout(100:0)" orien="R180" />
         <rect width="552" x="136" y="96" height="324" />
         <text style="fontsize:64;fontname:Arial" x="240" y="376">External Pins</text>
-        <text style="fontsize:28;fontname:Arial" x="928" y="436">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
-        <branch name="ARD_RESET">
-            <wire x2="1440" y1="144" y2="144" x1="1408" />
-        </branch>
-        <instance x="1184" y="176" name="XLXI_48" orien="R0" />
-        <branch name="DUO_SW1">
-            <wire x2="1184" y1="144" y2="144" x1="1152" />
-        </branch>
-        <text style="fontsize:28;fontname:Arial" x="928" y="468">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
-        <iomarker fontsize="28" x="1440" y="144" name="ARD_RESET" orien="R0" />
-        <iomarker fontsize="28" x="1152" y="144" name="DUO_SW1" orien="R180" />
-        <rect width="1468" x="836" y="100" height="472" />
-        <text style="fontsize:48;fontname:Arial" x="1388" y="536">Papilio DUO Reset</text>
-        <instance x="160" y="1056" name="XLXI_27" orien="R0">
-        </instance>
-        <instance x="160" y="1344" name="XLXI_26" orien="R0">
-        </instance>
-        <instance x="160" y="1616" name="XLXI_25" orien="R0">
-        </instance>
-        <instance x="160" y="1920" name="XLXI_24" orien="R0">
-        </instance>
-        <instance x="160" y="2208" name="XLXI_23" orien="R0">
-        </instance>
-        <instance x="160" y="2496" name="XLXI_22" orien="R0">
-        </instance>
-        <branch name="XLXN_335(7:0)">
-            <wire x2="400" y1="960" y2="960" x1="384" />
-            <wire x2="416" y1="960" y2="960" x1="400" />
-        </branch>
-        <branch name="XLXN_336(7:0)">
-            <wire x2="400" y1="1024" y2="1024" x1="384" />
-            <wire x2="416" y1="1024" y2="1024" x1="400" />
-        </branch>
-        <branch name="XLXN_333(7:0)">
-            <wire x2="400" y1="1248" y2="1248" x1="384" />
-            <wire x2="416" y1="1248" y2="1248" x1="400" />
-        </branch>
-        <branch name="XLXN_334(7:0)">
-            <wire x2="400" y1="1312" y2="1312" x1="384" />
-            <wire x2="416" y1="1312" y2="1312" x1="400" />
-        </branch>
-        <branch name="XLXN_331(7:0)">
-            <wire x2="400" y1="1520" y2="1520" x1="384" />
-            <wire x2="416" y1="1520" y2="1520" x1="400" />
-        </branch>
-        <branch name="XLXN_332(7:0)">
-            <wire x2="400" y1="1584" y2="1584" x1="384" />
-            <wire x2="416" y1="1584" y2="1584" x1="400" />
-        </branch>
-        <branch name="XLXN_329(7:0)">
-            <wire x2="400" y1="1824" y2="1824" x1="384" />
-            <wire x2="416" y1="1824" y2="1824" x1="400" />
-        </branch>
-        <branch name="XLXN_330(7:0)">
-            <wire x2="400" y1="1888" y2="1888" x1="384" />
-            <wire x2="416" y1="1888" y2="1888" x1="400" />
-        </branch>
-        <branch name="XLXN_327(7:0)">
-            <wire x2="400" y1="2112" y2="2112" x1="384" />
-            <wire x2="416" y1="2112" y2="2112" x1="400" />
-        </branch>
-        <branch name="XLXN_328(7:0)">
-            <wire x2="400" y1="2176" y2="2176" x1="384" />
-            <wire x2="416" y1="2176" y2="2176" x1="400" />
-        </branch>
-        <branch name="XLXN_325(7:0)">
-            <wire x2="400" y1="2400" y2="2400" x1="384" />
-            <wire x2="416" y1="2400" y2="2400" x1="400" />
-        </branch>
-        <branch name="XLXN_326(7:0)">
-            <wire x2="400" y1="2464" y2="2464" x1="384" />
-            <wire x2="416" y1="2464" y2="2464" x1="400" />
-        </branch>
-        <rect width="456" x="88" y="816" height="1760" />
-        <text style="fontsize:40;fontname:Arial" x="184" y="2540">GPIO Wings</text>
-        <branch name="WING_AL0">
-            <wire x2="944" y1="864" y2="864" x1="848" />
-        </branch>
-        <branch name="WING_AL1">
-            <wire x2="944" y1="896" y2="896" x1="848" />
-        </branch>
-        <branch name="WING_AL2">
-            <wire x2="944" y1="928" y2="928" x1="848" />
-        </branch>
-        <branch name="WING_AL3">
-            <wire x2="944" y1="960" y2="960" x1="848" />
-        </branch>
-        <branch name="WING_AL4">
-            <wire x2="944" y1="992" y2="992" x1="848" />
-        </branch>
-        <branch name="WING_AL5">
-            <wire x2="944" y1="1024" y2="1024" x1="848" />
-        </branch>
-        <branch name="WING_AL6">
-            <wire x2="944" y1="1056" y2="1056" x1="848" />
-        </branch>
-        <branch name="WING_AL7">
-            <wire x2="944" y1="1088" y2="1088" x1="848" />
-        </branch>
-        <branch name="WING_AH0">
-            <wire x2="944" y1="1152" y2="1152" x1="848" />
-        </branch>
-        <branch name="WING_AH1">
-            <wire x2="944" y1="1184" y2="1184" x1="848" />
-        </branch>
-        <branch name="WING_AH2">
-            <wire x2="944" y1="1216" y2="1216" x1="848" />
-        </branch>
-        <branch name="WING_AH3">
-            <wire x2="944" y1="1248" y2="1248" x1="848" />
-        </branch>
-        <branch name="WING_AH4">
-            <wire x2="944" y1="1280" y2="1280" x1="848" />
-        </branch>
-        <branch name="WING_AH5">
-            <wire x2="944" y1="1312" y2="1312" x1="848" />
-        </branch>
-        <branch name="WING_AH6">
-            <wire x2="944" y1="1344" y2="1344" x1="848" />
-        </branch>
-        <branch name="WING_AH7">
-            <wire x2="944" y1="1376" y2="1376" x1="848" />
-        </branch>
-        <branch name="WING_BL0">
-            <wire x2="944" y1="1440" y2="1440" x1="848" />
-        </branch>
-        <branch name="WING_BL1">
-            <wire x2="944" y1="1472" y2="1472" x1="848" />
-        </branch>
-        <branch name="WING_BL2">
-            <wire x2="944" y1="1504" y2="1504" x1="848" />
-        </branch>
-        <branch name="WING_BL3">
-            <wire x2="944" y1="1536" y2="1536" x1="848" />
-        </branch>
-        <branch name="WING_BL4">
-            <wire x2="944" y1="1568" y2="1568" x1="848" />
-        </branch>
-        <branch name="WING_BL5">
-            <wire x2="944" y1="1600" y2="1600" x1="848" />
-        </branch>
-        <branch name="WING_BL6">
-            <wire x2="944" y1="1632" y2="1632" x1="848" />
-        </branch>
-        <branch name="WING_BL7">
-            <wire x2="944" y1="1664" y2="1664" x1="848" />
-        </branch>
-        <branch name="WING_BH0">
-            <wire x2="944" y1="1728" y2="1728" x1="848" />
-        </branch>
-        <branch name="WING_BH1">
-            <wire x2="944" y1="1760" y2="1760" x1="848" />
-        </branch>
-        <branch name="WING_BH2">
-            <wire x2="944" y1="1792" y2="1792" x1="848" />
-        </branch>
-        <branch name="WING_BH3">
-            <wire x2="944" y1="1824" y2="1824" x1="848" />
-        </branch>
-        <branch name="WING_BH4">
-            <wire x2="944" y1="1856" y2="1856" x1="848" />
-        </branch>
-        <branch name="WING_BH5">
-            <wire x2="944" y1="1888" y2="1888" x1="848" />
-        </branch>
-        <branch name="WING_BH6">
-            <wire x2="944" y1="1920" y2="1920" x1="848" />
-        </branch>
-        <branch name="WING_BH7">
-            <wire x2="944" y1="1952" y2="1952" x1="848" />
-        </branch>
-        <branch name="WING_CL0">
-            <wire x2="944" y1="2016" y2="2016" x1="848" />
-        </branch>
-        <branch name="WING_CL1">
-            <wire x2="944" y1="2048" y2="2048" x1="848" />
-        </branch>
-        <branch name="WING_CL2">
-            <wire x2="944" y1="2080" y2="2080" x1="848" />
-        </branch>
-        <branch name="WING_CL3">
-            <wire x2="944" y1="2112" y2="2112" x1="848" />
-        </branch>
-        <branch name="WING_CL4">
-            <wire x2="944" y1="2144" y2="2144" x1="848" />
-        </branch>
-        <branch name="WING_CL5">
-            <wire x2="944" y1="2176" y2="2176" x1="848" />
-        </branch>
-        <branch name="WING_CL6">
-            <wire x2="944" y1="2208" y2="2208" x1="848" />
-        </branch>
-        <branch name="WING_CL7">
-            <wire x2="944" y1="2240" y2="2240" x1="848" />
-        </branch>
-        <branch name="WING_CH0">
-            <wire x2="944" y1="2304" y2="2304" x1="848" />
-        </branch>
-        <branch name="WING_CH1">
-            <wire x2="944" y1="2336" y2="2336" x1="848" />
-        </branch>
-        <branch name="WING_CH2">
-            <wire x2="944" y1="2368" y2="2368" x1="848" />
-        </branch>
-        <branch name="WING_CH3">
-            <wire x2="944" y1="2400" y2="2400" x1="848" />
-        </branch>
-        <branch name="WING_CH4">
-            <wire x2="944" y1="2432" y2="2432" x1="848" />
-        </branch>
-        <branch name="WING_CH5">
-            <wire x2="944" y1="2464" y2="2464" x1="848" />
-        </branch>
-        <branch name="WING_CH6">
-            <wire x2="944" y1="2496" y2="2496" x1="848" />
-        </branch>
-        <branch name="WING_CH7">
-            <wire x2="944" y1="2528" y2="2528" x1="848" />
-        </branch>
-        <rect width="724" x="616" y="776" height="1868" />
-        <text style="fontsize:40;fontname:Arial" x="660" y="2600">Papilio One and Pro IO Connections</text>
-        <iomarker fontsize="28" x="944" y="864" name="WING_AL0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="896" name="WING_AL1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="928" name="WING_AL2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="960" name="WING_AL3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="992" name="WING_AL4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1024" name="WING_AL5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1056" name="WING_AL6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1088" name="WING_AL7" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1152" name="WING_AH0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1184" name="WING_AH1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1216" name="WING_AH2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1248" name="WING_AH3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1280" name="WING_AH4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1312" name="WING_AH5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1344" name="WING_AH6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1376" name="WING_AH7" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1440" name="WING_BL0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1472" name="WING_BL1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1504" name="WING_BL2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1536" name="WING_BL3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1568" name="WING_BL4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1600" name="WING_BL5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1632" name="WING_BL6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1664" name="WING_BL7" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1728" name="WING_BH0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1760" name="WING_BH1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1792" name="WING_BH2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1824" name="WING_BH3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1856" name="WING_BH4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1888" name="WING_BH5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1920" name="WING_BH6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="1952" name="WING_BH7" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2016" name="WING_CL0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2048" name="WING_CL1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2080" name="WING_CL2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2112" name="WING_CL3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2144" name="WING_CL4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2176" name="WING_CL5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2208" name="WING_CL6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2240" name="WING_CL7" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2304" name="WING_CH0" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2336" name="WING_CH1" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2368" name="WING_CH2" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2400" name="WING_CH3" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2432" name="WING_CH4" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2464" name="WING_CH5" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2496" name="WING_CH6" orien="R0" />
-        <iomarker fontsize="28" x="944" y="2528" name="WING_CH7" orien="R0" />
         <rect width="724" x="2520" y="524" height="2152" />
         <text style="fontsize:40;fontname:Arial" x="2628" y="2624">Papilio DUO IO Connections</text>
         <branch name="Arduino_0">
@@ -834,5 +575,296 @@
         <iomarker fontsize="28" x="2816" y="2480" name="Arduino_27" orien="R0" />
         <iomarker fontsize="28" x="2816" y="2512" name="Arduino_25" orien="R0" />
         <iomarker fontsize="28" x="2816" y="2544" name="Arduino_23" orien="R0" />
+        <text style="fontsize:48;fontname:Arial" x="1388" y="536">Papilio DUO Reset</text>
+        <rect width="1468" x="836" y="100" height="472" />
+        <iomarker fontsize="28" x="1152" y="144" name="DUO_SW1" orien="R180" />
+        <iomarker fontsize="28" x="1440" y="144" name="ARD_RESET" orien="R0" />
+        <text style="fontsize:28;fontname:Arial" x="928" y="468">Replace DUO_SW1 with a Pullup if you want to disable the ATmega32U4 chip when this circuit is loaded.</text>
+        <instance x="1184" y="176" name="XLXI_48" orien="R0" />
+        <text style="fontsize:28;fontname:Arial" x="928" y="436">Replace DUO_SW1 with a Pulldown if you want the ATmega32U4 chip to run when this circuit is loaded.</text>
+        <branch name="DUO_SW1">
+            <wire x2="1184" y1="144" y2="144" x1="1152" />
+        </branch>
+        <branch name="ARD_RESET">
+            <wire x2="1440" y1="144" y2="144" x1="1408" />
+        </branch>
+        <instance x="1280" y="1088" name="XLXI_27" orien="R0">
+        </instance>
+        <instance x="1280" y="1376" name="XLXI_26" orien="R0">
+        </instance>
+        <instance x="1280" y="1648" name="XLXI_25" orien="R0">
+        </instance>
+        <instance x="1280" y="1952" name="XLXI_24" orien="R0">
+        </instance>
+        <instance x="1280" y="2240" name="XLXI_23" orien="R0">
+        </instance>
+        <instance x="1280" y="2528" name="XLXI_22" orien="R0">
+        </instance>
+        <branch name="XLXN_335(7:0)">
+            <wire x2="1520" y1="992" y2="992" x1="1504" />
+            <wire x2="1536" y1="992" y2="992" x1="1520" />
+        </branch>
+        <branch name="XLXN_336(7:0)">
+            <wire x2="1520" y1="1056" y2="1056" x1="1504" />
+            <wire x2="1536" y1="1056" y2="1056" x1="1520" />
+        </branch>
+        <branch name="XLXN_333(7:0)">
+            <wire x2="1520" y1="1280" y2="1280" x1="1504" />
+            <wire x2="1536" y1="1280" y2="1280" x1="1520" />
+        </branch>
+        <branch name="XLXN_334(7:0)">
+            <wire x2="1520" y1="1344" y2="1344" x1="1504" />
+            <wire x2="1536" y1="1344" y2="1344" x1="1520" />
+        </branch>
+        <branch name="XLXN_331(7:0)">
+            <wire x2="1520" y1="1552" y2="1552" x1="1504" />
+            <wire x2="1536" y1="1552" y2="1552" x1="1520" />
+        </branch>
+        <branch name="XLXN_332(7:0)">
+            <wire x2="1520" y1="1616" y2="1616" x1="1504" />
+            <wire x2="1536" y1="1616" y2="1616" x1="1520" />
+        </branch>
+        <branch name="XLXN_329(7:0)">
+            <wire x2="1520" y1="1856" y2="1856" x1="1504" />
+            <wire x2="1536" y1="1856" y2="1856" x1="1520" />
+        </branch>
+        <branch name="XLXN_330(7:0)">
+            <wire x2="1520" y1="1920" y2="1920" x1="1504" />
+            <wire x2="1536" y1="1920" y2="1920" x1="1520" />
+        </branch>
+        <branch name="XLXN_327(7:0)">
+            <wire x2="1520" y1="2144" y2="2144" x1="1504" />
+            <wire x2="1536" y1="2144" y2="2144" x1="1520" />
+        </branch>
+        <branch name="XLXN_328(7:0)">
+            <wire x2="1520" y1="2208" y2="2208" x1="1504" />
+            <wire x2="1536" y1="2208" y2="2208" x1="1520" />
+        </branch>
+        <branch name="XLXN_325(7:0)">
+            <wire x2="1520" y1="2432" y2="2432" x1="1504" />
+            <wire x2="1536" y1="2432" y2="2432" x1="1520" />
+        </branch>
+        <branch name="XLXN_326(7:0)">
+            <wire x2="1520" y1="2496" y2="2496" x1="1504" />
+            <wire x2="1536" y1="2496" y2="2496" x1="1520" />
+        </branch>
+        <rect width="456" x="1208" y="848" height="1760" />
+        <text style="fontsize:40;fontname:Arial" x="1304" y="2572">GPIO Wings</text>
+        <branch name="WING_AL0">
+            <wire x2="2064" y1="896" y2="896" x1="1968" />
+        </branch>
+        <branch name="WING_AL1">
+            <wire x2="2064" y1="928" y2="928" x1="1968" />
+        </branch>
+        <branch name="WING_AL2">
+            <wire x2="2064" y1="960" y2="960" x1="1968" />
+        </branch>
+        <branch name="WING_AL3">
+            <wire x2="2064" y1="992" y2="992" x1="1968" />
+        </branch>
+        <branch name="WING_AL4">
+            <wire x2="2064" y1="1024" y2="1024" x1="1968" />
+        </branch>
+        <branch name="WING_AL5">
+            <wire x2="2064" y1="1056" y2="1056" x1="1968" />
+        </branch>
+        <branch name="WING_AL6">
+            <wire x2="2064" y1="1088" y2="1088" x1="1968" />
+        </branch>
+        <branch name="WING_AL7">
+            <wire x2="2064" y1="1120" y2="1120" x1="1968" />
+        </branch>
+        <branch name="WING_AH0">
+            <wire x2="2064" y1="1184" y2="1184" x1="1968" />
+        </branch>
+        <branch name="WING_AH1">
+            <wire x2="2064" y1="1216" y2="1216" x1="1968" />
+        </branch>
+        <branch name="WING_AH2">
+            <wire x2="2064" y1="1248" y2="1248" x1="1968" />
+        </branch>
+        <branch name="WING_AH3">
+            <wire x2="2064" y1="1280" y2="1280" x1="1968" />
+        </branch>
+        <branch name="WING_AH4">
+            <wire x2="2064" y1="1312" y2="1312" x1="1968" />
+        </branch>
+        <branch name="WING_AH5">
+            <wire x2="2064" y1="1344" y2="1344" x1="1968" />
+        </branch>
+        <branch name="WING_AH6">
+            <wire x2="2064" y1="1376" y2="1376" x1="1968" />
+        </branch>
+        <branch name="WING_AH7">
+            <wire x2="2064" y1="1408" y2="1408" x1="1968" />
+        </branch>
+        <branch name="WING_BL0">
+            <wire x2="2064" y1="1472" y2="1472" x1="1968" />
+        </branch>
+        <branch name="WING_BL1">
+            <wire x2="2064" y1="1504" y2="1504" x1="1968" />
+        </branch>
+        <branch name="WING_BL2">
+            <wire x2="2064" y1="1536" y2="1536" x1="1968" />
+        </branch>
+        <branch name="WING_BL3">
+            <wire x2="2064" y1="1568" y2="1568" x1="1968" />
+        </branch>
+        <branch name="WING_BL4">
+            <wire x2="2064" y1="1600" y2="1600" x1="1968" />
+        </branch>
+        <branch name="WING_BL5">
+            <wire x2="2064" y1="1632" y2="1632" x1="1968" />
+        </branch>
+        <branch name="WING_BL6">
+            <wire x2="2064" y1="1664" y2="1664" x1="1968" />
+        </branch>
+        <branch name="WING_BL7">
+            <wire x2="2064" y1="1696" y2="1696" x1="1968" />
+        </branch>
+        <branch name="WING_BH0">
+            <wire x2="2064" y1="1760" y2="1760" x1="1968" />
+        </branch>
+        <branch name="WING_BH1">
+            <wire x2="2064" y1="1792" y2="1792" x1="1968" />
+        </branch>
+        <branch name="WING_BH2">
+            <wire x2="2064" y1="1824" y2="1824" x1="1968" />
+        </branch>
+        <branch name="WING_BH3">
+            <wire x2="2064" y1="1856" y2="1856" x1="1968" />
+        </branch>
+        <branch name="WING_BH4">
+            <wire x2="2064" y1="1888" y2="1888" x1="1968" />
+        </branch>
+        <branch name="WING_BH5">
+            <wire x2="2064" y1="1920" y2="1920" x1="1968" />
+        </branch>
+        <branch name="WING_BH6">
+            <wire x2="2064" y1="1952" y2="1952" x1="1968" />
+        </branch>
+        <branch name="WING_BH7">
+            <wire x2="2064" y1="1984" y2="1984" x1="1968" />
+        </branch>
+        <branch name="WING_CL0">
+            <wire x2="2064" y1="2048" y2="2048" x1="1968" />
+        </branch>
+        <branch name="WING_CL1">
+            <wire x2="2064" y1="2080" y2="2080" x1="1968" />
+        </branch>
+        <branch name="WING_CL2">
+            <wire x2="2064" y1="2112" y2="2112" x1="1968" />
+        </branch>
+        <branch name="WING_CL3">
+            <wire x2="2064" y1="2144" y2="2144" x1="1968" />
+        </branch>
+        <branch name="WING_CL4">
+            <wire x2="2064" y1="2176" y2="2176" x1="1968" />
+        </branch>
+        <branch name="WING_CL5">
+            <wire x2="2064" y1="2208" y2="2208" x1="1968" />
+        </branch>
+        <branch name="WING_CL6">
+            <wire x2="2064" y1="2240" y2="2240" x1="1968" />
+        </branch>
+        <branch name="WING_CL7">
+            <wire x2="2064" y1="2272" y2="2272" x1="1968" />
+        </branch>
+        <branch name="WING_CH0">
+            <wire x2="2064" y1="2336" y2="2336" x1="1968" />
+        </branch>
+        <branch name="WING_CH1">
+            <wire x2="2064" y1="2368" y2="2368" x1="1968" />
+        </branch>
+        <branch name="WING_CH2">
+            <wire x2="2064" y1="2400" y2="2400" x1="1968" />
+        </branch>
+        <branch name="WING_CH3">
+            <wire x2="2064" y1="2432" y2="2432" x1="1968" />
+        </branch>
+        <branch name="WING_CH4">
+            <wire x2="2064" y1="2464" y2="2464" x1="1968" />
+        </branch>
+        <branch name="WING_CH5">
+            <wire x2="2064" y1="2496" y2="2496" x1="1968" />
+        </branch>
+        <branch name="WING_CH6">
+            <wire x2="2064" y1="2528" y2="2528" x1="1968" />
+        </branch>
+        <branch name="WING_CH7">
+            <wire x2="2064" y1="2560" y2="2560" x1="1968" />
+        </branch>
+        <rect width="724" x="1736" y="808" height="1868" />
+        <text style="fontsize:40;fontname:Arial" x="1780" y="2632">Papilio One and Pro IO Connections</text>
+        <iomarker fontsize="28" x="2064" y="896" name="WING_AL0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="928" name="WING_AL1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="960" name="WING_AL2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="992" name="WING_AL3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1024" name="WING_AL4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1056" name="WING_AL5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1088" name="WING_AL6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1120" name="WING_AL7" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1184" name="WING_AH0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1216" name="WING_AH1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1248" name="WING_AH2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1280" name="WING_AH3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1312" name="WING_AH4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1344" name="WING_AH5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1376" name="WING_AH6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1408" name="WING_AH7" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1472" name="WING_BL0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1504" name="WING_BL1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1536" name="WING_BL2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1568" name="WING_BL3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1600" name="WING_BL4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1632" name="WING_BL5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1664" name="WING_BL6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1696" name="WING_BL7" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1760" name="WING_BH0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1792" name="WING_BH1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1824" name="WING_BH2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1856" name="WING_BH3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1888" name="WING_BH4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1920" name="WING_BH5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1952" name="WING_BH6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="1984" name="WING_BH7" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2048" name="WING_CL0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2080" name="WING_CL1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2112" name="WING_CL2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2144" name="WING_CL3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2176" name="WING_CL4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2208" name="WING_CL5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2240" name="WING_CL6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2272" name="WING_CL7" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2336" name="WING_CH0" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2368" name="WING_CH1" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2400" name="WING_CH2" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2432" name="WING_CH3" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2464" name="WING_CH4" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2496" name="WING_CH5" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2528" name="WING_CH6" orien="R0" />
+        <iomarker fontsize="28" x="2064" y="2560" name="WING_CH7" orien="R0" />
+        <rect width="552" x="120" y="560" height="424" />
+        <branch name="CLK">
+            <wire x2="432" y1="608" y2="608" x1="400" />
+        </branch>
+        <iomarker fontsize="28" x="400" y="608" name="CLK" orien="R180" />
+        <branch name="LED">
+            <wire x2="320" y1="656" y2="656" x1="288" />
+        </branch>
+        <iomarker fontsize="28" x="320" y="656" name="LED" orien="R0" />
+        <branch name="RXD">
+            <wire x2="432" y1="720" y2="720" x1="400" />
+        </branch>
+        <branch name="TXD">
+            <wire x2="320" y1="768" y2="768" x1="288" />
+        </branch>
+        <iomarker fontsize="28" x="400" y="720" name="RXD" orien="R180" />
+        <iomarker fontsize="28" x="320" y="768" name="TXD" orien="R0" />
+        <text style="fontsize:64;fontname:Arial" x="240" y="936">Misc Pins</text>
+        <branch name="DUO_LED">
+            <wire x2="304" y1="832" y2="832" x1="272" />
+        </branch>
+        <iomarker fontsize="28" x="304" y="832" name="DUO_LED" orien="R0" />
     </sheet>
 </drawing>
