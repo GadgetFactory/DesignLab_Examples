@@ -15,7 +15,7 @@
   4) Make an example sketch for the library
       Open the sketch under the examples folder - it should have automatically opened with this sketch.
   4) Share your library
-      http://forum.gadgetfactory.net/index.php?/page/articles.html
+      http://forum.gadgetfactory.net/index.php?/page/articles.html/_/designlab/libraries/
       
  created 2014
  by Jack Gassett
