@@ -188,11 +188,11 @@ begin
     I   => clkout1);
 --CLK_50Mhz <= clkin1;
 
-  clkout3_buf : BUFG
-  port map
-   (O   => CLK_32Mhz,
-    I   => clkout2);
---CLK_32Mhz <= clkin1;
+--  clkout3_buf : BUFG
+--  port map
+--   (O   => CLK_32Mhz,
+--    I   => clkout2);
+CLK_32Mhz <= clkin1;
 
   clkout4_buf : BUFG
   port map
