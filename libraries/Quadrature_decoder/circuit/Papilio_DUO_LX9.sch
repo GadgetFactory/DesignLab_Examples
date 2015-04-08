@@ -68,16 +68,34 @@
         <signal name="XLXN_335(7:0)" />
         <signal name="XLXN_522(200:0)" />
         <signal name="XLXN_523(200:0)" />
+        <signal name="XLXN_527" />
         <signal name="XLXN_528(100:0)" />
         <signal name="XLXN_529(100:0)" />
+        <signal name="XLXN_530(100:0)" />
+        <signal name="XLXN_563(100:0)" />
+        <signal name="XLXN_531" />
+        <signal name="XLXN_532" />
+        <signal name="XLXN_533" />
+        <signal name="XLXN_534" />
+        <signal name="XLXN_535" />
+        <signal name="XLXN_536" />
+        <signal name="XLXN_537" />
+        <signal name="XLXN_538" />
+        <signal name="Arduino_3" />
+        <signal name="Arduino_4" />
+        <signal name="Arduino_5" />
+        <signal name="Arduino_6" />
+        <signal name="Arduino_7" />
+        <signal name="Arduino_8" />
+        <signal name="Arduino_9" />
+        <signal name="Arduino_10" />
+        <signal name="XLXN_580(100:0)" />
         <signal name="Arduino_0" />
         <signal name="Arduino_1" />
         <signal name="Arduino_2" />
         <signal name="XLXN_589" />
         <signal name="ARD_RESET" />
         <signal name="DUO_SW1" />
-        <signal name="ARDUINO_4" />
-        <signal name="ARDUINO_5" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
@@ -124,12 +142,18 @@
         <port polarity="BiDirectional" name="Arduino_27" />
         <port polarity="BiDirectional" name="Arduino_25" />
         <port polarity="BiDirectional" name="Arduino_23" />
+        <port polarity="Input" name="Arduino_3" />
+        <port polarity="Input" name="Arduino_4" />
+        <port polarity="Input" name="Arduino_5" />
+        <port polarity="Input" name="Arduino_6" />
+        <port polarity="Input" name="Arduino_7" />
+        <port polarity="Input" name="Arduino_8" />
+        <port polarity="Input" name="Arduino_9" />
+        <port polarity="Input" name="Arduino_10" />
         <port polarity="BiDirectional" name="Arduino_0" />
         <port polarity="BiDirectional" name="Arduino_1" />
         <port polarity="BiDirectional" name="Arduino_2" />
         <port polarity="Output" name="ARD_RESET" />
-        <port polarity="Input" name="ARDUINO_4" />
-        <port polarity="Input" name="ARDUINO_5" />
         <blockdef name="Wing_GPIO">
             <timestamp>2014-11-10T23:31:50</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
@@ -324,6 +348,14 @@
             <line x2="64" y1="0" y2="-64" x1="64" />
             <circle r="16" cx="144" cy="-32" />
         </blockdef>
+        <blockdef name="ibuf">
+            <timestamp>2009-3-20T10:10:10</timestamp>
+            <line x2="64" y1="0" y2="-64" x1="64" />
+            <line x2="64" y1="-32" y2="0" x1="128" />
+            <line x2="128" y1="-64" y2="-32" x1="64" />
+            <line x2="128" y1="-32" y2="-32" x1="224" />
+            <line x2="64" y1="-32" y2="-32" x1="0" />
+        </blockdef>
         <blockdef name="pullup">
             <timestamp>2000-1-1T10:10:10</timestamp>
             <line x2="64" y1="-108" y2="-128" x1="64" />
@@ -485,17 +517,49 @@
             <blockpin name="Flex_Pin_in_5" />
         </block>
         <block symbolname="Quadrature_decoder" name="XLXI_48">
-            <blockpin signalname="ARDUINO_4" name="A" />
-            <blockpin signalname="ARDUINO_5" name="B" />
-            <blockpin name="A_s" />
-            <blockpin name="B_s" />
-            <blockpin name="A_t" />
-            <blockpin name="B_t" />
-            <blockpin name="A_f" />
-            <blockpin name="B_f" />
+            <blockpin signalname="XLXN_531" name="A" />
+            <blockpin signalname="XLXN_532" name="B" />
+            <blockpin signalname="XLXN_533" name="A_s" />
+            <blockpin signalname="XLXN_534" name="B_s" />
+            <blockpin signalname="XLXN_535" name="A_t" />
+            <blockpin signalname="XLXN_536" name="B_t" />
+            <blockpin signalname="XLXN_537" name="A_f" />
+            <blockpin signalname="XLXN_538" name="B_f" />
             <blockpin signalname="XLXN_529(100:0)" name="wishbone_out(100:0)" />
             <blockpin signalname="XLXN_528(100:0)" name="wishbone_in(100:0)" />
             <blockpin signalname="XLXN_589" name="Clk" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_61">
+            <blockpin signalname="Arduino_3" name="I" />
+            <blockpin signalname="XLXN_531" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_62">
+            <blockpin signalname="Arduino_4" name="I" />
+            <blockpin signalname="XLXN_532" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_63">
+            <blockpin signalname="Arduino_5" name="I" />
+            <blockpin signalname="XLXN_533" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_64">
+            <blockpin signalname="Arduino_6" name="I" />
+            <blockpin signalname="XLXN_534" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_65">
+            <blockpin signalname="Arduino_7" name="I" />
+            <blockpin signalname="XLXN_535" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_66">
+            <blockpin signalname="Arduino_8" name="I" />
+            <blockpin signalname="XLXN_536" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_67">
+            <blockpin signalname="Arduino_9" name="I" />
+            <blockpin signalname="XLXN_537" name="O" />
+        </block>
+        <block symbolname="ibuf" name="XLXI_68">
+            <blockpin signalname="Arduino_10" name="I" />
+            <blockpin signalname="XLXN_538" name="O" />
         </block>
         <block symbolname="inv" name="XLXI_60">
             <blockpin signalname="DUO_SW1" name="I" />
@@ -780,6 +844,70 @@
         </branch>
         <instance x="496" y="1632" name="XLXI_48" orien="R0">
         </instance>
+        <branch name="XLXN_531">
+            <wire x2="496" y1="1088" y2="1088" x1="464" />
+        </branch>
+        <instance x="240" y="1120" name="XLXI_61" orien="R0" />
+        <branch name="XLXN_532">
+            <wire x2="496" y1="1152" y2="1152" x1="464" />
+        </branch>
+        <instance x="240" y="1184" name="XLXI_62" orien="R0" />
+        <branch name="XLXN_533">
+            <wire x2="496" y1="1216" y2="1216" x1="464" />
+        </branch>
+        <instance x="240" y="1248" name="XLXI_63" orien="R0" />
+        <branch name="XLXN_534">
+            <wire x2="496" y1="1280" y2="1280" x1="464" />
+        </branch>
+        <instance x="240" y="1312" name="XLXI_64" orien="R0" />
+        <branch name="XLXN_535">
+            <wire x2="496" y1="1344" y2="1344" x1="464" />
+        </branch>
+        <instance x="240" y="1376" name="XLXI_65" orien="R0" />
+        <branch name="XLXN_536">
+            <wire x2="496" y1="1408" y2="1408" x1="464" />
+        </branch>
+        <instance x="240" y="1440" name="XLXI_66" orien="R0" />
+        <branch name="XLXN_537">
+            <wire x2="496" y1="1472" y2="1472" x1="464" />
+        </branch>
+        <instance x="240" y="1504" name="XLXI_67" orien="R0" />
+        <branch name="XLXN_538">
+            <wire x2="496" y1="1536" y2="1536" x1="464" />
+        </branch>
+        <instance x="240" y="1568" name="XLXI_68" orien="R0" />
+        <branch name="Arduino_3">
+            <wire x2="240" y1="1088" y2="1088" x1="208" />
+        </branch>
+        <branch name="Arduino_4">
+            <wire x2="240" y1="1152" y2="1152" x1="208" />
+        </branch>
+        <branch name="Arduino_5">
+            <wire x2="240" y1="1216" y2="1216" x1="208" />
+        </branch>
+        <branch name="Arduino_6">
+            <wire x2="240" y1="1280" y2="1280" x1="208" />
+        </branch>
+        <branch name="Arduino_7">
+            <wire x2="240" y1="1344" y2="1344" x1="208" />
+        </branch>
+        <branch name="Arduino_8">
+            <wire x2="240" y1="1408" y2="1408" x1="208" />
+        </branch>
+        <branch name="Arduino_9">
+            <wire x2="240" y1="1472" y2="1472" x1="208" />
+        </branch>
+        <branch name="Arduino_10">
+            <wire x2="240" y1="1536" y2="1536" x1="208" />
+        </branch>
+        <iomarker fontsize="28" x="208" y="1088" name="Arduino_3" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1152" name="Arduino_4" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1216" name="Arduino_5" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1280" name="Arduino_6" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1344" name="Arduino_7" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1408" name="Arduino_8" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1472" name="Arduino_9" orien="R180" />
+        <iomarker fontsize="28" x="208" y="1536" name="Arduino_10" orien="R180" />
         <branch name="Arduino_0">
             <wire x2="5200" y1="1248" y2="1248" x1="5168" />
         </branch>
@@ -808,13 +936,5 @@
         </branch>
         <iomarker fontsize="28" x="656" y="3216" name="ARD_RESET" orien="R0" />
         <instance x="304" y="3216" name="XLXI_88" orien="R0" />
-        <branch name="ARDUINO_4">
-            <wire x2="496" y1="1088" y2="1088" x1="464" />
-        </branch>
-        <iomarker fontsize="28" x="464" y="1088" name="ARDUINO_4" orien="R180" />
-        <branch name="ARDUINO_5">
-            <wire x2="496" y1="1152" y2="1152" x1="464" />
-        </branch>
-        <iomarker fontsize="28" x="464" y="1152" name="ARDUINO_5" orien="R180" />
     </sheet>
 </drawing>
