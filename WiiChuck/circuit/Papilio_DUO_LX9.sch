@@ -69,7 +69,6 @@
         <signal name="Arduino_33" />
         <signal name="Arduino_31" />
         <signal name="Arduino_29" />
-        <signal name="Arduino_23" />
         <signal name="XLXN_448(7:0)" />
         <signal name="XLXN_325(7:0)" />
         <signal name="XLXN_327(7:0)" />
@@ -81,8 +80,8 @@
         <signal name="XLXN_599(200:0)" />
         <signal name="XLXN_600(100:0)" />
         <signal name="XLXN_601(100:0)" />
+        <signal name="Arduino_23" />
         <signal name="Arduino_25" />
-        <signal name="Arduino_27" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
@@ -141,7 +140,6 @@
         <port polarity="BiDirectional" name="Arduino_29" />
         <port polarity="BiDirectional" name="Arduino_23" />
         <port polarity="BiDirectional" name="Arduino_25" />
-        <port polarity="BiDirectional" name="Arduino_27" />
         <blockdef name="Wing_GPIO">
             <timestamp>2014-10-31T16:12:30</timestamp>
             <rect width="160" x="0" y="-128" height="128" />
@@ -454,7 +452,7 @@
             <blockpin signalname="Arduino_29" name="WING_DH4" />
             <blockpin name="WING_DH5" />
             <blockpin name="WING_DH6" />
-            <blockpin signalname="Arduino_23" name="WING_DH7" />
+            <blockpin name="WING_DH7" />
             <blockpin signalname="XLXN_326(7:0)" name="WingType_mosi_DL(7:0)" />
             <blockpin signalname="XLXN_449(7:0)" name="WingType_mosi_DH(7:0)" />
             <blockpin signalname="XLXN_448(7:0)" name="WingType_miso_DH(7:0)" />
@@ -475,8 +473,8 @@
             <blockpin name="Flex_Pin_in_5" />
         </block>
         <block symbolname="COMM_zpuino_wb_I2C" name="XLXI_61">
-            <blockpin signalname="Arduino_25" name="i2c_scl" />
-            <blockpin signalname="Arduino_27" name="i2c_sda" />
+            <blockpin signalname="Arduino_23" name="i2c_scl" />
+            <blockpin signalname="Arduino_25" name="i2c_sda" />
             <blockpin signalname="XLXN_600(100:0)" name="wishbone_in(100:0)" />
             <blockpin signalname="XLXN_601(100:0)" name="wishbone_out(100:0)" />
         </block>
@@ -756,10 +754,6 @@
             <wire x2="5136" y1="3088" y2="3088" x1="5120" />
             <wire x2="5152" y1="3088" y2="3088" x1="5136" />
         </branch>
-        <branch name="Arduino_23">
-            <wire x2="5136" y1="3184" y2="3184" x1="5120" />
-            <wire x2="5152" y1="3184" y2="3184" x1="5136" />
-        </branch>
         <branch name="XLXN_448(7:0)">
             <wire x2="4544" y1="3056" y2="3056" x1="4528" />
             <wire x2="4560" y1="3056" y2="3056" x1="4544" />
@@ -841,7 +835,6 @@
         <iomarker fontsize="28" x="5152" y="3024" name="Arduino_33" orien="R0" />
         <iomarker fontsize="28" x="5152" y="3056" name="Arduino_31" orien="R0" />
         <iomarker fontsize="28" x="5152" y="3088" name="Arduino_29" orien="R0" />
-        <iomarker fontsize="28" x="5152" y="3184" name="Arduino_23" orien="R0" />
         <branch name="XLXN_598(200:0)">
             <wire x2="5216" y1="1056" y2="1056" x1="4512" />
             <wire x2="4512" y1="1056" y2="1168" x1="4512" />
@@ -864,13 +857,13 @@
         </branch>
         <instance x="368" y="1776" name="XLXI_61" orien="R0">
         </instance>
-        <branch name="Arduino_25">
+        <branch name="Arduino_23">
             <wire x2="672" y1="1680" y2="1680" x1="640" />
         </branch>
-        <iomarker fontsize="28" x="672" y="1680" name="Arduino_25" orien="R0" />
-        <branch name="Arduino_27">
+        <iomarker fontsize="28" x="672" y="1680" name="Arduino_23" orien="R0" />
+        <branch name="Arduino_25">
             <wire x2="672" y1="1744" y2="1744" x1="640" />
         </branch>
-        <iomarker fontsize="28" x="672" y="1744" name="Arduino_27" orien="R0" />
+        <iomarker fontsize="28" x="672" y="1744" name="Arduino_25" orien="R0" />
     </sheet>
 </drawing>

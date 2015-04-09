@@ -99,8 +99,8 @@ begin
   wishbone_out(0) <= wb_inta_o;
 -- End unpacking Wishbone array 
 
-	pinSCL: IOPAD port map(I => scl_pad_i, O => scl_pad_o, T => scl_padoen_o, C => wb_clk_i,PAD => i2c_scl );
-	pinSDA: IOPAD port map(I => sda_pad_i, O => sda_pad_o, T => sda_padoen_o, C => wb_clk_i,PAD => i2c_sda );
+	pinSCL: IOPAD port map(I => scl_pad_o, O => scl_pad_i, T => scl_padoen_o, C => wb_clk_i,PAD => i2c_scl );
+	pinSDA: IOPAD port map(I => sda_pad_o, O => sda_pad_i, T => sda_padoen_o, C => wb_clk_i,PAD => i2c_sda );
 
 	Inst_i2c_master_top: i2c_master_top PORT MAP(
 		wb_clk_i => wb_clk_i,

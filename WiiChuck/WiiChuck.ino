@@ -18,20 +18,28 @@
  This example code is in the public domain.
  */
  
-//#define circuit ZPUino_Vanilla
+//#define circuit WiiChuck
  
-int led = 13;
+#include "WiiChuck.h" 
+#include "i2c.h"
  
 void setup() {
   // put your setup code here, to run once:
+  delay(1000);
+  Serial.begin(9600);
+  Serial.println("Starting");
   
-  pinMode(led, OUTPUT);   
-  
+  WIIChuck.begin();
+  WIIChuck.init_nunchuck();
 }
 
 void loop() {
-  digitalWrite(led, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(1000);               // wait for a second
-  digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
-  delay(1000);               // wait for a second
+    WIIChuck.update();
+    printf("Chuck: %d %d buttons %d %d\n",
+           WIIChuck.getJoyX(),
+           WIIChuck.getJoyY(),
+           WIIChuck.getZButton(),
+           WIIChuck.getCButton());
+         
+    delay(500);
 }
