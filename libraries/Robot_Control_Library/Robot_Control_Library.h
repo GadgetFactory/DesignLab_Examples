@@ -26,11 +26,8 @@ class Robot_Control_Library
   public:
     Robot_Control_Library();
 	void setup(unsigned int wishboneSlot);
-        int getPulseCount(unsigned int i);
-        int getRevCount(unsigned int i);
-        int getSpeed(unsigned int i);
-        float getSpeedRad(unsigned int i);
-        int getAccel(unsigned int i);
+    unsigned long readButtons();
+    void writeLEDs(unsigned long value);
   private:
     int wishboneSlot;
 };

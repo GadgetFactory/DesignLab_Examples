@@ -32,19 +32,6 @@ void setup() {
 }
 
 void loop() {
-  Serial.print("\t Pulse Count: ");              
-  Serial.print(Robot_Control_Library.getPulseCount(1));
-//  Serial.print("\t \t Revolution Count:");            // T is not connected            
-//  Serial.print(Robot_Control_Library.getRevCount(1));
-
-  //Not sure if these functions are working correctly...
-  Serial.print("\t \t Speed: ");                 
-  Serial.print(Robot_Control_Library.getSpeed(1));
-  Serial.print("\t \t Speed Radians: ");               
-  Serial.print(Robot_Control_Library.getSpeedRad(1));
-  Serial.print("\t \t Acceleration: ");              
-  Serial.print(Robot_Control_Library.getAccel(1));
-  Serial.println();
-  Serial.println();
-  delay (200);   
+	Serial.println(Robot_Control_Library.readButtons());
+	Robot_Control_Library.writeLEDs(0xf);
 }
