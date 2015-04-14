@@ -1,0 +1,11 @@
+run
+-opt_level 2
+-opt_mode speed
+-ifmt mixed
+-ifn C:\emjay\mk3\microblaze\spartan3\pcores\Quadrature_Encoder_v1_00_a\devl\synthesis\Quadrature_Encoder_xst.prj
+-top Quadrature_Encoder
+-p virtex2p
+-ofn C:\emjay\mk3\microblaze\spartan3\pcores\Quadrature_Encoder_v1_00_a\devl\synthesis\Quadrature_Encoder_xst.ngc
+-iobuf NO
+-rtlview YES
+-hierarchy_separator /

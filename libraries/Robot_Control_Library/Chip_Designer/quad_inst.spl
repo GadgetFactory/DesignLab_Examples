@@ -1,0 +1,12 @@
+[Inputs]
+CLK
+Reset
+A_CLK
+B_CLK
+I_CLK
+[Outputs]
+=PULSE_COUNT[31:0]=
+=REV_COUNT[31:0]=
+=TSPEED[31:0]=
+=TACCEL[31:0]=
+[BiDir]
