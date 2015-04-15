@@ -37,7 +37,7 @@ if exist papilio_one_250k.bit (
 )
 
 REM Deletes all unnecessary files
-for /f %%F in ('dir /b /a-d ^| findstr /vile ".sch .xise .bit .bat .sym .vhd .pdf .ino .cmd_log .cmd .xst .prj .vhf .ut .h .cpp .xtcl  keywords.txt"') do del "%%F"
+for /f %%F in ('dir /b /a-d ^| findstr /vile ".sch .xise .bit .bat .sym .vhd .pdf .ino .cmd_log .cmd .xst .prj .vhf .ut .h .cpp .xtcl  keywords.txt .gz"') do del "%%F"
 REM for /f %%F in ('dir /b  ^| findstr /vile "Sketch saved_bitfiles rebuild LX9 500K 250K smallfs ols-0.9.7 Libraries ym_converter"') do rmdir /q /s "%%F"
 rmdir /q /s iseconfig
 
