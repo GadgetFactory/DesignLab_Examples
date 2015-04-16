@@ -72,7 +72,7 @@ architecture BEHAVIORAL of RCL_PWM_x48 is
 	
   signal register_in_array : register_type(0 to register_count-1);
   signal register_out_array : register_type(0 to register_count-1);
-  signal DIR : register_type(0 to register_count-1);
+  signal DIR : std_logic_vector(pwm_count-1 downto 0);
   
   signal clk_96Mhz : std_logic;  
 	
