@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="RCL_PWM_x48">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2015-4-15T20:16:43</timestamp>
-    <pin polarity="Input" x="0" y="-96" name="PWM_clk" />
-    <pin polarity="Input" x="192" y="-176" name="wishbone_in(100:0)" />
-    <pin polarity="Output" x="208" y="-176" name="wishbone_out(100:0)" />
+    <timestamp>2015-4-16T16:21:22</timestamp>
     <pin polarity="Output" x="400" y="-96" name="PWM(47:0)" />
-    <pin polarity="Output" x="400" y="-32" name="DIR(47:0)" />
+    <pin polarity="Input" x="240" y="-176" name="wishbone_in(100:0)" />
+    <pin polarity="Output" x="256" y="-176" name="wishbone_out(100:0)" />
     <graph>
-        <rect width="272" x="64" y="-128" height="128" />
-        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="212" y="64" type="symbol" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-96" type="pin PWM_clk" />
-        <line x2="0" y1="-96" y2="-96" x1="64" />
-        <line x2="192" y1="-176" y2="-128" x1="192" />
-        <line x2="208" y1="-176" y2="-128" x1="208" />
+        <rect width="180" x="156" y="-128" height="60" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="328" y="-96" type="pin PWM(47:0)" />
-        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="328" y="-32" type="pin DIR(47:0)" />
         <rect width="64" x="336" y="-108" height="24" />
         <line x2="400" y1="-96" y2="-96" x1="336" />
-        <rect width="64" x="336" y="-44" height="24" />
-        <line x2="400" y1="-32" y2="-32" x1="336" />
+        <line x2="240" y1="-176" y2="-128" x1="240" />
+        <line x2="256" y1="-176" y2="-128" x1="256" />
+        <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="256" y="12" type="symbol" />
     </graph>
 </symbol>

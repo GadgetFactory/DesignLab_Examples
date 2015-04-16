@@ -13,7 +13,7 @@ entity PWMGenerator is
   port ( 
     Clk : in std_logic;
 --    Dir : in std_logic;
-    Duty : in signed(C_PWM_WIDTH-1 downto 0) := (others => '0');
+    Duty : in std_logic_vector(C_PWM_WIDTH-1 downto 0) := (others => '0');
     Out1 : out std_logic;
     Out2 : out std_logic    
   );
@@ -22,20 +22,23 @@ end PWMGenerator;
 architecture Behavioral of PWMGenerator is
 
   signal duty_cnt : unsigned(C_PWM_WIDTH-2 downto 0) := (others => '0');
+  signal duty_i : unsigned(C_PWM_WIDTH-1 downto 0) := (others => '0');
   signal pwm_i : std_logic := '0';
 begin
+	duty_i <= unsigned(Duty);
+	
   Process(CLK)
   begin
     if Clk='1' and Clk'event then
       duty_cnt <= duty_cnt + 1;
-      if Duty >= 0 then
-        if duty_cnt < CONV_UNSIGNED(Duty(C_PWM_WIDTH-2 downto 0),C_PWM_WIDTH-1) then
+      if duty_i >= 0 then
+        if duty_cnt < CONV_UNSIGNED(duty_i(C_PWM_WIDTH-2 downto 0),C_PWM_WIDTH-1) then
           pwm_i <= '1';
         else
           pwm_i <= '0';
         end if;
       else
-        if duty_cnt < CONV_UNSIGNED(Duty(C_PWM_WIDTH-2 downto 0),C_PWM_WIDTH-1) then
+        if duty_cnt < CONV_UNSIGNED(duty_i(C_PWM_WIDTH-2 downto 0),C_PWM_WIDTH-1) then
           pwm_i <= '0';
         else
           pwm_i <= '1';
@@ -57,7 +60,7 @@ G_2_PHASE_CHOPPING : if C_PWM_TYPE=0 generate
 --        pwm_i := '0';
 --      end if;
       --if dir='1' then
-      if Duty >= 0 then 
+      if duty_i >= 0 then 
         Out1 <= pwm_i;
         Out2 <= '0';
       else
@@ -81,7 +84,7 @@ G_1_PHASE_CHOPPING : if C_PWM_TYPE=1 generate
 --        pwm_i := '0';
 --      end if;
       --if Dir='1' then
-      if Duty >= 0 then
+      if duty_i >= 0 then
         Out1 <= pwm_i;
         Out2 <= '0';
       else
@@ -105,7 +108,7 @@ G_ENABLE_CHOPPING : if C_PWM_TYPE=2 generate
 --      end if;
 --      duty_cnt := duty_cnt + 1;
       Out1 <= pwm_i;
-      if Duty >= 0 then
+      if duty_i >= 0 then
         Out2 <= '0';
       else
         Out2 <= '1';

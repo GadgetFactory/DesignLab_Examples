@@ -21,20 +21,11 @@ Robot_Control_Library::Robot_Control_Library()
 
 }
 
+//Quad stuff
 void Robot_Control_Library::setupQuad(unsigned int wishboneSlotQuad)
 {
 	this->wishboneSlotQuad = wishboneSlotQuad;
 }
-
-//unsigned long Robot_Control_Library::readButtons()
-//{
-//	return REGISTER(IO_SLOT(wishboneSlotQuad),1);
-//}
-//
-//void Robot_Control_Library::writeLEDs(unsigned long value)
-//{
-//	REGISTER(IO_SLOT(wishboneSlotQuad),0) = value;
-//}
 
 int Robot_Control_Library::getPulseCount(unsigned int i){
   return REGISTER(IO_SLOT(wishboneSlotQuad),i*4);
@@ -67,4 +58,21 @@ float Robot_Control_Library::getSpeedRad(unsigned int i){
 
 int Robot_Control_Library::getAccel(unsigned int i){
   return REGISTER(IO_SLOT(wishboneSlotQuad),i*4+3);
+}
+
+//PWM stuff
+void Robot_Control_Library::setupPWM(unsigned int wishboneSlotPWM)
+{
+	this->wishboneSlotPWM = wishboneSlotPWM;
+}
+
+void Robot_Control_Library::setPWMDuty(unsigned int i,int speed)
+{
+	REGISTER(IO_SLOT(wishboneSlotPWM),i) = speed;
+}
+
+int Robot_Control_Library::getPWMDuty(unsigned int i){
+	// Serial.print(wishboneSlotPWM);
+	// Serial.print(" ");
+  return REGISTER(IO_SLOT(wishboneSlotPWM),i);
 }

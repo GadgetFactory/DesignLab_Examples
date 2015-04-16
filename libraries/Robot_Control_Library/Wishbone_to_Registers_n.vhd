@@ -43,30 +43,11 @@ entity Wishbone_to_Registers_n is
   	 wishbone_in : in std_logic_vector(100 downto 0);
 	 wishbone_out : out std_logic_vector(100 downto 0);
 	 
+	 clk_96Mhz : out std_logic;
+	 
 	 --Registers
 	 register_in : in register_type(0 to register_count-1);
 	 register_out : out register_type(0 to register_count-1)
-	 
---	 register0_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register0_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register1_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register1_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register2_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register2_out : out std_logic_vector(31 downto 0) -- Register 0 (32 bits)
---	 register3_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register3_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register4_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register4_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register5_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register5_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register6_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register6_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register7_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register7_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register8_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register8_out : out std_logic_vector(31 downto 0); -- Register 0 (32 bits)
---	 register9_in  : in std_logic_vector(31 downto 0);  -- Register 0 (32 bits)
---	 register9_out : out std_logic_vector(31 downto 0) -- Register 0 (32 bits) 
   );
 end entity Wishbone_to_Registers_n;
 
@@ -106,27 +87,7 @@ begin
   wishbone_out(0) <= wb_inta_o;
 -- End unpacking Wishbone signals
 
---	register_in_array(0) <= register0_in;
---	register_in_array(1) <= register1_in;
---	register_in_array(2) <= register2_in;
---	register_in_array(3) <= register3_in;
---	register_in_array(4) <= register4_in;
---	register_in_array(5) <= register5_in;
---	register_in_array(6) <= register6_in;
---	register_in_array(7) <= register7_in;
---	register_in_array(8) <= register8_in;
---	register_in_array(9) <= register9_in;
-	
---	register0_out <= register_out_array(0);
---	register1_out <= register_out_array(1);
---	register2_out <= register_out_array(2);
---	register3_out <= register_out_array(3);
---	register4_out <= register_out_array(4);
---	register5_out <= register_out_array(5);
---	register6_out <= register_out_array(6);
---	register7_out <= register_out_array(7);
---	register8_out <= register_out_array(8);
---	register9_out <= register_out_array(9);
+  clk_96Mhz <= wb_clk_i;
 
   -- Asynchronous acknowledge
 

@@ -25,14 +25,21 @@ class Robot_Control_Library
 {
   public:
     Robot_Control_Library();
-		void setupQuad(unsigned int wishboneSlot);
+		void setupQuad(unsigned int wishboneSlotQuad);
         int getPulseCount(unsigned int i);
         int getRevCount(unsigned int i);
         int getSpeed(unsigned int i);
         float getSpeedRad(unsigned int i);
         int getAccel(unsigned int i);
+		
+		//PWM
+		void setupPWM(unsigned int wishboneSlotPWM);
+		void setPWMDuty(unsigned int i,int speed);
+		int getPWMDuty(unsigned int i);
+		
   private:
 		int wishboneSlotQuad;
+		int wishboneSlotPWM;
 };
 
 #endif
