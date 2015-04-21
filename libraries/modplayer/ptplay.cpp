@@ -34,6 +34,7 @@ it�s not 100% sure it works in all conditions with combined effects.
 #include "ptplay.h"
 #include <string.h>
 #include <math.h>
+#include "zstdio.h"
 /* #include <stdio.h>
 #include <stdlib.h> */
 

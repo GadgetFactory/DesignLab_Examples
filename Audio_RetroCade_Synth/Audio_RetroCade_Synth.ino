@@ -24,6 +24,10 @@
 License: GPL
 
 ChangeLog:
+4/21/2015      Version 1.3
+        -Updated MIDI library to better handle NoteOffs.
+        -Moved to ZPUino 2.0 with a DesignLab schematic.
+
 1/29/2014      Version 1.2
         -Moved to Papilio Schematic Library and drew up a schematic of the RetroCade system.
         -Added Analog mode to the LCD.
@@ -89,7 +93,7 @@ ChangeLog:
 
 */
 
-  HardwareSerial Serial1(11);   //This is to define Serial1 for the ZPUino.
+  HardwareSerial Serial1(WishboneSlot(11));   //This is to define Serial1 for the ZPUino.
 
 #include "RetroCade.h"
 #include "SID.h"
@@ -105,7 +109,8 @@ ChangeLog:
 #include "cbuffer.h"
 #include "sidplayer.h"
 #include "SPIADC.h"
-#include "SPI.h"
+#include "SPI.h" 
+#include <Timer.h>
 
 
 byte lastpitch[8];
@@ -113,7 +118,6 @@ File root;
 
 int sidplayercounter = 0;
 
-#undef DO_CHECKS
 //#define DEBUG
 
 //Instantiate the objects we will be using.
@@ -121,10 +125,20 @@ RETROCADE retrocade;
 //YM2149 ym2149;
 //SID sid;
 
+struct MySettings : public midi::DefaultSettings
+{
+    static const long BaudRate = 115200;
+};
+
+MIDI_CREATE_INSTANCE(HardwareSerial, Serial1, MIDI);
+#ifndef DEBUG
+MIDI_CREATE_CUSTOM_INSTANCE(HardwareSerial, Serial, midiB, MySettings);
+#endif   
+
 void setup(){
   int input;
   Serial.begin(115200);
-  Serial1.begin(31250);
+  //Serial1.begin(31250);
 
 //  for (input=0; input<8; input++) {
 //      VolumeController.set(input, 255, 255);
@@ -149,13 +163,23 @@ void setup(){
    
   // Initiate MIDI communications, listen to all channels
   MIDI.begin(MIDI_CHANNEL_OMNI);
+  #ifndef DEBUG
+    midiB.begin(MIDI_CHANNEL_OMNI);
+  #endif    
  
   // Connect the HandleNoteOn function to the library, so it is called upon reception of a NoteOn.
   MIDI.setHandleNoteOn(HandleNoteOn); // Put only the name of the function
   MIDI.setHandleControlChange(HandleControlChange); // Put only the name of the function
   MIDI.setHandleNoteOff(HandleNoteOff); // Put only the name of the function
 // MIDI.setHandleProgramChange(HandleProgramChange); // Put only the name of the function
- MIDI.setHandlePitchBend(HandlePitchBend); // Put only the name of the function
+  MIDI.setHandlePitchBend(HandlePitchBend); // Put only the name of the function
+  
+  #ifndef DEBUG
+    midiB.setHandleNoteOn(HandleNoteOn); // Put only the name of the function
+    midiB.setHandleControlChange(HandleControlChange); // Put only the name of the function
+    midiB.setHandleNoteOff(HandleNoteOff); // Put only the name of the function
+    midiB.setHandlePitchBend(HandlePitchBend); // Put only the name of the function  
+  #endif  
   
   retrocade.modplayer.setup(5);
   retrocade.ymplayer.setup(&retrocade.ym2149,13); 
@@ -166,10 +190,17 @@ void setup(){
   
   //analog.begin(CS(WING_C_9),WISHBONESLOT(8),ADCBITS(SPIADC_8BIT));
 
+ //Setup timer for YM and mod players, this generates an interrupt at 1700hz
+  Timers.begin();
+  int r = Timers.periodicHz(17000, timer, 0, 1);
+  if (r<0) {
+      Serial.println("Fatal error!");
+  }    
+
 }
 
 
-void _zpu_interrupt()
+bool timer(void*)
 {
   sidplayercounter++;
   retrocade.modplayer.zpu_interrupt();
@@ -179,6 +210,7 @@ void _zpu_interrupt()
     sidplayercounter = 1;
   }
   retrocade.setTimeout();
+  return true;
 }
 
 void HandleControlChange(byte channel, byte number, byte value) {
@@ -392,8 +424,10 @@ void HandleNoteOff(byte channel, byte pitch, byte velocity) {
 
 void loop(){
   // Call MIDI.read the fastest you can for real-time performance.
-  MIDI.read(&Serial);
-  MIDI.read(&Serial1);  
+  MIDI.read();
+  #ifndef DEBUG
+    midiB.read();
+  #endif    
   if (retrocade.modplayer.getPlaying() == 1)
     retrocade.modplayer.audiofill();
   else

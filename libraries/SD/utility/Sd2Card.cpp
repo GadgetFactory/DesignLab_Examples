@@ -312,6 +312,7 @@ int Sd2Card::init(uint8_t sckRateID, uint8_t chipSelectPin) {
   SPI.begin(WishboneSlot(wishboneSlot_));
   //SPI.begin(wishboneSlot_);
   REGISTER(IO_SLOT(wishboneSlot_),0)=BIT(SPICP1)|BIT(SPICPOL)|BIT(SPISRE)|BIT(SPIEN)|BIT(SPIBLOCK);
+  //SPI.setClockDivider(128);
 #ifdef SPI_CLOCK_DIV128
     SPI.setClockDivider(SPI_CLOCK_DIV128);
 #else

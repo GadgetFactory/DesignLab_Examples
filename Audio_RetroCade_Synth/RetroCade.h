@@ -57,6 +57,7 @@
 #define SDIPIN WING_C_12
 #define SCKPIN WING_C_11
 #define SDOPIN WING_C_10
+#define SDWISHBONESLOT 10
 
 enum kButtonDirection {
 	Left                = 0, 
