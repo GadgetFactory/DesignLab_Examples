@@ -149,17 +149,6 @@ void setup(){
   //Set Wishbone slots for audio chips
   retrocade.sid.setup(14);
   retrocade.ym2149.setup(13);
-  
-  ///Give some volume
-  retrocade.ym2149.V1.setVolume(11);
-  retrocade.ym2149.V2.setVolume(11);
-  retrocade.ym2149.V3.setVolume(11);   
-  retrocade.sid.setVolume(15);
-
-  //Select an instrument for each SID Voice.
-  retrocade.sid.V1.setInstrument("Calliope",0,0,15,0,0,0,0,1,0); //Calliope
-  retrocade.sid.V2.setInstrument("Accordian",12,0,12,0,0,0,1,0,0); //Accordian
-  retrocade.sid.V3.setInstrument("Harpsicord",0,9,0,0,0,1,0,0,512); //Harpsicord
    
   // Initiate MIDI communications, listen to all channels
   MIDI.begin(MIDI_CHANNEL_OMNI);
@@ -196,6 +185,17 @@ void setup(){
   if (r<0) {
       Serial.println("Fatal error!");
   }    
+  
+  ///Give some volume
+  retrocade.ym2149.V1.setVolume(11);
+  retrocade.ym2149.V2.setVolume(11);
+  retrocade.ym2149.V3.setVolume(11);   
+  retrocade.sid.setVolume(15);
+
+  //Select an instrument for each SID Voice.
+  retrocade.sid.V1.setInstrument("Calliope",0,0,15,0,0,0,0,1,2048); //Calliope
+  retrocade.sid.V2.setInstrument("Accordian",12,0,12,0,0,0,1,0,2048); //Accordian
+  retrocade.sid.V3.setInstrument("Harpsicord",0,9,0,0,0,1,0,0,512); //Harpsicord
 
 }
 
