@@ -63,6 +63,8 @@
 #include "avr/ServoTimers.h"
 #elif defined(ARDUINO_ARCH_SAM)
 #include "sam/ServoTimers.h"
+#elif defined(ZPU)
+#include "zpu20/ServoTimers.h"
 #else
 #error "This library only supports boards with an AVR or SAM processor."
 #endif
