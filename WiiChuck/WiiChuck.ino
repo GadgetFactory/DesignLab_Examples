@@ -1,6 +1,6 @@
 /*
- Gadget Factory - Project Name
- Use this as a template for DesignLab ZPUino System on Chip Projects
+ Gadget Factory - Wii Chuck example
+ An example of using the Wii Chuck Wing with the Nintendo Wii Chuck Controller.
  To learn more about using DesignLab please visit http://learn.gadgetfactory.net
 
  Tutorials:
@@ -8,17 +8,19 @@
  Related library documentation:
 
  Hardware:
+   WiiChuck Wing connected to AL WingSlot
    
  Special Notes:
+ Only works on Papilio DUO and Papilio Pro boards.
 
- created 2014
+ created 2015
  by Jack Gassett
  http://www.gadgetfactory.net
  
  This example code is in the public domain.
  */
  
-//#define circuit WiiChuck
+#define circuit ZPUino_Wings
  
 #include "WiiChuck.h" 
 #include "i2c.h"

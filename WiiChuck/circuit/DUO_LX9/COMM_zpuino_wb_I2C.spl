@@ -1,7 +1,0 @@
-[Inputs]
-=wishbone_in[100:0]=
-[Outputs]
-=wishbone_out[100:0]=
-[BiDir]
-i2c_scl
-i2c_sda
