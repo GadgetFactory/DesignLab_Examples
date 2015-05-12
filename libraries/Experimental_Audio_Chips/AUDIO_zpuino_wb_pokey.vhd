@@ -47,10 +47,10 @@ library ieee;
   use ieee.std_logic_arith.all;
   use ieee.std_logic_unsigned.all;
 
-library board;
-  use board.zpuino_config.all;
-  use board.zpu_config.all;
-  use board.zpupkg.all;
+library work;
+  use work.zpuino_config.all;
+  use work.zpu_config.all;
+  use work.zpupkg.all;
   
 
 entity AUDIO_zpuino_wb_pokey is
@@ -58,7 +58,7 @@ entity AUDIO_zpuino_wb_pokey is
 	 wishbone_in : in std_logic_vector(100 downto 0);
 	 wishbone_out : out std_logic_vector(100 downto 0);
 
-	 data_out: 		out std_logic_vector(7 downto 0)  	--Digital data out - this should be fed into an audio mixer or Delta-Sigma DAC.
+	 data_out: 		out std_logic_vector(17 downto 0)  	--Digital data out - this should be fed into an audio mixer or Delta-Sigma DAC.
   );
 end;
 
@@ -168,7 +168,7 @@ begin
   wb_inta_o <= '0';
   
   ena <= '1';
-  data_out <= o_audio;
+  data_out(7 downto 0) <= o_audio;
 
   predivider: process(wb_clk_i)
   begin
