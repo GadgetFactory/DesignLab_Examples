@@ -37,6 +37,46 @@ http://forum.gadgetfactory.net
 
 TABLE OF CONTENTS FOR EXAMPLE PROJECTS
 
+****IMPORTANT - Here is a list of all of the pre-existing circuits that you can use in your DesignLab Sketches *********
+  example://Circuit_Library_Descriptions/Circuit_Library_Descriptions.ino
+
+New/Featured
+  ZPUino VGA Adapter
+	This exciting VGA adapter lets you change resolutions on the fly and use the AdaFruit GFX library to program it. This is the latest and greatest VGA adapter.
+	Go to File/Examples/ZPUino_VGA_Adapter
+
+    Audio Project - RetroCade Synth
+        The RetroCade Synth project has been updated to work with ZPUino 2.0.
+        The MIDI library has been updated to fix Note-Off issues.
+	How about putting all of these audio chips together and putting them under MIDI control? That's what this project does, there is even a special MegaWing to provide high quality audio jacks, MIDI connnectors, and a Digital readout.
+	example://Audio_RetroCade_Synth/Audio_RetroCade_Synth.ino
+  
+  Servo Library - Works for Arduino and ZPUino projects now
+        Go to File/Examples/Servo
+        
+  Nintendo WiiChuck Example - I2C library
+        The WiiChuck Example lets you tap into the Nintendo Wii Chuck controller by connecting it to a Wii Wing.
+        The WiiChuck uses the I2C "Chip" and accompanying library and shows how to use I2C in your own projects.
+        example://WiiChuck/WiiChuck.ino
+        http://store.gadgetfactory.net/wii-wing/
+        
+  Robot Control Library
+        This Robot Control Library is one of the best libraries available on Opencores.com. It has been converted to DesignLab format for ease of use.
+        Working now are: 
+          -PWM Output
+          -Quadrature Decoder
+        Still to be ported:
+          -Stepper Controller
+          -PID Controller
+        There are working examples for the Encoder Wing available in the Gadget Factory store.
+        Go to File/Examples/Robot Control Library
+        http://store.gadgetfactory.net/encoder-wing/
+  
+  PS/2 Library - For mouse and keyboard input
+        The default Arduino library has been tested and verified to work with ZPUino as well.
+        Use this library for mouse and keyboard input from the PS/2 ports of the Arcade MegaWing or the Computing Shield.
+        Go to File/Examples/PS2
+        
 UTILITY PROJECTS
   Wishbone Slots
         This is a very useful sketch that shows what is connected to the ZPUino Wishbone Slots.
@@ -170,6 +210,8 @@ ZPUINO SOFT PROCESSOR PROJECTS
 	example://Papilio_QuickStart/Papilio_QuickStart.ino
 
   Audio Project - RetroCade Synth
+        The RetroCade Synth project has been updated to work with ZPUino 2.0.
+        The MIDI library has been updated to fix Note-Off issues.
 	How about putting all of these audio chips together and putting them under MIDI control? That's what this project does, there is even a special MegaWing to provide high quality audio jacks, MIDI connnectors, and a Digital readout.
 	example://Audio_RetroCade_Synth/Audio_RetroCade_Synth.ino
 	
