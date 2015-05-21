@@ -159,6 +159,11 @@ NET "ext_pins_inout<4>" LOC = "P21" | IOSTANDARD=LVTTL | SLEW=FAST ;
 NET "ext_pins_inout<5>" LOC = "P22" | IOSTANDARD=LVTTL | SLEW=FAST ;
 NET "ext_pins_inout<6>" LOC = "P23" | IOSTANDARD=LVTTL | SLEW=FAST ;
 NET "ext_pins_inout<7>" LOC = "P24" | IOSTANDARD=LVTTL | SLEW=FAST ;
+# AVR Wishbone bridge
+NET "ext_pins_inout<8>" LOC = "P131" | IOSTANDARD=LVTTL | SLEW=FAST ;
+NET "ext_pins_inout<9>" LOC = "P134" | IOSTANDARD=LVTTL | SLEW=FAST ;
+NET "ext_pins_inout<10>" LOC = "P132" | IOSTANDARD=LVTTL | SLEW=FAST ;
+NET "ext_pins_inout<11>" LOC = "P133" | IOSTANDARD=LVTTL | SLEW=FAST ;
 
 # Control lines
 NET "sram_ce" LOC = "P12" | IOSTANDARD=LVTTL | SLEW=FAST;

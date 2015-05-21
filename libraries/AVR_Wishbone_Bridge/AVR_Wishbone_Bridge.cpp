@@ -15,6 +15,8 @@
 
 #include "AVR_Wishbone_Bridge.h"
 
+#if defined(ARDUINO_ARCH_AVR)
+
 uint32_t REGISTER::read()
 {
     uint32_t val = 0;
@@ -75,4 +77,4 @@ void REGISTER::write(uint32_t val)
     digitalWrite(SS,HIGH);
 }
 
-
+#endif

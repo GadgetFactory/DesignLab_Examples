@@ -16,6 +16,8 @@
 #ifndef __AVR_Wishbone_Bridge_H__
 #define __AVR_Wishbone_Bridge_H__
 
+#if defined(ARDUINO_ARCH_AVR)
+
 #include <SPI.h>
 
 #define IOBASE 0x8000000
@@ -36,5 +38,7 @@ protected:
 private:
     uint32_t _address;
 };
+
+#endif
 
 #endif

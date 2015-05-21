@@ -16,10 +16,10 @@
 #ifndef __AVR_Wishbone_Bridge_Test_H__
 #define __AVR_Wishbone_Bridge_Test_H__
 
-#include <inttypes.h> 
+/* #include <inttypes.h> 
 #include <zpuino-types.h>
 #include <zpuino.h>
-#include "Arduino.h"
+#include "Arduino.h" */
 #include "AVR_Wishbone_Bridge.h"
 
 class AVR_Wishbone_Bridge_Test
