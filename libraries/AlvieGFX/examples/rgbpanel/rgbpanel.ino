@@ -7,7 +7,7 @@
 //#include "gfxframebuffer.h"
 #include "wiipositioner.h"
 //#include "wiipositionerdyn.h"
-//#include "menus.h"
+#include "menus.h"
 
 #include <SD.h>
 #include <SigmaDelta.h>
@@ -128,40 +128,40 @@ void onBricks(void*p)
 
 void exitMenus(void *a)
 {
-//    menuExit();
-//    menuVisible=false;
-//    RGBPanel.setApplyEnabled(true);
+    menuExit();
+    menuVisible=false;
+    RGBPanel.setApplyEnabled(true);
 }
 
 
 void showMenu()
 {
-//    menuReset();
-//    menuVisible=true;
-//    menuShowTop();
+    menuReset();
+    menuVisible=true;
+    menuShowTop();
 }
 
 static void createMenus()
 {
-//    subMenu *config = new subMenu("Opcoes");
-//
-//    subMenu *modo = new subMenu("Modo");
-//    config->appendChild(modo);
-//    modo->setParent(config);
-//
-//    modo->appendChild( new menuItem("Video", &onVideo) );
-//    modo->appendChild( new menuItem("Bricks", &onBricks)) ;
-//    modo->appendChild( new menuItem("SoundPuddle",&onVideo) ) ;
-//    modo->appendChild( new menuItem("< Voltar",(void(*)(void*))&menuSwitchTo, config) ) ;
-//
-//    subMenu *controle = new subMenu("Controle");
-//    config->appendChild(controle);
-//    controle->setParent(config);
-//    controle->appendChild( new menuItem("< Voltar",(void(*)(void*))&menuSwitchTo, config) ) ;
-//
-//    config->appendChild( new menuItem("Sair",(void(*)(void*))&exitMenus) ) ;
-//
-//    menuSetTop(config);
+    subMenu *config = new subMenu("Opcoes");
+
+    subMenu *modo = new subMenu("Modo");
+    config->appendChild(modo);
+    modo->setParent(config);
+
+    modo->appendChild( new menuItem("Video", &onVideo) );
+    modo->appendChild( new menuItem("Bricks", &onBricks)) ;
+    modo->appendChild( new menuItem("SoundPuddle",&onVideo) ) ;
+    modo->appendChild( new menuItem("< Voltar",(void(*)(void*))&menuSwitchTo, config) ) ;
+
+    subMenu *controle = new subMenu("Controle");
+    config->appendChild(controle);
+    controle->setParent(config);
+    controle->appendChild( new menuItem("< Voltar",(void(*)(void*))&menuSwitchTo, config) ) ;
+
+    config->appendChild( new menuItem("Sair",(void(*)(void*))&exitMenus) ) ;
+
+    menuSetTop(config);
 }
 
 
@@ -185,8 +185,8 @@ void setup() {
 //
 //  cameraPositioner.begin( getCameraMax()-camoffset,
 //                          getCameraMax()-camoffset);
-//  createMenus();
-//  menuInit();
+  createMenus();
+  menuInit();
 
   // Setup SPI for SD card.
 //  SPI.begin(
@@ -270,7 +270,7 @@ void setup() {
   xpos = (RGBPanel.width()/2)<<SHIFTPOS;
   ypos = (RGBPanel.height()/2)<<SHIFTPOS;
 
-
+  //currentMode = BALL;
 
 }
 
@@ -393,7 +393,7 @@ extern unsigned int hsvtable[256];
 
 
 
-void loop() {
+void oldloop() {
     static int mode = 0;
     static unsigned frame = 0;
 
@@ -493,7 +493,7 @@ void loop() {
         ball_demo();
 
         while (1) {
-            Serial.println("In ball demo");
+            //Serial.println("In ball demo");
             ball_demo_loop();
         }
 
@@ -528,7 +528,7 @@ void displayLoop()
 }
 
 
-void newloop()
+void loop()
 {
     static int accumul = 0;
     static int button = 0;
@@ -537,6 +537,7 @@ void newloop()
     unsigned now;
 
     frame++;
+    if (frame&1) delay(10);
     if (currentMode==VIDEO) {
         unsigned delta;
         now = TIMERTSC;
@@ -567,9 +568,11 @@ void newloop()
     case BUTTON_Z:
         if (button==0) {
             if (menuVisible) {
-                //menuAction();
+                menuAction();
+                Serial.println("Menu Action");
             } else {
-                //showMenu();
+                showMenu();
+                Serial.println("Show Menu");
                 RGBPanel.setApplyEnabled(false);
             }
         }
@@ -590,15 +593,15 @@ void newloop()
             accumul+=delta;
             //Serial.println(accumul);
             if (accumul<-100) {
-                //moveMenuDown();
+                moveMenuDown();
                 accumul=0;
             } else if (accumul>100) {
-                //moveMenuUp();
+                moveMenuUp();
                 accumul=0;
             }
         }
 
-        //updateMenus();
+        updateMenus();
     } else {
         displayLoop();
     }

@@ -354,7 +354,7 @@ void prepareStart()
 
 int demo_loop()
 {
-    Serial.println("In demo_loop");
+    //Serial.println("In demo_loop");
     int nx, ny;
     int hcol=0, vcol=0;
 
@@ -386,12 +386,14 @@ int demo_loop()
 
     nx=bx+dx;
     ny=by+dy;
-    printf("Dx %d, Dy %d\r\n", dx,dy);
-    printf("New x %d, new y %d\n", nx>>4,ny>>4);
+    //printf("Dx %d, Dy %d\r\n", dx,dy);
+    //printf("New x %d, new y %d\n", nx>>4,ny>>4);
 
     /* Out of bounds check */
     unsigned rnx = roundpos(nx);
     unsigned rny = roundpos(ny);
+    
+    //printf("rnx %d, rny %d\r\n", rnx,rny);
 
     if (rnx>(VGA_COLUMNS-BALL_SIZE_BITS) || nx<0) {
         dx=-1*dx;
@@ -619,25 +621,25 @@ void update_player()
 
 static void waitStart()
 {
-    RGBPanel.setTextColor(0xffff00);
-    clearTextArea();
-    // 16 chars.
-    RGBPanel.setCursor((96/2)-(6*16)/2,33);
-    RGBPanel.print("Carrega no botao");
-    RGBPanel.setCursor((96/2)-(6*16)/2,33+7);
-    RGBPanel.print(" para comecares ");
-    gamestate = WAITSTART;
-    interDelay=0;
+//    RGBPanel.setTextColor(0xffff00);
+//    clearTextArea();
+//    // 16 chars.
+//    RGBPanel.setCursor((96/2)-(6*16)/2,33);
+//    RGBPanel.print("Carrega no botao");
+//    RGBPanel.setCursor((96/2)-(6*16)/2,33+7);
+//    RGBPanel.print(" para comecares ");
+//    gamestate = WAITSTART;
+//    interDelay=0;
 }
 
 static void playLost()
 {
-    RGBPanel.setTextColor(0xff4040);
-    clearTextArea();
-    // 16 chars.
-    RGBPanel.setCursor((96/2)-(6*16)/2,33);
-    RGBPanel.print("Perdeste a bola!");
-    interDelay=100;
+//    RGBPanel.setTextColor(0xff4040);
+//    clearTextArea();
+//    // 16 chars.
+//    RGBPanel.setCursor((96/2)-(6*16)/2,33);
+//    RGBPanel.print("Perdeste a bola!");
+//    interDelay=100;
 }
 
 void ball_setup()
@@ -670,12 +672,12 @@ void ball_calibrate()
 
 void ball_demo_loop()
 {
-    Serial.println("In ball_demo_loop");
+    //Serial.println("In ball_demo_loop");
     demo_loop();
 }
 
 void ball_demo()
 {
-    Serial.println("In ball_demo");
+    //Serial.println("In ball_demo");
     ball_setup();
 }

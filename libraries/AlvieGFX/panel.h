@@ -105,6 +105,8 @@ public:
 
     void applyWithOverlay(const unsigned int *overlay)
     {
+		setRawImage(overlay);
+		apply();
 #if 0
         // TODO for simple panel
         int i,z;
