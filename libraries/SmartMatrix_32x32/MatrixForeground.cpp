@@ -30,7 +30,7 @@ static char text[textLayerMaxStringLength];
 static unsigned char textlen;
 static int scrollcounter = 0;
 
-static rgb24 textcolor = {0xff, 0xff, 0xff};
+static rgb24 textcolor = rgb24(0xff, 0xff, 0xff);
 static int fontTopOffset = 1;
 static int fontLeftOffset = 1;
 static bool majorScrollFontChange = false;

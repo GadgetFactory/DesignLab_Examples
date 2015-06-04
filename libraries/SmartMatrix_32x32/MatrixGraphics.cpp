@@ -48,7 +48,7 @@ const rgb24 SmartMatrix::readPixel(int16_t x, int16_t y) const {
 
     // check for out of bounds coordinates
     if (x < 0 || y < 0 || x >= screenConfig.localWidth || y >= screenConfig.localHeight)
-        return (rgb24){0, 0, 0};
+        return (rgb24)rgb24(0, 0, 0);
 
     // map pixel into hardware buffer before writing
     if (screenConfig.rotation == rotation0) {
@@ -883,7 +883,7 @@ void SmartMatrix::apply(void) {
         for (y=0;y<MATRIX_HEIGHT;y++) {
 
             for (x=0;x<MATRIX_WIDTH;x++) {
-				brightness = 15;
+				brightness = 40;
                 //unsigned int v = *pix;
 				if (bHasForeground && getForegroundPixel(x, y, &tempPixel0)) {
 					r = tempPixel0.red;

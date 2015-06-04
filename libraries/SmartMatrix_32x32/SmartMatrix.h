@@ -69,6 +69,10 @@ typedef struct rgb24 {
     uint8_t red;
     uint8_t green;
     uint8_t blue;
+	
+	rgb24(uint8_t r, uint8_t g, uint8_t b) { red=r;green=g;blue=b; }
+	rgb24() { red=0x40;green=0;blue=0; }
+	
 } rgb24;
 
 

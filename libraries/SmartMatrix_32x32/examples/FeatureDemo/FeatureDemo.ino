@@ -12,10 +12,10 @@ SmartMatrix matrix;
 //const int defaultBrightness = 100*(255/100);    // full brightness
 const int defaultBrightness = 15*(255/100);    // dim: 15% brightness
 const int defaultScrollOffset = 6;
-const rgb24 defaultBackgroundColor = {0x40, 0, 0};
-const rgb24 defaultScrollColor = {0xff, 0xff, 0xff};
-const rgb24 black = {0x0, 0x0, 0x0};
-const rgb24 white = {0xff, 0xff, 0xff};
+const rgb24 defaultBackgroundColor = rgb24(0x40, 0, 0);
+const rgb24 defaultScrollColor = rgb24(0xff, 0xff, 0xff);
+const rgb24 black = rgb24(0x0, 0x0, 0x0);
+const rgb24 white = rgb24(0xff, 0xff, 0xff);
 
 
 // Teensy 3.0 has the LED on pin 13
@@ -31,7 +31,7 @@ void setup() {
     Serial.println("Starting");
     
       Timers.begin();
-    int r = Timers.periodicHz(5, timer, 0, 1);
+    int r = Timers.periodic(10, timer, 0, 1);
     if (r<0) {
         Serial.println("Fatal error!");
     }  
@@ -81,18 +81,18 @@ bool timer(void*)
 #define DEMO_DRAWING_INTRO      0
 #define DEMO_DRAWING_PIXELS     0
 #define DEMO_DRAWING_LINES      0
-#define DEMO_DRAWING_TRIANGLES  1
-#define DEMO_DRAWING_CIRCLES    1
-#define DEMO_DRAWING_RECTANGLES 1
-#define DEMO_DRAWING_ROUNDRECT  1
-#define DEMO_DRAWING_FILLED     1
-#define DEMO_FILL_SCREEN        1
-#define DEMO_DRAW_CHARACTERS    1
-#define DEMO_FONT_OPTIONS       1
+#define DEMO_DRAWING_TRIANGLES  0
+#define DEMO_DRAWING_CIRCLES    0
+#define DEMO_DRAWING_RECTANGLES 0
+#define DEMO_DRAWING_ROUNDRECT  0
+#define DEMO_DRAWING_FILLED     0
+#define DEMO_FILL_SCREEN        0
+#define DEMO_DRAW_CHARACTERS    0
+#define DEMO_FONT_OPTIONS       0
 #define DEMO_MONO_BITMAP        0
 #define DEMO_SCROLL_COLOR       0
-#define DEMO_SCROLL_MODES       0
-#define DEMO_SCROLL_SPEED       0
+#define DEMO_SCROLL_MODES       1
+#define DEMO_SCROLL_SPEED       1
 #define DEMO_SCROLL_FONTS       0
 #define DEMO_SCROLL_POSITION    0
 #define DEMO_SCROLL_ROTATION    0
@@ -110,8 +110,10 @@ void loop() {
     unsigned long currentMillis;
 
     // clear screen
-    matrix.fillScreen(defaultBackgroundColor);
+    //matrix.fillScreen(defaultBackgroundColor);
+    matrix.fillScreen(rgb24(0x40, 0, 0));
     matrix.swapBuffers(true);
+    //return;
 
 #if (DEMO_INTRO == 1)
     // "SmartMatrix Demo"
@@ -158,8 +160,8 @@ void loop() {
             // radius is positive, up to screen width size
             radius = random(matrix.getScreenWidth());
 
-            rgb24 fillColor = {(uint8_t)random(192), (uint8_t)random(192), (uint8_t)random(192)};
-            rgb24 outlineColor = {(uint8_t)random(192), (uint8_t)random(192), (uint8_t)random(192)};
+            rgb24 fillColor = rgb24((uint8_t)random(192), (uint8_t)random(192), (uint8_t)random(192));
+            rgb24 outlineColor = rgb24((uint8_t)random(192), (uint8_t)random(192), (uint8_t)random(192));
 
             switch (random(14)) {
             case 0:
@@ -623,16 +625,16 @@ void loop() {
             } else {
                 matrix.fillRectangle(random(matrix.getScreenWidth() / 4), random(matrix.getScreenHeight() / 4),
                                      random(matrix.getScreenWidth() / 4) + matrix.getScreenWidth() / 4, random(matrix.getScreenHeight() / 4) + matrix.getScreenHeight() / 4,
-                {0, 0, 0xff}, color);
+                rgb24(0, 0, 0xff), color);
                 matrix.fillRoundRectangle(random(matrix.getScreenWidth() / 4) + matrix.getScreenWidth() / 2, random(matrix.getScreenHeight() / 4),
                                           random(matrix.getScreenWidth() / 4) + matrix.getScreenWidth() * 3 / 4, random(matrix.getScreenHeight() / 4) + matrix.getScreenHeight() / 4,
-                                          random(matrix.getScreenWidth() / 4), {0, 0, 0xff}, color);
+                                          random(matrix.getScreenWidth() / 4), rgb24(0, 0, 0xff), color);
                 matrix.fillCircle(random(matrix.getScreenWidth() / 4) + matrix.getScreenWidth() / 8, random(matrix.getScreenHeight() / 4) + matrix.getScreenHeight() * 5 / 8,
-                                  random(matrix.getScreenHeight() / 8), {0, 0, 0xff}, color);
+                                  random(matrix.getScreenHeight() / 8), rgb24(0, 0, 0xff), color);
                 matrix.fillTriangle(random(matrix.getScreenWidth() / 2) + matrix.getScreenWidth() / 2, random(matrix.getScreenHeight() / 2) + matrix.getScreenHeight() / 2,
                                     random(matrix.getScreenWidth() / 2) + matrix.getScreenWidth() / 2, random(matrix.getScreenHeight() / 2) + matrix.getScreenHeight() / 2,
                                     random(matrix.getScreenWidth() / 2) + matrix.getScreenWidth() / 2, random(matrix.getScreenHeight() / 2) + matrix.getScreenHeight() / 2,
-                {0, 0, 0xff}, color);
+                rgb24(0, 0, 0xff), color);
             }
 
             matrix.swapBuffers(true);
@@ -655,7 +657,7 @@ void loop() {
 
         const uint transitionTime = 3000;
 
-        rgb24 tmp = {0x0, 0, 0};
+        rgb24 tmp = rgb24(0x0, 0, 0);
         matrix.fillScreen(tmp);
         matrix.swapBuffers(true);
 
@@ -701,33 +703,33 @@ void loop() {
 
         currentMillis = millis();
 
-        matrix.fillScreen({0, 0x80, 0x80});
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
         matrix.swapBuffers(true);
 
 
         matrix.setFont(font5x7);
-        matrix.drawChar(leftEdgeOffset + 0 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, {0xff, 0, 0}, 'H');
+        matrix.drawChar(leftEdgeOffset + 0 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), 'H');
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
-        matrix.drawChar(leftEdgeOffset + 1 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, {0xff, 0, 0}, 'E');
+        matrix.drawChar(leftEdgeOffset + 1 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), 'E');
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
-        matrix.drawChar(leftEdgeOffset + 2 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, {0xff, 0, 0}, 'L');
+        matrix.drawChar(leftEdgeOffset + 2 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), 'L');
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
-        matrix.drawChar(leftEdgeOffset + 3 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, {0xff, 0, 0}, 'L');
+        matrix.drawChar(leftEdgeOffset + 3 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), 'L');
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
-        matrix.drawChar(leftEdgeOffset + 4 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, {0xff, 0, 0}, 'O');
+        matrix.drawChar(leftEdgeOffset + 4 * spaceBetweenCharacters, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), 'O');
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
 
         delay(delayBetweenCharacters);
 
-        matrix.fillScreen({0, 0x80, 0x80});
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
         matrix.swapBuffers(true);
 
-        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, {0, 0xff, 0}, "Hello!");
+        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, rgb24(0, 0xff, 0), "Hello!");
 
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
@@ -752,31 +754,31 @@ void loop() {
 
         currentMillis = millis();
 
-        matrix.fillScreen({0, 0x80, 0x80});
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
         matrix.swapBuffers(true);
 
 
         matrix.setFont(font3x5);
-        matrix.fillScreen({0, 0x80, 0x80});
-        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, {0xff, 0, 0}, "3x5");
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
+        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), "3x5");
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
 
         matrix.setFont(font5x7);
-        matrix.fillScreen({0, 0x80, 0x80});
-        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, {0xff, 0, 0}, "5x7");
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
+        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), "5x7");
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
 
         matrix.setFont(font6x10);
-        matrix.fillScreen({0, 0x80, 0x80});
-        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, {0xff, 0, 0}, "6x10");
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
+        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), "6x10");
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
 
         matrix.setFont(font8x13);
-        matrix.fillScreen({0, 0x80, 0x80});
-        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, {0xff, 0, 0}, "8x13");
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
+        matrix.drawString(leftEdgeOffset, matrix.getScreenHeight() / 2, rgb24(0xff, 0, 0), "8x13");
         delay(delayBetweenCharacters);
         matrix.swapBuffers(true);
 
@@ -816,13 +818,13 @@ void loop() {
         const uint transitionTime = 5500;
         currentMillis = millis();
 
-        matrix.fillScreen({0, 0x80, 0x80});
+        matrix.fillScreen(rgb24(0, 0x80, 0x80));
         matrix.swapBuffers(true);
 
         while (millis() < currentMillis + transitionTime) {
             matrix.drawMonoBitmap(random(matrix.getScreenWidth() + testBitmapWidth) - testBitmapWidth,
                                   random(matrix.getScreenHeight() + testBitmapHeight) - testBitmapHeight,
-                                  testBitmapWidth, testBitmapHeight, {(uint8_t)random(256), (uint8_t)random(256), 0}, testBitmap);
+                                  testBitmapWidth, testBitmapHeight, rgb24((uint8_t)random(256), (uint8_t)random(256), 0), testBitmap);
             matrix.swapBuffers(true);
             delay(100);
         }
@@ -879,7 +881,7 @@ void loop() {
 
         matrix.scrollText("Wrap Forward", 2);
         matrix.setFont(font3x5);
-        matrix.drawString(0, matrix.getScreenHeight() / 2, {0xff, 0xff, 0xff}, "Modes");
+        matrix.drawString(0, matrix.getScreenHeight() / 2, rgb24(0xff, 0xff, 0xff), "Modes");
         matrix.swapBuffers(true);
 
         uint transitionTime = 6000;
@@ -984,28 +986,28 @@ void loop() {
         matrix.setRotation(rotation90);
         matrix.scrollText("Rotation 90", 1);
         matrix.fillScreen(defaultBackgroundColor);
-        matrix.drawString(1, matrix.getScreenHeight()/2, {0xff, 0xff, 0xff}, "BACKGND");
+        matrix.drawString(1, matrix.getScreenHeight()/2, rgb24(0xff, 0xff, 0xff), "BACKGND");
         matrix.swapBuffers(true);
         while(matrix.getScrollStatus());
 
         matrix.setRotation(rotation180);
         matrix.scrollText("Rotation 180", 1);
         matrix.fillScreen(defaultBackgroundColor);
-        matrix.drawString(1, matrix.getScreenHeight()/2, {0xff, 0xff, 0xff}, "BACKGND");
+        matrix.drawString(1, matrix.getScreenHeight()/2, rgb24(0xff, 0xff, 0xff), "BACKGND");
         matrix.swapBuffers(true);
         while(matrix.getScrollStatus());
 
         matrix.setRotation(rotation270);
         matrix.scrollText("Rotation 270", 1);
         matrix.fillScreen(defaultBackgroundColor);
-        matrix.drawString(1, matrix.getScreenHeight()/2, {0xff, 0xff, 0xff}, "BACKGND");
+        matrix.drawString(1, matrix.getScreenHeight()/2, rgb24(0xff, 0xff, 0xff), "BACKGND");
         matrix.swapBuffers(true);
         while(matrix.getScrollStatus());
 
         matrix.scrollText("Rotation 0", 1);
         matrix.setRotation(rotation0);
         matrix.fillScreen(defaultBackgroundColor);
-        matrix.drawString(1, matrix.getScreenHeight()/2, {0xff, 0xff, 0xff}, "BACKGND");
+        matrix.drawString(1, matrix.getScreenHeight()/2, rgb24(0xff, 0xff, 0xff), "BACKGND");
         matrix.swapBuffers(true);
         while(matrix.getScrollStatus());
     }
@@ -1020,8 +1022,8 @@ void loop() {
         matrix.setScrollMode(wrapForward);
         matrix.setScrollSpeed(40);
 
-        matrix.drawString(0, 0, {0xff, 0xff, 0xff}, "Stop");
-        matrix.drawString(0, 6, {0xff, 0xff, 0xff}, "Scroll");
+        matrix.drawString(0, 0, rgb24(0xff, 0xff, 0xff), "Stop");
+        matrix.drawString(0, 6, rgb24(0xff, 0xff, 0xff), "Scroll");
         matrix.swapBuffers();
 
         // rotate 90
@@ -1086,7 +1088,7 @@ void loop() {
 #if (DEMO_RAW_BITMAP == 1)
     {
         // "Drawing Functions"
-        matrix.setScrollColor({0xff, 0, 0});
+        matrix.setScrollColor(rgb24(0xff, 0, 0));
         matrix.setScrollMode(wrapForward);
         matrix.setScrollSpeed(40);
         matrix.setScrollFont(font6x10);
@@ -1125,8 +1127,8 @@ void loop() {
                 buffer[i].blue = weathericon.Bitmap[i * 3 + 2];
             }
 
-            matrix.drawString(12, 16, {0xff, 0, 0}, value);
-            matrix.drawString(12, 24, {0xff, 0, 0}, percent);
+            matrix.drawString(12, 16, rgb24(0xff, 0, 0), value);
+            matrix.drawString(12, 24, rgb24(0xff, 0, 0), percent);
             matrix.swapBuffers(true);
         }
 
@@ -1137,7 +1139,7 @@ void loop() {
 #if (DEMO_COLOR_CORRECTION == 1)
     {
         // "Drawing Functions"
-        matrix.setScrollColor({0xff, 0, 0});
+        matrix.setScrollColor(rgb24(0xff, 0, 0));
         matrix.setScrollMode(wrapForward);
         matrix.setScrollSpeed(40);
         matrix.setScrollFont(font6x10);
@@ -1161,10 +1163,10 @@ void loop() {
             }
 
             if (j%2) {
-                matrix.drawString(1, 16, {0xff, 0, 0}, "CC:ON");
+                matrix.drawString(1, 16, rgb24(0xff, 0, 0), "CC:ON");
                 matrix.setColorCorrection(cc24);
             } else {
-                matrix.drawString(1, 16, {0xff, 0, 0}, "CC:OFF");
+                matrix.drawString(1, 16, rgb24(0xff, 0, 0), "CC:OFF");
                 matrix.setColorCorrection(ccNone);
             }
             // use swapBuffers(false) as background bitmap is fully drawn each time
