@@ -61,26 +61,28 @@
 #include <SmartMatrix_32x32.h>
 #include "GIFDecoder.h"
 
+#include <Timer.h>
+
 #define DISPLAY_TIME_SECONDS 10
 
 // range 0-255
 const int defaultBrightness = 255;
 
-const rgb24 COLOR_BLACK = {
-    0, 0, 0 };
+const rgb24 COLOR_BLACK = rgb24(0, 0, 0 );
 
 // Smart Matrix instance
 SmartMatrix matrix;
 
 // Chip select for SD card on the SmartMatrix Shield
-#define SD_CS 15
+#define SD_CS WING_CH4
+#define WISHBONESLOT 13
 
 #define GIF_DIRECTORY "/gifs/"
 
 int num_files;
 
 void screenClearCallback(void) {
-  matrix.fillScreen({0,0,0});
+  matrix.fillScreen(COLOR_BLACK);
 }
 
 void updateScreenCallback(void) {
@@ -88,7 +90,8 @@ void updateScreenCallback(void) {
 }
 
 void drawPixelCallback(int16_t x, int16_t y, uint8_t red, uint8_t green, uint8_t blue) {
-  matrix.drawPixel(x, y, {red, green, blue});
+  rgb24 color = rgb24(red, green, blue);
+  matrix.drawPixel(x, y, color);
 }
 
 // Setup method runs once, when the sketch starts
@@ -99,9 +102,17 @@ void setup() {
     setDrawPixelCallback(drawPixelCallback);
 
     // Seed the random number generator
-    randomSeed(analogRead(14));
+    //randomSeed(analogRead(14));
+    randomSeed(1);
 
     Serial.begin(115200);
+    Serial.println("Starting");
+    
+      Timers.begin();
+    int r = Timers.periodic(1, timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }      
 
     // Initialize matrix
     matrix.begin();
@@ -110,10 +121,11 @@ void setup() {
     // Clear screen
     matrix.fillScreen(COLOR_BLACK);
     matrix.swapBuffers();
+    Serial.println("Matrix Started");
 
     // initialize the SD card at full speed
     pinMode(SD_CS, OUTPUT);
-    if (!SD.begin(SD_CS)) {
+    if (!SD.begin(SD_CS, WISHBONESLOT)) {
         matrix.scrollText("No SD card", -1);
         Serial.println("No SD card");
         while(1);
@@ -133,6 +145,14 @@ void setup() {
         Serial.println("Empty gifs directory");
         while(1);
     }
+}
+
+bool timer(void*)
+{
+  //1Hz Timer
+  //Serial.println("In Timer");
+  matrix.apply();
+  return true;
 }
 
 

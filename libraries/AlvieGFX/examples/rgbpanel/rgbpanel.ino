@@ -169,7 +169,7 @@ void setup() {
   // put your setup code here, to run once:
   int index;
   //Serial.begin(3000000);
-  Serial.begin(115200);
+  Serial.begin(250000);
   //Serial1.begin(460800);
   Serial.println("Hello");
 
@@ -302,89 +302,6 @@ static const int colors_lighter[8] = {
 };
 
 
-
-
-
-//template<unsigned int W, unsigned int H>
-//class Blocks {
-//    static const int BlockWidth = 8;
-//    static const int BlockHeight = 3;
-//
-//    static const int WB = W / BlockWidth;
-//    static const int HB = 3;
-//    static const int NC = 8; // Colors
-//
-//    Positioner_class<WIDTH-5, 0> positioner;
-//
-//public:
-//    Blocks(Adafruit_GFX *base): D(base)
-//    {
-//        positioner.set((WIDTH/2)-3, 0);
-//    }
-//
-//    void start()
-//    {
-//        D->fillRect(0,0,W,H,0);
-//        initBlocks();
-//        drawBlocks();
-//        RGBPanel.apply();
-//    }
-//    void go()
-//    {
-//        while(1) {
-//            positioner.update();
-//            D->fillRect( 0, HEIGHT-2, WIDTH, HEIGHT, 0);
-//            // Place
-//
-//            D->fillRect( positioner.getX(), HEIGHT-2, 5, 2, 0x808080);
-//
-//            RGBPanel.apply();
-//            delay(1);
-//        }
-//    }
-//    void initBlocks()
-//    {
-//        int x,y;
-//        for (x=0;x<WB;x++)
-//            for (y=0;y<HB;y++) {
-//                blocks[x][y] = random()%NC;
-//            }
-//    }
-//    void drawBlocks()
-//    {
-//        D->fillRect(0,0,W,HB*2,0x0);
-//        int x,y;
-//        for (x=0;x<WB;x++)
-//            for (y=0;y<HB;y++) {
-//                int colorval = blocks[x][y];
-//                if (colorval>=0) {
-//                    D->fillRect(x*BlockWidth,
-//                                y*BlockHeight,
-//                                BlockWidth-1,
-//                                BlockHeight-1,
-//                                colors_lighter[ colorval ]);
-//                    // Lighten color a bit now
-//
-//                    unsigned color = colors_lighter[colorval];
-//#if 1
-//                    D->drawFastHLine(x*BlockWidth,
-//                                     ((y+1)*BlockHeight)-1,
-//                                     BlockWidth,
-//                                     color);
-//
-//                    D->drawFastVLine(((x+1)*BlockWidth)-1,
-//                                     y*BlockHeight,
-//                                     BlockHeight-1,color);
-//#endif
-//                }
-//            }
-//    }
-//
-//    Adafruit_GFX *D;
-//    int blocks[WB][HB];
-//};
-//
-//static Blocks<96,64> mBlocks(&RGBPanel);
 
 
 // Accelerometer test
@@ -620,7 +537,8 @@ int syncSeen;
 int unescaping;
 int bufferpos;
 
-#define VIDEOFRAMESIZE 96*64*3
+//#define VIDEOFRAMESIZE 96*64*3
+#define VIDEOFRAMESIZE 32*32*3
 
 unsigned char buffer[VIDEOFRAMESIZE+16];
 
