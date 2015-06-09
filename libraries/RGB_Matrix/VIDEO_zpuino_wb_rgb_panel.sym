@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <symbol version="7" name="VIDEO_zpuino_wb_rgb_panel">
     <symboltype>BLOCK</symboltype>
-    <timestamp>2015-4-10T16:24:21</timestamp>
+    <timestamp>2015-6-9T15:34:31</timestamp>
     <pin polarity="Output" x="304" y="-224" name="R(1:0)" />
     <pin polarity="Output" x="304" y="-160" name="G(1:0)" />
     <pin polarity="Output" x="304" y="-96" name="B(1:0)" />
@@ -11,7 +11,7 @@
     <pin polarity="Output" x="304" y="-288" name="OE" />
     <pin polarity="Output" x="160" y="-496" name="wishbone_out(100:0)" />
     <pin polarity="Input" x="144" y="-496" name="wishbone_in(100:0)" />
-    <pin polarity="Input" x="0" y="-384" name="clk_64Mhz" />
+    <pin polarity="Input" x="0" y="-384" name="clk_32Mhz" />
     <graph>
         <rect width="176" x="64" y="-448" height="448" />
         <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="232" y="-224" type="pin R(1:0)" />
@@ -35,7 +35,7 @@
         <line x2="144" y1="-496" y2="-448" x1="144" />
         <line x2="160" y1="-496" y2="-448" x1="160" />
         <attrtext style="alignment:BCENTER;fontsize:56;fontname:Arial" attrname="SymbolName" x="180" y="84" type="symbol" />
-        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-384" type="pin clk_64Mhz" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="76" y="-384" type="pin clk_32Mhz" />
         <line x2="64" y1="-384" y2="-384" x1="0" />
     </graph>
 </symbol>

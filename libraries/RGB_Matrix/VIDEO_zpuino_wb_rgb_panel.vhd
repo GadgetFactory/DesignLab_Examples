@@ -14,7 +14,7 @@ entity VIDEO_zpuino_wb_rgb_panel is
 	wishbone_in : in std_logic_vector(100 downto 0);
 	wishbone_out : out std_logic_vector(100 downto 0);
 	
-	clk_64Mhz: in std_logic;
+	clk_32Mhz: in std_logic;
  
  -- RGB outputters
     R:        out std_logic_vector(1 downto 0);
@@ -117,7 +117,7 @@ begin
 		wb_inta_o => wb_inta_o,
 		-- id => id,
 
-    displayclk => clk_64Mhz,
+    displayclk => clk_32Mhz,
 
     R => R,
     G => G,
