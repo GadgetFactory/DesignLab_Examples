@@ -3,6 +3,8 @@
     This example code is released into the public domain
 */
 
+#define circuit RGB_Matrix
+
 #include <SmartMatrix_32x32.h>
 
 #include <Timer.h>
@@ -83,22 +85,22 @@ bool timer(void*)
 #define DEMO_DRAWING_LINES      0
 #define DEMO_DRAWING_TRIANGLES  0
 #define DEMO_DRAWING_CIRCLES    0
-#define DEMO_DRAWING_RECTANGLES 0
-#define DEMO_DRAWING_ROUNDRECT  0
-#define DEMO_DRAWING_FILLED     0
-#define DEMO_FILL_SCREEN        0
-#define DEMO_DRAW_CHARACTERS    0
-#define DEMO_FONT_OPTIONS       0
-#define DEMO_MONO_BITMAP        0
-#define DEMO_SCROLL_COLOR       0
+#define DEMO_DRAWING_RECTANGLES 1
+#define DEMO_DRAWING_ROUNDRECT  1
+#define DEMO_DRAWING_FILLED     1
+#define DEMO_FILL_SCREEN        1
+#define DEMO_DRAW_CHARACTERS    1
+#define DEMO_FONT_OPTIONS       1
+#define DEMO_MONO_BITMAP        1
+#define DEMO_SCROLL_COLOR       1
 #define DEMO_SCROLL_MODES       1
 #define DEMO_SCROLL_SPEED       1
-#define DEMO_SCROLL_FONTS       0
-#define DEMO_SCROLL_POSITION    0
-#define DEMO_SCROLL_ROTATION    0
-#define DEMO_BRIGHTNESS         0
-#define DEMO_RAW_BITMAP         0
-#define DEMO_COLOR_CORRECTION   0
+#define DEMO_SCROLL_FONTS       1
+#define DEMO_SCROLL_POSITION    1
+#define DEMO_SCROLL_ROTATION    1
+#define DEMO_BRIGHTNESS         1
+#define DEMO_RAW_BITMAP         1
+#define DEMO_COLOR_CORRECTION   1
 
 
 // the loop() method runs over and over again,

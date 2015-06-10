@@ -25,7 +25,9 @@ entity VIDEO_zpuino_wb_rgb_panel is
 
     CLK:      out std_logic;
     STB:      out std_logic;
-    OE:       out std_logic
+    OE:       out std_logic;
+	 
+	 Matrix_Bus: out std_logic_vector(20 downto 0)
 
   );
 end entity;
@@ -82,6 +84,10 @@ architecture behave of VIDEO_zpuino_wb_rgb_panel is
   signal  id:    std_logic_vector(15 downto 0); -- ZPUino Wishbone id
 --end signals for unpacking the wishbone array
 
+	signal CLK_r, STB_r, OE_r: std_logic;
+	signal R_r, G_r, B_r: std_logic_vector(1 downto 0);
+	signal COL_r: std_logic_vector(3 downto 0);
+
 begin
 -- Unpack the wishbone array into signals so the modules code is not confusing.
   wb_clk_i <= wishbone_in(61);
@@ -119,35 +125,32 @@ begin
 
     displayclk => clk_32Mhz,
 
-    R => R,
-    G => G,
-    B => B,
+    R => R_r,
+    G => G_r,
+    B => B_r,
 
-    COL => COL,
+    COL => COL_r,
 
-    CLK => CLK,
-    STB => STB,
-    OE  => OE
+    CLK => CLK_r,
+    STB => STB_r,
+    OE  => OE_r
   );
   id <= x"08" & x"20";
 
-	-- Inst_i2c_master_top: i2c_master_top PORT MAP(
-		-- -- wb_clk_i => wb_clk_i,
-		-- -- wb_rst_i => wb_rst_i,
-		-- -- wb_dat_o => wb_dat_o(7 downto 0),
-		-- -- wb_dat_i => wb_dat_i(7 downto 0),
-		-- -- wb_adr_i => wb_adr_i(4 downto 2),
-		-- -- wb_we_i => wb_we_i,
-		-- -- wb_cyc_i => wb_cyc_i,
-		-- -- wb_stb_i => wb_stb_i,
-		-- -- wb_ack_o => wb_ack_o,
-		-- -- wb_inta_o => wb_inta_o,
-		-- -- id => id,
-		-- scl_pad_i => scl_pad_i,
-		-- scl_pad_o => scl_pad_o,
-		-- scl_padoen_o => scl_padoen_o,
-		-- sda_pad_i => sda_pad_i,
-		-- sda_pad_o => sda_pad_o,
-		-- sda_padoen_o => sda_padoen_o
-	-- );
+	R <= R_r;
+	G <= G_r;
+	B <= B_r;
+	COL <= COL_r;
+	CLK <= CLK_r;
+	STB <= STB_r;
+	OE  <= OE_r;
+	
+	Matrix_Bus(1 downto 0) <= R_r;
+	Matrix_Bus(3 downto 2) <= G_r;
+	Matrix_Bus(5 downto 4) <= B_r;
+	Matrix_Bus(9 downto 6) <= COL_r;
+	Matrix_Bus(10) <= CLK_r;
+	Matrix_Bus(11) <= STB_r;
+	Matrix_Bus(12)  <= OE_r;
+
 end behave;
