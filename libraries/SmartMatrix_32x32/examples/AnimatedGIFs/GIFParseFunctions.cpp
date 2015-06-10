@@ -27,7 +27,7 @@
  */
 
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include <Arduino.h>
 #include <SD.h>

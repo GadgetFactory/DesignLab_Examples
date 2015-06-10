@@ -54,14 +54,15 @@
   * https://github.com/pixelmatix/AnimatedGIFs/issues
   */
 
+#define circuit RGB_Matrix
+
+#include <Timer.h>
 #include <math.h>
 #include <stdlib.h>
 #include <SPI.h>
 #include <SD.h>
 #include <SmartMatrix_32x32.h>
 #include "GIFDecoder.h"
-
-#include <Timer.h>
 
 #define DISPLAY_TIME_SECONDS 10
 
@@ -90,12 +91,22 @@ void updateScreenCallback(void) {
 }
 
 void drawPixelCallback(int16_t x, int16_t y, uint8_t red, uint8_t green, uint8_t blue) {
+  //matrix.drawPixel(x, y, {red, green, blue});
   rgb24 color = rgb24(red, green, blue);
-  matrix.drawPixel(x, y, color);
+  matrix.drawPixel(x, y, color);  
+}
+
+bool timer(void*)
+{
+  //1Hz Timer
+  //Serial.println("In Timer");
+  matrix.apply();
+  return true;
 }
 
 // Setup method runs once, when the sketch starts
 void setup() {
+    delay(4000);
 
     setScreenClearCallback(screenClearCallback);
     setUpdateScreenCallback(updateScreenCallback);
@@ -108,8 +119,8 @@ void setup() {
     Serial.begin(115200);
     Serial.println("Starting");
     
-      Timers.begin();
-    int r = Timers.periodic(1, timer, 0, 1);
+    Timers.begin();
+    int r = Timers.periodic(10, timer, 0, 1);
     if (r<0) {
         Serial.println("Fatal error!");
     }      
@@ -130,6 +141,7 @@ void setup() {
         Serial.println("No SD card");
         while(1);
     }
+    Serial.println("Finished SD init");
 
     // Determine how many animated GIF files exist
     num_files = enumerateGIFFiles(GIF_DIRECTORY, false);
@@ -145,14 +157,7 @@ void setup() {
         Serial.println("Empty gifs directory");
         while(1);
     }
-}
-
-bool timer(void*)
-{
-  //1Hz Timer
-  //Serial.println("In Timer");
-  matrix.apply();
-  return true;
+    Serial.println("done setup");
 }
 
 

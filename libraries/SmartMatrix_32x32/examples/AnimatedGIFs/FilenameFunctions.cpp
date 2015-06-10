@@ -11,15 +11,15 @@
 int numberOfFiles;
 
 bool isAnimationFile(const char filename []) {
-//    if (filename[0] == '_')
-//        return false;
-//
-//    if (filename[0] == '~')
-//        return false;
-//
-//    if (filename[0] == '.')
-//        return false;
-//
+    if (filename[0] == '_')
+        return false;
+
+    if (filename[0] == '~')
+        return false;
+
+    if (filename[0] == '.')
+        return false;
+
 //    String filenameString = String(filename).toUpperCase();
 //    if (filenameString.endsWith(".GIF") != 1)
 //        return false;
