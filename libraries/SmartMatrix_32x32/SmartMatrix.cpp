@@ -24,6 +24,7 @@
 #include "SmartMatrix.h"
 #include "CircularBuffer_SM.h"
 //#include "DMAChannel.h"
+#include <Timer.h>
 
 #define INLINE __attribute__( ( always_inline ) ) inline
 
@@ -49,6 +50,8 @@
 DMAChannel dmaUpdateAddress(false);
 DMAChannel dmaUpdateTimer(false);
 DMAChannel dmaClockOutData(false); */
+
+SmartMatrix* update;
 
 void rowShiftCompleteISR(void);
 void rowCalculationISR(void);
@@ -161,9 +164,33 @@ INLINE void SmartMatrix::calculateTimerLut(void) {
     } */
 }
 
+bool timer(void*)
+{
+  //1Hz Timer
+  //Serial.println("In Timer");
+  update->apply();
+  return true;
+}
+
+int updateMilliSecs = 10;
+
+void SmartMatrix::begin(int _updateMilliSecs)
+{
+	updateMilliSecs = _updateMilliSecs;
+	this->begin();
+}
+
 void SmartMatrix::begin(void)
 {
     int i;
+	
+	update = this;
+	
+    Timers.begin();
+    int r = Timers.periodic(updateMilliSecs, timer, 0, 1);
+    if (r<0) {
+        Serial.println("Fatal error!");
+    }  	
 /*     cbInit(&dmaBuffer, DMA_BUFFER_NUMBER_OF_ROWS);
 
     // fill addressLUT

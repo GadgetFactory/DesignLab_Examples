@@ -7,8 +7,6 @@
 
 #include <SmartMatrix_32x32.h>
 
-#include <Timer.h>
-
 SmartMatrix matrix;
 
 //const int defaultBrightness = 100*(255/100);    // full brightness
@@ -29,14 +27,6 @@ void setup() {
     pinMode(ledPin, OUTPUT);
 
     Serial.begin(115200);
-    
-    Serial.println("Starting");
-    
-      Timers.begin();
-    int r = Timers.periodic(10, timer, 0, 1);
-    if (r<0) {
-        Serial.println("Fatal error!");
-    }  
 
     matrix.begin();
     matrix.setBrightness(defaultBrightness);
@@ -48,43 +38,12 @@ void setup() {
     Serial.println("End of setup");
 }
 
-bool timer(void*)
-{
-  //1Hz Timer
-  //Serial.println("In Timer");
-  matrix.apply();
-  return true;
-}
-
-//#define DEMO_INTRO              1
-//#define DEMO_DRAWING_INTRO      1
-//#define DEMO_DRAWING_PIXELS     1
-//#define DEMO_DRAWING_LINES      1
-//#define DEMO_DRAWING_TRIANGLES  1
-//#define DEMO_DRAWING_CIRCLES    1
-//#define DEMO_DRAWING_RECTANGLES 1
-//#define DEMO_DRAWING_ROUNDRECT  1
-//#define DEMO_DRAWING_FILLED     0
-//#define DEMO_FILL_SCREEN        1
-//#define DEMO_DRAW_CHARACTERS    0
-//#define DEMO_FONT_OPTIONS       0
-//#define DEMO_MONO_BITMAP        0
-//#define DEMO_SCROLL_COLOR       1
-//#define DEMO_SCROLL_MODES       0
-//#define DEMO_SCROLL_SPEED       1
-//#define DEMO_SCROLL_FONTS       0
-//#define DEMO_SCROLL_POSITION    1
-//#define DEMO_SCROLL_ROTATION    0
-//#define DEMO_BRIGHTNESS         0
-//#define DEMO_RAW_BITMAP         0
-//#define DEMO_COLOR_CORRECTION   0
-
-#define DEMO_INTRO              0
-#define DEMO_DRAWING_INTRO      0
-#define DEMO_DRAWING_PIXELS     0
-#define DEMO_DRAWING_LINES      0
-#define DEMO_DRAWING_TRIANGLES  0
-#define DEMO_DRAWING_CIRCLES    0
+#define DEMO_INTRO              1
+#define DEMO_DRAWING_INTRO      1
+#define DEMO_DRAWING_PIXELS     1
+#define DEMO_DRAWING_LINES      1
+#define DEMO_DRAWING_TRIANGLES  1
+#define DEMO_DRAWING_CIRCLES    1
 #define DEMO_DRAWING_RECTANGLES 1
 #define DEMO_DRAWING_ROUNDRECT  1
 #define DEMO_DRAWING_FILLED     1
@@ -106,8 +65,6 @@ bool timer(void*)
 // the loop() method runs over and over again,
 // as long as the board has power
 void loop() {
-    Serial.println("in loop");  
-  
     int i, j;
     unsigned long currentMillis;
 

@@ -56,7 +56,6 @@
 
 #define circuit RGB_Matrix
 
-#include <Timer.h>
 #include <math.h>
 #include <stdlib.h>
 #include <SPI.h>
@@ -69,7 +68,8 @@
 #define DISPLAY_TIME_SECONDS 10
 
 // range 0-255
-const int defaultBrightness = 255;
+//const int defaultBrightness = 255;
+const int defaultBrightness = 15*(255/100);    // dim: 15% brightness
 
 const rgb24 COLOR_BLACK = rgb24(0, 0, 0 );
 
@@ -98,14 +98,6 @@ void drawPixelCallback(int16_t x, int16_t y, uint8_t red, uint8_t green, uint8_t
   matrix.drawPixel(x, y, color);  
 }
 
-bool timer(void*)
-{
-  //1Hz Timer
-  //Serial.println("In Timer");
-  matrix.apply();
-  return true;
-}
-
 // Setup method runs once, when the sketch starts
 void setup() {
     //delay(4000);
@@ -119,26 +111,18 @@ void setup() {
     randomSeed(1);
 
     Serial.begin(115200);
-    Serial.println("Starting");
     
     if (SmallFS.begin()<0) {
     	Serial.println("No SmalLFS found.");
-    }    
-    
-    Timers.begin();
-    int r = Timers.periodic(40, timer, 0, 1);
-    if (r<0) {
-        Serial.println("Fatal error!");
-    }      
+    }         
 
     // Initialize matrix
-    matrix.begin();
+    matrix.begin(40);  //Updating every 40 milliseconds seems to work best.
     matrix.setBrightness(defaultBrightness);
 
     // Clear screen
     matrix.fillScreen(COLOR_BLACK);
     matrix.swapBuffers();
-    Serial.println("Matrix Started");
 
     // initialize the SD card at full speed
     pinMode(SD_CS, OUTPUT);
@@ -149,10 +133,9 @@ void setup() {
 //    }
 //    Serial.println("Finished SD init");
 
-  Serial.println("Starting spi");
+
   SPI.begin();
   // put your setup code here, to run once:
-  Serial.println("Starting FatFS");
 
   FatFS.begin(SPI, SD_CS);
   SPI.setClockDivider(SPI_CLOCK_DIV2);
@@ -171,8 +154,6 @@ void setup() {
 //        Serial.println("Empty gifs directory");
 //        while(1);
 //    }
-
-    Serial.println("done setup");
 }
 
 
@@ -200,13 +181,11 @@ void loop() {
         if (e.hasNext())
           e++;
         else {
-          Serial.println("first entry");
           e = SmallFS.getFirstEntry();
         }
           
         e.getName(filename);
         sprintf(pathname,"/smallfs/%s",filename);
-        //Serial.println(pathname);
 
         // Calculate time in the future to terminate animation
         futureTime = millis() + (DISPLAY_TIME_SECONDS * 1000);

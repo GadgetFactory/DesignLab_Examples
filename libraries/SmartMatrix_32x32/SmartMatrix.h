@@ -112,6 +112,7 @@ class SmartMatrix {
 public:
     SmartMatrix(void);
     void begin(void);
+    void begin(int _updateMilliSecs);
 
     // drawing functions
     void swapBuffers(bool copy = true);
@@ -232,6 +233,7 @@ private:
     static bool getBitmapFontPixelAtXY(unsigned char letter, unsigned char x, unsigned char y, const bitmap_font *font);
     const bitmap_font *fontLookup(fontChoices font) const;
     static uint16_t getBitmapFontRowAtXY(unsigned char letter, unsigned char y, const bitmap_font *font);
+
 };
 
 #endif
