@@ -27,13 +27,14 @@
  */
 
 
-#define DEBUG 1
+#define DEBUG 0
 
 #include <Arduino.h>
-#include <SD.h>
+//#include <SD.h>
+#include "FatFS.h"
 #include "GIFDecoder.h"
 
-File file;
+FILE *file;
 
 const int WIDTH  = 32;
 const int HEIGHT = 32;
@@ -121,13 +122,16 @@ void setScreenClearCallback(callback f) {
 
 // Backup the read stream by n bytes
 void backUpStream(int n) {
-    file.seek(file.position() - n);
+    //fseek(file, - n, SEEK_CUR);
+    //fseek(file, - n, 1);
 }
 
 // Read a file byte
 int readByte() {
 
-    int b = file.read();
+    char b;
+    fread(&b, 1, 1, file);
+    //int b = file.read();
     if (b == -1) {
         Serial.println("Read error or EOF occurred");
     }
@@ -145,7 +149,8 @@ int readWord() {
 // Read the specified number of bytes into the specified buffer
 int readIntoBuffer(void *buffer, int numberOfBytes) {
 
-    int result = file.read(buffer, numberOfBytes);
+    int result = fread(buffer, 1, numberOfBytes, file);
+    //int result = file.read(buffer, numberOfBytes);
     if (result == -1) {
         Serial.println("Read error or EOF occurred");
     }
@@ -505,16 +510,21 @@ void parseTableBasedImage() {
     Serial.print("dataBlockSize: ");
     Serial.println(dataBlockSize);
 #endif
-        backUpStream(1);
-        dataBlockSize++;
+        //backUpStream(1);
+        //dataBlockSize++;
+        lzwImageData[offset]=dataBlockSize;
+        offset++;
         // quick fix to prevent a crash if lzwImageData is not large enough
         if(offset + dataBlockSize <= (int)sizeof(lzwImageData)) {
             readIntoBuffer(lzwImageData + offset, dataBlockSize);
         } else {
             int i;
             // discard the data block that would cause a buffer overflow
-            for(i=0; i<dataBlockSize; i++)
-                file.read();
+            for(i=0; i<dataBlockSize; i++){
+               char buf;
+               fread(&buf, 1, 1, file);
+            }
+
 #if DEBUG == 1
             Serial.print("******* Prevented lzwImageData Overflow ******");
 #endif
@@ -612,7 +622,7 @@ int parseData() {
             done = true;
 
             // Push unprocessed byte back into the stream for later processing
-            backUpStream(1);
+            backUpStream(1); //TODO JPG - what is the unprocessed byte here?
         }
     }
     return ERROR_NONE;
@@ -630,18 +640,20 @@ int processGIFFile(const char *pathname) {
     Serial.println(pathname);
 
     if(file)
-        file.close();
+        fclose(file);
+        //file.close();
 
     // Attempt to open the file for reading
-    file = SD.open(pathname);
-    if (!file) {
+    //file = SD.open(pathname);
+    file = fopen(pathname, "rb");
+    if (file == NULL) {
         Serial.println("Error opening GIF file");
         return ERROR_FILEOPEN;
     }
     // Validate the header
     if (! parseGifHeader()) {
         Serial.println("Not a GIF file");
-        file.close();
+        fclose(file);
         return ERROR_FILENOTGIF;
     }
     // If we get here we have a gif file to process
@@ -658,12 +670,12 @@ int processGIFFile(const char *pathname) {
         Serial.println("Error: ");
         Serial.println(result);
         Serial.println(" occurred during parsing of data");
-        file.close();
+        fclose(file);
         return result;
     }
     // Parse the gif file terminator
     result = parseGIFFileTerminator();
-    file.close();
+    fclose(file);
 
     Serial.println("Success");
     return result;

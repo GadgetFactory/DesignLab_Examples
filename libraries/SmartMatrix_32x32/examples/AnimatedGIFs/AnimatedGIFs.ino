@@ -60,7 +60,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <SPI.h>
-#include <SD.h>
+//#include <SD.h>
+#include "FatFS.h"
+#include "SmallFS.h"
 #include <SmartMatrix_32x32.h>
 #include "GIFDecoder.h"
 
@@ -106,7 +108,7 @@ bool timer(void*)
 
 // Setup method runs once, when the sketch starts
 void setup() {
-    delay(4000);
+    //delay(4000);
 
     setScreenClearCallback(screenClearCallback);
     setUpdateScreenCallback(updateScreenCallback);
@@ -119,8 +121,12 @@ void setup() {
     Serial.begin(115200);
     Serial.println("Starting");
     
+    if (SmallFS.begin()<0) {
+    	Serial.println("No SmalLFS found.");
+    }    
+    
     Timers.begin();
-    int r = Timers.periodic(10, timer, 0, 1);
+    int r = Timers.periodic(40, timer, 0, 1);
     if (r<0) {
         Serial.println("Fatal error!");
     }      
@@ -136,27 +142,35 @@ void setup() {
 
     // initialize the SD card at full speed
     pinMode(SD_CS, OUTPUT);
-    if (!SD.begin(SD_CS, WISHBONESLOT)) {
-        matrix.scrollText("No SD card", -1);
-        Serial.println("No SD card");
-        while(1);
-    }
-    Serial.println("Finished SD init");
+//    if (!SD.begin(SD_CS, WISHBONESLOT)) {
+//        matrix.scrollText("No SD card", -1);
+//        Serial.println("No SD card");
+//        while(1);
+//    }
+//    Serial.println("Finished SD init");
+
+  Serial.println("Starting spi");
+  SPI.begin();
+  // put your setup code here, to run once:
+  Serial.println("Starting FatFS");
+
+  FatFS.begin(SPI, SD_CS);
+  SPI.setClockDivider(SPI_CLOCK_DIV2);
 
     // Determine how many animated GIF files exist
-    num_files = enumerateGIFFiles(GIF_DIRECTORY, false);
-
-    if(num_files < 0) {
-        matrix.scrollText("No gifs directory", -1);
-        Serial.println("No gifs directory");
-        while(1);
-    }
-
-    if(!num_files) {
-        matrix.scrollText("Empty gifs directory", -1);
-        Serial.println("Empty gifs directory");
-        while(1);
-    }
+//    num_files = enumerateGIFFiles(GIF_DIRECTORY, false);
+//
+//    if(num_files < 0) {
+//        matrix.scrollText("No gifs directory", -1);
+//        Serial.println("No gifs directory");
+//        while(1);
+//    }
+//
+//    if(!num_files) {
+//        matrix.scrollText("Empty gifs directory", -1);
+//        Serial.println("Empty gifs directory");
+//        while(1);
+//    }
     Serial.println("done setup");
 }
 
@@ -166,7 +180,7 @@ void loop() {
     unsigned long futureTime;
     char pathname[30];
 
-    int index = random(num_files);
+    //int index = random(num_files);
 
     // Do forever
     while (true) {
@@ -174,16 +188,16 @@ void loop() {
         // matrix.fillScreen(COLOR_BLACK);
         // matrix.swapBuffers();
 
-        getGIFFilenameByIndex(GIF_DIRECTORY, index++, pathname);
-        if (index >= num_files) {
-            index = 0;
-        }
+//        getGIFFilenameByIndex(GIF_DIRECTORY, index++, pathname);
+//        if (index >= num_files) {
+//            index = 0;
+//        }
 
         // Calculate time in the future to terminate animation
         futureTime = millis() + (DISPLAY_TIME_SECONDS * 1000);
 
         while (futureTime > millis()) {
-            processGIFFile(pathname);
+            processGIFFile("/smallfs/bigbuck2.gif");
         }
     }
 }
