@@ -171,6 +171,7 @@ void setup() {
 //        Serial.println("Empty gifs directory");
 //        while(1);
 //    }
+
     Serial.println("done setup");
 }
 
@@ -178,9 +179,12 @@ void setup() {
 void loop() {
 
     unsigned long futureTime;
-    char pathname[30];
+    char pathname[64];
+    char filename[64];
 
     //int index = random(num_files);
+    
+    SmallFSEntry e = SmallFS.getFirstEntry();
 
     // Do forever
     while (true) {
@@ -193,11 +197,23 @@ void loop() {
 //            index = 0;
 //        }
 
+        if (e.hasNext())
+          e++;
+        else {
+          Serial.println("first entry");
+          e = SmallFS.getFirstEntry();
+        }
+          
+        e.getName(filename);
+        sprintf(pathname,"/smallfs/%s",filename);
+        //Serial.println(pathname);
+
         // Calculate time in the future to terminate animation
         futureTime = millis() + (DISPLAY_TIME_SECONDS * 1000);
 
         while (futureTime > millis()) {
-            processGIFFile("/smallfs/bigbuck2.gif");
+            //processGIFFile(strcat("/smallfs/",pathname));
+            processGIFFile(pathname);
         }
     }
 }

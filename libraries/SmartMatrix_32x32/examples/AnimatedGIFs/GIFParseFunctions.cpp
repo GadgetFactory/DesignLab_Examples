@@ -122,7 +122,7 @@ void setScreenClearCallback(callback f) {
 
 // Backup the read stream by n bytes
 void backUpStream(int n) {
-    //fseek(file, - n, SEEK_CUR);
+    //fseek(file, - n, SEEK_CUR);  //TODO need to implement fseek in ZF_Device.
     //fseek(file, - n, 1);
 }
 
