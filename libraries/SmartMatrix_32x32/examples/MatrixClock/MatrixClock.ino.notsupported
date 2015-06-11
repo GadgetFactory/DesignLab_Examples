@@ -17,7 +17,7 @@
 
 SmartMatrix matrix;
 
-const rgb24 clockColor = {0xff, 0xff, 0xff};
+const rgb24 clockColor = rgb24(0xff, 0xff, 0xff);
 
 void setup() {
   Serial.begin(9600);

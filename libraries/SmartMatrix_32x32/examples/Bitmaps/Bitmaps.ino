@@ -18,6 +18,8 @@
 // chrome16 is a 16x16 pixel bitmap, exported from GIMP without modification
 #include "chrome16.c"
 
+const rgb24 COLOR_BLACK = rgb24(0, 0, 0 );
+
 SmartMatrix matrix;
 
 int led = 13;
@@ -25,9 +27,9 @@ int led = 13;
 void drawBitmap(int16_t x, int16_t y, const gimp32x32bitmap* bitmap) {
   for(unsigned int i=0; i < bitmap->height; i++) {
     for(unsigned int j=0; j < bitmap->width; j++) {
-      rgb24 pixel = { bitmap->pixel_data[(i*bitmap->width + j)*3 + 0],
+      rgb24 pixel = rgb24( bitmap->pixel_data[(i*bitmap->width + j)*3 + 0],
                       bitmap->pixel_data[(i*bitmap->width + j)*3 + 1],
-                      bitmap->pixel_data[(i*bitmap->width + j)*3 + 2] };
+                      bitmap->pixel_data[(i*bitmap->width + j)*3 + 2] );
 
       matrix.drawPixel(x + j, y + i, pixel);
     }
@@ -42,7 +44,7 @@ void setup() {
 }
 
 void loop() {
-  matrix.fillScreen({0,0,0});
+  matrix.fillScreen(COLOR_BLACK);
   // to use drawBitmap, must cast the pointer to pixelmatixlogo as (const gimp32x32bitmap*)
   drawBitmap(0,0,(const gimp32x32bitmap*)&pixelmatixlogo);
   matrix.swapBuffers();
@@ -52,7 +54,7 @@ void loop() {
   digitalWrite(led, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);
 
-  matrix.fillScreen({0,0,0});
+  matrix.fillScreen(COLOR_BLACK);
   // can pass &colorwheel in directly as the bitmap source is already gimp32x32bitmap
   drawBitmap(0,0,&colorwheel);
   matrix.swapBuffers();
@@ -63,7 +65,7 @@ void loop() {
   delay(1000);
 
 
-  matrix.fillScreen({0,0,0});
+  matrix.fillScreen(COLOR_BLACK);
   // draw this smaller bitmap centered
   int x = (MATRIX_WIDTH / 2) - (chrome16.width/2);
   int y = (MATRIX_HEIGHT / 2) - (chrome16.height/2);
