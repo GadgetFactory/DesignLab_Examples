@@ -833,58 +833,23 @@ void SmartMatrix::swapBuffers(bool copy) {
 extern bool hasForeground;
 // waits until swap is complete before returning
 void SmartMatrix::apply(void) {
-//working
-/*     //while (swapPending);
-	rgb24 white = {0xFF, 0, 0};
-	currentRefreshBufferPtr[0][0]  = white;
 
-    swapPending = true;
-
-    if (copy) {
-        //while (swapPending);
-        //memcpy(currentDrawBufferPtr, currentRefreshBufferPtr, sizeof(backgroundBuffer[0]));
-		//Serial.println("In swapPending");
-        int x,y;
-        unsigned offset = 32*128;
-        unsigned soff = offset;
-		//rgb24 (*pix)[MATRIX_WIDTH]=currentRefreshBufferPtr;
-		rgb24 *pix = &currentDrawBufferPtr[0][0];
-		
-        for (y=0;y<MATRIX_HEIGHT;y++) {
-
-            for (x=0;x<MATRIX_WIDTH;x++) {
-                //unsigned int v = *pix;
-				unsigned v = ((unsigned)pix->red<<16) + ((unsigned)pix->green<<8) + ((unsigned)pix->blue);
-				REGISTER(IO_SLOT(9),soff + x) = v;
-				//REGISTER(IO_SLOT(9),soff + x) = 0x00FF00;
-                pix++;
-            }
-            soff+=128;
-        }		
-    } */
-	
-    //while (swapPending);
 	uint8_t r,g,b,brightness;
 
-    //swapPending = true;
 	bool bHasForeground = hasForeground;
 
-        //while (swapPending);
-        //memcpy(currentDrawBufferPtr, currentRefreshBufferPtr, sizeof(backgroundBuffer[0]));
-		//Serial.println("In swapPending");
         int x,y;
         unsigned offset = 32*128;
         unsigned soff = offset;
-		//rgb24 (*pix)[MATRIX_WIDTH]=currentRefreshBufferPtr;
+
 		rgb24 *pix = &currentDrawBufferPtr[0][0];
-		//rgb24 *pix = backgroundBuffer[0][0];
+
 		rgb24 tempPixel0;
 		
         for (y=0;y<MATRIX_HEIGHT;y++) {
 
             for (x=0;x<MATRIX_WIDTH;x++) {
-				brightness = 40;
-                //unsigned int v = *pix;
+				brightness = dimmingFactor;
 				if (bHasForeground && getForegroundPixel(x, y, &tempPixel0)) {
 					r = tempPixel0.red;
 					g = tempPixel0.green;
@@ -900,17 +865,11 @@ void SmartMatrix::apply(void) {
 				g = ((unsigned)g * brightness)>>8;
 				b = ((unsigned)b * brightness)>>8;				
 				
-				//reduce brightness
-				//r>>=1; g>>=1; b>>=1;
-
-				
 				unsigned v = ((unsigned)r<<16) + ((unsigned)g<<8) + ((unsigned)b);
 				REGISTER(IO_SLOT(9),soff + x) = v;
-				//REGISTER(IO_SLOT(9),soff + x) = 0x00FF00;
                 pix++;
             }
             soff+=128;
-			//swapPending = true;
 			handleBufferSwap();
 			handleForegroundDrawingCopy();
 			calculateBackgroundLUT();

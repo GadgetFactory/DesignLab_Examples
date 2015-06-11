@@ -55,7 +55,8 @@ const int SmartMatrix::dimmingMaximum = 255;
 int SmartMatrix::dimmingFactor = dimmingMaximum - (100 * 255)/100;
 
 void SmartMatrix::setBrightness(uint8_t brightness) {
-    dimmingFactor = dimmingMaximum - brightness;
+    //dimmingFactor = dimmingMaximum - brightness;
+	dimmingFactor = brightness;
     brightnessChange = true;
 }
 
