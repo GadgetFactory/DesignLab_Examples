@@ -835,8 +835,10 @@ extern bool hasForeground;
 void SmartMatrix::apply(void) {
 
 	uint8_t r,g,b,brightness;
+	uint16_t temp0red,temp0green,temp0blue,temp1red,temp1green,temp1blue;
 
 	bool bHasForeground = hasForeground;
+	bool bHasCC = SmartMatrix::_ccmode != ccNone;
 
         int x,y;
         unsigned offset = 32*128;
@@ -850,6 +852,35 @@ void SmartMatrix::apply(void) {
 
             for (x=0;x<MATRIX_WIDTH;x++) {
 				brightness = dimmingFactor;
+				
+				
+/* 			if (bHasForeground && getForegroundPixel(x, y, &tempPixel0)) {
+				if(bHasCC) {
+					// load foreground pixel with color correction
+					r = colorCorrection(tempPixel0.red);
+					g = colorCorrection(tempPixel0.green);
+					b = colorCorrection(tempPixel0.blue);
+				} else {
+					// load foreground pixel without color correction
+					r = tempPixel0.red;
+					g = tempPixel0.green;
+					b = tempPixel0.blue;
+				}
+			} else {
+				if(bHasCC) {
+					// load background pixel with color correction
+					r = backgroundColorCorrection(pix->red);
+					g = backgroundColorCorrection(pix->green);
+					b = backgroundColorCorrection(pix->blue);
+				} else {
+					// load background pixel without color correction
+					r = pix->red;
+					g = pix->green;
+					b = pix->blue;
+				}
+			} */				
+				
+				
 				if (bHasForeground && getForegroundPixel(x, y, &tempPixel0)) {
 					r = tempPixel0.red;
 					g = tempPixel0.green;
