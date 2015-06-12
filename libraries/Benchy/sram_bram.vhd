@@ -57,13 +57,13 @@ architecture behavioral of sram_bram is
 		port (
 			clk: IN std_logic;
 			we: IN std_logic;
-			addr: IN std_logic_VECTOR(12 downto 0);
+			addr: IN std_logic_VECTOR(13 downto 0);
 			din: IN std_logic_VECTOR(35 downto 0);
 			dout: OUT std_logic_VECTOR(35 downto 0)
 		);
 	end component;
 
-	signal addra : std_logic_vector (12 downto 0) := (others => '0');
+	signal addra : std_logic_vector (13 downto 0) := (others => '0');
 	signal writeSignal : std_logic;
 	signal bramIn, bramOut : std_logic_vector (35 downto 0);
 

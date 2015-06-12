@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="BENCHY_sa_SumpBlaze_LogicAnalyzer16">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-6-12T6:34:29</timestamp>
+    <attr value="12" name="brams">
+        <trait vhdl="all:1" />
+        <trait valuetype="Integer" />
+    </attr>
+    <pin polarity="Input" x="0" y="-704" name="clk_32Mhz" />
+    <pin polarity="Input" x="0" y="-576" name="la0" />
+    <pin polarity="Input" x="0" y="-640" name="rx" />
+    <pin polarity="Output" x="512" y="-704" name="tx" />
+    <pin polarity="Input" x="0" y="-544" name="la1" />
+    <pin polarity="Input" x="0" y="-512" name="la2" />
+    <pin polarity="Input" x="0" y="-480" name="la3" />
+    <pin polarity="Input" x="0" y="-448" name="la4" />
+    <pin polarity="Input" x="0" y="-416" name="la5" />
+    <pin polarity="Input" x="0" y="-384" name="la6" />
+    <pin polarity="Input" x="0" y="-352" name="la7" />
+    <pin polarity="Input" x="0" y="-304" name="la8" />
+    <pin polarity="Input" x="0" y="-272" name="la9" />
+    <pin polarity="Input" x="0" y="-240" name="la10" />
+    <pin polarity="Input" x="0" y="-208" name="la11" />
+    <pin polarity="Input" x="0" y="-176" name="la12" />
+    <pin polarity="Input" x="0" y="-144" name="la13" />
+    <pin polarity="Input" x="0" y="-112" name="la14" />
+    <pin polarity="Input" x="0" y="-80" name="la15" />
+    <graph>
+        <rect width="384" x="64" y="-728" height="672" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-704" type="pin clk_32Mhz" />
+        <line x2="0" y1="-704" y2="-704" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-576" type="pin la0" />
+        <line x2="0" y1="-576" y2="-576" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-640" type="pin rx" />
+        <line x2="0" y1="-640" y2="-640" x1="64" />
+        <text style="fontsize:32;fontname:Arial" x="120" y="-416">Set the brams generic </text>
+        <text style="fontsize:32;fontname:Arial" x="132" y="-384">to define how many </text>
+        <text style="fontsize:32;fontname:Arial" x="124" y="-356">1024 byte bram blocks</text>
+        <text style="fontsize:32;fontname:Arial" x="208" y="-328"> to use.</text>
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="-704" type="pin tx" />
+        <line x2="512" y1="-704" y2="-704" x1="448" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-544" type="pin la1" />
+        <line x2="0" y1="-544" y2="-544" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-512" type="pin la2" />
+        <line x2="0" y1="-512" y2="-512" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-480" type="pin la3" />
+        <line x2="0" y1="-480" y2="-480" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-448" type="pin la4" />
+        <line x2="0" y1="-448" y2="-448" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-416" type="pin la5" />
+        <line x2="0" y1="-416" y2="-416" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-384" type="pin la6" />
+        <line x2="0" y1="-384" y2="-384" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-352" type="pin la7" />
+        <line x2="0" y1="-352" y2="-352" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-304" type="pin la8" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-272" type="pin la9" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-240" type="pin la10" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-208" type="pin la11" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-176" type="pin la12" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-144" type="pin la13" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-112" type="pin la14" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-80" type="pin la15" />
+        <text style="fontsize:40;fontname:Arial" x="-28" y="-12">Sump Blaze Logic Analyzer x16</text>
+        <line x2="0" y1="-304" y2="-304" x1="64" />
+        <line x2="0" y1="-272" y2="-272" x1="64" />
+        <line x2="0" y1="-240" y2="-240" x1="64" />
+        <line x2="0" y1="-208" y2="-208" x1="64" />
+        <line x2="0" y1="-176" y2="-176" x1="64" />
+        <line x2="0" y1="-144" y2="-144" x1="64" />
+        <line x2="0" y1="-112" y2="-112" x1="64" />
+        <line x2="0" y1="-80" y2="-80" x1="64" />
+    </graph>
+</symbol>

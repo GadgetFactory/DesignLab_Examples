@@ -43,7 +43,7 @@ entity Mem_Gen_36bit is
 	 brams: integer := 12
 	);
 	Port ( CLK : in  STD_LOGIC;
-		  ADDR : in  STD_LOGIC_VECTOR (12 downto 0);
+		  ADDR : in  STD_LOGIC_VECTOR (13 downto 0);
 		  WE : in  STD_LOGIC;
 		  DOUT : out  STD_LOGIC_VECTOR (35 downto 0);
 		  DIN : in  STD_LOGIC_VECTOR (35 downto 0));
@@ -51,7 +51,8 @@ end Mem_Gen_36bit;
 
 architecture Behavioral of Mem_Gen_36bit is
 
-	type   RAMBlDOut_Type is array(2**(ADDR'length-9)-1 downto 0) of  std_logic_vector(dout'range);
+	--type   RAMBlDOut_Type is array(2**(ADDR'length-9)-1 downto 0) of  std_logic_vector(dout'range);
+	type   RAMBlDOut_Type is array(31 downto 0) of  std_logic_vector(dout'range);
 	signal RAMBlDOut     : RAMBlDOut_Type;
 	signal WEB     : std_logic_vector((brams-1) downto 0);
 

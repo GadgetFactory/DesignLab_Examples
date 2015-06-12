@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<symbol version="7" name="BENCHY_sa_SumpBlaze_LogicAnalyzer32">
+    <symboltype>BLOCK</symboltype>
+    <timestamp>2015-6-12T6:48:35</timestamp>
+    <attr value="12" name="brams">
+        <trait vhdl="all:1" />
+        <trait valuetype="Integer" />
+    </attr>
+    <pin polarity="Input" x="0" y="-368" name="clk_32Mhz" />
+    <pin polarity="Input" x="0" y="-240" name="la(31:0)" />
+    <pin polarity="Input" x="0" y="-304" name="rx" />
+    <pin polarity="Output" x="512" y="-368" name="tx" />
+    <graph>
+        <rect width="384" x="64" y="-392" height="304" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-368" type="pin clk_32Mhz" />
+        <line x2="0" y1="-368" y2="-368" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-240" type="pin la(31:0)" />
+        <line x2="0" y1="-240" y2="-240" x1="64" />
+        <attrtext style="fontsize:24;fontname:Arial" attrname="PinName" x="72" y="-304" type="pin rx" />
+        <line x2="0" y1="-304" y2="-304" x1="64" />
+        <attrtext style="alignment:RIGHT;fontsize:24;fontname:Arial" attrname="PinName" x="440" y="-368" type="pin tx" />
+        <line x2="512" y1="-368" y2="-368" x1="448" />
+        <text style="fontsize:32;fontname:Arial" x="108" y="-200">Set the brams generic </text>
+        <text style="fontsize:32;fontname:Arial" x="120" y="-168">to define how many </text>
+        <text style="fontsize:32;fontname:Arial" x="112" y="-140">512 byte bram blocks</text>
+        <text style="fontsize:32;fontname:Arial" x="196" y="-112"> to use.</text>
+        <text style="fontsize:40;fontname:Arial" x="-24" y="-40">Sump Blaze Logic Analyzer x32</text>
+    </graph>
+</symbol>

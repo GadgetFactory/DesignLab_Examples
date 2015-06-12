@@ -7,7 +7,7 @@
     </attr>
     <netlist>
         <blockdef name="BENCHY_sa_SumpBlaze_LogicAnalyzer8">
-            <timestamp>2014-10-31T15:52:14</timestamp>
+            <timestamp>2015-6-12T6:20:12</timestamp>
             <rect width="384" x="64" y="-424" height="424" />
             <line x2="0" y1="-400" y2="-400" x1="64" />
             <line x2="0" y1="-272" y2="-272" x1="64" />
@@ -50,6 +50,37 @@
             <line x2="144" y1="-528" y2="-480" x1="144" />
             <line x2="160" y1="-528" y2="-476" x1="160" />
         </blockdef>
+        <blockdef name="BENCHY_sa_SumpBlaze_LogicAnalyzer16">
+            <timestamp>2015-6-12T6:36:9</timestamp>
+            <rect width="384" x="64" y="-728" height="672" />
+            <line x2="0" y1="-704" y2="-704" x1="64" />
+            <line x2="0" y1="-576" y2="-576" x1="64" />
+            <line x2="0" y1="-640" y2="-640" x1="64" />
+            <line x2="512" y1="-704" y2="-704" x1="448" />
+            <line x2="0" y1="-544" y2="-544" x1="64" />
+            <line x2="0" y1="-512" y2="-512" x1="64" />
+            <line x2="0" y1="-480" y2="-480" x1="64" />
+            <line x2="0" y1="-448" y2="-448" x1="64" />
+            <line x2="0" y1="-416" y2="-416" x1="64" />
+            <line x2="0" y1="-384" y2="-384" x1="64" />
+            <line x2="0" y1="-352" y2="-352" x1="64" />
+            <line x2="0" y1="-304" y2="-304" x1="64" />
+            <line x2="0" y1="-272" y2="-272" x1="64" />
+            <line x2="0" y1="-240" y2="-240" x1="64" />
+            <line x2="0" y1="-208" y2="-208" x1="64" />
+            <line x2="0" y1="-176" y2="-176" x1="64" />
+            <line x2="0" y1="-144" y2="-144" x1="64" />
+            <line x2="0" y1="-112" y2="-112" x1="64" />
+            <line x2="0" y1="-80" y2="-80" x1="64" />
+        </blockdef>
+        <blockdef name="BENCHY_sa_SumpBlaze_LogicAnalyzer32">
+            <timestamp>2015-6-12T6:44:31</timestamp>
+            <rect width="384" x="64" y="-392" height="304" />
+            <line x2="0" y1="-368" y2="-368" x1="64" />
+            <line x2="0" y1="-240" y2="-240" x1="64" />
+            <line x2="0" y1="-304" y2="-304" x1="64" />
+            <line x2="512" y1="-368" y2="-368" x1="448" />
+        </blockdef>
         <block symbolname="BENCHY_sa_SumpBlaze_LogicAnalyzer8" name="XLXI_49">
             <blockpin name="clk_32Mhz" />
             <blockpin name="la0" />
@@ -82,8 +113,35 @@
             <blockpin name="sin_dac_out" />
             <blockpin name="cos_dac_out" />
             <blockpin name="clk_in" />
-            <blockpin name="wishbone_in(61:0)" />
-            <blockpin name="wishbone_out(33:0)" />
+            <blockpin name="wishbone_in(100:0)" />
+            <blockpin name="wishbone_out(100:0)" />
+        </block>
+        <block symbolname="BENCHY_sa_SumpBlaze_LogicAnalyzer16" name="XLXI_53">
+            <blockpin name="clk_32Mhz" />
+            <blockpin name="la0" />
+            <blockpin name="rx" />
+            <blockpin name="tx" />
+            <blockpin name="la1" />
+            <blockpin name="la2" />
+            <blockpin name="la3" />
+            <blockpin name="la4" />
+            <blockpin name="la5" />
+            <blockpin name="la6" />
+            <blockpin name="la7" />
+            <blockpin name="la8" />
+            <blockpin name="la9" />
+            <blockpin name="la10" />
+            <blockpin name="la11" />
+            <blockpin name="la12" />
+            <blockpin name="la13" />
+            <blockpin name="la14" />
+            <blockpin name="la15" />
+        </block>
+        <block symbolname="BENCHY_sa_SumpBlaze_LogicAnalyzer32" name="XLXI_54">
+            <blockpin name="clk_32Mhz" />
+            <blockpin name="la(31:0)" />
+            <blockpin name="rx" />
+            <blockpin name="tx" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="1760" height="1360">
@@ -92,6 +150,10 @@
         <instance x="832" y="512" name="XLXI_50" orien="R0">
         </instance>
         <instance x="608" y="1216" name="XLXI_51" orien="R0">
+        </instance>
+        <instance x="1072" y="1360" name="XLXI_53" orien="R0">
+        </instance>
+        <instance x="64" y="1136" name="XLXI_54" orien="R0">
         </instance>
     </sheet>
 </drawing>
