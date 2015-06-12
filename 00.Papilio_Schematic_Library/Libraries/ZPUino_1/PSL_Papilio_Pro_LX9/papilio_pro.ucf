@@ -36,6 +36,8 @@ NET TXD       LOC="P105" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;          				
 NET ext_pins_out(3)       LOC="P105" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST;          										# TX
 NET RXD       LOC="P101" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST; 	    											# RX
 NET ext_pins_in(2)       LOC="P101" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST; 	    											# RX
+
+#Individual Wing Pins
 NET WING_AL0     LOC="P48"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A0
 NET WING_AL1     LOC="P51"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A1
 NET WING_AL2     LOC="P56"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A2
@@ -84,6 +86,58 @@ NET WING_CH4     LOC="P131" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;       
 NET WING_CH5     LOC="P132" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C13
 NET WING_CH6     LOC="P133" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C14
 NET WING_CH7     LOC="P134" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C15
+
+#Wing Pins in bus
+NET WA(0)     LOC="P48"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A0
+NET WA(1)     LOC="P51"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A1
+NET WA(2)     LOC="P56"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A2
+NET WA(3)     LOC="P58"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A3
+NET WA(4)     LOC="P61"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A4
+NET WA(5)     LOC="P66"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A5
+NET WA(6)     LOC="P67"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A6
+NET WA(7)     LOC="P75"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A7
+NET WA(8)     LOC="P79"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A8
+NET WA(9)     LOC="P81"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A9
+NET WA(10)     LOC="P83"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A10
+NET WA(11)     LOC="P85"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A11
+NET WA(12)     LOC="P88"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A12
+NET WA(13)     LOC="P93"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A13
+NET WA(14)     LOC="P98"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A14
+NET WA(15)     LOC="P100" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # A15
+
+NET WB(0)     LOC="P99"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B0
+NET WB(1)     LOC="P97"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B1
+NET WB(2)     LOC="P92"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B2
+NET WB(3)     LOC="P87"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B3
+NET WB(4)     LOC="P84"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B4
+NET WB(5)     LOC="P82"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B5
+NET WB(6)     LOC="P80"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B6
+NET WB(7)     LOC="P78"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B7
+NET WB(8)     LOC="P74"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B8
+NET WB(9)     LOC="P95"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B9
+NET WB(10)     LOC="P62"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B10
+NET WB(11)     LOC="P59"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B11
+NET WB(12)     LOC="P57"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B12
+NET WB(13)     LOC="P55"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B13
+NET WB(14)     LOC="P50"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B14
+NET WB(15)     LOC="P47"  | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # B15
+
+NET WC(0)     LOC="P114" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C0
+NET WC(1)     LOC="P115" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C1
+NET WC(2)     LOC="P116" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C2
+NET WC(3)     LOC="P117" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C3
+NET WC(4)     LOC="P118" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C4
+NET WC(5)     LOC="P119" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C5
+NET WC(6)     LOC="P120" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C6
+NET WC(7)     LOC="P121" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C7
+NET WC(8)     LOC="P123" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C8
+NET WC(9)     LOC="P124" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C9
+NET WC(10)     LOC="P126" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C10
+NET WC(11)     LOC="P127" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C11
+NET WC(12)     LOC="P131" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C12
+NET WC(13)     LOC="P132" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C13
+NET WC(14)     LOC="P133" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C14
+NET WC(15)     LOC="P134" | IOSTANDARD=LVTTL | SLEW = FAST | DRIVE = 8;                                # C15
 
 NET DRAM_ADDR(0)  LOC="P140" | IOSTANDARD=LVTTL | SLEW=FAST;                                # ADDR0
 NET DRAM_ADDR(1)  LOC="P139" | IOSTANDARD=LVTTL | SLEW=FAST;                                # ADDR1

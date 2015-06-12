@@ -37,6 +37,7 @@ NET ext_pins_out(25)       LOC="P141" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST; 
 NET RXD       LOC="P46" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST; 	    											# RX
 NET ext_pins_in(2)       LOC="P46" | IOSTANDARD=LVTTL | DRIVE=8 | SLEW=FAST; 	    											# RX
 
+# Arduino Pinouts
 NET Arduino_0          LOC="P116" | IOSTANDARD=LVTTL;                                # A0
 NET Arduino_1          LOC="P117" | IOSTANDARD=LVTTL;                                # A1
 NET Arduino_2          LOC="P118" | IOSTANDARD=LVTTL;                                # A2
@@ -78,22 +79,81 @@ NET Arduino_48         LOC="P55"  | IOSTANDARD=LVTTL;                           
 NET Arduino_50         LOC="P50"  | IOSTANDARD=LVTTL;                                # C14
 NET Arduino_52         LOC="P47"  | IOSTANDARD=LVTTL;                                # C15
 
-NET Arduino_23     LOC="P98"  | IOSTANDARD=LVTTL ;                                
-NET Arduino_25     LOC="P95" | IOSTANDARD=LVTTL ;                                	
-NET Arduino_27     LOC="P92"  | IOSTANDARD=LVTTL ;                                
-NET Arduino_29     LOC="P87"  | IOSTANDARD=LVTTL ;                                
-NET Arduino_31     LOC="P84"  | IOSTANDARD=LVTTL ;                               
-NET Arduino_33     LOC="P82"  | IOSTANDARD=LVTTL ;                              
-NET Arduino_35     LOC="P80"  | IOSTANDARD=LVTTL ;                              
-NET Arduino_37     LOC="P78"  | IOSTANDARD=LVTTL ;                            
-NET Arduino_39     LOC="P74"  | IOSTANDARD=LVTTL ;                             
-NET Arduino_41     LOC="P66"  | IOSTANDARD=LVTTL ;                            
-NET Arduino_43     LOC="P61"  | IOSTANDARD=LVTTL ;                             
-NET Arduino_45     LOC="P58"  | IOSTANDARD=LVTTL ;                               
-NET Arduino_47     LOC="P56"  | IOSTANDARD=LVTTL ;                              
-NET Arduino_49     LOC="P51"  | IOSTANDARD=LVTTL ;                             
-NET Arduino_51     LOC="P48"  | IOSTANDARD=LVTTL ;                           
-NET Arduino_53     LOC="P39"  | IOSTANDARD=LVTTL ;    
+NET Arduino_23     LOC="P98"  | IOSTANDARD=LVTTL ;												 # D15                                
+NET Arduino_25     LOC="P95" | IOSTANDARD=LVTTL ;                                	 # D14
+NET Arduino_27     LOC="P92"  | IOSTANDARD=LVTTL ;                                   # D13
+NET Arduino_29     LOC="P87"  | IOSTANDARD=LVTTL ;                                   # D12
+NET Arduino_31     LOC="P84"  | IOSTANDARD=LVTTL ;                                   # D11
+NET Arduino_33     LOC="P82"  | IOSTANDARD=LVTTL ;                                   # D10
+NET Arduino_35     LOC="P80"  | IOSTANDARD=LVTTL ;                                   # D9
+NET Arduino_37     LOC="P78"  | IOSTANDARD=LVTTL ;                                   # D8
+NET Arduino_39     LOC="P74"  | IOSTANDARD=LVTTL ;                                   # D7
+NET Arduino_41     LOC="P66"  | IOSTANDARD=LVTTL ;                                   # D6
+NET Arduino_43     LOC="P61"  | IOSTANDARD=LVTTL ;                                   # D5
+NET Arduino_45     LOC="P58"  | IOSTANDARD=LVTTL ;                               	 # D4
+NET Arduino_47     LOC="P56"  | IOSTANDARD=LVTTL ;                              		 # D3
+NET Arduino_49     LOC="P51"  | IOSTANDARD=LVTTL ;                             		 # D2
+NET Arduino_51     LOC="P48"  | IOSTANDARD=LVTTL ;                           			 # D1
+NET Arduino_53     LOC="P39"  | IOSTANDARD=LVTTL ;    										 # D0
+
+# Wing Bus Pinouts
+NET WA(0)          LOC="P116" | IOSTANDARD=LVTTL;                                # A0
+NET WA(1)          LOC="P117" | IOSTANDARD=LVTTL;                                # A1
+NET WA(2)          LOC="P118" | IOSTANDARD=LVTTL;                                # A2
+NET WA(3)          LOC="P119" | IOSTANDARD=LVTTL;                                # A3
+NET WA(4)          LOC="P120" | IOSTANDARD=LVTTL;                                # A4
+NET WA(5)          LOC="P121" | IOSTANDARD=LVTTL;                                # A5
+NET WA(6)          LOC="P123" | IOSTANDARD=LVTTL;                                # A6
+NET WA(7)          LOC="P124" | IOSTANDARD=LVTTL;                                # A7
+NET WA(8)          LOC="P126" | IOSTANDARD=LVTTL;                                # A8
+NET WA(9)          LOC="P127" | IOSTANDARD=LVTTL;                                # A9
+NET WA(10)         LOC="P131" | IOSTANDARD=LVTTL;                                # A10
+NET WA(11)         LOC="P132" | IOSTANDARD=LVTTL;                                # A11
+NET WA(12)         LOC="P133" | IOSTANDARD=LVTTL;                                # A12
+NET WA(13)         LOC="P134" | IOSTANDARD=LVTTL;                                # A13
+
+NET WB(7)          LOC="P115" | IOSTANDARD=LVTTL;                                # B7
+NET WB(6)          LOC="P114" | IOSTANDARD=LVTTL;                                # B6
+NET WB(5)          LOC="P112" | IOSTANDARD=LVTTL;                                # B5
+NET WB(4)          LOC="P111" | IOSTANDARD=LVTTL;                                # B4
+NET WB(3)          LOC="P105" | IOSTANDARD=LVTTL;                                # B3
+NET WB(2)          LOC="P102" | IOSTANDARD=LVTTL;                                # B2
+NET WB(1)          LOC="P101" | IOSTANDARD=LVTTL;                                # B1
+NET WB(0)          LOC="P100" | IOSTANDARD=LVTTL;                                # B0                        
+
+NET WC(0)          LOC="P99"  | IOSTANDARD=LVTTL;                                # C0
+NET WC(1)          LOC="P97"  | IOSTANDARD=LVTTL;                                # C1
+NET WC(2)          LOC="P93"  | IOSTANDARD=LVTTL;                                # C2
+NET WC(3)          LOC="P88"  | IOSTANDARD=LVTTL;                                # C3
+NET WC(4)          LOC="P85"  | IOSTANDARD=LVTTL;                                # C4
+NET WC(5)          LOC="P83"  | IOSTANDARD=LVTTL;                                # C5
+NET WC(6)          LOC="P81"  | IOSTANDARD=LVTTL;                                # C6
+NET WC(7)          LOC="P79"  | IOSTANDARD=LVTTL;                                # C7
+NET WC(8)          LOC="P75"  | IOSTANDARD=LVTTL;                                # C8
+NET WC(9)          LOC="P67"  | IOSTANDARD=LVTTL;                                # C9
+NET WC(10)         LOC="P62"  | IOSTANDARD=LVTTL;                                # C10
+NET WC(11)         LOC="P59"  | IOSTANDARD=LVTTL;                                # C11
+NET WC(12)         LOC="P57"  | IOSTANDARD=LVTTL;                                # C12
+NET WC(13)         LOC="P55"  | IOSTANDARD=LVTTL;                                # C13
+NET WC(14)         LOC="P50"  | IOSTANDARD=LVTTL;                                # C14
+NET WC(15)         LOC="P47"  | IOSTANDARD=LVTTL;                                # C15
+
+NET WD(15)     LOC="P98"  | IOSTANDARD=LVTTL ;												 # D15                                
+NET WD(14)     LOC="P95" | IOSTANDARD=LVTTL ;                                	 # D14
+NET WD(13)     LOC="P92"  | IOSTANDARD=LVTTL ;                                   # D13
+NET WD(12)     LOC="P87"  | IOSTANDARD=LVTTL ;                                   # D12
+NET WD(11)     LOC="P84"  | IOSTANDARD=LVTTL ;                                   # D11
+NET WD(10)     LOC="P82"  | IOSTANDARD=LVTTL ;                                   # D10
+NET WD(9)     LOC="P80"  | IOSTANDARD=LVTTL ;                                   # D9
+NET WD(8)     LOC="P78"  | IOSTANDARD=LVTTL ;                                   # D8
+NET WD(7)     LOC="P74"  | IOSTANDARD=LVTTL ;                                   # D7
+NET WD(6)     LOC="P66"  | IOSTANDARD=LVTTL ;                                   # D6
+NET WD(5)     LOC="P61"  | IOSTANDARD=LVTTL ;                                   # D5
+NET WD(4)     LOC="P58"  | IOSTANDARD=LVTTL ;                               	 # D4
+NET WD(3)     LOC="P56"  | IOSTANDARD=LVTTL ;                              		 # D3
+NET WD(2)     LOC="P51"  | IOSTANDARD=LVTTL ;                             		 # D2
+NET WD(1)     LOC="P48"  | IOSTANDARD=LVTTL ;                           			 # D1
+NET WD(0)     LOC="P39"  | IOSTANDARD=LVTTL ;    										 # D0
 
 # SRAM
 
