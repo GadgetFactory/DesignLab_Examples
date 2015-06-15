@@ -52,7 +52,17 @@
   * If you find any GIFs that won't play properly, please attach them to a new
   * Issue post in the GitHub repo here:
   * https://github.com/pixelmatix/AnimatedGIFs/issues
+  *
   */
+  
+/*
+    Papilio Notes:
+    
+    Hardware: Use a RGB LED Panel Wing connected to row D on the Papilio DUO and row C on the Papilio Pro.
+    http://store.gadgetfactory.net/rgb-led-panel-wing/?page_context=category&faceted_search=0
+    
+    This sketch has been modified to display all of the GIF files you place in the smallFS directory instead of from an SD card. Press CTRL-K to bring up the sketch directory with the smallFS folder.
+*/
 
 #define circuit RGB_Matrix
 
@@ -100,7 +110,6 @@ void drawPixelCallback(int16_t x, int16_t y, uint8_t red, uint8_t green, uint8_t
 
 // Setup method runs once, when the sketch starts
 void setup() {
-    //delay(4000);
 
     setScreenClearCallback(screenClearCallback);
     setUpdateScreenCallback(updateScreenCallback);
@@ -126,13 +135,6 @@ void setup() {
 
     // initialize the SD card at full speed
     pinMode(SD_CS, OUTPUT);
-//    if (!SD.begin(SD_CS, WISHBONESLOT)) {
-//        matrix.scrollText("No SD card", -1);
-//        Serial.println("No SD card");
-//        while(1);
-//    }
-//    Serial.println("Finished SD init");
-
 
   SPI.begin();
   // put your setup code here, to run once:
@@ -191,7 +193,6 @@ void loop() {
         futureTime = millis() + (DISPLAY_TIME_SECONDS * 1000);
 
         while (futureTime > millis()) {
-            //processGIFFile(strcat("/smallfs/",pathname));
             processGIFFile(pathname);
         }
     }

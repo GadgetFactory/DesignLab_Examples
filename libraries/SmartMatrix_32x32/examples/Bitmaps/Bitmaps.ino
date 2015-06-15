@@ -4,6 +4,16 @@
  * See more details here:
  * http://docs.pixelmatix.com/SmartMatrix/library.html#drawing-raw-bitmaps
  */
+ 
+/*
+    Papilio Notes:
+    
+    Hardware: Use a RGB LED Panel Wing connected to row D on the Papilio DUO and row C on the Papilio Pro.
+    http://store.gadgetfactory.net/rgb-led-panel-wing/?page_context=category&faceted_search=0
+    
+*/
+
+#define circuit RGB_Matrix 
 
 #include <SmartMatrix_32x32.h>
 
