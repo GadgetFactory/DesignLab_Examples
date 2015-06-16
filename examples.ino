@@ -41,6 +41,11 @@ TABLE OF CONTENTS FOR EXAMPLE PROJECTS
   example://Circuit_Library_Descriptions/Circuit_Library_Descriptions.ino
 
 New/Featured
+  RGB LED Matrix Panel
+        Use the SmartMatrix library to make cool graphics on a 32x32 RGB LED Panel with 1024 RGB pixels.
+        The SmartMatrix Animated GIF player works as well as 1-Pixel Pacman from HackaDay.
+        Go to File/Examples/SmartMatrix_32x32
+
   ZPUino VGA Adapter
 	This exciting VGA adapter lets you change resolutions on the fly and use the AdaFruit GFX library to program it. This is the latest and greatest VGA adapter.
 	Go to File/Examples/ZPUino_VGA_Adapter

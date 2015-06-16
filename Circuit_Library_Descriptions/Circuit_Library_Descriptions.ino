@@ -4,6 +4,26 @@ DesignLab contains many circuits that have already been generated for you. This 
 It's easy to associate any one of these circuits to your sketch. Simply do a:
 #define circuit <circuit_name>
 
+RGB_Matrix Circuit
+  The RGB_Matrix circuit connects a 32x32 RGB LED Matrix Panel to the Papilio. 
+  It contains:
+    -I2C controller, on Wishbone slot 5, connected to CL for the Wii Nunchuck controller.
+    -RGB Panel controller on Wishbone slot 9.
+    -RGB Panel Wing connector on row D for the DUO and row C for the Pro.
+    -SPI Master, on Wishbone slot 13, and a SD Card Wing on CH.
+
+  Special Notes:
+    Pullups are placed on BL so a Joystick can be connected for 1-Pixel Pacman.
+  
+  Supported boards:
+    Papilio DUO
+    Papilio Pro  
+  
+  To use, include the following line in your sketch:
+  #define circuit RGB_Matrix
+
+*******************************************************************************************************************************************************************  
+
 Arcade_MegaWing Circuit
   The Arcade_MegaWing circuit is intended to be used with an Arcade MegaWing connected to a Papilio Pro or Papilio One 500K.
   It contains:
