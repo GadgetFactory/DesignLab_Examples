@@ -2,6 +2,7 @@
 
 #include "i2c.h"
 //#include"config.h"
+#define OV7670_ADDRESS 0x21
 #define OV7670_REG_NUM  166
 const char OV7670_reg[166][2]={
   {0x67,0xaa},
@@ -210,8 +211,9 @@ static byte outputmode = 1;
 volatile int OV_State=0;
 int incomingByte;
 int hCount = 0;
-int hrefPrev;
-unsigned char buf[201];
+int hrefCur = 0;
+int hrefPrev = 0;
+unsigned char buf[202];
 
 void setup(){
   delay(3000);  
@@ -219,14 +221,39 @@ void setup(){
   
     I2C.begin(100000);
     I2C.enable(); 
+    
+    writeSensor(0x12,0x80);//reset
+    delay(100);
+    writeSensor(0x0C,0x08);//enable scaling
+    delay(100);
+    writeSensor(0x12,0x09);//set to RGB and QCIF
+    delay(100);
+    
+//    Serial.print("Read sub-address 1: ");
+//    Serial.println(readSensor(0x01),HEX);
+//    delay(1);
+//    Serial.print("Read sub-address 0: ");
+//    Serial.println(readSensor(0x00),HEX);       
    
-   Serial.println(I2C.start(0x21,1));
+   readSensor(0x00);  //Set address for read to 0
+   delay(1);
+   Serial.println(I2C.start(OV7670_ADDRESS,1,0));
     if (I2C.rx(buf,sizeof(buf),true)!=0) {
         Serial.println("Error read");
         //return;
     }   
-//   //I2C.rx(buf,1,true);
-   Serial.println("Finished reading");
+   Serial.println("Read after write");
+   
+  for(int i=0;i<sizeof(buf);i++)
+  {
+    Serial.print(i,HEX);
+    Serial.print(": ");
+    Serial.println(buf[i],HEX); 
+  }
+
+
+  
+  
 //   Serial.println(buf[0]);
 //   Serial.println(buf[1]);
   //output
@@ -256,40 +283,26 @@ void setup(){
 
 void loop(){
   //Serial.println(readSensor(0x01));
-  Serial.println(".");
-  delay(1000);
+//  Serial.println(".");
+//  delay(1000);
   
-//   Serial.println(I2C.start(0x21,1));
-//    if (I2C.rx(buf,2,true)!=0) {
-//        Serial.println("Error read");
-//        //return;
-//    }   
-//   //I2C.rx(buf,1,true);
-//   Serial.println("Finished reading");
-//   Serial.println(buf[0],HEX);
-//   Serial.println(buf[1],HEX); 
 
-  for(int i=0;i<sizeof(buf);i++)
+  if (digitalRead(VSYNC) == 0)  // meaning we are on a frame
   {
-    Serial.print(i,HEX);
-    Serial.print(": ");
-    Serial.println(buf[i],HEX); 
+    hrefCur = digitalRead(HREF); 
+    if (hrefCur == 1 && hrefPrev == 0) // detect rising edge of href - meaning we are on a line
+    {
+      Serial.println(hCount);
+      hCount++;
+    }
+    hrefPrev = hrefCur;
+  }
+  else
+  {
+    //Serial.println(hCount);
+    hCount = 0;
   }
   
-   
-//  if (digitalRead(VSYNC) == 0)  // meaning we are on a frame
-//  {
-//    if (digitalRead(HREF) == 1) // meaning we are on a line
-//    {
-//      Serial.println(hCount);
-//      hCount++;
-//    }
-//  }
-//  else
-//  {
-//    Serial.println(hCount);
-//    hCount = 0;
-//  }
     
   
   
@@ -362,10 +375,10 @@ void loop(){
 //}
 
 void Sensorinit(){
-  pinMode(SCCB_SCL,OUTPUT);
-  pinMode(SCCB_SDA,OUTPUT);
-  digitalWrite(SCCB_SDA,HIGH);
-  digitalWrite(SCCB_SCL,HIGH);
+//  pinMode(SCCB_SCL,OUTPUT);
+//  pinMode(SCCB_SDA,OUTPUT);
+//  digitalWrite(SCCB_SDA,HIGH);
+//  digitalWrite(SCCB_SCL,HIGH);
   delayMicroseconds(10);
   writeSensor(0x12,0x80);//reset
   if(readSensor(0x0A)==0x76){
@@ -378,135 +391,175 @@ void Sensorinit(){
   }
 }
 
+//orig
+//byte readSensor(byte regID){
+//  byte temp;
+//  SCCB_Start();
+//  if(SCCB_Write(0x42)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Read ERROR1");
+//  }
+//  delayMicroseconds(10);
+//  if(SCCB_Write(regID)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Read ERROR2");
+//  }
+//  SCCB_Stop();
+//  delayMicroseconds(10);
+//  SCCB_Start();
+//  if(SCCB_Write(0x43)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Read ERROR3");
+//  }
+//  delayMicroseconds(10);
+//  temp=SCCB_Read();
+//  SCCB_NASK();
+//  SCCB_Stop();
+//  return temp;
+//}
+
 byte readSensor(byte regID){
   byte temp;
-  SCCB_Start();
-  if(SCCB_Write(0x42)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Read ERROR1");
-  }
+  //write address
+  int err = 0;
+  if (I2C.start(OV7670_ADDRESS,0)!=0)
+      err = -1;
+  if (err==0)
+      if (I2C.tx(regID)!=0)
+          err = -1;
+  I2C.stop();  
+  if (err==-1)
+     Serial.println("There was an error in reading");   
   delayMicroseconds(10);
-  if(SCCB_Write(regID)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Read ERROR2");
-  }
-  SCCB_Stop();
-  delayMicroseconds(10);
-  SCCB_Start();
-  if(SCCB_Write(0x43)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Read ERROR3");
-  }
-  delayMicroseconds(10);
-  temp=SCCB_Read();
-  SCCB_NASK();
-  SCCB_Stop();
+  //read data
+   I2C.start(OV7670_ADDRESS,1);
+    if (I2C.rx(buf,1,true)!=0) {
+        Serial.println("Error read");
+        //return;
+    } 
+   temp = buf[0];    
   return temp;
 }
 
 void writeSensor(byte regID, byte regDat){
-  SCCB_Start();
-  if(SCCB_Write(0x42)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Write ERROR1");
-  }
-  delayMicroseconds(10);
-  if(SCCB_Write(regID)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Write ERROR2");
-  }
-  delayMicroseconds(10);
-  if(SCCB_Write(regDat)==0){
-    SCCB_Stop();
-    Serial.print(regID);
-    Serial.println(" Write ERROR3");
-  }
-  delayMicroseconds(10);
-  SCCB_Stop();
+    int err = 0;
+    if (I2C.start(OV7670_ADDRESS,0)!=0)
+        err = -1;
+    if (err==0)
+        if (I2C.tx(regID)!=0)
+            err = -1;
+    if (err==0)
+        if (I2C.tx(regDat)!=0)
+            err = -1;
+    I2C.stop();  
+    if (err==-1)
+       Serial.println("There was an error in writing");   
 }
 
-void SCCB_Start(){
-  digitalWrite(SCCB_SDA,HIGH);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,HIGH);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SDA,LOW);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,LOW);
-  delayMicroseconds(30);
-}
+//orig
+//void writeSensor(byte regID, byte regDat){
+//  SCCB_Start();
+//  if(SCCB_Write(0x42)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Write ERROR1");
+//  }
+//  delayMicroseconds(10);
+//  if(SCCB_Write(regID)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Write ERROR2");
+//  }
+//  delayMicroseconds(10);
+//  if(SCCB_Write(regDat)==0){
+//    SCCB_Stop();
+//    Serial.print(regID);
+//    Serial.println(" Write ERROR3");
+//  }
+//  delayMicroseconds(10);
+//  SCCB_Stop();
+//}
 
-void SCCB_Stop(){
-  digitalWrite(SCCB_SDA,LOW);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,HIGH);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SDA,HIGH);
-  delayMicroseconds(20);
-}
-
-void SCCB_NASK(){
-  digitalWrite(SCCB_SDA,HIGH);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,HIGH);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,LOW);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SDA,LOW);
-  delayMicroseconds(20);
-}
-
-byte SCCB_Write(byte data){
-  for(byte i=0x80;i>0;i>>=1){
-    if(data&i){
-      digitalWrite(SCCB_SDA,HIGH);
-    }
-    else{
-      digitalWrite(SCCB_SDA,LOW);
-    }
-    delayMicroseconds(20);
-    digitalWrite(SCCB_SCL,HIGH);
-    delayMicroseconds(20);
-    digitalWrite(SCCB_SCL,LOW);
-    delayMicroseconds(20);
-  }
-  //digitalWrite(SCCB_SDA,HIGH);
-  byte temp;
-  pinMode(SCCB_SDA,INPUT);
-  delayMicroseconds(20);
-  digitalWrite(SCCB_SCL,HIGH);
-  delayMicroseconds(20);
-  if(digitalRead(SCCB_SDA)){
-    temp=0;
-  }   //SDA=1发送失败，返回0}
-  else {
-    temp=1;
-  } 
-  digitalWrite(SCCB_SCL,LOW);
-  delayMicroseconds(20);
-  pinMode(SCCB_SDA,OUTPUT); 
-  return temp;
-}
-
-byte SCCB_Read(){
-  byte data;
-  pinMode(SCCB_SDA,INPUT);
-  delayMicroseconds(50);
-  for(int i=0;i<8;i++){
-    digitalWrite(SCCB_SCL,HIGH);
-    data <<= 1;
-    delayMicroseconds(20);
-    if(digitalRead(SCCB_SDA)){
-      data++;
-    }
-    digitalWrite(SCCB_SCL,LOW);
-    delayMicroseconds(20);
-  }
-  pinMode(SCCB_SDA,OUTPUT); 
-  return data;
-}
+//void SCCB_Start(){
+//  digitalWrite(SCCB_SDA,HIGH);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,HIGH);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SDA,LOW);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,LOW);
+//  delayMicroseconds(30);
+//}
+//
+//void SCCB_Stop(){
+//  digitalWrite(SCCB_SDA,LOW);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,HIGH);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SDA,HIGH);
+//  delayMicroseconds(20);
+//}
+//
+//void SCCB_NASK(){
+//  digitalWrite(SCCB_SDA,HIGH);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,HIGH);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,LOW);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SDA,LOW);
+//  delayMicroseconds(20);
+//}
+//
+//byte SCCB_Write(byte data){
+//  for(byte i=0x80;i>0;i>>=1){
+//    if(data&i){
+//      digitalWrite(SCCB_SDA,HIGH);
+//    }
+//    else{
+//      digitalWrite(SCCB_SDA,LOW);
+//    }
+//    delayMicroseconds(20);
+//    digitalWrite(SCCB_SCL,HIGH);
+//    delayMicroseconds(20);
+//    digitalWrite(SCCB_SCL,LOW);
+//    delayMicroseconds(20);
+//  }
+//  //digitalWrite(SCCB_SDA,HIGH);
+//  byte temp;
+//  pinMode(SCCB_SDA,INPUT);
+//  delayMicroseconds(20);
+//  digitalWrite(SCCB_SCL,HIGH);
+//  delayMicroseconds(20);
+//  if(digitalRead(SCCB_SDA)){
+//    temp=0;
+//  }   //SDA=1发送失败，返回0}
+//  else {
+//    temp=1;
+//  } 
+//  digitalWrite(SCCB_SCL,LOW);
+//  delayMicroseconds(20);
+//  pinMode(SCCB_SDA,OUTPUT); 
+//  return temp;
+//}
+//
+//byte SCCB_Read(){
+//  byte data;
+//  pinMode(SCCB_SDA,INPUT);
+//  delayMicroseconds(50);
+//  for(int i=0;i<8;i++){
+//    digitalWrite(SCCB_SCL,HIGH);
+//    data <<= 1;
+//    delayMicroseconds(20);
+//    if(digitalRead(SCCB_SDA)){
+//      data++;
+//    }
+//    digitalWrite(SCCB_SCL,LOW);
+//    delayMicroseconds(20);
+//  }
+//  pinMode(SCCB_SDA,OUTPUT); 
+//  return data;
+//}
