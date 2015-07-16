@@ -211,8 +211,11 @@ static byte outputmode = 1;
 volatile int OV_State=0;
 int incomingByte;
 int hCount = 0;
+int pCount = 0;
 int hrefCur = 0;
 int hrefPrev = 0;
+int pclkCur = 0;
+int pclkPrev = 0;
 unsigned char buf[202];
 
 void setup(){
@@ -286,22 +289,67 @@ void loop(){
 //  Serial.println(".");
 //  delay(1000);
   
+  //Wait for VSYNC to go high
+  while(digitalRead(VSYNC) == 0){
+    //Serial.println("Waiting for VSYNC LOW");
+//    Serial.println(hCount);       
+//    hCount = 0;
+//    pCount = 0;  
+  } 
+  
+  //Wait for VSYNC to go low
+  while(digitalRead(VSYNC) == 1){
+    //Serial.println("Waiting for VSYNC HIGH");
+  }   
+  hCount = 0;
+  Serial.println("VSYNC went low");
+  
+  int vsyncLow = 1;
+  while(vsyncLow){
+    //Wait for HREF to go low
+    while(digitalRead(HREF) == 1){
+    } 
+    
+    //Wait for HREF to go high
+    while(digitalRead(HREF) == 0){
+      if (digitalRead(VSYNC) == 1)
+        vsyncLow = 0;
+    }   
+    //Serial.println("HREF went high");
+    Serial.println(hCount); 
+    hCount++; 
+  }
+  
+  
 
-  if (digitalRead(VSYNC) == 0)  // meaning we are on a frame
-  {
-    hrefCur = digitalRead(HREF); 
-    if (hrefCur == 1 && hrefPrev == 0) // detect rising edge of href - meaning we are on a line
-    {
-      Serial.println(hCount);
-      hCount++;
-    }
-    hrefPrev = hrefCur;
-  }
-  else
-  {
-    //Serial.println(hCount);
-    hCount = 0;
-  }
+//  while(digitalRead(HREF) == 0){}  //Wait for HREF to go high
+//  hCount++;
+//  Serial.print("hCount: ");
+//  Serial.println(hCount);   
+ 
+  //while(digitalRead(HREF) == 1){Serial.println("in href high");delay(1);} 
+
+//    hrefCur = digitalRead(HREF); 
+//    if (hrefCur == 1 && hrefPrev == 0) // detect rising edge of href - meaning we are on a line
+//    {
+//      while(digitalRead(HREF) == 1)
+//      {
+//        pclkCur = digitalRead(PCLK);
+//        if (pclkCur == 1 && pclkPrev == 0) // detect rising edge of pclk - meaning we have a new pixel
+//        {
+//          Serial.print("pCount: ");
+//          Serial.println(pCount);         
+//          pCount++;  
+//        }
+//        pclkPrev = pclkCur;      
+//      }     
+//      pCount = 0; 
+//      Serial.print("hCount: ");
+//      Serial.println(hCount);     
+//      hCount++;
+//    }
+//    hrefPrev = hrefCur;
+
   
     
   
