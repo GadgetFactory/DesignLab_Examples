@@ -120,7 +120,9 @@ PAPILIO DUO PROJECTS
         
   AVR to Wishbone Bridge
         How to access Wishbone peripherals from the AVR.
-        Go to File/Examples/AVR_Wishbone_Bridge
+        You can follow a tutorial showing how to use the Wishbone bridge to communicate between the AVR and the ZPUino on the FPGA:
+        http://gadgetfactory.net/learn/2015/05/25/papilio-duo-avr-to-zpuino-communication-over-wishbone/ 
+        example://AVR_to_ZPUino_Communications/AVR_to_ZPUino_Communications.ino
 		
   ZPUino VGA Adapter
 	This exciting VGA adapter lets you change resolutions on the fly and use the AdaFruit GFX library to program it. This is the latest and greatest VGA adapter.

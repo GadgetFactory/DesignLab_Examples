@@ -4,6 +4,7 @@
  To learn more about using DesignLab please visit http://learn.gadgetfactory.net
 
  Tutorials:
+ http://gadgetfactory.net/learn/2015/05/25/papilio-duo-avr-to-zpuino-communication-over-wishbone/
 
  Related library documentation:
 
