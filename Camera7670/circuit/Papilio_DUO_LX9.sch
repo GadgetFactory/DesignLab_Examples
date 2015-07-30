@@ -76,7 +76,6 @@
         <signal name="XLXN_335(7:0)" />
         <signal name="XLXN_598(200:0)" />
         <signal name="XLXN_599(200:0)" />
-        <signal name="Arduino_37" />
         <signal name="XLXN_601" />
         <signal name="XLXN_602(100:0)" />
         <signal name="XLXN_603(100:0)" />
@@ -85,11 +84,9 @@
         <signal name="XLXN_609(7:0)" />
         <signal name="XLXN_610(7:0)" />
         <signal name="XLXN_619(32:0)" />
-        <signal name="XLXN_620" />
-        <signal name="XLXN_628" />
-        <signal name="XLXN_629" />
         <signal name="XLXN_630(100:0)" />
         <signal name="XLXN_631(100:0)" />
+        <signal name="Arduino_37" />
         <port polarity="Input" name="ext_pins_in(100:0)" />
         <port polarity="Output" name="ext_pins_out(100:0)" />
         <port polarity="BiDirectional" name="ext_pins_inout(100:0)" />
@@ -546,8 +543,8 @@
         </block>
         <block symbolname="clk_divider_32Mhz" name="XLXI_60">
             <blockpin signalname="XLXN_601" name="clk_32Mhz" />
-            <blockpin name="div1_16Mhz" />
-            <blockpin signalname="Arduino_37" name="div2_8Mhz" />
+            <blockpin signalname="Arduino_37" name="div1_16Mhz" />
+            <blockpin name="div2_8Mhz" />
             <blockpin name="div3_4Mhz" />
             <blockpin name="div4_2Mhz" />
             <blockpin name="div5_1Mhz" />
@@ -899,15 +896,6 @@
         </branch>
         <instance x="1600" y="1952" name="XLXI_60" orien="R0">
         </instance>
-        <branch name="Arduino_37">
-            <wire x2="2048" y1="1536" y2="1536" x1="2032" />
-            <wire x2="2176" y1="1536" y2="1536" x1="2048" />
-            <wire x2="2320" y1="1536" y2="1536" x1="2176" />
-            <wire x2="2176" y1="1504" y2="1504" x1="2096" />
-            <wire x2="2176" y1="1504" y2="1536" x1="2176" />
-            <wire x2="2096" y1="1504" y2="2448" x1="2096" />
-            <wire x2="2176" y1="2448" y2="2448" x1="2096" />
-        </branch>
         <branch name="XLXN_601">
             <wire x2="1520" y1="944" y2="1472" x1="1520" />
             <wire x2="1600" y1="1472" y2="1472" x1="1520" />
@@ -953,7 +941,6 @@
             <wire x2="3664" y1="1728" y2="2352" x1="3664" />
             <wire x2="3776" y1="2352" y2="2352" x1="3664" />
         </branch>
-        <iomarker fontsize="28" x="2320" y="1536" name="Arduino_37" orien="R0" />
         <instance x="2176" y="2704" name="XLXI_64" orien="R0">
         </instance>
         <branch name="Arduino_33">
@@ -1015,5 +1002,15 @@
         <iomarker fontsize="28" x="2160" y="1136" name="Arduino_29" orien="R0" />
         <instance x="2048" y="1136" name="XLXI_72" orien="R0" />
         <instance x="2320" y="1200" name="XLXI_73" orien="R0" />
+        <branch name="Arduino_37">
+            <wire x2="2048" y1="1472" y2="1472" x1="2032" />
+            <wire x2="2176" y1="1472" y2="1472" x1="2048" />
+            <wire x2="2400" y1="1472" y2="1472" x1="2176" />
+            <wire x2="2176" y1="1456" y2="1456" x1="2096" />
+            <wire x2="2176" y1="1456" y2="1472" x1="2176" />
+            <wire x2="2096" y1="1456" y2="2448" x1="2096" />
+            <wire x2="2176" y1="2448" y2="2448" x1="2096" />
+        </branch>
+        <iomarker fontsize="28" x="2400" y="1472" name="Arduino_37" orien="R0" />
     </sheet>
 </drawing>

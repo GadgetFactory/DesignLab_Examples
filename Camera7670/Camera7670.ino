@@ -182,10 +182,6 @@ const char OV7670_reg[166][2]={
 #define HREF 31
 #define XCLK 37
 #define PCLK 35
-//#define WEN  //No FIFO
-//#define RRST //What is this?
-//#define OE //No Fifo
-#define RCLK 37  //Is this right?
 
 #define D0 53
 #define D1 51
@@ -196,18 +192,6 @@ const char OV7670_reg[166][2]={
 #define D6 41
 #define D7 39
 
-//output mode 0:screen
-static byte outputmode = 1;
-
-//#if outputmode == 0
-//  #include <TFT.h>  // Arduino LCD library
-//  #include <SPI.h>
-//  #define cs   53
-//  #define dc   48
-//  #define rst  49
-//  TFT TFTscreen = TFT(cs, dc, rst);
-//#endif
-
 volatile int OV_State=0;
 int incomingByte;
 int hCount = 0;
@@ -217,9 +201,22 @@ int hrefPrev = 0;
 int pclkCur = 0;
 int pclkPrev = 0;
 unsigned char buf[202];
+unsigned int pCountBuf[30];
+unsigned int hCountBuf[30];
+int i = 0;
 
 void setup(){
   delay(3000);  
+  pinMode(VSYNC, INPUT);
+  pinMode(HREF, INPUT);
+  pinMode(PCLK, INPUT);
+  pinMode(D0, INPUT);
+  pinMode(D1, INPUT);
+  pinMode(D2, INPUT);
+  pinMode(D3, INPUT);
+  pinMode(D4, INPUT);
+  pinMode(D5, INPUT);
+  pinMode(D6, INPUT);
   Serial.begin(115200);
   
     I2C.begin(100000);
@@ -253,180 +250,250 @@ void setup(){
     Serial.print(": ");
     Serial.println(buf[i],HEX); 
   }
-
-
-  
-  
-//   Serial.println(buf[0]);
-//   Serial.println(buf[1]);
-  //output
-//  if (outputmode == 0)
-//  {
-//	  TFTscreen.begin();
-//	  TFTscreen.background(0, 0, 0);	  
-//  }
-  
-  //connection initialize
-  //pinMode(WEN,OUTPUT);
-  //pinMode(RRST,OUTPUT);
-  //pinMode(OE,OUTPUT);
-  //pinMode(RCLK,OUTPUT);
-  //DDRC = 0x00;
-  
-  //disable FIFO, start loading data
-//  digitalWrite(OE,LOW);
-//  digitalWrite(WEN,HIGH);
   
 
   Serial.println("Starting");
-  
-  //Sensorinit();
-  //readReset();
 }
 
+enum State {
+    idle,
+    waitForFrame,
+    startFrame,
+    waitForLine,
+    startLine,
+    waitForPixel,
+    capturePixel,
+    report
+};
+State currentState = idle;
+int cameraPins;
+int cameraPinsPrev;
+
+//This is for PRO
 void loop(){
-  //Serial.println(readSensor(0x01));
-//  Serial.println(".");
-//  delay(1000);
+
+  cameraPins = REGISTER(GPIOBASE,1);
+  //Serial.println(currentState);
   
-  //Wait for VSYNC to go high
-  while(digitalRead(VSYNC) == 0){
-    //Serial.println("Waiting for VSYNC LOW");
-//    Serial.println(hCount);       
-//    hCount = 0;
-//    pCount = 0;  
-  } 
-  
-  //Wait for VSYNC to go low
-  while(digitalRead(VSYNC) == 1){
-    //Serial.println("Waiting for VSYNC HIGH");
-  }   
-  hCount = 0;
-  Serial.println("VSYNC went low");
-  
-  int vsyncLow = 1;
-  while(vsyncLow){
-    //Wait for HREF to go low
-    while(digitalRead(HREF) == 1){
-    } 
-    
-    //Wait for HREF to go high
-    while(digitalRead(HREF) == 0){
-      if (digitalRead(VSYNC) == 1)
-        vsyncLow = 0;
-    }   
-    //Serial.println("HREF went high");
-    Serial.println(hCount); 
-    hCount++; 
+  switch(currentState) {
+    case idle:
+       if (((cameraPins >> 1) & 0x01) == 1) //VSYNC is high
+         currentState = waitForFrame;
+       break;
+    case waitForFrame:
+       if (((cameraPins >> 1) & 0x01) == 0) //VSYNC is low
+         currentState = startFrame;
+       break;
+     case startFrame:
+       if (((cameraPins >> 11) & 0x01) == 0) //HREF is low
+         currentState = waitForLine;     
+       break;
+     case waitForLine:
+       if (((cameraPins >> 1) & 0x01) == 1) //VSYNC is high
+         currentState = report;  //or waitForFrame?     
+       else if (((cameraPins >> 11) & 0x01) == 1){ //HREF is high
+         currentState = startLine;        
+         pCount = 0;
+       }
+       break;
+     case startLine:
+       if (((cameraPins >> 9) & 0x01) == 0) //PCLK is low
+         currentState = waitForPixel;       
+       break;
+     case waitForPixel:
+       if (((cameraPins >> 9) & 0x01) == 1) //PCLK is high
+         currentState = capturePixel;     
+       break;
+     case capturePixel:
+       //capture pixel here
+       pCount++;
+       if (((cameraPins >> 11) & 0x01) == 1) //HREF is high
+         currentState = startLine;
+       else  //if HREF is low
+         currentState = waitForLine;
+       break; 
+     case report:
+       Serial.println(pCount);
+       currentState = idle;  //or waitForFrame?
+       break;    
   }
   
   
-
-//  while(digitalRead(HREF) == 0){}  //Wait for HREF to go high
-//  hCount++;
-//  Serial.print("hCount: ");
-//  Serial.println(hCount);   
- 
-  //while(digitalRead(HREF) == 1){Serial.println("in href high");delay(1);} 
-
-//    hrefCur = digitalRead(HREF); 
-//    if (hrefCur == 1 && hrefPrev == 0) // detect rising edge of href - meaning we are on a line
-//    {
-//      while(digitalRead(HREF) == 1)
-//      {
-//        pclkCur = digitalRead(PCLK);
-//        if (pclkCur == 1 && pclkPrev == 0) // detect rising edge of pclk - meaning we have a new pixel
-//        {
-//          Serial.print("pCount: ");
-//          Serial.println(pCount);         
-//          pCount++;  
-//        }
-//        pclkPrev = pclkCur;      
+  
+//  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 0){} //While VSYNC is low
+//  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 1){} //While VSYNC is high
+//  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 0){} //While VSYNC is low
+//  while(((REGISTER(GPIOBASE,0) >> 11) & 0x01) == 1){}  //While HREF is high
+//  while(((REGISTER(GPIOBASE,0) >> 11) & 0x01) == 0){}  //While HREF is low
+//    
+//  while(((REGISTER(GPIOBASE,0) >> 11) & 0x01) == 1){  //While HREF is high
+//      //Wait for PCLK to go high
+//      while(((REGISTER(GPIOBASE,1) >> 9) & 0x01) == 0){ //While PCLK is low
+//      } 
+//      //get data here
+//      pCount++;
+//      while(((REGISTER(GPIOBASE,1) >> 9) & 0x01) == 1){ //While PCLK is high
 //      }     
-//      pCount = 0; 
-//      Serial.print("hCount: ");
-//      Serial.println(hCount);     
-//      hCount++;
-//    }
-//    hrefPrev = hrefCur;
-
-  
-    
-  
-  
-//  if (digitalRead(vsyncPin) == 0)  // meaning we are on a frame
-//  {
-//    if (digitalRead(hrefPin) == 1) // meaning we are on a line
-//    {
-//      d0 = digitalRead(d0Pin);
-//      d1 = digitalRead(d1Pin);
-//      d2 = digitalRead(d2Pin);
-//      d3 = digitalRead(d3Pin);
-//      d4 = digitalRead(d4Pin);
-//      d5 = digitalRead(d5Pin);
-//      d6 = digitalRead(d6Pin);
-//      d7 = digitalRead(d7Pin);
-//      buf[k++] = (d0 + d1*2 + d2*4 + d3*8 + d4*16 + d5*32 + d6*64 + d7*128); 
-//    }
+//      
 //  }  
   
   
-//  attachInterrupt(0,watcher,RISING);
-//  while(OV_State != 2){
-//  }
+// Serial.println((REGISTER(GPIOBASE,1) >> 11) & 0x01);  //HREF
+// 
+//  Serial.println((REGISTER(GPIOBASE,1) >> 10) & 0x01);  //VSYNC
 
-//  readReset();
-//  digitalWrite(OE,LOW);
-//  if (outputmode == 0)
-//  {
-//	  int colordata;
-//	  for(int x=0; x<120; x++)
-//	  {
-//		  for (int y = 0; y<160;y++)
-//		  {
-//			  digitalWrite(RCLK,LOW);
-//			  //colordata=PINC<<8;		//读高位
-//			  digitalWrite(RCLK,HIGH);
-//			  digitalWrite(RCLK,LOW);
-//			  //colordata|=PINC;			//读低位
-//			  digitalWrite(RCLK,HIGH);
-//			  //TFTscreen.drawPixel(x,y,colordata);  //RGB565
-//		  }
-//	  }  
-//  }
-//  digitalWrite(OE,HIGH);
-//  delayMicroseconds(20);
-//  OV_State=0;
+//  Serial.println((REGISTER(GPIOBASE,1) >> 9) & 0x01);  //PCLK
+
+//Serial.println(digitalRead(PCLK));
+  
 }
 
-//void watcher(){
-//  if(OV_State == 0)				//判断状态，第一次下降沿
-//  {
-//    OV_State = 1;				//状态变为1
-//    digitalWrite(WEN,HIGH);		//使能WEN，写
-//  }
-//  else if(OV_State == 1)		//状态1，
-//  {
-//    digitalWrite(WEN,LOW);		//关闭写使能，禁止写
-//    OV_State = 2;				//状态变为2，准备读数据
-//    detachInterrupt(0);			//关闭外部中断 
+////This is for DUO
+//void loop(){
+//  Serial.println(pCount);
+//  pCount=0;
+//  
+////  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 0){} //While VSYNC is low
+////  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 1){} //While VSYNC is high
+////  while(((REGISTER(GPIOBASE,1) >> 1) & 0x01) == 0){} //While VSYNC is low
+//  while(((REGISTER(GPIOBASE,0) >> HREF) & 0x01) == 1){}  //While HREF is high
+//  while(((REGISTER(GPIOBASE,0) >> HREF) & 0x01) == 0){}  //While HREF is low
+//    
+//  while(((REGISTER(GPIOBASE,0) >> HREF) & 0x01) == 1){  //While HREF is high
+//      //Wait for PCLK to go high
+//      while(((REGISTER(GPIOBASE,1) >> 3) & 0x01) == 0){ //While PCLK is low
+//      } 
+//      //get data here
+//      pCount++;
+//      while(((REGISTER(GPIOBASE,1) >> 3) & 0x01) == 1){ //While PCLK is high
+//      }     
+//      
 //  }  
+//  
+//  
+//// Serial.println((REGISTER(GPIOBASE,0) >> HREF) & 0x01);  //HREF
+//// 
+////  Serial.println((REGISTER(GPIOBASE,1) >> 1) & 0x01);  //VSYNC
+//
+////  Serial.println((REGISTER(GPIOBASE,1) >> 3) & 0x01);  //PCLK
+//
+////Serial.println(digitalRead(PCLK));
+//  
+//// int GPIO1 = REGISTER(GPIOBASE,0);
+//// Serial.println((GPIO1 >> 31) & 0x01);  //This should be href
+// 
+// //Serial.println((GPIO1 & 31));  //This should be href
+// //Serial.println(digitalRead(HREF));
+//  
 //}
 
-//void readReset(){
-//  digitalWrite(RRST,LOW);
-//  digitalWrite(RCLK,LOW);
-//  digitalWrite(RCLK,HIGH);
-//  digitalWrite(RCLK,LOW);
-//  digitalWrite(RRST,HIGH);
-//  digitalWrite(RCLK,HIGH);
+//void loop(){
+//  //pCount=0;
+//
+//    //Wait for VSYNC to go high
+////    while(digitalRead(VSYNC) == 0){ 
+////    } 
+////    
+////    //Wait for VSYNC to go low
+////    while(digitalRead(VSYNC) == 1){
+////    }  
+//
+//  while(digitalRead(HREF) == 0){
+//    if(digitalRead(VSYNC) == 1){       
+//      pCountBuf[i]=pCount;
+//      hCountBuf[i]=hCount;
+//      i++;
+//      hCount=0;  
+//      if (i == 29)
+//      {
+//         Serial.println("in i");
+//         for(int j=0;j<30;j++)
+//        {
+//          Serial.print("hCount: ");
+//          Serial.println(hCountBuf[j]);  
+//          Serial.print("pCount: ");
+//          Serial.println(pCountBuf[j]);      
+//        }
+//       i=0; 
+//      }            
+//    }
+//  }
+//  
+//  pCount=0;  
+//  while(digitalRead(HREF) == 1){
+//      //Wait for PCLK to go high
+//      while(digitalRead(PCLK) == 0){ 
+//      }      
+//      pCount++;
+//  }
+//  hCount++;
+//}
+
+//void loop(){  
+//  //Wait for VSYNC to go high
+//  while(digitalRead(VSYNC) == 0){ 
+//  } 
+//  
+//  //Wait for VSYNC to go low
+//  while(digitalRead(VSYNC) == 1){
+//  }   
+//  hCount = 0;
+//  Serial.println("VSYNC went low");
+//  
+//  int vsyncLow = 1;
+//  //Do while vsync is low
+//  while(vsyncLow){
+//    //Wait for HREF to go low
+//    while(digitalRead(HREF) == 1){
+//      if (digitalRead(VSYNC) == 1)
+//        vsyncLow = 0;    //exit while loop 
+//        break;      
+//    }     
+//    
+//    //Wait for HREF to go high
+//    while(digitalRead(HREF) == 0){
+//      if (digitalRead(VSYNC) == 1)
+//        vsyncLow = 0;    //exit while loop 
+//        break;     
+//    } 
+//    if(vsyncLow == 0){
+//      Serial.print("HCount: ");
+//      Serial.println(hCount);     
+//      break;
+//    }
+//    hCount++; 
+//    pCount=0;    
+//
+//    //Capture pixels on PCLK now
+//    //do while HREF is high
+////    int hrefHigh = 1;
+////    while(hrefHigh){
+////      //Wait for PCLK to go high
+////      while(digitalRead(PCLK) == 0){ 
+////        if (digitalRead(HREF) == 0)
+////          hrefHigh = 0;
+////      } 
+////      
+////      //if (digitalRead(HREF) == 0){
+////      if (hrefHigh == 0)
+////        break;  //exit pixel while loop   
+////      //read the data here
+////      pCount++;        
+////      
+////      //Wait for PCLK to go low
+////      while(digitalRead(PCLK) == 1){
+////        if (digitalRead(HREF) == 0)
+////          hrefHigh = 0;        
+////      } 
+////      if (hrefHigh == 0){
+////        break;  //exit pixel while loop   
+////      }      
+////    }
+//    
+//  }
 //}
 
 void Sensorinit(){
-//  pinMode(SCCB_SCL,OUTPUT);
-//  pinMode(SCCB_SDA,OUTPUT);
-//  digitalWrite(SCCB_SDA,HIGH);
-//  digitalWrite(SCCB_SCL,HIGH);
   delayMicroseconds(10);
   writeSensor(0x12,0x80);//reset
   if(readSensor(0x0A)==0x76){
@@ -438,36 +505,6 @@ void Sensorinit(){
     }
   }
 }
-
-//orig
-//byte readSensor(byte regID){
-//  byte temp;
-//  SCCB_Start();
-//  if(SCCB_Write(0x42)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Read ERROR1");
-//  }
-//  delayMicroseconds(10);
-//  if(SCCB_Write(regID)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Read ERROR2");
-//  }
-//  SCCB_Stop();
-//  delayMicroseconds(10);
-//  SCCB_Start();
-//  if(SCCB_Write(0x43)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Read ERROR3");
-//  }
-//  delayMicroseconds(10);
-//  temp=SCCB_Read();
-//  SCCB_NASK();
-//  SCCB_Stop();
-//  return temp;
-//}
 
 byte readSensor(byte regID){
   byte temp;
@@ -506,108 +543,3 @@ void writeSensor(byte regID, byte regDat){
     if (err==-1)
        Serial.println("There was an error in writing");   
 }
-
-//orig
-//void writeSensor(byte regID, byte regDat){
-//  SCCB_Start();
-//  if(SCCB_Write(0x42)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Write ERROR1");
-//  }
-//  delayMicroseconds(10);
-//  if(SCCB_Write(regID)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Write ERROR2");
-//  }
-//  delayMicroseconds(10);
-//  if(SCCB_Write(regDat)==0){
-//    SCCB_Stop();
-//    Serial.print(regID);
-//    Serial.println(" Write ERROR3");
-//  }
-//  delayMicroseconds(10);
-//  SCCB_Stop();
-//}
-
-//void SCCB_Start(){
-//  digitalWrite(SCCB_SDA,HIGH);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,HIGH);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SDA,LOW);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,LOW);
-//  delayMicroseconds(30);
-//}
-//
-//void SCCB_Stop(){
-//  digitalWrite(SCCB_SDA,LOW);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,HIGH);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SDA,HIGH);
-//  delayMicroseconds(20);
-//}
-//
-//void SCCB_NASK(){
-//  digitalWrite(SCCB_SDA,HIGH);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,HIGH);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,LOW);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SDA,LOW);
-//  delayMicroseconds(20);
-//}
-//
-//byte SCCB_Write(byte data){
-//  for(byte i=0x80;i>0;i>>=1){
-//    if(data&i){
-//      digitalWrite(SCCB_SDA,HIGH);
-//    }
-//    else{
-//      digitalWrite(SCCB_SDA,LOW);
-//    }
-//    delayMicroseconds(20);
-//    digitalWrite(SCCB_SCL,HIGH);
-//    delayMicroseconds(20);
-//    digitalWrite(SCCB_SCL,LOW);
-//    delayMicroseconds(20);
-//  }
-//  //digitalWrite(SCCB_SDA,HIGH);
-//  byte temp;
-//  pinMode(SCCB_SDA,INPUT);
-//  delayMicroseconds(20);
-//  digitalWrite(SCCB_SCL,HIGH);
-//  delayMicroseconds(20);
-//  if(digitalRead(SCCB_SDA)){
-//    temp=0;
-//  }   //SDA=1发送失败，返回0}
-//  else {
-//    temp=1;
-//  } 
-//  digitalWrite(SCCB_SCL,LOW);
-//  delayMicroseconds(20);
-//  pinMode(SCCB_SDA,OUTPUT); 
-//  return temp;
-//}
-//
-//byte SCCB_Read(){
-//  byte data;
-//  pinMode(SCCB_SDA,INPUT);
-//  delayMicroseconds(50);
-//  for(int i=0;i<8;i++){
-//    digitalWrite(SCCB_SCL,HIGH);
-//    data <<= 1;
-//    delayMicroseconds(20);
-//    if(digitalRead(SCCB_SDA)){
-//      data++;
-//    }
-//    digitalWrite(SCCB_SCL,LOW);
-//    delayMicroseconds(20);
-//  }
-//  pinMode(SCCB_SDA,OUTPUT); 
-//  return data;
-//}
