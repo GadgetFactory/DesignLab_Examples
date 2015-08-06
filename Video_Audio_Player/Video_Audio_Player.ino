@@ -189,7 +189,7 @@ void setup()
     //gfx.begin( &modeline_640x480_60 );
     createMenus();
     //menuInit(128,128);
-    menuInit(300,300);
+    menuInit(256,256);
     menusSetRenderer(&gfx);
 
     
@@ -201,15 +201,15 @@ void setup()
     sidplayer.setup(8);  
   
     ///Give some volume
-    ym2149.V1.setVolume(11);
-    ym2149.V2.setVolume(11);
-    ym2149.V3.setVolume(11);   
+    ym2149.V1.setVolume(15);
+    ym2149.V2.setVolume(15);
+    ym2149.V3.setVolume(15);   
     //sid.setVolume(15);    
     
     sidplayer.loadFile("track1.sid");
     sidplayer.play(true);
     
-    ymplayer.loadFile("track1.ymd");
+    ymplayer.loadFile("track2.ymd");
     ymplayer.play(true);    
     
    //Setup timer for YM and mod players, this generates an interrupt at 1700hz
@@ -283,7 +283,7 @@ void loop()
                 menuAction();
             }
             if (buttonPressed == Left) {
-                exitMenus(0);
+                //exitMenus(0);
             }
         } else {
             if (buttonPressed == Select) {

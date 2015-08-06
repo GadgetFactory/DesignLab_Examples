@@ -50,7 +50,7 @@ abstractMenuEntry* subMenu::at(int index)
 }
 
 #define TITLEHEIGHT 11
-#define TITLEWIDTH 80
+#define TITLEWIDTH 120
 #define TITLEXOFFSET 8
 #define TITLEYOFFSET 8
 
