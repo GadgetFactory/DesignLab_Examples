@@ -97,7 +97,7 @@ void renderSingleSubMenu(subMenu *menu)
     int ypos = FIRSTITEMVPOS;
 
     GFXFrameBuffer.clear( 0 );
-    GFXFrameBuffer.setTransparentColor(0xfefe);
+    //GFXFrameBuffer.setTransparentColor(0xfefe);
     //GFXFrameBuffer.setAlpha(TITLEALPHA);
 
     /* Draw top rectangle */

@@ -16,6 +16,7 @@
  
 #define circuit Computing_Shield2
 
+#include "jpeglib.h"
 #include "Adafruit_GFX.h"
 #include "ZPUino_GFX.h"
 #include "PLL.h"
@@ -31,6 +32,8 @@
 #include "ramFS.h"
 #include "cbuffer.h"
 #include <Timer.h>
+
+
 
 YM2149 ym2149;
 YMPLAYER ymplayer;
@@ -59,6 +62,90 @@ enum kButtonDirection {
 	Select              = 4,
     None                = 5
 };
+
+
+//Image stuff.
+int width, height;
+
+
+
+#define COLOR_BYTES 2
+#define COLOR_WEIGHT_R 5
+#define COLOR_WEIGHT_G 6
+#define COLOR_WEIGHT_B 5
+
+#define COLOR_SHIFT_R (COLOR_WEIGHT_B+COLOR_WEIGHT_G)
+#define COLOR_SHIFT_G (COLOR_WEIGHT_B)
+#define COLOR_SHIFT_B 0
+
+
+unsigned short *imgbuf;
+
+
+
+
+void jpeg_error(jpeg_common_struct*)
+{
+    printf("Error reading JPEG\r\n");
+    while (1) {
+    }
+}
+
+int readjpeg(const char *file)
+{
+    jpeg_decompress_struct cinfo;
+
+    jpeg_error_mgr defaultErrorManager;
+
+    cinfo.err = jpeg_std_error(&defaultErrorManager);
+
+    defaultErrorManager.error_exit = &jpeg_error;
+
+    FILE* pFile = fopen(file, "rb");
+    if (!pFile)
+        return -1;
+
+    jpeg_create_decompress(&cinfo);
+    jpeg_stdio_src(&cinfo, pFile);
+    jpeg_read_header(&cinfo, TRUE);
+    jpeg_start_decompress(&cinfo);
+
+    printf("JPEG image info: %d x %d\n", cinfo.image_width, cinfo.image_height);
+
+    unsigned row_stride = cinfo.output_width * cinfo.output_components;
+
+    unsigned char *buffer = (unsigned char*)malloc(row_stride);
+
+    unsigned short v;
+    uint16_t *imgbuf = gfx.getFramebuffer();
+ 
+    while(cinfo.output_scanline < cinfo.image_height)
+    {
+        int s = jpeg_read_scanlines(&cinfo, &buffer, 1);
+        printf("%d\r\n",cinfo.output_scanline);
+        unsigned char *ptr = buffer;
+        int x;
+        for (x=0; x<cinfo.image_width; x++) {
+            uint16_t r = (ptr[0] >> (8 - COLOR_WEIGHT_R));
+            uint16_t g = (ptr[1] >> (8 - COLOR_WEIGHT_G));
+            uint16_t b = (ptr[2] >> (8 - COLOR_WEIGHT_B));
+            v = (r<<(COLOR_SHIFT_R)) + (g<<COLOR_SHIFT_G) + (b<<COLOR_SHIFT_B);
+            *imgbuf=v;
+            ptr+=3;
+            imgbuf++;
+        }
+    }
+    jpeg_finish_decompress(&cinfo);
+    jpeg_destroy_decompress(&cinfo);
+    fclose(pFile);
+    free(buffer);
+    printf("All done\r\n");
+    return 0;
+
+}
+
+
+
 
 unsigned long timeout;
 int sidplayercounter = 0;
@@ -98,11 +185,34 @@ static void ymStart(void*)
 
 #define MAXFILES 32
 
+int fileExtension(const char* name, const char* extension, size_t length)
+{
+  //Serial.println(extension);
+  const char* ldot = strrchr(name, '.');
+  if (ldot != NULL)
+  {
+    if (length == 0)
+      length = strlen(extension);
+    return strncmp(ldot + 1, extension, length) == 0;
+  }
+  return 0;
+}
+
 char fileNames[MAXFILES][32];
 
 static void onOpenFile(void *data)
 {
-    char *name = (char*)data;
+     char *name = (char*)data;
+     if (fileExtension(name,"sid",3)) {
+      sidplayer.loadFile(name);
+      sidplayer.play(true);
+      ymplayer.play(false);    
+     }     
+     if (fileExtension(name,"ymd",3)) {
+      ymplayer.loadFile(name);
+      ymplayer.play(true); 
+      sidplayer.play(false);   
+     }    
     // Process file here.
 }
 
@@ -139,6 +249,13 @@ static void createFileSelectionMenu(subMenu *menu, const char *filter_ext = NULL
 static void createMenus()
 {
     subMenu *config = new subMenu("Options");
+    
+    subMenu *play = new subMenu("Play SID Files");
+    config->appendChild(play);
+    play->setParent(config);
+    //createFileSelectionMenu(play, ".sid");
+    createFileSelectionMenu(play);
+    play->appendChild( new menuItem("< Back",(void(*)(void*))&menuSwitchTo, config) ) ;    
 
 //    subMenu *sid = new subMenu("SID Audio");
 //    config->appendChild(sid);
@@ -162,11 +279,7 @@ static void createMenus()
     config->appendChild( new menuItem("Exit",(void(*)(void*))&exitMenus) ) ;
 
 
-    subMenu *play = new subMenu("Play");
-    config->appendChild(play);
-    play->setParent(config);
-    createFileSelectionMenu(play);
-    play->appendChild( new menuItem("< Back",(void(*)(void*))&menuSwitchTo, config) ) ;
+
 
     menuSetTop(config);
 }
@@ -188,21 +301,23 @@ void setup()
 {
     //delay(3000);
     Serial.begin(115200);
-    Serial.println("Starting");
-    gfx.begin(MODE_640x480);
-    //gfx.begin( &modeline_640x480_60 );
-    createMenus();
-    //menuInit(128,128);
-    menuInit(256,256);
-    menusSetRenderer(&gfx);
-    
+    Serial.println("Starting");  
+  
      //Start SmallFS
     if (SmallFS.begin()<0) {
   	Serial.println("No SmalLFS found.");
     }
     else{
        Serial.println("SmallFS Started.");
-    }      
+    }    
+
+    gfx.begin(MODE_640x480);
+    //gfx.begin( &modeline_640x480_60 );
+    createMenus();
+    //menuInit(128,128);
+    menuInit(256,256);
+    menusSetRenderer(&gfx);
+       
 
     //Set Wishbone slots for audio chips
     //sid.setup(14);
@@ -217,11 +332,11 @@ void setup()
     ym2149.V3.setVolume(15);   
     //sid.setVolume(15);    
     
-    sidplayer.loadFile("track1.sid");
-    sidplayer.play(true);
-    
-    ymplayer.loadFile("track2.ymd");
-    ymplayer.play(true);    
+//    sidplayer.loadFile("track1.sid");
+//    sidplayer.play(true);
+//    
+//    ymplayer.loadFile("track2.ymd");
+//    ymplayer.play(true);    
     
    //Setup timer for YM and mod players, this generates an interrupt at 1700hz
     Timers.begin();
@@ -238,7 +353,9 @@ void setup()
     pinMode(JRIGHT, INPUT);     
     
     timeout=TIMEOUTMAX;
-    showMenu();    
+    showMenu(); 
+ 
+    readjpeg("/smallfs/image.jpg");   
 }
 
 void loop()
@@ -295,6 +412,7 @@ void loop()
             }
             if (buttonPressed == Left) {
                 //exitMenus(0);
+                menuShowTop();
             }
         } else {
             if (buttonPressed == Select) {
