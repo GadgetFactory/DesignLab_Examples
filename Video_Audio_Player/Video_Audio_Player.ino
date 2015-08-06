@@ -191,8 +191,15 @@ void setup()
     //menuInit(128,128);
     menuInit(256,256);
     menusSetRenderer(&gfx);
-
     
+     //Start SmallFS
+    if (SmallFS.begin()<0) {
+  	Serial.println("No SmalLFS found.");
+    }
+    else{
+       Serial.println("SmallFS Started.");
+    }      
+
     //Set Wishbone slots for audio chips
     //sid.setup(14);
     //ym2149.setup(13);   
