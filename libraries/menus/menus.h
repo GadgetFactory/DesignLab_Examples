@@ -38,6 +38,7 @@ struct subMenu: public abstractMenuEntry
     virtual bool isSubmenu() const { return true; }
     abstractMenuEntry *getChild() { return m_children; }
     void appendChild(abstractMenuEntry *child);
+    void deleteChilds();
     void setParent(abstractMenuEntry *parent) { m_parent=parent; }
     abstractMenuEntry *getParent() const { return m_parent; }
     abstractMenuEntry *at(int index);

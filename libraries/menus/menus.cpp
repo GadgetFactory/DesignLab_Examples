@@ -28,6 +28,15 @@ void subMenu::appendChild(abstractMenuEntry *child)
     }
 }
 
+void subMenu::deleteChilds()
+{
+    while (m_children) {
+        abstractMenuEntry *e = m_children;
+        m_children = m_children->getNext();
+        delete(e);
+    }
+}
+
 abstractMenuEntry* subMenu::at(int index)
 {
     abstractMenuEntry *c = NULL;
