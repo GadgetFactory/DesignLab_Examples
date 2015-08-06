@@ -96,6 +96,42 @@ static void ymStart(void*)
   ymplayer.play(true);
 }
 
+#define MAXFILES 32
+
+char fileNames[MAXFILES][32];
+
+static void onOpenFile(void *data)
+{
+    char *name = (char*)data;
+    // Process file here.
+}
+
+static void createFileSelectionMenu(subMenu *menu, const char *filter_ext = NULL)
+{
+    int i = 0;
+    SmallFSEntry entry = SmallFS.getFirstEntry();
+    menu->deleteChilds();
+    if (entry.valid()) {
+        do {
+            bool skip=false;
+            if (filter_ext) {
+                if (!entry.endsWith(filter_ext))
+                    skip=true;
+            }
+            if (!skip) {
+                entry.getName(fileNames[i]);
+                menu->appendChild(new menuItem( fileNames[i], &onOpenFile, fileNames[i]) );
+            }
+            if (entry.hasNext())
+                entry++;
+            else
+                break;
+            i++;
+        } while (true);
+    }
+}
+
+
 static void createMenus()
 {
     subMenu *config = new subMenu("Options");
@@ -120,6 +156,13 @@ static void createMenus()
     //controle->appendChild( new menuItem("< Back",(void(*)(void*))&menuSwitchTo, config) ) ;
 
     config->appendChild( new menuItem("Exit",(void(*)(void*))&exitMenus) ) ;
+
+
+    subMenu *play = new subMenu("Play");
+    config->appendChild(play);
+    play->setParent(config);
+    createFileSelectionMenu(play);
+    play->appendChild( new menuItem("< Back",(void(*)(void*))&menuSwitchTo, config) ) ;
 
     menuSetTop(config);
 }
