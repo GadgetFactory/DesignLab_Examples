@@ -115,8 +115,10 @@ static void createFileSelectionMenu(subMenu *menu, const char *filter_ext = NULL
         do {
             bool skip=false;
             if (filter_ext) {
-                if (!entry.endsWith(filter_ext))
+                if (!entry.endsWith(filter_ext)) {
+                    Serial.println("Skipping file.");
                     skip=true;
+                }
             }
             if (!skip) {
                 entry.getName(fileNames[i]);
@@ -128,6 +130,8 @@ static void createFileSelectionMenu(subMenu *menu, const char *filter_ext = NULL
                 break;
             i++;
         } while (true);
+    } else {
+        Serial.println("Nothing in SmallFS...");
     }
 }
 
