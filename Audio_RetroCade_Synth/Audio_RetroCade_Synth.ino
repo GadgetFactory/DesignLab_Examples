@@ -346,10 +346,11 @@ void HandleNoteOn(byte channel, byte pitch, byte velocity) {
     Serial.print("Channel Received: ");
     Serial.println(channel);
   #endif     
-  lastpitch[channel-1]=pitch;
+  
   byte activeChannel = retrocade.getActiveChannel();
   if ( activeChannel != 0 )
     channel = activeChannel;
+  lastpitch[channel-1]=pitch;
   switch (channel){
     case 1:
       retrocade.sid.V1.setNote(pitch, 1);
