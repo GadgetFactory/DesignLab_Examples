@@ -18,7 +18,12 @@
         <signal name="XLXN_438(2)" />
         <signal name="XLXN_438(1)" />
         <signal name="XLXN_438(0)" />
-        <signal name="WING_CL1" />
+        <signal name="WING_CL1">
+            <attr value="TMDS_33" name="IOSTANDARD">
+                <trait verilog="all:0 wsynth:1" />
+                <trait vhdl="all:0 wa:1 wd:1" />
+            </attr>
+        </signal>
         <signal name="WING_CL7" />
         <signal name="WING_CL5" />
         <signal name="WING_CL3" />
