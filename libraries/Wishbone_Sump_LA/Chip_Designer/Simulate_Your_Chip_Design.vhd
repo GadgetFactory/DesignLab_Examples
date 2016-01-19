@@ -20,6 +20,8 @@ architecture sim of Simulate_Your_CCL_Design is
 		wishbone_in : IN std_logic_vector(100 downto 0);
 		la : IN std_logic_vector(31 downto 0);          
 		wishbone_out : OUT std_logic_vector(100 downto 0);
+		wishbone_slot_video_in : out std_logic_vector(100 downto 0);
+		wishbone_slot_video_out : in std_logic_vector(100 downto 0);		
 		reset : IN std_logic;
 		tx : OUT std_logic
 		);
@@ -35,6 +37,9 @@ architecture sim of Simulate_Your_CCL_Design is
   
   signal wb_in:   std_logic_vector(100 downto 0);
   signal wb_out:   std_logic_vector(100 downto 0);
+  
+  signal wb_v_out:   std_logic_vector(100 downto 0);
+  signal wb_v_in:   std_logic_vector(100 downto 0);
   
   signal wb_dat_o_dly:   std_logic_vector(31 downto 0);
   
@@ -76,6 +81,8 @@ begin
 		clk_32Mhz => clk,
 		wishbone_in => wb_in,
 		wishbone_out => wb_out,
+		wishbone_slot_video_in => wb_v_in,
+		wishbone_slot_video_out => wb_v_out,	
 --		la => "10101010101010101010101010101010",
 		la => count,
 		reset => rst,

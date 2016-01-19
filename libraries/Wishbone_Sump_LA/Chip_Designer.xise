@@ -15,19 +15,6 @@
   <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
-    <file xil_pn:name="../AVR_Wishbone_Bridge/AVR_Wishbone_Bridge.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-      <library xil_pn:name="DesignLab"/>
-    </file>
-    <file xil_pn:name="../AVR_Wishbone_Bridge/AVR_Wishbone_Bridge_Test.vhd" xil_pn:type="FILE_VHDL">
-      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-      <library xil_pn:name="DesignLab"/>
-    </file>
-    <file xil_pn:name="../AVR_Wishbone_Bridge/include_symbols.edif" xil_pn:type="FILE_EDIF">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-    </file>
     <file xil_pn:name="BENCHY_wb_SumpBlaze_LogicAnalyzer32.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="25"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
@@ -78,9 +65,6 @@
     </file>
     <file xil_pn:name="group_selector.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="17"/>
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-    </file>
-    <file xil_pn:name="include_symbols.edif" xil_pn:type="FILE_EDIF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="Mem_Gen_36bit.vhd" xil_pn:type="FILE_VHDL">
@@ -405,9 +389,6 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
-    </file>
-    <file xil_pn:name="../RGB_Matrix/include_symbols.edif" xil_pn:type="FILE_EDIF">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="../RGB_Matrix/RGB_Matrix_Wing.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="0"/>

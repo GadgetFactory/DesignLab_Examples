@@ -43,7 +43,9 @@ entity BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 	port(
 		clk_32Mhz : in std_logic;
 		wishbone_in : in std_logic_vector(100 downto 0);
-		wishbone_out : out std_logic_vector(100 downto 0);		
+		wishbone_out : out std_logic_vector(100 downto 0);	
+		wishbone_slot_video_in : out std_logic_vector(100 downto 0);
+		wishbone_slot_video_out : in std_logic_vector(100 downto 0);		
 		--extClockIn : in std_logic;
 --		extClockOut : out std_logic;
 		--extTriggerIn : in std_logic;
@@ -147,6 +149,7 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 		);
 	end component;
 	
+--signals for unpacking the wishbone array
   signal  wb_clk_i:    std_logic;                     -- Wishbone clock
   signal  wb_rst_i:    std_logic;                     -- Wishbone reset (synchronous)
   signal  wb_dat_i:    std_logic_vector(31 downto 0); -- Wishbone data input  (32 bits)
@@ -157,7 +160,22 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 
   signal  wb_dat_o:    std_logic_vector(31 downto 0); -- Wishbone data output (32 bits)
   signal  wb_ack_o:    std_logic;                      -- Wishbone acknowledge out signal
-  signal  wb_inta_o:   std_logic;	
+  signal  wb_inta_o:   std_logic;
+  signal  id:    std_logic_vector(15 downto 0); -- ZPUino Wishbone id
+--end signals for unpacking the wishbone array
+
+--signals for unpacking DMA array
+	signal mi_wb_dat_i: std_logic_vector(31 downto 0);
+	signal mi_wb_dat_o: std_logic_vector(31 downto 0);
+	signal mi_wb_adr_o: std_logic_vector(27 downto 0);
+	signal mi_wb_sel_o: std_logic_vector(3 downto 0);
+	signal mi_wb_cti_o: std_logic_vector(2 downto 0);
+	signal mi_wb_we_o: std_logic;
+	signal mi_wb_cyc_o: std_logic;
+	signal mi_wb_stb_o: std_logic;
+	signal mi_wb_ack_i: std_logic;
+	signal mi_wb_stall_i: std_logic;
+--end signals for unpacking DMA array
 
 	signal cmd : std_logic_vector (39 downto 0);
 	signal memoryIn, memoryOut : std_logic_vector (35 downto 0);
@@ -184,10 +202,23 @@ begin
   wb_cyc_i <= wishbone_in(1);
   wb_stb_i <= wishbone_in(0); 
   
+  wishbone_out(49 downto 34) <= id;
   wishbone_out(33 downto 2) <= wb_dat_o;
   wishbone_out(1) <= wb_ack_o;
-  wishbone_out(0) <= wb_inta_o; 
+  wishbone_out(0) <= wb_inta_o;
+-- End unpacking Wishbone array 
 
+--Unpack DMA array
+	wishbone_slot_video_in(31 downto 0) <= mi_wb_dat_o;
+	wishbone_slot_video_in(77 downto 50) <= mi_wb_adr_o;
+	wishbone_slot_video_in(100) <= mi_wb_we_o;
+	wishbone_slot_video_in(99) <= mi_wb_cyc_o;
+	wishbone_slot_video_in(98) <= mi_wb_stb_o;
+	
+	mi_wb_dat_i <= wishbone_slot_video_out(31 downto 0);
+	mi_wb_ack_i <= wishbone_slot_video_out(100);
+	mi_wb_stall_i <= wishbone_slot_video_out(99);
+--End upack DMA array 
 
   wb_dat_o <= (others => '0');
   wb_inta_o <= '0';
