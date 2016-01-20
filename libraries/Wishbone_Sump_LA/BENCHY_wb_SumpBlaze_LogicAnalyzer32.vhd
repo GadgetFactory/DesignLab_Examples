@@ -74,26 +74,6 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 		);
 	end component;
 	
-	COMPONENT eia232
-	generic (
-		FREQ : integer;
-		SCALE : integer;
-		RATE : integer
-	);
-	PORT(
-		clock : IN std_logic;
-		reset : in std_logic;
-		speed : IN std_logic_vector(1 downto 0);
-		rx : IN std_logic;
-		data : IN std_logic_vector(31 downto 0);
-		send : IN std_logic;          
-		tx : OUT std_logic;
-		cmd : OUT std_logic_vector(39 downto 0);
-		execute : OUT std_logic;
-		busy : OUT std_logic
-		);
-	END COMPONENT;	
-
 	component spi_slave
 		port(
 			clock : in std_logic;
@@ -129,26 +109,14 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 			extTriggerOut : out std_logic;
 			extClockOut : out std_logic;
 			armLED : out std_logic;
---			reset : in std_logic;
+			reset : out std_logic;
 --			resetInternal : out std_logic;
 			triggerLED : out std_logic;
 			tx_bytes : out integer range 0 to 4
 		);
 	end component;
 
-	component sram_bram
-		generic (
-		 brams: integer := 12
-		);	
-		port(
-			clock : in std_logic;
-			output : out std_logic_vector(35 downto 0);
-			la_input : in std_logic_vector(35 downto 0);
-			read : in std_logic;
-			write : in std_logic
-		);
-	end component;
-	
+  signal  core_reset:  std_logic;
 --signals for unpacking the wishbone array
   signal  wb_clk_i:    std_logic;                     -- Wishbone clock
   signal  wb_rst_i:    std_logic;                     -- Wishbone reset (synchronous)
@@ -315,20 +283,9 @@ extTriggerIn <= '0';		--External trigger disabled
 		armLED => open,
 		triggerLED => open,
 --		resetInternal => resetInternal,
---		reset => reset,
+		reset => core_reset,
 		tx_bytes => tx_bytes
 	);
 
-	Inst_sram: sram_bram
-	generic map (
-		brams => brams
-	)		
-	port map(
-		clock => clock,
-		output => memoryIn,
-		la_input => memoryOut,
-		read => read,
-		write => write
-	);
 end behavioral;
 
