@@ -80,6 +80,9 @@ begin
 	--Connect ExtTriggerIn to the last stageRun
 	--stageRun(4) <= ExtTriggerIn;	--Disable external trigger
 
+	-- BUG BUG - alvie. At least set stageRun(4)....
+	stageRun(4)<='0';
+
 	-- create stages
 	stages: for i in 0 to 3 generate
 		Inst_stage: stage
