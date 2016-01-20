@@ -35,9 +35,6 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
-library unisim;
-use unisim.vcomponents.all;
-
 entity core is
 	port(
 		clock : in std_logic;
@@ -58,6 +55,7 @@ entity core is
 		armLED : out std_logic;
 		triggerLED : out std_logic;
 		reset : out std_logic;
+		run:    out std_logic;
 		tx_bytes : out integer range 0 to 4
 	);
 end core;
@@ -231,7 +229,7 @@ architecture behavioral of core is
 	signal opcode : std_logic_vector (7 downto 0);
 	signal data : std_logic_vector (31 downto 0);
 	signal sample, syncedla_input : std_logic_vector (31 downto 0);
-	signal sampleClock, run : std_logic;
+	signal sampleClock, run_i : std_logic;
 	signal wrtrigmask, wrtrigval, wrtrigcfg : std_logic_vector(3 downto 0);
 	signal wrDivider, wrsize, arm, resetCmd: std_logic;
 	signal flagDemux, flagFilter, flagExternal, flagInverted : std_logic;
@@ -450,7 +448,7 @@ begin
 		wrConfig => wrtrigcfg,
 		arm => arm,
 		demuxed => flagDemux,
-		run => run,
+		run => run_i,
 		extTriggerIn => extTriggerIn
 	);
 
@@ -489,7 +487,7 @@ begin
 		reset => resetCmd,
 		la_input => controller_la_input,
 		la_inputReady => controller_la_inputReady,
-		run => run,
+		run => run_i,
 		wrSize => wrSize,
 		data => data,
 		busy => outputBusy,
@@ -524,5 +522,8 @@ begin
 		rdstate => rdstate,
 		data_ready => raw_ready
 	);
+
+	run <= run_i;
+	reset <= resetCmd;
 
 end behavioral;
