@@ -37,84 +37,16 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
-	generic (
-	 brams: integer := 12
-	);	
 	port(
-		clk_32Mhz : in std_logic;
 		wishbone_in : in std_logic_vector(100 downto 0);
 		wishbone_out : out std_logic_vector(100 downto 0);	
 		wishbone_slot_video_in : out std_logic_vector(100 downto 0);
 		wishbone_slot_video_out : in std_logic_vector(100 downto 0);		
-		--extClockIn : in std_logic;
---		extClockOut : out std_logic;
-		--extTriggerIn : in std_logic;
-		--extTriggerOut : out std_logic;
-		la : in std_logic_vector(31 downto 0);
-		reset : in std_logic;
-		-- rx : in std_logic;
-		 tx : out std_logic
---		miso : out std_logic;
---		mosi : in std_logic;
---		sclk : in std_logic;
---		cs : in std_logic;
---		dataReady : out std_logic;
---		adc_cs_n : inout std_logic;
-		--armLED : out std_logic;
-		--triggerLED : out std_logic
+		la : in std_logic_vector(31 downto 0)
 	);
 end BENCHY_wb_SumpBlaze_LogicAnalyzer32;
 
 architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
-
-	component clockman
-		port(
-			clkin : in  STD_LOGIC;
-			clk0 : out std_logic
-		);
-	end component;
-	
-	component spi_slave
-		port(
-			clock : in std_logic;
-			data : in std_logic_vector(31 downto 0);
-			send : in std_logic;
-			mosi : in std_logic;
-			sclk : in std_logic;
-			cs : in std_logic;
-			miso : out std_logic;
-			cmd : out std_logic_vector(39 downto 0);
-			execute : out std_logic;
-			busy : out std_logic;
-			dataReady : out std_logic;
-			tx_bytes : in integer range 0 to 4
-		);
-	end component;
-
-	component core
-		port(
-			clock : in std_logic;
-			cmd : in std_logic_vector(39 downto 0);
-			execute : in std_logic;
-			la_input : in std_logic_vector(31 downto 0);
-			la_inputClock : in std_logic;
-			output : out std_logic_vector (31 downto 0);
-			outputSend : out std_logic;
-			outputBusy : in std_logic;
-			memoryIn : in std_logic_vector(35 downto 0);
-			memoryOut : out std_logic_vector(35 downto 0);
-			memoryRead : out std_logic;
-			memoryWrite : out std_logic;
-			extTriggerIn : in std_logic;
-			extTriggerOut : out std_logic;
-			extClockOut : out std_logic;
-			armLED : out std_logic;
-			reset : out std_logic;
---			resetInternal : out std_logic;
-			triggerLED : out std_logic;
-			tx_bytes : out integer range 0 to 4
-		);
-	end component;
 
   signal  core_reset:  std_logic;
 --signals for unpacking the wishbone array
@@ -149,18 +81,11 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 	signal memoryIn, memoryOut : std_logic_vector (35 downto 0);
 	signal output, la_input : std_logic_vector (31 downto 0);
 	signal clock : std_logic;
-	signal read, write, execute, send, busy, resetInternal : std_logic;
+	signal read, write, execute, send, busy, resetInternal, reset, run : std_logic;
 	signal tx_bytes : integer range 0 to 4;
 	signal extClockIn, extTriggerIn : std_logic;
 	
-	--Constants for UART
-	constant FREQ : integer := 100000000;				-- limited to 100M by onboard SRAM
-	constant TRXSCALE : integer := 54; 					-- 16 times the desired baud rate. Example 100000000/(16*115200) = 54
-	constant RATE : integer := 115200;					-- maximum & base rate	
-	constant SPEED	: std_logic_vector (1 downto 0) := "00";	--Sets the speed for UART communications
-	
-	
-begin
+	begin
 -- Unpack the wishbone array into signals so the modules code is not confusing.
   wb_clk_i <= wishbone_in(61);
   wb_rst_i <= wishbone_in(60);
@@ -188,82 +113,17 @@ begin
 	mi_wb_stall_i <= wishbone_slot_video_out(99);
 --End upack DMA array 
 
-  wb_dat_o <= (others => '0');
-  wb_inta_o <= '0';
-  wb_ack_o <= wb_cyc_i and wb_stb_i;
-  
-	process(wb_clk_i)
-	begin
-	  if rising_edge(wb_clk_i) then
-		if wb_rst_i='1' then
-		  cmd <= (others =>'0');
-		else 
-			if wb_cyc_i='1' and wb_stb_i='1' and wb_we_i='1' then
-			case wb_adr_i(3 downto 2) is
-			  when "00" =>
-					execute <= wb_dat_i(0);			
-			  when "01" =>
-					cmd(7 downto 0) <= wb_dat_i(7 downto 0); 		--Short Command
-			  when "10" =>
-					cmd(39 downto 8) <= wb_dat_i(31 downto 0);	--Long Command				
-			  when others =>
-			end case;
-		  end if;
-		end if;
-	  end if;
-	end process;  
-
-
 	--la_input <= (others => '0');
 	la_input <= la;
 
 --	adc_cs_n <= '1';		--Disables ADC
 	
-	Inst_clockman: clockman
-	port map(
-		clkin => clk_32Mhz,
-		clk0 => clock
-	);
-	
-	Inst_eia232: eia232
-	generic map (
-		FREQ => FREQ,
-		SCALE => TRXSCALE,
-		RATE => RATE
-	)
-	PORT MAP(
-		clock => clock,
-		reset => reset,
-		speed => SPEED,
-		rx => '0',
-		tx => tx,
-		cmd => OPEN,
-		execute => OPEN,
-		data => output,
-		send => send,
-		busy => busy
-	);	
+  extClockIn <= '0';		--External clock disabled
+  extTriggerIn <= '0';		--External trigger disabled
 
---	Inst_spi_slave: spi_slave
---	port map(
---		clock => clock,
---		data => output,
---		send => send,
---		mosi => mosi,
---		sclk => sclk,
---		cs => cs,
---		miso => miso,
---		cmd => cmd,
---		execute => execute,
---		busy => busy,
---		dataReady => dataReady,
---		tx_bytes => tx_bytes
---	);
+  clock <= wb_clk_i;
 
-extClockIn <= '0';		--External clock disabled
-extTriggerIn <= '0';		--External trigger disabled
-
-	Inst_core: core
+	Inst_core: entity work.core
 	port map(
 		clock => clock,
 		cmd => cmd,
@@ -272,11 +132,12 @@ extTriggerIn <= '0';		--External trigger disabled
 		la_inputClock => extClockIn,
 		output => output,
 		outputSend => send,
-		outputBusy => '0',
+		outputBusy => '1',
 		memoryIn => memoryIn,
 		memoryOut => memoryOut,
 		memoryRead => read,
 		memoryWrite => write,
+    run   => run,
 		extTriggerIn => extTriggerIn,
 		extTriggerOut => open,
 		extClockOut => open,
@@ -286,6 +147,42 @@ extTriggerIn <= '0';		--External trigger disabled
 		reset => core_reset,
 		tx_bytes => tx_bytes
 	);
+
+  SumpWb_Inst: entity work.sump_wishbone
+    port map (
+    clk =>        wb_clk_i,
+    rst =>        wb_rst_i,
+    -- Main wishbone signals
+    wb_dat_i      => wb_dat_i,
+    wb_adr_i      => wb_adr_i,
+    wb_we_i       => wb_we_i,
+    wb_cyc_i      => wb_cyc_i,
+    wb_stb_i      => wb_stb_i,
+
+    wb_dat_o      => wb_dat_o,
+    wb_ack_o      => wb_ack_o,
+
+    -- Signals to/from core
+    -- clock         => clock, -- not used.
+    reset         => core_reset,
+    write         => write,
+    memoryOut     => memoryOut(31 downto 0),
+    run           => run,
+    send          => send,
+    cmd           => cmd,
+    execute       => execute,
+    -- DMA
+    mi_wb_dat_i   => mi_wb_dat_i,
+    mi_wb_dat_o   => mi_wb_dat_o,
+    mi_wb_adr_o   => mi_wb_adr_o,
+    mi_wb_sel_o   => mi_wb_sel_o,
+    mi_wb_cti_o   => mi_wb_cti_o,
+    mi_wb_we_o    => mi_wb_we_o,
+    mi_wb_cyc_o   => mi_wb_cyc_o,
+    mi_wb_stb_o   => mi_wb_stb_o,
+    mi_wb_ack_i   => mi_wb_ack_i,
+    mi_wb_stall_i => mi_wb_stall_i
+  );
 
 end behavioral;
 

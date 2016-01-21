@@ -141,7 +141,8 @@ begin
       wait until rising_edge(clk);
       wait until rising_edge(clk);
     command(x"01",x"00000000"); -- Arm
-      wait for 100 us;
+      wait for 200 us;
+
   end process;
 
 
