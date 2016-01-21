@@ -61,6 +61,7 @@ architecture behave of sump_wishbone is
 
   type rregs_type is record
     ack:  std_logic;
+    triggered: std_logic;
     baddr:  unsigned(27 downto 0); -- Base address
     asize:  unsigned(27 downto 0); -- Address size
   end record;
@@ -163,10 +164,6 @@ begin
         if abort='1' then --
         end if;
 
-        if send='1' then
-          w.flush := '1';
-        end if;
-
         if eob='1' then
           if oregs.flush='0' then
             w.state := IDLE;
@@ -181,6 +178,7 @@ begin
             end if;
 
             w.flush := not fifo_empty;
+
           end if;
         end if;
           
@@ -207,12 +205,15 @@ begin
 
   cmd <=  wb_dat_i & wb_adr_i(9 downto 2);
 
-  process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i)
+  process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run)
     variable w: rregs_type;
   begin
     w:=rregs;
     w.ack:='0';
     execute<='0';
+    if run='1' then
+      w.triggered := '1';
+    end if;
 
     if wb_cyc_i='1' and wb_stb_i='1' and rregs.ack='0' then
       if wb_we_i='1' then
@@ -221,23 +222,29 @@ begin
           -- Direct SUMP writes
           execute<='1';
         else
-          case wb_adr_i(2) is
-            when '0' =>
+          case wb_adr_i(3 downto 2) is
+            when "00" =>
               w.baddr := unsigned( wb_dat_i(w.baddr'RANGE));
-            when '1' =>
+            when "01" =>
               w.asize := unsigned( wb_dat_i(w.asize'RANGE));
+            when "10" =>
+              if wb_dat_i(0)='1' then
+                w.triggered:='0';
+              end if;
             when others =>
           end case;
 
         end if;
-        wb_dat_o(31 downto 1)<=(others => '0');
+        wb_dat_o(31 downto 2)<=(others => '0');
         wb_dat_o(0) <= memidle;
+        wb_dat_o(1) <= rregs.triggered;
       end if;
       w.ack:='1';
     end if;
 
     if rst='1' then
       w.ack:='0';
+      w.triggered:='0';
     end if;
 
     if rising_edge(clk) then

@@ -142,6 +142,7 @@ begin
       wait until rising_edge(clk);
     command(x"01",x"00000000"); -- Arm
       wait for 200 us;
+    wbwrite(x"00000408", x"00000001"); -- Clear trigger indicator
 
   end process;
 
