@@ -3,6 +3,9 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
+library DesignLab;
+use DesignLab.all;
+
 entity sump_wishbone is
   port (
     clk:          in std_logic;
@@ -45,6 +48,7 @@ end entity sump_wishbone;
 
 architecture behave of sump_wishbone is
 
+
   signal fifo_read : std_logic := '0';
   signal sob,eob,wnext,rnext: std_logic;
   signal fifo_almost_full, fifo_empty: std_logic;
@@ -71,7 +75,7 @@ architecture behave of sump_wishbone is
 
 begin
 
-  fifo_inst: entity work.async_fifo
+  fifo_inst: entity DesignLab.async_fifo
     generic map (
       address_bits    => 10,
       data_bits       => 32,
@@ -89,7 +93,7 @@ begin
       empty => fifo_empty
     );
 
-    inst_burstctrl: entity work.wb_burstctrl
+    inst_burstctrl: entity wb_burstctrl
      generic map (
        WIDTH_BITS   => 16
      )

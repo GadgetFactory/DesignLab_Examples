@@ -71,9 +71,10 @@
         <signal name="ext_pins_in(100:0)" />
         <signal name="ext_pins_out(100:0)" />
         <signal name="ext_pins_inout(100:0)" />
-        <signal name="XLXN_413" />
-        <signal name="XLXN_414(100:0)" />
-        <signal name="XLXN_415(100:0)" />
+        <signal name="XLXN_416(100:0)" />
+        <signal name="XLXN_417(100:0)" />
+        <signal name="XLXN_418(100:0)" />
+        <signal name="XLXN_419(100:0)" />
         <port polarity="BiDirectional" name="WING_AL0" />
         <port polarity="BiDirectional" name="WING_AL1" />
         <port polarity="BiDirectional" name="WING_AL2" />
@@ -280,12 +281,13 @@
             <line x2="3888" y1="64" y2="0" x1="3888" />
         </blockdef>
         <blockdef name="BENCHY_wb_SumpBlaze_LogicAnalyzer32">
-            <timestamp>2016-1-21T21:21:53</timestamp>
-            <line x2="0" y1="-80" y2="-80" x1="64" />
-            <rect width="208" x="64" y="-104" height="100" />
+            <timestamp>2016-1-22T17:22:29</timestamp>
+            <rect width="208" x="64" y="-80" height="76" />
             <line x2="0" y1="-32" y2="-32" x1="64" />
-            <line x2="160" y1="-104" y2="-148" x1="160" />
-            <line x2="176" y1="-144" y2="-104" x1="176" />
+            <line x2="96" y1="-128" y2="-80" x1="96" />
+            <line x2="112" y1="-128" y2="-80" x1="112" />
+            <line x2="208" y1="-128" y2="-80" x1="208" />
+            <line x2="224" y1="-128" y2="-80" x1="224" />
         </blockdef>
         <block symbolname="Wing_GPIO" name="XLXI_27">
             <blockpin signalname="XLXN_335(7:0)" name="wt_miso(7:0)" />
@@ -392,12 +394,12 @@
             <blockpin signalname="XLXN_409(200:0)" name="gpio_bus_in(200:0)" />
             <blockpin name="clk_96Mhz" />
             <blockpin name="clk_1Mhz" />
-            <blockpin signalname="XLXN_413" name="clk_osc_32Mhz" />
+            <blockpin name="clk_osc_32Mhz" />
             <blockpin signalname="ext_pins_in(100:0)" name="ext_pins_in(100:0)" />
             <blockpin signalname="ext_pins_out(100:0)" name="ext_pins_out(100:0)" />
             <blockpin signalname="ext_pins_inout(100:0)" name="ext_pins_inout(100:0)" />
-            <blockpin signalname="XLXN_415(100:0)" name="wishbone_slot_5_out(100:0)" />
-            <blockpin signalname="XLXN_414(100:0)" name="wishbone_slot_5_in(100:0)" />
+            <blockpin name="wishbone_slot_5_out(100:0)" />
+            <blockpin name="wishbone_slot_5_in(100:0)" />
             <blockpin name="wishbone_slot_6_in(100:0)" />
             <blockpin name="wishbone_slot_6_out(100:0)" />
             <blockpin name="wishbone_slot_8_in(100:0)" />
@@ -412,16 +414,17 @@
             <blockpin name="wishbone_slot_12_out(100:0)" />
             <blockpin name="wishbone_slot_13_in(100:0)" />
             <blockpin name="wishbone_slot_13_out(100:0)" />
-            <blockpin name="wishbone_slot_14_in(100:0)" />
-            <blockpin name="wishbone_slot_14_out(100:0)" />
-            <blockpin name="wishbone_slot_video_in(100:0)" />
-            <blockpin name="wishbone_slot_video_out(100:0)" />
+            <blockpin signalname="XLXN_416(100:0)" name="wishbone_slot_14_in(100:0)" />
+            <blockpin signalname="XLXN_417(100:0)" name="wishbone_slot_14_out(100:0)" />
+            <blockpin signalname="XLXN_418(100:0)" name="wishbone_slot_video_in(100:0)" />
+            <blockpin signalname="XLXN_419(100:0)" name="wishbone_slot_video_out(100:0)" />
         </block>
-        <block symbolname="BENCHY_wb_SumpBlaze_LogicAnalyzer32" name="XLXI_40">
-            <blockpin signalname="XLXN_413" name="clk_32Mhz" />
+        <block symbolname="BENCHY_wb_SumpBlaze_LogicAnalyzer32" name="XLXI_41">
             <blockpin name="la(31:0)" />
-            <blockpin signalname="XLXN_414(100:0)" name="wishbone_in(100:0)" />
-            <blockpin signalname="XLXN_415(100:0)" name="wishbone_out(100:0)" />
+            <blockpin signalname="XLXN_416(100:0)" name="wishbone_in(100:0)" />
+            <blockpin signalname="XLXN_417(100:0)" name="wishbone_out(100:0)" />
+            <blockpin signalname="XLXN_418(100:0)" name="wishbone_slot_video_in(100:0)" />
+            <blockpin signalname="XLXN_419(100:0)" name="wishbone_slot_video_out(100:0)" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="5440" height="3520">
@@ -696,20 +699,19 @@
         <iomarker fontsize="28" x="304" y="160" name="ext_pins_inout(100:0)" orien="R180" />
         <instance x="336" y="752" name="XLXI_39" orien="R0">
         </instance>
-        <instance x="336" y="1136" name="XLXI_40" orien="R0">
+        <branch name="XLXN_416(100:0)">
+            <wire x2="4096" y1="816" y2="848" x1="4096" />
+        </branch>
+        <branch name="XLXN_417(100:0)">
+            <wire x2="4112" y1="816" y2="848" x1="4112" />
+        </branch>
+        <branch name="XLXN_418(100:0)">
+            <wire x2="4208" y1="816" y2="848" x1="4208" />
+        </branch>
+        <branch name="XLXN_419(100:0)">
+            <wire x2="4224" y1="816" y2="848" x1="4224" />
+        </branch>
+        <instance x="4000" y="976" name="XLXI_41" orien="R0">
         </instance>
-        <branch name="XLXN_413">
-            <wire x2="4768" y1="848" y2="848" x1="272" />
-            <wire x2="272" y1="848" y2="1056" x1="272" />
-            <wire x2="336" y1="1056" y2="1056" x1="272" />
-            <wire x2="4768" y1="544" y2="544" x1="4704" />
-            <wire x2="4768" y1="544" y2="848" x1="4768" />
-        </branch>
-        <branch name="XLXN_414(100:0)">
-            <wire x2="496" y1="816" y2="992" x1="496" />
-        </branch>
-        <branch name="XLXN_415(100:0)">
-            <wire x2="512" y1="816" y2="992" x1="512" />
-        </branch>
     </sheet>
 </drawing>
