@@ -67,6 +67,7 @@ architecture behave of sump_wishbone is
   type rregs_type is record
     ack:  std_logic;
     triggered: std_logic;
+    enabled: std_logic;
     baddr:  unsigned(27 downto 0); -- Base address
     asize:  unsigned(27 downto 0); -- Address size
   end record;
@@ -74,8 +75,11 @@ architecture behave of sump_wishbone is
 
   signal memidle: std_logic;
   signal breq: std_logic;
+  signal write_int: std_logic;
 
 begin
+
+  write_int <= write and rregs.enabled;
 
   fifo_inst: entity DesignLab.async_fifo
     generic map (
@@ -87,7 +91,7 @@ begin
       clk_r => clk,
       clk_w => clk,
       arst  => reset,
-      wr    => write,
+      wr    => write_int,
       rd    => fifo_read,
       write => memoryOut(31 downto 0),
       read  => fifo_data,
@@ -237,6 +241,7 @@ begin
               if wb_dat_i(0)='1' then
                 w.triggered:='0';
               end if;
+              w.enabled := wb_dat_i(1);
             when others =>
           end case;
 
@@ -262,6 +267,7 @@ begin
     if rst='1' then
       w.ack:='0';
       w.triggered:='0';
+      w.enabled := '0';
     end if;
 
     if rising_edge(clk) then
