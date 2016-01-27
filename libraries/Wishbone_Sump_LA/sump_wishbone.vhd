@@ -73,6 +73,7 @@ architecture behave of sump_wishbone is
   signal rregs:  rregs_type;
 
   signal memidle: std_logic;
+  signal breq: std_logic;
 
 begin
 
@@ -112,7 +113,7 @@ begin
        stall  => mi_wb_stall_i,
        ack    => mi_wb_ack_i,
 
-       req    => open,
+       req    => breq,
        eob    => eob
      );
 
@@ -240,7 +241,7 @@ begin
           end case;
 
         end if;
-        wb_dat_o(31 downto 6)<=(others => '0');
+        wb_dat_o(31 downto 12)<=(others => '0');
         wb_dat_o(0) <= memidle;
         wb_dat_o(1) <= rregs.triggered;
         wb_dat_o(2) <= armed(0);
@@ -249,6 +250,11 @@ begin
         wb_dat_o(5) <= armed(3);
         wb_dat_o(6) <= fifo_empty;
         wb_dat_o(7) <= fifo_almost_full;
+        wb_dat_o(8) <= send;
+        wb_dat_o(9) <= oregs.flush;
+        wb_dat_o(10) <= abort;
+        wb_dat_o(11) <= breq;
+
       end if;
       w.ack:='1';
     end if;
