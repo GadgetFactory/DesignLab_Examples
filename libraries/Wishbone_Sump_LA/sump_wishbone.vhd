@@ -247,6 +247,8 @@ begin
         wb_dat_o(3) <= armed(1);
         wb_dat_o(4) <= armed(2);
         wb_dat_o(5) <= armed(3);
+        wb_dat_o(6) <= fifo_empty;
+        wb_dat_o(7) <= fifo_almost_full;
       end if;
       w.ack:='1';
     end if;
