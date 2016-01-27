@@ -246,7 +246,7 @@ begin
           end case;
 
         end if;
-        wb_dat_o(31 downto 12)<=(others => '0');
+        wb_dat_o(31 downto 14)<=(others => '0');
         wb_dat_o(0) <= memidle;
         wb_dat_o(1) <= rregs.triggered;
         wb_dat_o(2) <= armed(0);
@@ -259,6 +259,8 @@ begin
         wb_dat_o(9) <= oregs.flush;
         wb_dat_o(10) <= abort;
         wb_dat_o(11) <= breq;
+        wb_dat_o(12) <= write;
+        wb_dat_o(13) <= write_int;
 
       end if;
       w.ack:='1';
