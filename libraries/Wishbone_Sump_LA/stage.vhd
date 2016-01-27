@@ -63,6 +63,7 @@ entity stage is
 		level : in std_logic_vector (1 downto 0);
 		demuxed : in std_logic;
 		run : out std_logic;
+    is_armed:  out std_logic;
 		match : out std_logic
 	);
 end stage;
@@ -83,6 +84,8 @@ architecture behavioral of stage is
 	signal serialChannelL16, serialChannelH16 : std_logic;
 
 begin
+
+  is_armed<='1' when state=ARMED else '0';
 
 	-- use shift register or la_input depending on configuration
 	testValue <= shiftRegister when cfgSerial = '1' else la_input;

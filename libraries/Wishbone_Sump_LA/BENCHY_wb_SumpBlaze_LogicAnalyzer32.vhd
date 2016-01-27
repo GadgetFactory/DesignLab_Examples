@@ -84,6 +84,7 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 	signal read, write, execute, send, busy, resetInternal, reset, run : std_logic;
 	signal tx_bytes : integer range 0 to 4;
 	signal extClockIn, extTriggerIn : std_logic;
+  signal armed: std_logic_vector(3 downto 0);
 	
 	begin
 -- Unpack the wishbone array into signals so the modules code is not confusing.
@@ -138,6 +139,7 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
 		memoryRead => read,
 		memoryWrite => write,
     run   => run,
+    armed => armed,
 		extTriggerIn => extTriggerIn,
 		extTriggerOut => open,
 		extClockOut => open,
@@ -170,6 +172,7 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
     run           => run,
     send          => send,
     cmd           => cmd,
+    armed         => armed,
     execute       => execute,
     -- DMA
     mi_wb_dat_i   => mi_wb_dat_i,

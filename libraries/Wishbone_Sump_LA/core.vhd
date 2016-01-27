@@ -56,6 +56,7 @@ entity core is
 		triggerLED : out std_logic;
 		reset : out std_logic;
 		run:    out std_logic;
+    armed:  out std_logic_vector(3 downto 0);
 		tx_bytes : out integer range 0 to 4
 	);
 end core;
@@ -146,6 +147,7 @@ architecture behavioral of core is
 			arm : in std_logic;
 			demuxed : in std_logic;
 			run : out std_logic;
+      armed : out std_logic_vector(3 downto 0);
 			ExtTriggerIn : in std_logic
 		);
 	end component;
@@ -447,6 +449,7 @@ begin
 		wrValue => wrtrigval,
 		wrConfig => wrtrigcfg,
 		arm => arm,
+    armed => armed,
 		demuxed => flagDemux,
 		run => run_i,
 		extTriggerIn => extTriggerIn

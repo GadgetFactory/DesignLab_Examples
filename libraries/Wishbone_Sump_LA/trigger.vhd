@@ -47,6 +47,7 @@ entity trigger is
 		arm : in std_logic;
 		demuxed : in std_logic;
 		run : out std_logic;
+    armed:  out std_logic_vector(3 downto 0);
 		ExtTriggerIn : in std_logic
 	);
 end trigger;
@@ -67,6 +68,7 @@ architecture behavioral of trigger is
 			level : in std_logic_vector(1 downto 0);
 			demuxed : in std_logic;
 			run : out std_logic;
+      is_armed : out std_logic;
 			match : out std_logic
 		);
 	end component;
@@ -74,7 +76,6 @@ architecture behavioral of trigger is
 	signal stageMatch : std_logic_vector(3 downto 0);
 	signal stageRun : std_logic_vector(4 downto 0);
 	signal levelReg : std_logic_vector(1 downto 0);
-
 begin
 
 	--Connect ExtTriggerIn to the last stageRun
@@ -99,6 +100,7 @@ begin
 			level => levelReg,
 			demuxed => demuxed,
 			run => stageRun(i),
+      is_armed => armed(i),
 			match => stageMatch(i)
 		);
 	end generate;

@@ -28,6 +28,7 @@ entity sump_wishbone is
     write:        in std_logic;
     memoryOut:    in std_logic_vector(31 downto 0);
     run:          in std_logic;
+    armed:        in std_logic_vector(3 downto 0);
     send:         in std_logic;
     cmd:          out std_logic_vector(39 downto 0);
     execute:      out std_logic;
@@ -239,9 +240,13 @@ begin
           end case;
 
         end if;
-        wb_dat_o(31 downto 2)<=(others => '0');
+        wb_dat_o(31 downto 6)<=(others => '0');
         wb_dat_o(0) <= memidle;
         wb_dat_o(1) <= rregs.triggered;
+        wb_dat_o(2) <= armed(0);
+        wb_dat_o(3) <= armed(1);
+        wb_dat_o(4) <= armed(2);
+        wb_dat_o(5) <= armed(3);
       end if;
       w.ack:='1';
     end if;
