@@ -220,7 +220,9 @@ begin
   cmd <=  wb_dat_i & wb_adr_i(9 downto 2);
   wb_dat_o <= rregs.dat_o;
 
-  process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run)
+  process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run,
+    memidle, armed,fifo_empty, fifo_almost_full,send,oregs.flush,abort,breq,write,write_int
+  )
     variable w: rregs_type;
   begin
     w:=rregs;
@@ -229,7 +231,6 @@ begin
     if run='1' then
       w.triggered := '1';
     end if;
-    w.dat_o := (others => '0');
 
     if wb_cyc_i='1' and wb_stb_i='1' and rregs.ack='0' then
       if wb_we_i='1' then
@@ -252,6 +253,7 @@ begin
           end case;
 
         end if;
+        w.dat_o := (others => '0');
         w.dat_o(0) := memidle;
         w.dat_o(1) := rregs.triggered;
         w.dat_o(2) := armed(0);
