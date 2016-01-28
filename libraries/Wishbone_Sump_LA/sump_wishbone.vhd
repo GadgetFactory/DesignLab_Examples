@@ -68,6 +68,7 @@ architecture behave of sump_wishbone is
     ack:  std_logic;
     triggered: std_logic;
     enabled: std_logic;
+    dat_o:  std_logic_vector(31 downto 0);
     baddr:  unsigned(27 downto 0); -- Base address
     asize:  unsigned(27 downto 0); -- Address size
   end record;
@@ -79,6 +80,7 @@ architecture behave of sump_wishbone is
 
 begin
 
+  mi_wb_sel_o <= "1111";
   write_int <= write and rregs.enabled;
 
   fifo_inst: entity DesignLab.async_fifo
@@ -149,6 +151,8 @@ begin
           fifo_read <= not fifo_empty;
           w.state := FILL;
           w.sob :='1';
+        else
+          fifo_read <= '0';
         end if;
 
       when FILL =>
@@ -214,6 +218,7 @@ begin
   -- Register access
 
   cmd <=  wb_dat_i & wb_adr_i(9 downto 2);
+  wb_dat_o <= rregs.dat_o;
 
   process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run)
     variable w: rregs_type;
@@ -224,6 +229,7 @@ begin
     if run='1' then
       w.triggered := '1';
     end if;
+    w.dat_o := (others => '0');
 
     if wb_cyc_i='1' and wb_stb_i='1' and rregs.ack='0' then
       if wb_we_i='1' then
@@ -246,21 +252,20 @@ begin
           end case;
 
         end if;
-        wb_dat_o(31 downto 14)<=(others => '0');
-        wb_dat_o(0) <= memidle;
-        wb_dat_o(1) <= rregs.triggered;
-        wb_dat_o(2) <= armed(0);
-        wb_dat_o(3) <= armed(1);
-        wb_dat_o(4) <= armed(2);
-        wb_dat_o(5) <= armed(3);
-        wb_dat_o(6) <= fifo_empty;
-        wb_dat_o(7) <= fifo_almost_full;
-        wb_dat_o(8) <= send;
-        wb_dat_o(9) <= oregs.flush;
-        wb_dat_o(10) <= abort;
-        wb_dat_o(11) <= breq;
-        wb_dat_o(12) <= write;
-        wb_dat_o(13) <= write_int;
+        w.dat_o(0) := memidle;
+        w.dat_o(1) := rregs.triggered;
+        w.dat_o(2) := armed(0);
+        w.dat_o(3) := armed(1);
+        w.dat_o(4) := armed(2);
+        w.dat_o(5) := armed(3);
+        w.dat_o(6) := fifo_empty;
+        w.dat_o(7) := fifo_almost_full;
+        w.dat_o(8) := send;
+        w.dat_o(9) := oregs.flush;
+        w.dat_o(10) := abort;
+        w.dat_o(11) := breq;
+        w.dat_o(12) := write;
+        w.dat_o(13) := write_int;
 
       end if;
       w.ack:='1';
