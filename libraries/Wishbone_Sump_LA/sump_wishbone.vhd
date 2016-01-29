@@ -6,6 +6,9 @@ use ieee.std_logic_unsigned.all;
 library DesignLab;
 use DesignLab.all;
 
+library work;
+use work.all;
+
 entity sump_wishbone is
   port (
     clk:          in std_logic;
@@ -83,7 +86,7 @@ begin
   mi_wb_sel_o <= "1111";
   write_int <= write and rregs.enabled;
 
-  fifo_inst: entity DesignLab.async_fifo
+  fifo_inst: entity async_fifo
     generic map (
       address_bits    => 10,
       data_bits       => 32,
@@ -253,30 +256,31 @@ begin
           end case;
 
         end if;
-        w.dat_o := (others => '0');
-        w.dat_o(0) := memidle;
-        w.dat_o(1) := rregs.triggered;
-        w.dat_o(2) := armed(0);
-        w.dat_o(3) := armed(1);
-        w.dat_o(4) := armed(2);
-        w.dat_o(5) := armed(3);
-        w.dat_o(6) := fifo_empty;
-        w.dat_o(7) := fifo_almost_full;
-        w.dat_o(8) := send;
-        w.dat_o(9) := oregs.flush;
-        w.dat_o(10) := abort;
-        w.dat_o(11) := breq;
-        w.dat_o(12) := write;
-        w.dat_o(13) := write_int;
-
       end if;
+
+      w.dat_o := (others => '0');
+      w.dat_o(0) := memidle;
+      w.dat_o(1) := rregs.triggered;
+      w.dat_o(2) := armed(0);
+      w.dat_o(3) := armed(1);
+      w.dat_o(4) := armed(2);
+      w.dat_o(5) := armed(3);
+      w.dat_o(6) := fifo_empty;
+      w.dat_o(7) := fifo_almost_full;
+      w.dat_o(8) := send;
+      w.dat_o(9) := oregs.flush;
+      w.dat_o(10) := abort;
+      w.dat_o(11) := breq;
+      w.dat_o(12) := write;
+      w.dat_o(13) := write_int;
+
       w.ack:='1';
     end if;
 
     if rst='1' then
       w.ack:='0';
       w.triggered:='0';
-      w.enabled := '0';
+      w.enabled := '1';
     end if;
 
     if rising_edge(clk) then

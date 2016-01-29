@@ -68,6 +68,8 @@ architecture sim of tb_top is
   signal clk: std_logic := '0';
   constant PERIOD: time := 31.25 ns;
 
+  signal rb: std_logic_vector(31 downto 0);
+
 begin
 
   clk <= not clk after 10.416667 ns;
@@ -93,6 +95,7 @@ begin
     wait until rising_edge(clk);
   end process;
 
+
   stim: process
 
     procedure wbwrite(addr: in std_logic_vector(31 downto 0); data: std_logic_vector(31 downto 0) ) is
@@ -109,6 +112,28 @@ begin
         wait until rising_edge(clk);
         if wb_ack_o='1' then
 
+        wb_cyc_i<='0';
+        wb_stb_i<='0';
+        wb_we_i<='0';
+        exit dly;
+        end if;
+      end loop;
+    end procedure;
+
+    procedure wbread(addr: in std_logic_vector(31 downto 0); signal data: out std_logic_vector(31 downto 0) ) is
+    begin
+      wait until rising_edge(clk);
+      wait for 5 ns;
+      wb_adr_i <= addr(26 downto 2);
+      wb_dat_i <= (others =>'X');
+      wb_cyc_i<='1';
+      wb_stb_i<='1';
+      wb_we_i<='0';
+
+      dly: loop
+        wait until rising_edge(clk);
+        if wb_ack_o='1' then
+        data <= wb_dat_o;
         wb_cyc_i<='0';
         wb_stb_i<='0';
         wb_we_i<='0';
@@ -141,9 +166,11 @@ begin
       wait until rising_edge(clk);
       wait until rising_edge(clk);
     command(x"01",x"00000000"); -- Arm
-      wait for 200 us;
-    wbwrite(x"00000408", x"00000001"); -- Clear trigger indicator
-
+      --wait for 200 us;
+    --wbwrite(x"00000408", x"00000001"); -- Clear trigger indicator
+    rbl: loop
+      wbread(x"00000408", rb);
+    end loop;
   end process;
 
 
