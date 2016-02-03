@@ -62,10 +62,12 @@ architecture behave of sump_wishbone is
     sob:    std_logic;
     flush:  std_logic;
     addr:   unsigned(27 downto 0); -- Current address
+    taddr:  unsigned(27 downto 0); -- Triggered address
+    tset:   std_logic;
   end record;
   signal oregs: oregs_type;
   signal abort: std_logic := '0';
-  signal fifo_data: std_logic_vector(31 downto 0);
+  signal fifo_data: std_logic_vector(32 downto 0);
 
   type rregs_type is record
     ack:  std_logic;
@@ -80,16 +82,18 @@ architecture behave of sump_wishbone is
   signal memidle: std_logic;
   signal breq: std_logic;
   signal write_int: std_logic;
-
+  signal fifo_write_data: std_logic_vector(32 downto 0);
 begin
 
   mi_wb_sel_o <= "1111";
   write_int <= write and rregs.enabled;
 
+  fifo_write_data <= rregs.triggered & memoryOut(31 downto 0);
+
   fifo_inst: entity async_fifo
     generic map (
       address_bits    => 10,
-      data_bits       => 32,
+      data_bits       => 33,
       threshold       => 900
     )
     port map (
@@ -98,7 +102,7 @@ begin
       arst  => reset,
       wr    => write_int,
       rd    => fifo_read,
-      write => memoryOut(31 downto 0),
+      write => fifo_write_data,
       read  => fifo_data,
       almost_full  => fifo_almost_full,
       empty => fifo_empty
@@ -127,7 +131,7 @@ begin
      );
 
   mi_wb_adr_o <= std_logic_vector(oregs.addr);
-  mi_wb_dat_o <= fifo_data;
+  mi_wb_dat_o <= fifo_data(31 downto 0);
   mi_wb_we_o  <= '1';
 
   sob <= oregs.sob;
@@ -202,9 +206,19 @@ begin
       when others =>
     end case;
 
+    if wnext='1' and fifo_data(32)='1' then
+      if oregs.tset='0' then
+        w.taddr := oregs.addr;
+      end if;
+      w.tset := '1';
+    end if;
+
     if reset='1' then
       w.addr := rregs.baddr;
+      w.tset:='0';
     end if;
+
+
 
     if rst='1' then
       w.state := IDLE;
@@ -257,22 +271,28 @@ begin
 
         end if;
       end if;
-
-      w.dat_o := (others => '0');
-      w.dat_o(0) := memidle;
-      w.dat_o(1) := rregs.triggered;
-      w.dat_o(2) := armed(0);
-      w.dat_o(3) := armed(1);
-      w.dat_o(4) := armed(2);
-      w.dat_o(5) := armed(3);
-      w.dat_o(6) := fifo_empty;
-      w.dat_o(7) := fifo_almost_full;
-      w.dat_o(8) := send;
-      w.dat_o(9) := oregs.flush;
-      w.dat_o(10) := abort;
-      w.dat_o(11) := breq;
-      w.dat_o(12) := write;
-      w.dat_o(13) := write_int;
+      case wb_adr_i(2) is
+        when '0' =>
+          w.dat_o := (others => '0');
+          w.dat_o(0) := memidle;
+          w.dat_o(1) := rregs.triggered;
+          w.dat_o(2) := armed(0);
+          w.dat_o(3) := armed(1);
+          w.dat_o(4) := armed(2);
+          w.dat_o(5) := armed(3);
+          w.dat_o(6) := fifo_empty;
+          w.dat_o(7) := fifo_almost_full;
+          w.dat_o(8) := send;
+          w.dat_o(9) := oregs.flush;
+          w.dat_o(10) := abort;
+          w.dat_o(11) := breq;
+          w.dat_o(12) := write;
+          w.dat_o(13) := write_int;
+        when '1' =>
+          w.dat_o := (others => '0');
+          w.dat_o(oregs.taddr'range) := std_logic_vector(oregs.taddr);
+        when others =>
+      end case;
 
       w.ack:='1';
     end if;
