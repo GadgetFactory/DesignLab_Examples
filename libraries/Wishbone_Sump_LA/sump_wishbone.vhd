@@ -234,7 +234,10 @@ begin
 
   -- Register access
 
-  cmd <=  wb_dat_i & wb_adr_i(9 downto 2);
+  --cmd <=  wb_dat_i & wb_adr_i(9 downto 2);
+  -- Reverse the byte order of the data portion of cmd
+  --cmd <=  wb_dat_i(0) & wb_dat_i(1) & wb_dat_i(2) & wb_dat_i(3) & wb_dat_i(4) & wb_dat_i(5) & wb_dat_i(6) & wb_dat_i(7) & wb_dat_i(8) & wb_dat_i(9) & wb_dat_i(10) & wb_dat_i(11) & wb_dat_i(12) & wb_dat_i(13) & wb_dat_i(14) & wb_dat_i(15) & wb_dat_i(16) & wb_dat_i(17) & wb_dat_i(18) & wb_dat_i(19) & wb_dat_i(20) & wb_dat_i(21) & wb_dat_i(22) & wb_dat_i(23) & wb_dat_i(24) & wb_dat_i(25) & wb_dat_i(26) & wb_dat_i(27) & wb_dat_i(28) & wb_dat_i(29) & wb_dat_i(30) & wb_dat_i(31) & wb_adr_i(9 downto 2);
+  cmd <=  wb_dat_i(7) & wb_dat_i(6) & wb_dat_i(5) & wb_dat_i(4) & wb_dat_i(3) & wb_dat_i(2) & wb_dat_i(1) & wb_dat_i(0) & wb_dat_i(15) & wb_dat_i(14) & wb_dat_i(13) & wb_dat_i(12) & wb_dat_i(11) & wb_dat_i(10) & wb_dat_i(9) & wb_dat_i(8) & wb_dat_i(23) & wb_dat_i(22) & wb_dat_i(21) & wb_dat_i(20) & wb_dat_i(19) & wb_dat_i(18) & wb_dat_i(17) & wb_dat_i(16) & wb_dat_i(31) & wb_dat_i(30) & wb_dat_i(29) & wb_dat_i(28) & wb_dat_i(27) & wb_dat_i(26) & wb_dat_i(25) & wb_dat_i(24) & wb_adr_i(9 downto 2);
   wb_dat_o <= rregs.dat_o;
 
   process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run,
