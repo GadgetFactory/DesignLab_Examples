@@ -5,6 +5,12 @@ using namespace ZPUino;
 
 class Capture: public BaseDevice
 {
+private:
+    byte channel0;
+    byte channel1;
+    byte channel2;
+    byte channel3;
+    
 public:
     uint32_t *buffer;
     size_t samples;
@@ -17,9 +23,13 @@ public:
         } else {
             printf("Cannot find device\n");
         }
-        samples = 0xff;
+        samples = 0x10;
         buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
         armed=0;
+        channel0=1;
+        channel1=1;
+        channel2=1;
+        channel3=1;
     }
     unsigned getStatus()
     {
@@ -27,6 +37,34 @@ public:
     }
     void longCommand(uint8_t opcode, uint32_t data)
     {
+        switch (opcode) {
+        case 0x81: // Size
+            //samples = (data&0xffff)+((data>>16)&0xffff);
+            samples = ((((data>>16)&0x00ff)*0x100 + ((data>>24)&0xff))+1)*4;
+            //samples = (((data>>16)&0x00ff)*0x100 + ((data>>24)&0xff)) + (((data&0xff)*0x100) + ((data>>8)&0xff));
+            //(b3+b4)+(b2+b1)
+            //free(buffer);
+            //buffer = (uint32_t*) realloc(buffer,samples);
+            //REG(100) = (unsigned)&buffer[0];
+            //REG(101) = (unsigned)&buffer[samples];
+            //Serial.println(samples, HEX);
+            break;
+        case 0x82: //Channel Groups
+            channel0 = data>>26&0x01;
+            channel1 = data>>27&0x01;
+            channel2 = data>>28&0x01;
+            channel3 = data>>29&0x01;
+//            Serial.print("Channel0: ");
+//            Serial.println(channel0);
+//            Serial.print("Channel1: ");
+//            Serial.println(channel1);
+//            Serial.print("Channel2: ");
+//            Serial.println(channel2);
+//            Serial.print("Channel3: ");
+//            Serial.println(channel3);
+            break;
+        }      
+      
       REG(opcode) = data;
     }
     
@@ -34,42 +72,11 @@ public:
     {
         REG(100) = (unsigned)&buffer[0];
         REG(101) = (unsigned)&buffer[samples];
-               
         
-//        //Mask
-//        REG(0xc0) = 0x00000001;
-//        //Mask Value
-//        REG(0xc1) = 0x00000001;
-//        
-//        //Trigger Conf
-//        REG(0xc2) = 0x08000000;
-//        //Speed
-//        REG(0x80) = 0x00000008;
-//        //Size
-//        //REG(0x81) = 0x20000000;
-//        REG(0x81) = 0x00100000;
-//        //Flags
-//        REG(0x82) = 0x00000000;
-//        //ARM
-//        REG(0x01) = 0x00000000;    
-
-
-//        //Mask
-//        REG(0xc0) = 0x10000000;
-//        //Mask Value
-//        REG(0xc1) = 0x10000000;
-//        
-//        //Trigger Conf
-//        REG(0xc2) = 0x00000008;
-//        //Speed
-//        REG(0x80) = 0x00000000;
-//        //Size
-//        //REG(0x81) = 0x20000000;
-//        REG(0x81) = 0x00000001;
-//        //Flags
-//        REG(0x82) = 0x00000000;
-//        //ARM
-//        REG(0x01) = 0x00000000;  
+  //Set base address for shared memory
+  //REGISTER(IO_SLOT(14),0x100) = (unsigned)&buffer[0];
+  //Set end of shared memory
+  //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[8192];         
 
     }
     void reset()
@@ -96,22 +103,14 @@ public:
             if ((getStatus())==0x43) {
                 // Transmit.
                 //Serial.println("In Transmit");
-                for (i=0;i<samples; i++) {
-                  Serial.write(buffer[i]&0xff);
-                  Serial.write((buffer[i]>>8)&0xff);
-                  Serial.write((buffer[i]>>16)&0xff);
-                  Serial.write((buffer[i]>>24)&0xff);                  
-                  
-                  
-//                    Serial.write((uint8_t)0x00);
-//                    Serial.write((uint8_t)( i& 1));
-//                    Serial.write((uint8_t)0x00);
-//                    Serial.write((uint8_t)0x00);
-                    
-                    //Serial.write(buffer[i]);
-                    //Serial.println(buffer[i], HEX);
+                for (i=samples;i>=0; i--) {
+                //for (i=0;i<=samples; i++) {
+                  if (channel0=1) Serial.write(buffer[i]&0xff);
+                  if (channel1=1) Serial.write((buffer[i]>>8)&0xff);
+                  if (channel2=1) Serial.write((buffer[i]>>16)&0xff);
+                  if (channel3=1) Serial.write((buffer[i]>>24)&0xff);                  
                 }
-              //reset();
+              reset();
             }
         }
     }
@@ -181,7 +180,7 @@ void handleSerial(uint8_t v)
             break;  
         case 0x62: // getStatus
             for (int i = 0; i < serialIndex; i++ ){
-             Serial.println(serialBuffer[i], HEX); 
+             Serial.write(serialBuffer[i]); 
             }      
             break;    
         default:
@@ -216,8 +215,6 @@ void handleSerial(uint8_t v)
         processLong(v);
         state = IDLE;
         break;
-
-
     }
 }
 
@@ -228,8 +225,8 @@ void loop()
     {
         int i = Serial.read();
         //Serial.println(i, HEX);
-//        serialBuffer[serialIndex] = i;
-//        serialIndex++;
+        serialBuffer[serialIndex] = i;
+        serialIndex++;
         handleSerial(i&0xff);
         //handleSerial(i);
     }
