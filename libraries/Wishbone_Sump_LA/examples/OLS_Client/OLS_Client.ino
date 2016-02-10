@@ -23,7 +23,7 @@ public:
         } else {
             printf("Cannot find device\n");
         }
-        samples = 0x10;
+        samples = 8192;
         buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
         armed=0;
         channel0=1;
@@ -42,11 +42,12 @@ public:
             //samples = (data&0xffff)+((data>>16)&0xffff);
             samples = ((((data>>16)&0x00ff)*0x100 + ((data>>24)&0xff))+1)*4;
             //samples = (((data>>16)&0x00ff)*0x100 + ((data>>24)&0xff)) + (((data&0xff)*0x100) + ((data>>8)&0xff));
-            //(b3+b4)+(b2+b1)
-            //free(buffer);
-            //buffer = (uint32_t*) realloc(buffer,samples);
-            //REG(100) = (unsigned)&buffer[0];
-            //REG(101) = (unsigned)&buffer[samples];
+            
+            free(buffer);
+            buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));            
+//            buffer = (uint32_t*) realloc(buffer,samples);
+            REG(100) = (unsigned)&buffer[0];
+            REG(101) = (unsigned)&buffer[samples];
             //Serial.println(samples, HEX);
             break;
         case 0x82: //Channel Groups
