@@ -102,14 +102,23 @@ public:
     void reset()
     {
         //REG(2) = 2;
-        REG(0) = 0;
+        //REG(102) = 0x01;
+        REGISTER(IO_SLOT(14),102) = 1;        
+        REGISTER(IO_SLOT(14),0) = 0;
         armed = 0;
     }
     void arm()
     {
-        REG(1) = 0;
+        //REG(1) = 0;
+        REGISTER(IO_SLOT(14),1) = 0;
         armed=1;
     }
+    void abort()
+    {
+        //REG(5) = 0;
+        REGISTER(IO_SLOT(14),5) = 0;
+        armed=1;
+    }    
     void dump()
     {
         int i;
@@ -119,10 +128,11 @@ public:
     }
     void sendIfReady()
     {
-        int i;
+        int i,status;
         unsigned trigAddress = 0;
         if (armed) {
             if ((getStatus())==0x43) {
+              //if ((getStatus())&0x02) {
                 // Transmit.
                 //Serial.println("In Transmit");
                 trigAddress = getTriggerAddress();
@@ -201,6 +211,9 @@ void handleSerial(uint8_t v)
             Serial.write((const uint8_t*)"1ALS",4);
             //Serial.print("1ALS");
             break;
+        case 0x05: // Abort
+            mycap.abort();
+            break;            
         case 0x61: // getStatus
             Serial.println(mycap.getStatus());
             break;  
@@ -210,8 +223,7 @@ void handleSerial(uint8_t v)
             }      
             break;   
         case 0x63: // getTrigger
-
-             Serial.write(mycap.getTriggerAddress());   
+             Serial.println(mycap.getTriggerAddress(),HEX);   
             break; 
         case 0x64: // getSamples
              Serial.println(mycap.getSamples(), HEX);   
@@ -258,8 +270,8 @@ void loop()
     {
         int i = Serial.read();
         //Serial.println(i, HEX);
-//        serialBuffer[serialIndex] = i;
-//        serialIndex++;
+        serialBuffer[serialIndex] = i;
+        serialIndex++;
         handleSerial(i&0xff);
         //handleSerial(i);
     }
