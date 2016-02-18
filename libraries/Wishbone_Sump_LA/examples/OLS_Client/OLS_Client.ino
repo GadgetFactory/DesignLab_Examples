@@ -41,8 +41,8 @@ public:
     
     uint32_t getEndAddress()
     {
-        //return REG(1);
-        return REGISTER(IO_SLOT(14),1);
+        return REG(1);
+        //return REGISTER(IO_SLOT(14),1);
     }    
     
     unsigned getSamples()
@@ -77,26 +77,24 @@ public:
   //Set base address for shared memory
   REGISTER(IO_SLOT(14),0x100) = (unsigned)&buffer[0];
   //Set end of shared memory
-  //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[8192];         
-  //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[samples]; 
-  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[300000];  
+  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[samples];  
     }
     void reset()
     {
-        //REG(0) = 0;
-        REGISTER(IO_SLOT(14),0) = 0;
+        REG(0) = 0;
+        //REGISTER(IO_SLOT(14),0) = 0;
         armed = 0;
     }
     void arm()
     {
-        //REG(1) = 0;
-        REGISTER(IO_SLOT(14),1) = 0;
+        REG(1) = 0;
+        //REGISTER(IO_SLOT(14),1) = 0;
         armed=1;      
     }
     void abort()
     {
-        //REG(5) = 0;
-        REGISTER(IO_SLOT(14),5) = 0;
+        REG(5) = 0;
+        //REGISTER(IO_SLOT(14),5) = 0;
         armed=1;
     }    
     void dump()
