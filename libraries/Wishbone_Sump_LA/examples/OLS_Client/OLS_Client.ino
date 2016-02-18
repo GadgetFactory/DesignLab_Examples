@@ -10,6 +10,7 @@ private:
     byte channel1;
     byte channel2;
     byte channel3;
+    uint8_t armed;    
     
 public:
     //uint32_t *buffer;
@@ -144,13 +145,22 @@ public:
     }
     void sendIfReady()
     {
-        int i,status,send,triggered,fifoEmpty,memoryIdle;
+        int i,status,send,triggered,fifoEmpty,memoryIdle,samplesSent,memoryFilled,memoryFlushed;
         uint32_t endAddress = 0;
         if (armed) {
             status = getStatus();
+            memoryIdle = status&0x01;
             triggered = status>>1&0x01;
-            fifoEmpty = status>>6&0x01;
-            memoryIdle = status&0x01;           
+            fifoEmpty = status>>2&0x01;
+            samplesSent = status>>3&0x01;
+            memoryFilled = status>>4&0x01;
+            memoryFlushed = status>>5&0x01;
+                         
+            
+            
+//            triggered = status>>1&0x01;
+//            fifoEmpty = status>>6&0x01;
+//            memoryIdle = status&0x01;           
 //            send = status>>8&0x01;
 //            Serial.print("Status: ");
 //            Serial.println(status, BIN);
@@ -161,25 +171,26 @@ public:
 //            Serial.println(send, HEX);   
 //            Serial.print("Fifo Empty: ");
 //            Serial.println(fifoEmpty, HEX);             
-            if (fifoEmpty && triggered && memoryIdle) {
-              //if ((getStatus())&0x02) {
+            //if (fifoEmpty && triggered && memoryIdle) {
+              if (status==0x1F) {
+              //if (0) {                
                 // Transmit.
                 //Serial.println("In Transmit");
                 //endAddress = getEndAddress();
-                Serial.print("Last address: ");
-                Serial.println(getEndAddress(), DEC);
-                Serial.print("Base address: ");
-                Serial.println((unsigned)&buffer[0], DEC); 
-                Serial.print("End address: ");
-                Serial.println((unsigned)&buffer[65536] , DEC); 
+//                Serial.print("Last address: ");
+//                Serial.println(getEndAddress(), DEC);
+//                Serial.print("Base address: ");
+//                Serial.println((unsigned)&buffer[0], DEC); 
+//                Serial.print("End address: ");
+//                Serial.println((unsigned)&buffer[65536] , DEC); 
                
                 //for (i=samples+trigAddress;i>=trigAddress; i--) {
                 //for (i=0;i<=samples; i++) {
                 //for (i=samples;i>=0; i--) {
                 uint32_t index = (getEndAddress() - (uint32_t)&buffer[0])/4;
-                Serial.print("Index: ");
-                Serial.println(index, DEC);                
-                for (i=samples;i>=0; i--) {                  
+//                Serial.print("Index: ");
+//                Serial.println(index, DEC);                
+                for (i=index;i>=index-samples; i--) {                  
                   if (channel0==0) Serial.write(buffer[i]&0xff);
                   if (channel1==0) Serial.write((buffer[i]>>8)&0xff);
                   if (channel2==0) Serial.write((buffer[i]>>16)&0xff);
@@ -190,8 +201,6 @@ public:
             }
         }
     }
-
-    uint8_t armed;
 };
 
 Capture mycap;

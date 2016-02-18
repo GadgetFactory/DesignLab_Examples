@@ -290,18 +290,37 @@ begin
           w.dat_o := (others => '0');
           w.dat_o(0) := memidle;
           w.dat_o(1) := rregs.triggered;
-          w.dat_o(2) := armed(0);
-          w.dat_o(3) := armed(1);
-          w.dat_o(4) := armed(2);
-          w.dat_o(5) := armed(3);
-          w.dat_o(6) := fifo_empty;
-          w.dat_o(7) := fifo_almost_full;
-          w.dat_o(8) := send;
-          w.dat_o(9) := oregs.flush;
-          w.dat_o(10) := abort;
-          w.dat_o(11) := breq;
-          w.dat_o(12) := write;
-          w.dat_o(13) := write_int;
+          w.dat_o(2) := fifo_empty;
+          w.dat_o(3) := oregs.sent;
+          w.dat_o(4) := oregs.filled;			 
+          w.dat_o(5) := oregs.flush;			 
+--          w.dat_o(6) := armed(0);
+--          w.dat_o(7) := armed(1);
+--          w.dat_o(8) := armed(2);
+--          w.dat_o(9) := armed(3);
+
+--          w.dat_o(7) := fifo_almost_full;
+--          w.dat_o(8) := send;
+--          w.dat_o(10) := abort;
+--          w.dat_o(11) := breq;
+--          w.dat_o(12) := write;
+--          w.dat_o(13) := write_int;			 
+			 
+			 
+--          w.dat_o(0) := memidle;
+--          w.dat_o(1) := rregs.triggered;
+--          w.dat_o(2) := armed(0);
+--          w.dat_o(3) := armed(1);
+--          w.dat_o(4) := armed(2);
+--          w.dat_o(5) := armed(3);
+--          w.dat_o(6) := fifo_empty;
+--          w.dat_o(7) := fifo_almost_full;
+--          w.dat_o(8) := send;
+--          w.dat_o(9) := oregs.flush;
+--          w.dat_o(10) := abort;
+--          w.dat_o(11) := breq;
+--          w.dat_o(12) := write;
+--          w.dat_o(13) := write_int;
         when '1' =>
           w.dat_o := (others => '0');
           --w.dat_o(oregs.taddr'range) := std_logic_vector(oregs.taddr);
