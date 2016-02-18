@@ -15,7 +15,7 @@ private:
 public:
     //uint32_t *buffer;
     uint32_t samples;
-    uint32_t buffer[65536];
+    uint32_t buffer[300000];
 
     Capture(): BaseDevice(-1) {
     }
@@ -26,7 +26,7 @@ public:
             printf("Cannot find device\n");
         }
         //samples = 300000;
-        samples = 65536;
+        samples = 300000;
         //buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
         //memset(buffer, 0xff, samples*sizeof(uint32_t));
         armed=0;
@@ -111,7 +111,7 @@ public:
   //Set end of shared memory
   //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[8192];         
   //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[samples]; 
-  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[65536];  
+  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[300000];  
     }
     void reset()
     {
