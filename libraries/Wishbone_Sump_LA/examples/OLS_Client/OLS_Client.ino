@@ -12,8 +12,9 @@ private:
     byte channel3;
     
 public:
-    uint32_t *buffer;
+    //uint32_t *buffer;
     uint32_t samples;
+    uint32_t buffer[65536];
 
     Capture(): BaseDevice(-1) {
     }
@@ -25,7 +26,7 @@ public:
         }
         //samples = 300000;
         samples = 65536;
-        buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
+        //buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
         //memset(buffer, 0xff, samples*sizeof(uint32_t));
         armed=0;
         channel0=0;
@@ -35,12 +36,24 @@ public:
     }
     unsigned getStatus()
     {
-        return REG(0);
+//        int status = REG(0);
+//        Serial.print("Status: ");
+//        Serial.println(status, BIN);
+//        Serial.println(status, HEX); 
+//        Serial.print("triggered: ");
+//        Serial.println(status>>1&0x01, HEX);             
+//        Serial.print("send: ");
+//        Serial.println(status>>8&0x01, HEX);   
+//        Serial.print("Fifo Empty: ");
+//        Serial.println(status>>6&0x01, HEX);  
+
+        return REG(0);        
     }
     
-    unsigned getTriggerAddress()
+    uint32_t getEndAddress()
     {
-        return REG(1);
+        //return REG(1);
+        return REGISTER(IO_SLOT(14),1);
     }    
     
     unsigned getSamples()
@@ -96,15 +109,16 @@ public:
   REGISTER(IO_SLOT(14),0x100) = (unsigned)&buffer[0];
   //Set end of shared memory
   //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[8192];         
-  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[samples];         
-
+  //REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[samples]; 
+  REGISTER(IO_SLOT(14),0x101) = (unsigned)&buffer[65536];  
     }
     void reset()
     {
         //REG(2) = 2;
-        //REG(102) = 0x01;
-        REGISTER(IO_SLOT(14),102) = 1;        
+        //REG(102) = 0x03;
+        //Serial.println("In Reset");
         REGISTER(IO_SLOT(14),0) = 0;
+        //REGISTER(IO_SLOT(14),102) = 0x03;
         armed = 0;
     }
     void arm()
@@ -112,6 +126,8 @@ public:
         //REG(1) = 0;
         REGISTER(IO_SLOT(14),1) = 0;
         armed=1;
+//        Serial.print("Armed Trigger address: ");
+//        Serial.println(getEndAddress(),HEX);        
     }
     void abort()
     {
@@ -128,24 +144,48 @@ public:
     }
     void sendIfReady()
     {
-        int i,status;
-        unsigned trigAddress = 0;
+        int i,status,send,triggered,fifoEmpty,memoryIdle;
+        uint32_t endAddress = 0;
         if (armed) {
-            if ((getStatus())==0x43) {
+            status = getStatus();
+            triggered = status>>1&0x01;
+            fifoEmpty = status>>6&0x01;
+            memoryIdle = status&0x01;           
+//            send = status>>8&0x01;
+//            Serial.print("Status: ");
+//            Serial.println(status, BIN);
+//            Serial.println(status, HEX); 
+//            Serial.print("triggered: ");
+//            Serial.println(triggered, HEX);             
+//            Serial.print("send: ");
+//            Serial.println(send, HEX);   
+//            Serial.print("Fifo Empty: ");
+//            Serial.println(fifoEmpty, HEX);             
+            if (fifoEmpty && triggered && memoryIdle) {
               //if ((getStatus())&0x02) {
                 // Transmit.
                 //Serial.println("In Transmit");
-                trigAddress = getTriggerAddress();
-                //Serial.print("Trigger address: ");
-                //Serial.println(trigAddress);
+                //endAddress = getEndAddress();
+                Serial.print("Last address: ");
+                Serial.println(getEndAddress(), DEC);
+                Serial.print("Base address: ");
+                Serial.println((unsigned)&buffer[0], DEC); 
+                Serial.print("End address: ");
+                Serial.println((unsigned)&buffer[65536] , DEC); 
+               
                 //for (i=samples+trigAddress;i>=trigAddress; i--) {
-                for (i=samples;i>=0; i--) {
                 //for (i=0;i<=samples; i++) {
+                //for (i=samples;i>=0; i--) {
+                uint32_t index = (getEndAddress() - (uint32_t)&buffer[0])/4;
+                Serial.print("Index: ");
+                Serial.println(index, DEC);                
+                for (i=samples;i>=0; i--) {                  
                   if (channel0==0) Serial.write(buffer[i]&0xff);
                   if (channel1==0) Serial.write((buffer[i]>>8)&0xff);
                   if (channel2==0) Serial.write((buffer[i]>>16)&0xff);
                   if (channel3==0) Serial.write((buffer[i]>>24)&0xff);                  
                 }
+                armed = 0;
               reset();
             }
         }
@@ -223,7 +263,7 @@ void handleSerial(uint8_t v)
             }      
             break;   
         case 0x63: // getTrigger
-             Serial.println(mycap.getTriggerAddress(),HEX);   
+             Serial.println(mycap.getEndAddress(),HEX);   
             break; 
         case 0x64: // getSamples
              Serial.println(mycap.getSamples(), HEX);   

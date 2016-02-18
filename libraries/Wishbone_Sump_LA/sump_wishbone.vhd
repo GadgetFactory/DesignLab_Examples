@@ -61,8 +61,11 @@ architecture behave of sump_wishbone is
     state:  fillstate_t;
     sob:    std_logic;
     flush:  std_logic;
+	 sent: std_logic;
+	 filled: std_logic;
     addr:   unsigned(27 downto 0); -- Current address
     taddr:  unsigned(27 downto 0); -- Triggered address
+    eaddr:  unsigned(27 downto 0); -- End address
     tset:   std_logic;
   end record;
   signal oregs: oregs_type;
@@ -152,6 +155,7 @@ begin
         w.sob:='0';
         if send='1' then
           w.flush := '1';
+			 w.sent := '1';
         end if;
 
         if fifo_almost_full='1' or oregs.flush='1' then
@@ -180,6 +184,7 @@ begin
 
         if send='1' then
           w.flush := '1';
+			 w.sent := '1';
         end if;
 
         if abort='1' then --
@@ -188,12 +193,14 @@ begin
         if eob='1' then
           if oregs.flush='0' then
             w.state := IDLE;
+				w.filled:='1';
           else
             -- Need to flush
             fifo_read <= not fifo_empty;
 
             if fifo_empty='1' then
               w.state := IDLE;
+				  w.filled:='1';
             else
               w.sob :='1';
             end if;
@@ -205,6 +212,10 @@ begin
           
       when others =>
     end case;
+	 
+	 if oregs.sent='1' and oregs.filled='1' then
+		w.eaddr := oregs.addr;
+	 end if;
 
     if wnext='1' and fifo_data(32)='1' then
       if oregs.tset='0' then
@@ -216,9 +227,9 @@ begin
     if reset='1' then
       w.addr := rregs.baddr;
       w.tset:='0';
+		w.sent:='0';
+		w.filled:='0';
     end if;
-
-
 
     if rst='1' then
       w.state := IDLE;
@@ -240,7 +251,7 @@ begin
   cmd <=  wb_dat_i(7) & wb_dat_i(6) & wb_dat_i(5) & wb_dat_i(4) & wb_dat_i(3) & wb_dat_i(2) & wb_dat_i(1) & wb_dat_i(0) & wb_dat_i(15) & wb_dat_i(14) & wb_dat_i(13) & wb_dat_i(12) & wb_dat_i(11) & wb_dat_i(10) & wb_dat_i(9) & wb_dat_i(8) & wb_dat_i(23) & wb_dat_i(22) & wb_dat_i(21) & wb_dat_i(20) & wb_dat_i(19) & wb_dat_i(18) & wb_dat_i(17) & wb_dat_i(16) & wb_dat_i(31) & wb_dat_i(30) & wb_dat_i(29) & wb_dat_i(28) & wb_dat_i(27) & wb_dat_i(26) & wb_dat_i(25) & wb_dat_i(24) & wb_adr_i(9 downto 2);
   wb_dat_o <= rregs.dat_o;
 
-  process(clk,rst,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run,
+  process(clk,rst,reset,wb_dat_i, wb_adr_i, wb_we_i, wb_cyc_i, wb_stb_i, rregs, wb_dat_i, run,
     memidle, armed,fifo_empty, fifo_almost_full,send,oregs.flush,abort,breq,write,write_int
   )
     variable w: rregs_type;
@@ -293,14 +304,15 @@ begin
           w.dat_o(13) := write_int;
         when '1' =>
           w.dat_o := (others => '0');
-          w.dat_o(oregs.taddr'range) := std_logic_vector(oregs.taddr);
+          --w.dat_o(oregs.taddr'range) := std_logic_vector(oregs.taddr);
+			 w.dat_o(oregs.eaddr'range) := std_logic_vector(oregs.eaddr); 
         when others =>
       end case;
 
       w.ack:='1';
     end if;
 
-    if rst='1' then
+    if rst='1' or reset='1' then
       w.ack:='0';
       w.triggered:='0';
       w.enabled := '1';
