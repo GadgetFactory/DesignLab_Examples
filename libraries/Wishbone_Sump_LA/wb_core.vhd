@@ -416,17 +416,17 @@ begin
 		output => syncedla_input
 	);
 
---	Inst_testmode: testmode
---	port map(
---		clock => clock,
---		enable => flagTest,
---		la_input => syncedla_input,
---		output => la_input_sampler
---	);
+	Inst_testmode: testmode
+	port map(
+		clock => clock,
+		enable => flagTest,
+		la_input => syncedla_input,
+		output => la_input_sampler
+	);
 
 	Inst_sampler: sampler
 	port map(
-		la_input => syncedla_input,
+		la_input => la_input_sampler,
 		clock => clock,
 		exClock => la_inputClock,
 		external => flagExternal,
