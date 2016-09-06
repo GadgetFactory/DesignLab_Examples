@@ -34,7 +34,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
-entity trigger is
+entity wb_trigger is
 	port(
 		la_input : in std_logic_vector (31 downto 0);
 		la_inputReady : in std_logic;
@@ -50,11 +50,11 @@ entity trigger is
     armed:  out std_logic_vector(3 downto 0);
 		ExtTriggerIn : in std_logic
 	);
-end trigger;
+end wb_trigger;
 
-architecture behavioral of trigger is
+architecture behavioral of wb_trigger is
 
-	component stage
+	component wb_stage
 		port(
 			la_input : in std_logic_vector(31 downto 0);
 			la_inputReady : in std_logic;
@@ -86,7 +86,7 @@ begin
 
 	-- create stages
 	stages: for i in 0 to 3 generate
-		Inst_stage: stage
+		Inst_stage: wb_stage
 		port map(
 			la_input => la_input,
 			la_inputReady => la_inputReady,

@@ -123,6 +123,8 @@ architecture behavioral of BENCHY_wb_SumpBlaze_LogicAnalyzer32 is
   extTriggerIn <= '0';		--External trigger disabled
 
   clock <= wb_clk_i;
+  
+	id <= x"08" & x"22"; -- Vendor: ZPUIno  Product: Sump Logic Analyzer
 
 	Inst_core: entity work.core
 	port map(

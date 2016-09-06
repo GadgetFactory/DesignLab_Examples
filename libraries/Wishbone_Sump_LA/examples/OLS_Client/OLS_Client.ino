@@ -24,7 +24,9 @@ public:
             printf("Cannot find device\n");
         }
         //samples = 300000;
-        samples = 65536;
+        //samples = 65536;
+        //samples = 131072;
+        samples = 262144;
         buffer = (uint32_t*)malloc(samples*sizeof(uint32_t));
         //memset(buffer, 0xff, samples*sizeof(uint32_t));
         armed=0;

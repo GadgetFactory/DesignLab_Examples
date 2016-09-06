@@ -49,7 +49,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
-entity stage is
+entity wb_stage is
 	port(
 		la_input : in std_logic_vector (31 downto 0);
 		la_inputReady : in std_logic;
@@ -66,9 +66,9 @@ entity stage is
     is_armed:  out std_logic;
 		match : out std_logic
 	);
-end stage;
+end wb_stage;
 
-architecture behavioral of stage is
+architecture behavioral of wb_stage is
 
 	type STATES is (OFF, ARMED, MATCHED);
 

@@ -3,555 +3,369 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Benchy/Chip_Designer/Simulate_Your_CCL_Design_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="C:/Dropbox/GadgetFactory_Engineering/DesignLab_Examples/libraries/Wishbone_Sump_LA/Chip_Designer/tb_top_isim_beh.wdb" id="1" type="auto">
          <top_modules>
+            <top_module name="mti_pkg" />
             <top_module name="numeric_std" />
-            <top_module name="simulate_your_ccl_design" />
+            <top_module name="sim" />
             <top_module name="std_logic_1164" />
             <top_module name="std_logic_arith" />
             <top_module name="std_logic_unsigned" />
+            <top_module name="tb_top" />
             <top_module name="textio" />
             <top_module name="vcomponents" />
             <top_module name="vital_primitives" />
             <top_module name="vital_timing" />
             <top_module name="vpkg" />
+            <top_module name="wishbonepkg" />
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="54" />
    <wvobject fp_name="group24" type="group">
       <obj_property name="label">Wishbone Bus</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/clk" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/rst" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">rst</obj_property>
-         <obj_property name="ObjectShortName">rst</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_dat_o" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_dat_o[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wb_dat_o[31:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_dat_o_dly" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_dat_o_dly[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wb_dat_o_dly[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_dat_i" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_dat_i[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wb_dat_i[31:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_adr_i" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_adr_i[31:0]</obj_property>
-         <obj_property name="ObjectShortName">wb_adr_i[31:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_we_i" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_we_i</obj_property>
-         <obj_property name="ObjectShortName">wb_we_i</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_cyc_i" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_cyc_i</obj_property>
-         <obj_property name="ObjectShortName">wb_cyc_i</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_stb_i" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_stb_i</obj_property>
-         <obj_property name="ObjectShortName">wb_stb_i</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/wb_ack_o" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wb_ack_o</obj_property>
-         <obj_property name="ObjectShortName">wb_ack_o</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/period" type="other" db_ref_id="1">
-         <obj_property name="ElementShortName">period</obj_property>
-         <obj_property name="ObjectShortName">period</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group56" type="group">
       <obj_property name="label">Decoder</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/opcode" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">opcode[7:0]</obj_property>
-         <obj_property name="ObjectShortName">opcode[7:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/execute" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">execute</obj_property>
-         <obj_property name="ObjectShortName">execute</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/clock" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">clock</obj_property>
-         <obj_property name="ObjectShortName">clock</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrtrigmask" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigmask[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigmask[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrtrigval" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigval[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigval[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrtrigcfg" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigcfg[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigcfg[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrspeed" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrspeed</obj_property>
-         <obj_property name="ObjectShortName">wrspeed</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrsize" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrsize</obj_property>
-         <obj_property name="ObjectShortName">wrsize</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/wrflags" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrflags</obj_property>
-         <obj_property name="ObjectShortName">wrflags</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/arm" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">arm</obj_property>
-         <obj_property name="ObjectShortName">arm</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/reset" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">reset</obj_property>
-         <obj_property name="ObjectShortName">reset</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/abort" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">abort</obj_property>
-         <obj_property name="ObjectShortName">abort</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/ident" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ident</obj_property>
-         <obj_property name="ObjectShortName">ident</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/meta" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">meta</obj_property>
-         <obj_property name="ObjectShortName">meta</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/exe" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">exe</obj_property>
-         <obj_property name="ObjectShortName">exe</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_decoder/exereg" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">exereg</obj_property>
-         <obj_property name="ObjectShortName">exereg</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group67" type="group">
       <obj_property name="label">Top Level</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/tx" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">tx</obj_property>
-         <obj_property name="ObjectShortName">tx</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/read" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">read</obj_property>
-         <obj_property name="ObjectShortName">read</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/write" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">write</obj_property>
-         <obj_property name="ObjectShortName">write</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/execute" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">execute</obj_property>
-         <obj_property name="ObjectShortName">execute</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/send" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">send</obj_property>
-         <obj_property name="ObjectShortName">send</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/busy" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">busy</obj_property>
-         <obj_property name="ObjectShortName">busy</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group135" type="group">
       <obj_property name="label">Core</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/clock" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">clock</obj_property>
-         <obj_property name="ObjectShortName">clock</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/cmd" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">cmd[39:0]</obj_property>
-         <obj_property name="ObjectShortName">cmd[39:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/execute" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">execute</obj_property>
-         <obj_property name="ObjectShortName">execute</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/la_input" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">la_input[31:0]</obj_property>
-         <obj_property name="ObjectShortName">la_input[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/la_inputclock" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">la_inputclock</obj_property>
-         <obj_property name="ObjectShortName">la_inputclock</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/output" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">output[31:0]</obj_property>
-         <obj_property name="ObjectShortName">output[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/outputsend" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">outputsend</obj_property>
-         <obj_property name="ObjectShortName">outputsend</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/outputbusy" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">outputbusy</obj_property>
-         <obj_property name="ObjectShortName">outputbusy</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/memoryin" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">memoryin[35:0]</obj_property>
-         <obj_property name="ObjectShortName">memoryin[35:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/memoryout" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">memoryout[35:0]</obj_property>
-         <obj_property name="ObjectShortName">memoryout[35:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/memoryread" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">memoryread</obj_property>
-         <obj_property name="ObjectShortName">memoryread</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/memorywrite" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">memorywrite</obj_property>
-         <obj_property name="ObjectShortName">memorywrite</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/exttriggerin" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">exttriggerin</obj_property>
-         <obj_property name="ObjectShortName">exttriggerin</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/exttriggerout" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">exttriggerout</obj_property>
-         <obj_property name="ObjectShortName">exttriggerout</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/extclockout" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">extclockout</obj_property>
-         <obj_property name="ObjectShortName">extclockout</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/armled" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">armled</obj_property>
-         <obj_property name="ObjectShortName">armled</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/triggerled" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">triggerled</obj_property>
-         <obj_property name="ObjectShortName">triggerled</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/reset" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">reset</obj_property>
-         <obj_property name="ObjectShortName">reset</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/tx_bytes" type="other" db_ref_id="1">
-         <obj_property name="ElementShortName">tx_bytes</obj_property>
-         <obj_property name="ObjectShortName">tx_bytes</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/opcode" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">opcode[7:0]</obj_property>
-         <obj_property name="ObjectShortName">opcode[7:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">data[31:0]</obj_property>
-         <obj_property name="ObjectShortName">data[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/sample" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">sample[31:0]</obj_property>
-         <obj_property name="ObjectShortName">sample[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/syncedla_input" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">syncedla_input[31:0]</obj_property>
-         <obj_property name="ObjectShortName">syncedla_input[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/sampleclock" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">sampleclock</obj_property>
-         <obj_property name="ObjectShortName">sampleclock</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/run" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">run</obj_property>
-         <obj_property name="ObjectShortName">run</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrtrigmask" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigmask[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigmask[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrtrigval" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigval[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigval[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrtrigcfg" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrtrigcfg[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrtrigcfg[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrdivider" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrdivider</obj_property>
-         <obj_property name="ObjectShortName">wrdivider</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrsize" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrsize</obj_property>
-         <obj_property name="ObjectShortName">wrsize</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/arm" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">arm</obj_property>
-         <obj_property name="ObjectShortName">arm</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/resetcmd" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">resetcmd</obj_property>
-         <obj_property name="ObjectShortName">resetcmd</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flagdemux" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flagdemux</obj_property>
-         <obj_property name="ObjectShortName">flagdemux</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flagfilter" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flagfilter</obj_property>
-         <obj_property name="ObjectShortName">flagfilter</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flagexternal" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flagexternal</obj_property>
-         <obj_property name="ObjectShortName">flagexternal</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flaginverted" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flaginverted</obj_property>
-         <obj_property name="ObjectShortName">flaginverted</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/wrflags" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">wrflags</obj_property>
-         <obj_property name="ObjectShortName">wrflags</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/sampleready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">sampleready</obj_property>
-         <obj_property name="ObjectShortName">sampleready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flagrle" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flagrle</obj_property>
-         <obj_property name="ObjectShortName">flagrle</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/flagtest" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">flagtest</obj_property>
-         <obj_property name="ObjectShortName">flagtest</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/armledreg" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">armledreg</obj_property>
-         <obj_property name="ObjectShortName">armledreg</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/triggerledreg" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">triggerledreg</obj_property>
-         <obj_property name="ObjectShortName">triggerledreg</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data_rd" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">data_rd</obj_property>
-         <obj_property name="ObjectShortName">data_rd</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data_wr" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">data_wr</obj_property>
-         <obj_property name="ObjectShortName">data_wr</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/controller_la_inputready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">controller_la_inputready</obj_property>
-         <obj_property name="ObjectShortName">controller_la_inputready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/rle_busy" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">rle_busy</obj_property>
-         <obj_property name="ObjectShortName">rle_busy</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/rle_inp_valid" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">rle_inp_valid</obj_property>
-         <obj_property name="ObjectShortName">rle_inp_valid</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/raw_inp_ready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">raw_inp_ready</obj_property>
-         <obj_property name="ObjectShortName">raw_inp_ready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data_size" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">data_size[1:0]</obj_property>
-         <obj_property name="ObjectShortName">data_size[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/disabledgroups" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">disabledgroups[3:0]</obj_property>
-         <obj_property name="ObjectShortName">disabledgroups[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/la_input_sampler" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">la_input_sampler[31:0]</obj_property>
-         <obj_property name="ObjectShortName">la_input_sampler[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/controller_memoryin" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">controller_memoryin[31:0]</obj_property>
-         <obj_property name="ObjectShortName">controller_memoryin[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/raw_inp" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">raw_inp[31:0]</obj_property>
-         <obj_property name="ObjectShortName">raw_inp[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data_inp" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">data_inp[32:0]</obj_property>
-         <obj_property name="ObjectShortName">data_inp[32:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/controller_la_input" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">controller_la_input[32:0]</obj_property>
-         <obj_property name="ObjectShortName">controller_la_input[32:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/rle_inp" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">rle_inp[32:0]</obj_property>
-         <obj_property name="ObjectShortName">rle_inp[32:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/data_ready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">data_ready</obj_property>
-         <obj_property name="ObjectShortName">data_ready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/raw_ready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">raw_ready</obj_property>
-         <obj_property name="ObjectShortName">raw_ready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/rdstate" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">rdstate</obj_property>
-         <obj_property name="ObjectShortName">rdstate</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/trig_delay" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">trig_delay[1:0]</obj_property>
-         <obj_property name="ObjectShortName">trig_delay[1:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/num_scheme" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">num_scheme</obj_property>
-         <obj_property name="ObjectShortName">num_scheme</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/abort" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">abort</obj_property>
-         <obj_property name="ObjectShortName">abort</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/ident" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">ident</obj_property>
-         <obj_property name="ObjectShortName">ident</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/meta" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">meta</obj_property>
-         <obj_property name="ObjectShortName">meta</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/output_i" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">output_i[31:0]</obj_property>
-         <obj_property name="ObjectShortName">output_i[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/outputsend_i" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">outputsend_i</obj_property>
-         <obj_property name="ObjectShortName">outputsend_i</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/tx_bytes_i" type="other" db_ref_id="1">
-         <obj_property name="ElementShortName">tx_bytes_i</obj_property>
-         <obj_property name="ObjectShortName">tx_bytes_i</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group151" type="group">
       <obj_property name="label">Trigger</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/la_input" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">la_input[31:0]</obj_property>
-         <obj_property name="ObjectShortName">la_input[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/la_inputready" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">la_inputready</obj_property>
-         <obj_property name="ObjectShortName">la_inputready</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/data" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">data[31:0]</obj_property>
-         <obj_property name="ObjectShortName">data[31:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/clock" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">clock</obj_property>
-         <obj_property name="ObjectShortName">clock</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/reset" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">reset</obj_property>
-         <obj_property name="ObjectShortName">reset</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/wrmask" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrmask[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrmask[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/wrvalue" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrvalue[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrvalue[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/wrconfig" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">wrconfig[3:0]</obj_property>
-         <obj_property name="ObjectShortName">wrconfig[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/arm" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">arm</obj_property>
-         <obj_property name="ObjectShortName">arm</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/demuxed" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">demuxed</obj_property>
-         <obj_property name="ObjectShortName">demuxed</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/run" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">run</obj_property>
-         <obj_property name="ObjectShortName">run</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/exttriggerin" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">exttriggerin</obj_property>
-         <obj_property name="ObjectShortName">exttriggerin</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/stagematch" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">stagematch[3:0]</obj_property>
-         <obj_property name="ObjectShortName">stagematch[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/stagerun" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">stagerun[4:0]</obj_property>
-         <obj_property name="ObjectShortName">stagerun[4:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_core/Inst_trigger/levelreg" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">levelreg[1:0]</obj_property>
-         <obj_property name="ObjectShortName">levelreg[1:0]</obj_property>
-      </wvobject>
    </wvobject>
    <wvobject fp_name="group131" type="group">
       <obj_property name="label">Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/clock" type="logic" db_ref_id="1">
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/armed" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">armed[3:0]</obj_property>
+      <obj_property name="ObjectShortName">armed[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wishbone_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wishbone_in[100:0]</obj_property>
+      <obj_property name="ObjectShortName">wishbone_in[100:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wishbone_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wishbone_out[100:0]</obj_property>
+      <obj_property name="ObjectShortName">wishbone_out[100:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wishbone_slot_video_in" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wishbone_slot_video_in[100:0]</obj_property>
+      <obj_property name="ObjectShortName">wishbone_slot_video_in[100:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wishbone_slot_video_out" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wishbone_slot_video_out[100:0]</obj_property>
+      <obj_property name="ObjectShortName">wishbone_slot_video_out[100:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/la" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">la[31:0]</obj_property>
+      <obj_property name="ObjectShortName">la[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/core_reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">core_reset</obj_property>
+      <obj_property name="ObjectShortName">core_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_clk_i</obj_property>
+      <obj_property name="ObjectShortName">wb_clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_rst_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_rst_i</obj_property>
+      <obj_property name="ObjectShortName">wb_rst_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_dat_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_dat_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_dat_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_adr_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_adr_i[26:2]</obj_property>
+      <obj_property name="ObjectShortName">wb_adr_i[26:2]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_we_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_we_i</obj_property>
+      <obj_property name="ObjectShortName">wb_we_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_cyc_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_cyc_i</obj_property>
+      <obj_property name="ObjectShortName">wb_cyc_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_stb_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_stb_i</obj_property>
+      <obj_property name="ObjectShortName">wb_stb_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_dat_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_dat_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wb_dat_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_ack_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_ack_o</obj_property>
+      <obj_property name="ObjectShortName">wb_ack_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/wb_inta_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wb_inta_o</obj_property>
+      <obj_property name="ObjectShortName">wb_inta_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/id" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">id[15:0]</obj_property>
+      <obj_property name="ObjectShortName">id[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_dat_i" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_dat_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_dat_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_dat_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_dat_o[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_dat_o[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_adr_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_adr_o[27:0]</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_adr_o[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_sel_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_sel_o[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_sel_o[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_cti_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_cti_o[2:0]</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_cti_o[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_we_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_we_o</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_we_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_cyc_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_cyc_o</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_cyc_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_stb_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_stb_o</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_stb_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_ack_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_ack_i</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_ack_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/mi_wb_stall_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">mi_wb_stall_i</obj_property>
+      <obj_property name="ObjectShortName">mi_wb_stall_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/cmd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cmd[39:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd[39:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/memoryin" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memoryin[35:0]</obj_property>
+      <obj_property name="ObjectShortName">memoryin[35:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/memoryout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">memoryout[35:0]</obj_property>
+      <obj_property name="ObjectShortName">memoryout[35:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/output" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">output[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/la_input" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">la_input[31:0]</obj_property>
+      <obj_property name="ObjectShortName">la_input[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/clock" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/read" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read</obj_property>
+      <obj_property name="ObjectShortName">read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/write" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">write</obj_property>
+      <obj_property name="ObjectShortName">write</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/execute" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">execute</obj_property>
+      <obj_property name="ObjectShortName">execute</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/send" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">send</obj_property>
+      <obj_property name="ObjectShortName">send</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/busy" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">busy</obj_property>
+      <obj_property name="ObjectShortName">busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/resetinternal" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">resetinternal</obj_property>
+      <obj_property name="ObjectShortName">resetinternal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/run" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">run</obj_property>
+      <obj_property name="ObjectShortName">run</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/tx_bytes" type="other" db_ref_id="1">
+      <obj_property name="ElementShortName">tx_bytes</obj_property>
+      <obj_property name="ObjectShortName">tx_bytes</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/extclockin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">extclockin</obj_property>
+      <obj_property name="ObjectShortName">extclockin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/exttriggerin" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">exttriggerin</obj_property>
+      <obj_property name="ObjectShortName">exttriggerin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top/uut/armed" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">armed[3:0]</obj_property>
+      <obj_property name="ObjectShortName">armed[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="group69" type="group">
+      <obj_property name="label">Decoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/opcode" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">opcode[7:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/execute" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">execute</obj_property>
+         <obj_property name="ObjectShortName">execute</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/clock" type="logic" db_ref_id="1">
          <obj_property name="ElementShortName">clock</obj_property>
          <obj_property name="ObjectShortName">clock</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/output" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">output[35:0]</obj_property>
-         <obj_property name="ObjectShortName">output[35:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrtrigmask" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrtrigmask[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrtrigmask[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/la_input" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">la_input[35:0]</obj_property>
-         <obj_property name="ObjectShortName">la_input[35:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrtrigval" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrtrigval[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrtrigval[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/read" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">read</obj_property>
-         <obj_property name="ObjectShortName">read</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrtrigcfg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrtrigcfg[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrtrigcfg[3:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/write" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">write</obj_property>
-         <obj_property name="ObjectShortName">write</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrspeed" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wrspeed</obj_property>
+         <obj_property name="ObjectShortName">wrspeed</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/addra" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">addra[13:0]</obj_property>
-         <obj_property name="ObjectShortName">addra[13:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrsize" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wrsize</obj_property>
+         <obj_property name="ObjectShortName">wrsize</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/writesignal" type="logic" db_ref_id="1">
-         <obj_property name="ElementShortName">writesignal</obj_property>
-         <obj_property name="ObjectShortName">writesignal</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/wrflags" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">wrflags</obj_property>
+         <obj_property name="ObjectShortName">wrflags</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/bramin" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">bramin[35:0]</obj_property>
-         <obj_property name="ObjectShortName">bramin[35:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/arm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">arm</obj_property>
+         <obj_property name="ObjectShortName">arm</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/bramout" type="array" db_ref_id="1">
-         <obj_property name="ElementShortName">bramout[35:0]</obj_property>
-         <obj_property name="ObjectShortName">bramout[35:0]</obj_property>
-         <obj_property name="Radix">HEXRADIX</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
       </wvobject>
-      <wvobject fp_name="/simulate_your_ccl_design/Inst_BENCHY_wb_SumpBlaze_LogicAnalyzer32/Inst_sram/brams" type="other" db_ref_id="1">
-         <obj_property name="ElementShortName">brams</obj_property>
-         <obj_property name="ObjectShortName">brams</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/abort" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">abort</obj_property>
+         <obj_property name="ObjectShortName">abort</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/ident" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">ident</obj_property>
+         <obj_property name="ObjectShortName">ident</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/meta" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">meta</obj_property>
+         <obj_property name="ObjectShortName">meta</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/exe" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">exe</obj_property>
+         <obj_property name="ObjectShortName">exe</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_decoder/exereg" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">exereg</obj_property>
+         <obj_property name="ObjectShortName">exereg</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group86" type="group">
+      <obj_property name="label">trigger</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/la_input" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">la_input[31:0]</obj_property>
+         <obj_property name="ObjectShortName">la_input[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/la_inputready" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">la_inputready</obj_property>
+         <obj_property name="ObjectShortName">la_inputready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/data" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">data[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/clock" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">clock</obj_property>
+         <obj_property name="ObjectShortName">clock</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/reset" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/wrmask" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrmask[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrmask[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/wrvalue" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrvalue[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrvalue[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/wrconfig" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">wrconfig[3:0]</obj_property>
+         <obj_property name="ObjectShortName">wrconfig[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/arm" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">arm</obj_property>
+         <obj_property name="ObjectShortName">arm</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/demuxed" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">demuxed</obj_property>
+         <obj_property name="ObjectShortName">demuxed</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/run" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">run</obj_property>
+         <obj_property name="ObjectShortName">run</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/armed" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">armed[3:0]</obj_property>
+         <obj_property name="ObjectShortName">armed[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/exttriggerin" type="logic" db_ref_id="1">
+         <obj_property name="ElementShortName">exttriggerin</obj_property>
+         <obj_property name="ObjectShortName">exttriggerin</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/stagematch" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stagematch[3:0]</obj_property>
+         <obj_property name="ObjectShortName">stagematch[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/stagerun" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">stagerun[4:0]</obj_property>
+         <obj_property name="ObjectShortName">stagerun[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/uut/Inst_core/Inst_trigger/levelreg" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">levelreg[1:0]</obj_property>
+         <obj_property name="ObjectShortName">levelreg[1:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>

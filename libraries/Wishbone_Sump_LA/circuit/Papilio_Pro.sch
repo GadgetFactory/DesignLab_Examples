@@ -42,7 +42,6 @@
         <signal name="Logic_Analyzer_Inputs(31:0)" />
         <signal name="WC(15:0)" />
         <signal name="WB(15:0)" />
-        <signal name="XLXN_432(15:0)" />
         <signal name="Logic_Analyzer_Inputs(15:0)" />
         <signal name="Logic_Analyzer_Inputs(31:16)" />
         <signal name="XLXN_436(100:0)" />
@@ -580,15 +579,15 @@
         <instance x="2864" y="1504" name="XLXI_43" orien="R0" />
         <bustap x2="3552" y1="1296" y2="1296" x1="3648" />
         <branch name="Logic_Analyzer_Inputs(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="3320" y="1296" type="branch" />
-            <wire x2="3320" y1="1296" y2="1296" x1="3088" />
-            <wire x2="3552" y1="1296" y2="1296" x1="3320" />
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="3320" y="1296" type="branch" />
+            <wire x2="3328" y1="1296" y2="1296" x1="3088" />
+            <wire x2="3552" y1="1296" y2="1296" x1="3328" />
         </branch>
         <bustap x2="3552" y1="1472" y2="1472" x1="3648" />
         <branch name="Logic_Analyzer_Inputs(31:16)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="3320" y="1472" type="branch" />
-            <wire x2="3320" y1="1472" y2="1472" x1="3088" />
-            <wire x2="3552" y1="1472" y2="1472" x1="3320" />
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="3320" y="1472" type="branch" />
+            <wire x2="3328" y1="1472" y2="1472" x1="3088" />
+            <wire x2="3552" y1="1472" y2="1472" x1="3328" />
         </branch>
         <branch name="XLXN_436(100:0)">
             <wire x2="4096" y1="816" y2="1120" x1="4096" />

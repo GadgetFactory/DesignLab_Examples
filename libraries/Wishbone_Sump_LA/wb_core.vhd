@@ -35,7 +35,7 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
-entity core is
+entity wb_core is
 	port(
 		clock : in std_logic;
 		cmd : in std_logic_vector (39 downto 0);
@@ -59,9 +59,9 @@ entity core is
     armed:  out std_logic_vector(3 downto 0);
 		tx_bytes : out integer range 0 to 4
 	);
-end core;
+end wb_core;
 
-architecture behavioral of core is
+architecture behavioral of wb_core is
 
 	component decoder
 		port(
@@ -134,7 +134,7 @@ architecture behavioral of core is
 		);
 	end component;
 
-	component trigger
+	component wb_trigger
 		port(
 			la_input : in std_logic_vector(31 downto 0);
 			la_inputReady : in std_logic;
@@ -438,7 +438,7 @@ begin
 		num_scheme => num_scheme
 	);
 
-	Inst_trigger: trigger
+	Inst_trigger: wb_trigger
 	port map(
 		la_input => sample,
 		la_inputReady => sampleReady,
