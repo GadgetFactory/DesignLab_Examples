@@ -5,6 +5,7 @@ del2
 del3
 del4
 del5
+Chip_Designer
 
 # Windows image file caches
 Thumbs.db
@@ -104,3 +105,6 @@ libraries/audio libraries -2.0-v1.zip
 libraries/AVR_Wishbone_Bridge.zip
 libraries/AVR_Wishbone_Bridge.zip
 *.zip
+hdmi-generic-old/smallfs/image.jpg
+*.7z
+libraries/Wishbone_Sump_LA/mt48lc16m16a2.vhd
