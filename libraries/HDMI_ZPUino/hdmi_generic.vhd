@@ -15,11 +15,11 @@ use work.wishbonepkg.all;
 
 entity hdmi_generic is
   generic (
-    CLKIN_PERIOD: real := 31.25;
-    CLKFB_MULT: integer := 24;
-    CLK0_DIV: integer := 8;
-    CLK1_DIV: integer := 8;
-    CLK2_DIV: integer := 8
+    CLKIN_PERIOD: real := 0.001;
+    CLKFB_MULT: integer := 10;
+    CLK0_DIV: integer := 10;
+    CLK1_DIV: integer := 10;
+    CLK2_DIV: integer := 10
   );
   port(
     wb_clk_i: in std_logic;
@@ -649,10 +649,10 @@ begin
 
   read_enable <= (v_display and not guard) and not hflip;
 
-  OBUFDS_blue  : OBUFDS generic map (IOSTANDARD => "TMDS_33") port map ( O  => TMDS(0), OB => TMDSB(0), I  => blue_s  );
-  OBUFDS_green : OBUFDS generic map (IOSTANDARD => "TMDS_33") port map ( O  => TMDS(1), OB => TMDSB(1), I  => green_s );
-  OBUFDS_red   : OBUFDS generic map (IOSTANDARD => "TMDS_33") port map ( O  => TMDS(2), OB => TMDSB(2), I  => red_s   );
-  OBUFDS_clock : OBUFDS generic map (IOSTANDARD => "TMDS_33") port map ( O  => TMDS(3), OB => TMDSB(3), I  => clock_s );
+  OBUFDS_blue  : OBUFDS port map ( O  => TMDS(0), OB => TMDSB(0), I  => blue_s  );
+  OBUFDS_green : OBUFDS port map ( O  => TMDS(1), OB => TMDSB(1), I  => green_s );
+  OBUFDS_red   : OBUFDS port map ( O  => TMDS(2), OB => TMDSB(2), I  => red_s   );
+  OBUFDS_clock : OBUFDS port map ( O  => TMDS(3), OB => TMDSB(3), I  => clock_s );
 
 --  myfifo: gh_fifo_async_rrd_sr_wf
 --  generic map (

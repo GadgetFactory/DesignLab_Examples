@@ -1,3 +1,5 @@
+#define circuit HDMI_ZPUino
+
 #include "jpeglib.h"
 #include <ZPUino_GFX.h>
 #include <Adafruit_GFX.h>
