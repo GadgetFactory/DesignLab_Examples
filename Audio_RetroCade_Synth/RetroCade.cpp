@@ -89,8 +89,11 @@ void RETROCADE::setupMegaWing()
   pinMode(JRIGHT, INPUT);  
  
   //Setup LCD
-  pinMode(WING_C_14, OUTPUT);     //Set contrast to GND
-  digitalWrite(WING_C_14, LOW);   //Set contrast to GND    
+//  pinMode(WING_C_14, OUTPUT);     //Set contrast to GND    SOME LCD's need this setting and some need to be set as an input.
+//  digitalWrite(WING_C_14, LOW);   //Set contrast to GND    
+  
+  pinMode(WING_C_14, INPUT);     //Set contrast to GND   
+  
  // set up the LCD's number of columns and rows:
  lcd.begin(16,2);
  // clear the LCD screen:

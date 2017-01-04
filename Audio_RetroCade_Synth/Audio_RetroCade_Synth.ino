@@ -11,10 +11,15 @@
       sketchdir://Dashboards/FlowStone/RetroCade_Synth_DashBoard.exe
 
     Click on the link below to load the latest production RetroCade bit file with all of the sample audio files
-      sketchdir://RetroCade-1.1-zpuino-1.0-PapilioPro-S6LX9-RetroCade-1.1.bit
+      sketchdir://circuit/RetroCade-1.3-zpuino-2.0-PapilioPro-S6LX9-RetroCade-1.3.bit
+      sketchdir://circuit/RetroCade-1.3-lcd-contrast-fix-zpuino-2.0-PapilioPro-S6LX9-RetroCade-1.3.bit   //Use this is you have problems with contrast on your LCD
+      
+    To use the older 1.1 version of the firmware (You will not be able to upload this sketch with the 1.0 version of ZPUino)
+      sketchdir://circuit/RetroCade-1.1-zpuino-1.0-PapilioPro-S6LX9-RetroCade-1.1.bit
       
     NOTE: If you want all of the production samples available when you load this sketch to the RetroCade first load the production bit file to your board and then hold down the left shift key before uploading. 
-    This will cause the program to be loaded directly to SDRAM and will not wipe out the samples in SPI Flash.
+    This will cause the program to be loaded directly to SDRAM and will not wipe out the samples in SPI Flash. Or, hit CTRL-K to open the sketch directory and rename smallfs-production to smallfs.
+    It will take a long time to upload all of the music files every time you make a code change. The current smallfs folder has very small files in it to speed up code changes.
     
  created 2014
  by Jack Gassett
@@ -24,6 +29,9 @@
 License: GPL
 
 ChangeLog:
+1/4/2017      Version 1.3.1
+        -Fix for some LCDs that have contrast issues.
+
 4/21/2015      Version 1.3
         -Updated MIDI library to better handle NoteOffs.
         -Moved to ZPUino 2.0 with a DesignLab schematic.
