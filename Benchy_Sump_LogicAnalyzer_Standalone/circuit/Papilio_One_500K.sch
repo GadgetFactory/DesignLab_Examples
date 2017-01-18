@@ -100,16 +100,14 @@
         </branch>
         <bustap x2="1712" y1="1632" y2="1632" x1="1808" />
         <branch name="Logic_Analyzer_Inputs(31:16)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1624" y="1632" type="branch" />
-            <wire x2="1624" y1="1632" y2="1632" x1="1536" />
-            <wire x2="1632" y1="1632" y2="1632" x1="1624" />
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1624" y="1632" type="branch" />
+            <wire x2="1632" y1="1632" y2="1632" x1="1536" />
             <wire x2="1712" y1="1632" y2="1632" x1="1632" />
         </branch>
         <bustap x2="1712" y1="1376" y2="1376" x1="1808" />
         <branch name="Logic_Analyzer_Inputs(15:0)">
-            <attrtext style="alignment:SOFT-BCENTER;fontsize:28;fontname:Arial" attrname="Name" x="1624" y="1376" type="branch" />
-            <wire x2="1624" y1="1376" y2="1376" x1="1536" />
-            <wire x2="1632" y1="1376" y2="1376" x1="1624" />
+            <attrtext style="alignment:SOFT-LEFT;fontsize:28;fontname:Arial" attrname="Name" x="1624" y="1376" type="branch" />
+            <wire x2="1632" y1="1376" y2="1376" x1="1536" />
             <wire x2="1712" y1="1376" y2="1376" x1="1632" />
         </branch>
         <instance x="1312" y="1408" name="XLXI_67" orien="R0" />

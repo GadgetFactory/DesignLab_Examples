@@ -15,17 +15,17 @@
   <version xil_pn:ise_version="14.7" xil_pn:schema_version="2"/>
 
   <files>
-    <file xil_pn:name="../../libraries/AVR_Wishbone_Bridge/AVR_Wishbone_Bridge.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../../libraries/AVR_Wishbone_Bridge/AVR_Wishbone_Bridge.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../libraries/AVR_Wishbone_Bridge/AVR_Wishbone_Bridge_Test.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../../libraries/AVR_Wishbone_Bridge/AVR_Wishbone_Bridge_Test.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../libraries/AVR_Wishbone_Bridge/include_symbols.edif" xil_pn:type="FILE_EDIF">
+    <file xil_pn:name="../../../libraries/AVR_Wishbone_Bridge/include_symbols.edif" xil_pn:type="FILE_EDIF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="../../libraries/Benchy/BENCHY_sa_SumpBlaze_LogicAnalyzer16.vhd" xil_pn:type="FILE_VHDL">
@@ -112,9 +112,6 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="17"/>
       <library xil_pn:name="DesignLab"/>
-    </file>
-    <file xil_pn:name="../../libraries/Benchy/include_symbols.edif" xil_pn:type="FILE_EDIF">
-      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
     <file xil_pn:name="../../libraries/Benchy/Mem_Gen_36bit.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
@@ -762,7 +759,7 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../libraries/ZPUino_Wishbone_Peripherals/VIDEO_zpuino_wb_rgb_panel.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../../libraries/ZPUino_Wishbone_Peripherals/VIDEO_zpuino_wb_rgb_panel.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="154"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
@@ -802,32 +799,31 @@
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuinopkg.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuinopkg.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="180"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
-      <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuino_config.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpuino_config.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="181"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="182"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg_hyperion.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpupkg_hyperion.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="183"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="184"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config_hyperion.vhd" xil_pn:type="FILE_VHDL">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/zpu_config_hyperion.vhd" xil_pn:type="FILE_VHDL">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="185"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
       <library xil_pn:name="DesignLab"/>
@@ -836,11 +832,14 @@
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="1"/>
       <association xil_pn:name="Implementation" xil_pn:seqID="26"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/papilio_one.ucf" xil_pn:type="FILE_UCF">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/PSL_Papilio_One_500K/papilio_one.ucf" xil_pn:type="FILE_UCF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
-    <file xil_pn:name="../../../DesignLab/build/windows/work/examples/00.Papilio_Schematic_Library/Libraries/ZPUino_1/Utility.sch" xil_pn:type="FILE_SCHEMATIC">
+    <file xil_pn:name="../../00.Papilio_Schematic_Library/Libraries/ZPUino_1/Utility.sch" xil_pn:type="FILE_SCHEMATIC">
       <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="284"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
+    </file>
+    <file xil_pn:name="../../../libraries/Benchy/include_symbols.edif" xil_pn:type="FILE_EDIF">
       <association xil_pn:name="Implementation" xil_pn:seqID="0"/>
     </file>
   </files>
@@ -869,7 +868,7 @@
     <property xil_pn:name="Change Device Speed To" xil_pn:value="-4" xil_pn:valueState="default"/>
     <property xil_pn:name="Change Device Speed To Post Trace" xil_pn:value="-4" xil_pn:valueState="default"/>
     <property xil_pn:name="Combinatorial Logic Optimization" xil_pn:value="false" xil_pn:valueState="default"/>
-    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="true" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Compile EDK Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile SIMPRIM (Timing) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile UNISIM (Functional) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
     <property xil_pn:name="Compile XilinxCoreLib (CORE Generator) Simulation Library" xil_pn:value="true" xil_pn:valueState="default"/>
@@ -1014,7 +1013,7 @@
     <property xil_pn:name="Overwrite Existing Symbol" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Pack I/O Registers into IOBs" xil_pn:value="Auto" xil_pn:valueState="default"/>
     <property xil_pn:name="Pack I/O Registers/Latches into IOBs" xil_pn:value="Off" xil_pn:valueState="default"/>
-    <property xil_pn:name="Package" xil_pn:value="vq100" xil_pn:valueState="non-default"/>
+    <property xil_pn:name="Package" xil_pn:value="vq100" xil_pn:valueState="default"/>
     <property xil_pn:name="Perform Advanced Analysis" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Perform Advanced Analysis Post Trace" xil_pn:value="false" xil_pn:valueState="default"/>
     <property xil_pn:name="Perform Timing-Driven Packing and Placement" xil_pn:value="false" xil_pn:valueState="default"/>
@@ -1164,12 +1163,12 @@
     <!-- project is analyzed based on files automatically identified as       -->
     <!-- include files.                                                       -->
     <file xil_pn:name="../../libraries/BitCoin_Miner/main_pll.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="../../libraries/BitCoin_Miner/raw7seg.v" xil_pn:type="FILE_VERILOG"/>
-    <file xil_pn:name="../../libraries/BitCoin_Miner/serial.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="../../libraries/BitCoin_Miner/sha-256-functions.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="../../libraries/BitCoin_Miner/sha256_transform.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="../../libraries/BitCoin_Miner/uart_receiver.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="../../libraries/BitCoin_Miner/uart_transmitter.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="../../libraries/BitCoin_Miner/serial.v" xil_pn:type="FILE_VERILOG"/>
+    <file xil_pn:name="../../libraries/BitCoin_Miner/raw7seg.v" xil_pn:type="FILE_VERILOG"/>
     <file xil_pn:name="../../libraries/Gameduino/revision.v" xil_pn:type="FILE_VERILOG"/>
   </autoManagedFiles>
 
