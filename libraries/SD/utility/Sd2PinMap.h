@@ -187,40 +187,40 @@ static const pin_map_t digitalPinMap[] = {
 // Leonardo
 
 // Two Wire (aka I2C) ports
-uint8_t const SDA_PIN = 2;
-uint8_t const SCL_PIN = 3;
+uint8_t const SDA_PIN = 7;
+uint8_t const SCL_PIN = 8;
 
 // SPI port
-uint8_t const SS_PIN = 17;
-uint8_t const MOSI_PIN = 16;
-uint8_t const MISO_PIN = 14;
+uint8_t const SS_PIN = 16;
+uint8_t const MOSI_PIN = 14;
+uint8_t const MISO_PIN = 2;
 uint8_t const SCK_PIN = 15;
 
 static const pin_map_t digitalPinMap[] = {
   {&DDRD, &PIND, &PORTD, 2},  // D2  0
   {&DDRD, &PIND, &PORTD, 3},  // D3  1
-  {&DDRD, &PIND, &PORTD, 1},  // D1  2
-  {&DDRD, &PIND, &PORTD, 0},  // D0  3
-  {&DDRD, &PIND, &PORTD, 4},  // D4  4
-  {&DDRC, &PINC, &PORTC, 6},  // C6  5
-  {&DDRD, &PIND, &PORTD, 7},  // D7  6
-  {&DDRE, &PINE, &PORTE, 6},  // E6  7
-  {&DDRB, &PINB, &PORTB, 4},  // B4  8
-  {&DDRB, &PINB, &PORTB, 5},  // B5  9
-  {&DDRB, &PINB, &PORTB, 6},  // B6 10
-  {&DDRB, &PINB, &PORTB, 7},  // B7 11
-  {&DDRD, &PIND, &PORTD, 6},  // D6 12
-  {&DDRC, &PINC, &PORTC, 7},  // C7 13
-  {&DDRB, &PINB, &PORTB, 3},  // B3 14
-  {&DDRB, &PINB, &PORTB, 1},  // B1 15
-  {&DDRB, &PINB, &PORTB, 2},  // B2 16
+  {&DDRB, &PINB, &PORTB, 5},  // B5  2
+  {&DDRB, &PINB, &PORTB, 4},  // B4  3
+  {&DDRD, &PIND, &PORTD, 7},  // D7  4
+  {&DDRD, &PIND, &PORTD, 6},  // D6  5
+  {&DDRD, &PIND, &PORTD, 4},  // D4  6
+  {&DDRD, &PIND, &PORTD, 1},  // D1  7
+  {&DDRD, &PIND, &PORTD, 0},  // D0  8
+  {&DDRB, &PINB, &PORTB, 7},  // B7  9
+  {&DDRB, &PINB, &PORTB, 0},  // B0 10
+  {&DDRB, &PINB, &PORTB, 2},  // B2 11
+  {&DDRB, &PINB, &PORTB, 3},  // B3 12
+  {&DDRB, &PINB, &PORTB, 1},  // B1 13
+  {&DDRB, &PINB, &PORTB, 6},  // B6 14
+  {&DDRC, &PINC, &PORTC, 6},  // C6 15
+  {&DDRC, &PINC, &PORTC, 7},  // C7 16
   {&DDRB, &PINB, &PORTB, 0},  // B0 17
-  {&DDRF, &PINF, &PORTF, 7},  // F7 18
-  {&DDRF, &PINF, &PORTF, 6},  // F6 19
-  {&DDRF, &PINF, &PORTF, 5},  // F5 20
-  {&DDRF, &PINF, &PORTF, 4},  // F4 21
-  {&DDRF, &PINF, &PORTF, 1},  // F1 22
-  {&DDRF, &PINF, &PORTF, 0},  // F0 23
+  {&DDRF, &PINF, &PORTF, 0},  // F0 18
+  {&DDRF, &PINF, &PORTF, 1},  // F1 19
+  {&DDRF, &PINF, &PORTF, 4},  // F4 20
+  {&DDRF, &PINF, &PORTF, 5},  // F5 21
+  {&DDRF, &PINF, &PORTF, 6},  // F6 22
+  {&DDRF, &PINF, &PORTF, 7},  // F7 23
 };
 //------------------------------------------------------------------------------
 #elif defined(__AVR_AT90USB646__) || defined(__AVR_AT90USB1286__)

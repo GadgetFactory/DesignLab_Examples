@@ -52,6 +52,15 @@ uint8_t const SPI_QUARTER_SPEED = 2;
 #define SOFTWARE_SPI
 #endif  // MEGA_SOFT_SPI
 
+/**
+ * Define MEGA_SOFT_SPI non-zero to use software SPI on the hardware ATMega32U4
+ * on Papilio DUO connected to a Classic Computing Shield. The SD card pins on the
+ * shield are not connected to the hardware SPI pins.
+ */
+#if MEGA_SOFT_SPI && (defined(__AVR_ATmega32U4__))
+#define SOFTWARE_SPI
+#endif // MEGA_SOFT_SPI
+
 #if defined(ZPU)
 #undef SOFTWARE_SPI
 #endif // ZPU
@@ -82,20 +91,22 @@ uint8_t const  SPI_SCK_PIN = SCK_PIN;
 /** optimize loops for hardware SPI */
 #ifndef USE_SPI_LIB
 #define OPTIMIZE_HARDWARE_SPI
-#endif
+#endif // USE_SPI_LIB
+
+#endif // AVR
 
 #else  // SOFTWARE_SPI
 // define software SPI pins so Mega can use unmodified GPS Shield
 /** SPI chip select pin */
-uint8_t const SD_CHIP_SELECT_PIN = 10;
+uint8_t const SD_CHIP_SELECT_PIN = 16;
 /** SPI Master Out Slave In pin */
-uint8_t const SPI_MOSI_PIN = 11;
+uint8_t const SPI_MOSI_PIN = 14;
 /** SPI Master In Slave Out pin */
-uint8_t const SPI_MISO_PIN = 12;
+uint8_t const SPI_MISO_PIN = 2;
 /** SPI Clock pin */
-uint8_t const SPI_SCK_PIN = 13;
+uint8_t const SPI_SCK_PIN = 15;
 #endif  // SOFTWARE_SPI
-#endif // AVR
+
 //------------------------------------------------------------------------------
 /** Protect block zero from write if nonzero */
 #define SD_PROTECT_BLOCK_ZERO 1

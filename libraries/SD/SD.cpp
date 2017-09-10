@@ -346,6 +346,8 @@ boolean SDClass::begin(uint8_t csPin) {
          root.openRoot(&volume);
 }
 
+#ifdef ZPU
+
 boolean SDClass::begin(uint8_t csPin, uint8_t wishboneSlot) {
   /*
 
@@ -360,6 +362,8 @@ boolean SDClass::begin(uint8_t csPin, uint8_t wishboneSlot) {
          ( volume.init(card) || volume.init(card,1)) &&
         root.openRoot(&volume);
 }
+
+#endif
 
 // this little helper is used to traverse paths
 SdFile SDClass::getParentDir(const char *filepath, int *index) {
