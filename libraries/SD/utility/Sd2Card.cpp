@@ -411,7 +411,9 @@ void Sd2Card::partialBlockRead(uint8_t value) {
  * the value zero, false, is returned for failure.
  */
 int Sd2Card::readBlock(uint32_t block, uint8_t* dst) {
-	//return readData(block, 0, 512, dst);
+#ifdef AVR
+  return readData(block, 0, 512, dst);
+#else
 	unsigned int *idst;
 	int i;
 
@@ -447,7 +449,8 @@ int Sd2Card::readBlock(uint32_t block, uint8_t* dst) {
 
 fail:
 	chipSelectHigh();
-	return false;
+  return false;
+#endif
 }
 //------------------------------------------------------------------------------
 /**
@@ -462,7 +465,7 @@ fail:
  */
 int Sd2Card::readData(uint32_t block,
 					  unsigned offset, unsigned count, uint8_t* dst) {
-//	unsigned n;
+	unsigned n;
 	if (count == 0) return true;
 	if ((count + offset) > 512) {
 		goto fail;

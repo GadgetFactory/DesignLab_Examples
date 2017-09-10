@@ -26,7 +26,6 @@
 #define CSPIN  WING_CL4
 #define WISHBONESLOT 12
 
-
 // set up variables using the SD utility library functions:
 Sd2Card card;
 SdVolume volume;
@@ -44,7 +43,11 @@ void setup()
 
   // we'll use the initialization code from the utility libraries
   // since we're just testing if the card is working!
+#ifdef ZPU
   if (!card.init(SPI_HALF_SPEED, CSPIN, WISHBONESLOT)) {
+#else
+  if (!card.init(SPI_HALF_SPEED, CSPIN)) {
+#endif
     Serial.println("initialization failed. Things to check:");
     Serial.println("* is a card is inserted?");
     Serial.println("* Is your wiring correct?");
